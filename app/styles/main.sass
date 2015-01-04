@@ -1,6 +1,11 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/"
+// FONTS
+@font-face
+  font-family: techni
+  src: url('fonts/TechnicznaPomoc.ttf')
+
 // bower:scss
-@import ../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss
+@import bootstrap-sass-official/assets/stylesheets/_bootstrap.scss
 // endbower
 
 .browsehappy
@@ -9,3 +14,44 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   color: #000
   padding: 0.2em 0
 
+.container
+  @media (min-width: $screen-lg-min)
+    width: 1019px
+
+// NAVBAR
+.navbar-default
+  background: #EFEFEF
+  border: 0
+  padding-top: 70px
+  .navbar-brand
+    background: url('../images/logo.jpg')
+    width: 364px
+    height: 29px
+    padding: 0
+    margin: 0 !important
+  .navbar-nav
+    margin: 0!important
+    li
+      padding: 0 10px 0 7px
+      background: url("../images/border-menu.jpg") no-repeat right
+      &:last-child
+        padding-right: 0px
+        background: none
+      a
+        font-size: 18px
+        font-family: techni
+        text-transform: uppercase
+        background: transparent
+        color: #2D2D2D
+        padding: 8px 4px 8px 8px
+        &:hover
+          cursor: pointer
+          color: #ffffff
+          background: black
+    & > .active
+      & > a
+        color: #ffffff
+        background: black
+        &:hover
+          color: #ffffff
+          background: black
