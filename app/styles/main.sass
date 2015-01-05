@@ -3,6 +3,24 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @font-face
   font-family: techni
   src: url('fonts/TechnicznaPomoc.ttf')
+@font-face
+  font-family: bender
+  src: url('fonts/Bender.otf')
+@font-face
+  font-family: benderlight
+  src: url('fonts/Bender Light.otf')
+@font-face
+  font-family: benderbold
+  src: url('fonts/Bender Bold.otf')
+@font-face
+  font-family: titilliumlight
+  src: url('fonts/TitilliumText22L001-webfont.ttf')
+@font-face
+  font-family: titillium
+  src: url('fonts/TitilliumText22L003-webfont.ttf')
+@font-face
+  font-family: titilliumstrong
+  src: url('fonts/TitilliumText22L004-webfont.ttf')
 
 // bower:scss
 @import bootstrap-sass-official/assets/stylesheets/_bootstrap.scss
@@ -18,11 +36,15 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   @media (min-width: $screen-lg-min)
     width: 1019px
 
+body
+  background-color: #EFEFEF
+
 // NAVBAR
 .navbar-default
   background: #EFEFEF
   border: 0
   padding-top: 70px
+  margin-bottom: 0
   .navbar-brand
     background: url('../images/logo.jpg')
     width: 364px
@@ -55,3 +77,61 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
         &:hover
           color: #ffffff
           background: black
+
+// HOME
+.home
+  padding-top: 76px
+  background: url('../images/top_bg.jpg') no-repeat
+  background-position: bottom right
+  height: 783px
+  position: relative
+  z-index: 1
+  h1
+    color: #909090
+    font-family: bender
+    font-size: 31px
+    width: 230px
+    line-height: 32px
+    margin-bottom: 23px
+    text-transform: uppercase
+  p
+    font-size: 13px
+    color: black
+    width: 392px
+    font-family: titillium
+    line-height: 16px
+    margin-bottom: 16px
+
+  .links
+    margin-top: 149px
+    text-transform: uppercase
+    font-size: 16px
+    font-family: titillium
+    width: 250px
+    a
+      display: block
+      padding-left: 40px
+      margin-bottom: 4px
+      &:hover
+        text-decoration: none
+      &:first-child
+        background: url('../images/arrow1.png') no-repeat
+        background-position: 0px 1px
+        color: rgb(255, 0, 109)
+        &:hover
+          background-position: 10px 1px
+      &:last-child
+        background: url('../images/arrow2.png') no-repeat
+        background-position: 0px 1px
+        color: rgb(157, 0, 111)
+        &:hover
+          background-position: 10px 1px
+.home-black-bg
+  background: black
+  height: 370px
+  margin-top: -370px
+  position: relative
+  z-index: 0
+
+
+
