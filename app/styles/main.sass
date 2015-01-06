@@ -295,6 +295,66 @@ body
         margin-top: -7px
         line-height: 15px
 
+// MAKERS
+.makers
+  margin-top: 43px
+  h2
+    font-family: bender
+    color: #5E5E5E
+    letter-spacing: 3px
+    font-size: 16px
+    text-transform: uppercase
+    margin-bottom: 20px
+  .maker
+    &:nth-child(1)
+      .shelfie
+        background-image: url("../images/sprites.png")
+        background-position: 0px 70px
+      &:hover
+        .shelfie
+          animation: gilles 0.75s steps(1)
+          animation-fill-mode: forwards
+    &:nth-child(2)
+      .shelfie
+        background-image: url("../images/sprites.png")
+        background-position: 54px 70px
+      &:hover
+        .shelfie
+          animation: thimios 0.75s steps(1)
+          animation-fill-mode: forwards
+    &:nth-child(3)
+      .shelfie
+        background-image: url("../images/sprites.png")
+        background-position: 108px 70px
+      &:hover
+        .shelfie
+          animation: spiros 0.75s steps(1)
+          animation-fill-mode: forwards
+    .shelfie
+      width: 54px
+      height: 69px
+      display: inline-block
+    .info
+      font-size: 14px
+      display: inline-block
+      vertical-align: top
+      max-width: 240px
+      padding-left: 15px
+      padding-top: 3px
+      .specialty
+        font-family: titillium
+        width: 118%
+      .name
+        font-family: titilliumlight
+        letter-spacing: -0.1px
+        margin-top: -4px
+        margin-bottom: 16px
+      .more
+        font-family: titillium
+        font-size: 12px
+        text-transform: uppercase
+
+
 .section-title
   font-family: benderlight
   font-size: 44px
@@ -329,3 +389,27 @@ body
   top: 178px
   z-index: 1
 
+// MAKERS ANIMATIONS
+@keyframes gilles
+  0%
+    background-position: 0px 70px
+  50%
+    background-position: 0px 139px
+  100%
+    background-position: 0px 209px
+
+@keyframes thimios
+  0%
+    background-position: 54px 70px
+  50%
+    background-position: 54px 139px
+  100%
+    background-position: 54px 209px
+
+@keyframes spiros
+  0%
+    background-position: 108px 70px
+  50%
+    background-position: 108px 139px
+  100%
+    background-position: 108px 209px
