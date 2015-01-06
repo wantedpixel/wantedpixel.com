@@ -13,7 +13,8 @@
     "angular-sanitize": "^1.3.0",
     "angular-touch": "^1.3.0",
     "zaccordion": "*",
-    "jquery.easing": "~1.3.1"
+    "jquery.easing": "~1.3.1",
+    "jquery-smallipop": "~0.6.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.0",
