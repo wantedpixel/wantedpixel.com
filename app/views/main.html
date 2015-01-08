@@ -1,14 +1,14 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand"></a>
+      <a ng-click="navigateTo('home')" class="navbar-brand"></a>
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a>Works</a></li>
-        <li class="project"><a>What</a></li>
-        <li class="project"><a>How</a></li>
-        <li class="project"><a>Contact</a></li>
+        <li class="project" ng-class="{'active': activeSection == 'works'}"><a ng-click="navigateTo('works')">Works</a></li>
+        <li class="project" ng-class="{'active': activeSection == 'products'}"><a ng-click="navigateTo('products')">What</a></li>
+        <li class="project" ng-class="{'active': activeSection == 'framework'}"><a ng-click="navigateTo('framework')">How</a></li>
+        <li class="project" ng-class="{'active': activeSection == 'contact-us'}"><a ng-click="navigateTo('contact-us')">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -193,7 +193,7 @@
 <div class="services">
   <div class="line"></div>
   <div class="container">
-    <h2 class="section-title">What we make</h2>
+    <h2 class="section-title products">What we make</h2>
     <div class="row">
       <div smallipop class="col-sm-4 service">
         <img src="images/services/web-design.png" alt="web design"/>
@@ -244,7 +244,7 @@
 <div class="method">
   <div class="line"></div>
   <div class="container">
-    <h2 class="section-title">How we make things</h2>
+    <h2 class="section-title framework">How we make things</h2>
     <div class="how-container">
       <div class="how-title" toggle-details>
         <h3>Wanted Pixel is no agency. We are a real family (Spiros and Thimios are brothers) and take each project personally.</h3>
@@ -329,7 +329,7 @@
 <div class="contact">
   <div class="line"></div>
   <div class="container">
-    <h2 class="section-title">Contact us</h2>
+    <h2 class="section-title contact-us">Contact us</h2>
     <div class="row">
       <div class="col-xs-6">
         <p>We are present in Germany (Berlin) and in France (Paris). We speak english, german, french, spanish and greek.Let us know about your project; we will use our knowledge and experience to help you make informed decisions about it. Meeting exciting people, starting new projects and concepts is what makes us tick. </p>
