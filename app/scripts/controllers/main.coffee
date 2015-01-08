@@ -23,3 +23,5 @@ angular.module('wantedpixelApp')
 
     $scope.$on '$locationChangeSuccess', (event) ->
       $route.current = lastRoute
+
+    $scope.projects = [1...12]
