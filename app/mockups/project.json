@@ -1,0 +1,95 @@
+[
+  {
+    "title": "discavo.de",
+    "mission": "DEVELOP - Mobile Site",
+    "description": "DISCAVO is the new hotel price comparison platform that takes the pain out of travel search. The platform offers user-friendly filter options that are revolutionizing the search for suitable accommodation. Travelers choose their destination and find the nearest location within the chosen price range. Dynamic maps allow visitors to explore the surroundings.",
+    "image": "images/accordion/slide_discavo_mobile.jpg",
+    "details":
+    {
+      "title": "Discavo Mobile Site",
+      "images": [
+        "images/project-screenshots/discavo_mobile.jpg"
+      ],
+      "url": "http://www.discavo.de",
+      "description": "DISCAVO is the new hotel price comparison platform that takes the pain out of travel search. Wanted Pixel developed a fully functional mobile version of the DISCAVO service within just one month.The platform offers user-friendly filter options that are revolutionizing the search for suitable accommodation. Travelers choose their destination and find the nearest location within the chosen price range. Dynamic maps allow visitors to explore the surroundings.Under the hood the platform is powered by the Play! framework, AngularJS and HTML5 WebSockets. It is hosted on the Amazon Cloud."
+    }
+  },
+  {
+    "title": "discavo.de",
+    "mission": "DEVELOP - Web App",
+    "description": "DISCAVO is the new hotel price comparison platform that takes the pain out of travel search. The platform offers user-friendly filter options that are revolutionizing the search for suitable accommodation. Travelers choose their destination and find the nearest location within the chosen price range. Dynamic maps allow visitors to explore the surroundings.",
+    "image": "images/accordion/slide_discavo.jpg",
+    "details":
+    {
+      "title": "Discavo Web App",
+      "images": [
+        "images/project-screenshots/discavo_01.jpg",
+        "images/project-screenshots/discavo_02.jpg",
+        "images/project-screenshots/discavo_03.jpg",
+        "images/project-screenshots/discavo_04.jpg"
+      ],
+      "url": "http://www.discavo.de",
+      "description": "DISCAVO is the new hotel price comparison platform that takes the pain out of travel search. Wanted Pixel developed a fully functional mobile version of the DISCAVO service within just one month.The platform offers user-friendly filter options that are revolutionizing the search for suitable accommodation. Travelers choose their destination and find the nearest location within the chosen price range. Dynamic maps allow visitors to explore the surroundings.Under the hood the platform is powered by the Play! framework, AngularJS and HTML5 WebSockets. It is hosted on the Amazon Cloud."
+    }
+  }
+,
+  {
+    "title": "gigflip.com",
+    "mission": "DEVELOP - e commerce",
+    "description": "Gigflip enables Fanbooking for music events, bridging the gap between artists, booking agencies and fans. On gigflip, artists plan concerts according to demand, minimizing financial risks through a unique direct dialogue with their fan-base. Fans collectively decide in which city the next gig of their favorite artist will take place.",
+    "image": "images/accordion/slide_gigflip.jpg",
+    "details":
+    {
+      "title": "Gigflip web app - e commerce",
+      "images": [
+        "images/project-screenshots/gigflip_01.jpg",
+        "images/project-screenshots/gigflip_02.jpg",
+        "images/project-screenshots/gigflip_03.jpg",
+        "images/project-screenshots/gigflip_04.jpg",
+        "images/project-screenshots/gigflip_05.jpg"
+      ],
+      "url": "http://www.gigflip.com",
+      "description": "Gigflip enables Fanbooking for music events, bridging the gap between artists, booking agencies and fans. On gigflip, artists plan concerts according to demand, minimizing financial risks through a unique direct dialogue with their fan-base. Fans collectively decide in which city the next gig of their favorite artist will take place.In technical terms, the platform is a Ruby on Rails application hosted on the Amazon cloud, offering live votings, concert ticket issuing, integration with Twitter / Facebook, credit card payments and a sophisticated administration back-end."
+    }
+  }
+,
+  {
+    "title": "arzttermine.de on Gelbe Seiten",
+    "mission": "DEVELOP & DESIGN",
+    "description": "We designed and developed a complete solution that allows visitors of Gelbe Seiten to book a doctor appointment without leaving the Gelbe Seiten portal. The actual appointment booking is a service offered by our client arzttermine.de.",
+    "image": "images/accordion/slide_gs-at.jpg",
+    "details":
+    {
+      "title": "INTEGRATION OF ARZTTERMINE.DE ON GELBE SEITEN.",
+      "images": [
+        "images/project-screenshots/gs-arzttermine_01.jpg",
+        "images/project-screenshots/gs-arzttermine_02.png",
+        "images/project-screenshots/gs-arzttermine_03.png",
+        "images/project-screenshots/gs-arzttermine_04.png",
+        "images/project-screenshots/gs-arzttermine_05.png"
+      ],
+      "url": "http://adresse.gelbeseiten.de/128033991843/zahnarzt-im-bazaar/koeln/altstadt-nord#zahnaerzte",
+      "description": "We designed and developed a complete solution that allows visitors of Gelbe Seiten to book a doctor appointment without leaving the Gelbe Seiten portal. The actual appointment booking is a service offered by our client arzttermine.de.<br>In business terms, the solution is a white label widget that integrates the arzttermine.de service on any third party portal. The look and feel of the widget is customizable, to enable seamless integration and serve the particular needs of each partnership between arzttermine and the third party portal. Right now the following integrations are online:<ul><li><a href='http://adresse.gelbeseiten.de/128033991843/zahnarzt-im-bazaar/koeln/altstadt-nord#zahnaerzte' target='_blank'>gelbeseiten.de</a></li><li><a href='http://www.mux.de/Dr-Heyne-Dr-Bierling' target='_blank'>mux.de</a></li><li><a href='http://www.netdoktor.de/Service/Arzt-Suche/?user_id=1401&amp;location_id=859&amp;termine=anzeigen' target='_blank'>netdoktor.de</a></li><li><a href='http://www.portal-der-frauen.de/frauenarzt/berlin/dr-med-anja-mutz.html' target='_blank'>portal-der-frauen.de</a></li><li><a href='http://www.chirurgie-portal.de/arztsuche/zahnarzt-zahnaerzte/berlin/dr-andreas-schroeder-10789-berlin-zahnarzt.html' target='_blank'>chirurgie-portal.de</a></li><li><a href='http://www.portal-der-zahnmedizin.de/zahnarzt/berlin/kerstin-schubert.html' target='_blank'>portal-der-zahnmedizin.de</a></li></ul>"
+    }
+  }
+,
+  {
+    "title": "Arzttermine",
+    "mission": "MOBILE APP",
+    "description": "Find an available doctor in your area and book an appointment on your iPhone, with Arzttermine.de. Wanted Pixel has updated the iPhone app of Arzttermine.de with new features, usability and design improvements.",
+    "image": "images/accordion/slide_arzttermine.jpg",
+    "details":
+    {
+      "title": "ARZTTERMINE MOBILE APP",
+      "images": [
+        "images/project-screenshots/arzttermine_mobile_01.png",
+        "images/project-screenshots/arzttermine_mobile_02.png",
+        "images/project-screenshots/arzttermine_mobile_03.png",
+        "images/project-screenshots/arzttermine_mobile_04.png",
+        "images/project-screenshots/arzttermine_mobile_05.png"
+      ],
+      "url": "https://itunes.apple.com/us/app/arzttermine.de/id563227771?ls=1&mt=8",
+      "description": "Find an available doctor in your area and book an appointment with the Arzttermine.de iPhone Application.<br/>Designed and implemented by Wanted Pixel, the app is user friendly and efficient."
+    }
+  }
+]

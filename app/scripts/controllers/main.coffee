@@ -8,7 +8,7 @@
  # Controller of the wantedpixelApp
 ###
 angular.module('wantedpixelApp')
-  .controller 'MainCtrl', ($scope, $location, $route) ->
+  .controller 'MainCtrl', ($scope, $location, $route, $resource, dataFactory) ->
     lastRoute = $route.current
 
     $scope.navigateTo = (section) ->
@@ -24,4 +24,4 @@ angular.module('wantedpixelApp')
     $scope.$on '$locationChangeSuccess', (event) ->
       $route.current = lastRoute
 
-    $scope.projects = [1...12]
+    $scope.projects=dataFactory.project.query()

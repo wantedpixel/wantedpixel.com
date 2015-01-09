@@ -10,8 +10,6 @@
 ###
 angular
   .module('wantedpixelApp', [
-    'ngAnimate',
-    'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
