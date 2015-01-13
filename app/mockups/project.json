@@ -92,4 +92,124 @@
       "description": "Find an available doctor in your area and book an appointment with the Arzttermine.de iPhone Application.<br/>Designed and implemented by Wanted Pixel, the app is user friendly and efficient."
     }
   }
+,
+  {
+    "title": "Arzttermine",
+    "mission": "WEB DEVELOPMENT + DESIGN",
+    "description": "Find an available doctor in your area and book an appointment with arzttermine.de. Wanted Pixel has updated arzttermine.de web app with new features working both on frontend and backend.",
+    "image": "images/accordion/slide_arzttermineSite.jpg",
+    "details":
+    {
+      "title": "ARZTTERMINE WEB APP",
+      "images": [
+        "images/project-screenshots/arzttermine_01.png",
+        "images/project-screenshots/arzttermine_02.png",
+        "images/project-screenshots/arzttermine_03.png",
+        "images/project-screenshots/arzttermine_04.png"
+      ],
+      "url": "http://www.arzttermine.de",
+      "description": "Find an available doctor in your area and book an appointment with arzttermine.de. Wanted Pixel has updated arzttermine.de web app with new features working both on frontend and backend. The new platform independent mobile site developed by Wanted Pixel is now online: <a href='http://m.arzttermine.de' target='_blank'>m.arzttermine.de</a>."
+    }
+  }
+,
+  {
+    "title": "StrategyVaR",
+    "mission": "WEBSITE DEVELOPMENT + DESIGN",
+    "description": "StrategyVaR Associates LLP is an energy risk consulting firm, delivering innovative risk management software, advisory services and bespoke IT work. Design and implementation made by Wanted Pixel. How cool is the parallax effect?",
+    "image": "images/accordion/slide_strategyvar.jpg",
+    "details":
+    {
+      "title": "STRATEGYVAR",
+      "images": [
+        "images/project-screenshots/strategyvar_01.png",
+        "images/project-screenshots/strategyvar_02.png",
+        "images/project-screenshots/strategyvar_03.png",
+        "images/project-screenshots/strategyvar_04.png",
+        "images/project-screenshots/strategyvar_05.png"
+      ],
+      "url": "http://www.strategyvar.com",
+      "description": "Wantedpixel designed and developed the new website of StrategyVaR. Pay attention on the parallax effect sliding of the pages. There is also a news section."
+    }
+
+  }
+,
+  {
+    "title": "K-NAP",
+    "mission": "WEBSITE DEVELOPMENT + DESIGN",
+    "description": "K-NAP is a hand-made furniture design brand. Wanted Pixel crafted their web presence.",
+    "image": "images/accordion/slide_k-nap.jpg",
+    "details":
+    {
+      "title": "K-NAP",
+      "images": [
+        "images/project-screenshots/k-nap_01.jpg"
+      ],
+      "url": "http://www.k-nap.fr/",
+      "description": "K-nap unique, elegant and innovative furniture is hand-made in France. Their attitude is reflected on the simple and fresh design of their website created by Wanted Pixel. The site includes multilingual functionality, a usable press section and background graphics that resize to fit to browser windows of any size."
+    }
+
+  }
+,
+  {
+    "title": "CADOLLE",
+    "mission": "WEBSITE DEVELOPMENT + DESIGN",
+    "description": "Maison Cadolle is happy to share with you, after over 120 years of experience, its collections of lingerie, corsetry, and other sweet things. We are also happy to be part of Cadolle's history, creating the new website.",
+    "image": "images/accordion/slide_cadolle.jpg",
+    "details":
+    {
+      "title": "CADOLLE",
+      "images": [
+        "images/project-screenshots/cadolle_01.jpg",
+        "images/project-screenshots/cadolle_02.jpg",
+        "images/project-screenshots/cadolle_03.jpg",
+        "images/project-screenshots/cadolle_04.jpg"
+      ],
+      "url": "http://www.cadolle.com/",
+      "description": "Cadolle is the brand that actually invented the bra in the 1880s. For more than a century Cadolle pioneer in creating luxury lingerie. Wanted Pixel designed the brand`s new website to look classic yet current, discreetly framing and revealing the beauty of Cadolle creations."
+    }
+
+  }
+,
+  {
+    "title": "ART-FI",
+    "mission": "WEBSITE DEVELOPMENT + DESIGN",
+    "description": "ART-FI is offering expert services in the field of electro magnetics, antenna design and 3D EM Simulation. Their new website created by Wanted Pixel points suggest professionalism and high-tech.",
+    "image": "images/accordion/slide_art-fi.jpg",
+    "details":
+    {
+      "title": "ART-Fi",
+      "images": [
+        "images/project-screenshots/artfi_01.jpg",
+        "images/project-screenshots/artfi_02.jpg",
+        "images/project-screenshots/artfi_03.jpg",
+        "images/project-screenshots/artfi_04.jpg"
+      ],
+      "url": "http://www.art-fi.eu/",
+      "description": "ART-FI is offering expert services in the field of electro magnetics, antenna design and 3D EM Simulation. Wanted Pixel has created a web design with high tech looks. Design and typesetting simplicity reveal the professionalism of the brand while shades of blue suggest wave-fields. This is an on-going project with many more features to come including live video streaming, customers area, blog..."
+    }
+
+  }
+,
+  {
+    "title": "Redmine TU Berlin",
+    "mission": "PROJECT MANAGEMENT TOOLS",
+    "description": "Maintaining a suite of services based on the Redmine Open Source Project management software integrated in the IT infrastructure of the Usability Lab at Deutsche Telekom Laboratories - TU Berlin.",
+    "image": "images/accordion/slide_rm.jpg",
+    "details":
+    {
+      "title": "ART-Fi",
+      "images": [
+        "images/project-screenshots/rm_1.png",
+        "images/project-screenshots/rm_2.png",
+        "images/project-screenshots/rm_3.png",
+        "images/project-screenshots/rm_4.png",
+        "images/project-screenshots/rm_5.png",
+        "images/project-screenshots/rm_6.png",
+        "images/project-screenshots/rm_7.png"
+      ],
+      "url": "https://dev.qu.tu-berlin.de/",
+      "description": "Our mission has been to optimize Project Management and Communication within the Usability Lab at Deutsche Telekom Laboratories - TU Berlin. Wanted Pixel supports and maintains a set of tools that help formalizing practices and processes for collaboration and in-house software creation within the Laboratory. The solution is based to the Redmine Open Source system, delivering progress tracking, bug reporting, wiki, progress reports, source code revision control with Git and Subversion, Gantt charts and calendar generation. Wanted Pixel supports and maintains the system and its integration in the laboratory's IT infrastructure."
+    }
+
+  }
 ]
