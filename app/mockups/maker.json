@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Gilles Freluche",
+    "specialty": "Design & User experience",
+    "description": "Gilles is a professional Graphic designer since 2005. His passion is to visually reveal the key points of a project, enabling it to stand out of the mass. He is restlessly seeking new ideas driven by his curiosity for illustration, subculture and all things exotic."
+  },
+  {
+    "name": "Thimios Dimopulos",
+    "specialty": "Computer Eng, Phd Candidate",
+    "description": "Thimios counts twelve years of experience on software, networking and web technology. He worked as a research scientist at the Deutsche Telekom Laboratories and as an IT Consultant for E&E Consultants AG in Berlin. He has published research work on ACM and IEEE journals. Thimios is candidate for a Phd on Usability at the Technical University of Berlin. He plays jazz guitar and travels a lot."
+  },
+  {
+    "name": "Spiros Dimopulos",
+    "specialty": "Computer Eng, M.Sc.",
+    "description": "Spiros has a passion for all things web and mobile. He has been developing websites and mobile applications for seven years. Spiros' mastery on programming combined with his eye for detail on design are especially appreciated at Wanted Pixel."
+  }
+]

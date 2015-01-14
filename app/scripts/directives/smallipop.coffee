@@ -11,10 +11,11 @@ angular.module('wantedpixelApp')
     restrict: 'A'
     link: (scope, element, attrs) ->
       scope.$on 'ngRepeatFinishedService', () ->
-        if(attrs.smallipop=="isService")
-          selector = $('.service')
-        else
-          selector = element
+        bindSmallipop($('.service'))
+      scope.$on 'ngRepeatFinishedMaker', () ->
+        bindSmallipop($('.maker'))
+
+      bindSmallipop = (selector) ->
         selector.smallipop(
           popupDistance: 0
           popupYOffset: -14
@@ -23,5 +24,4 @@ angular.module('wantedpixelApp')
           hideDelay: 0
           popupDelay: 0
         )
-        return
   )

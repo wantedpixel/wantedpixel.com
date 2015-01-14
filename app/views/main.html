@@ -110,37 +110,15 @@
   <div class="container">
     <h2>The makers</h2>
     <div class="row">
-      <div smallipop class="col-xs-4 maker">
+      <div smallipop ng-repeat="maker in makers" class="col-xs-4 maker" on-finish-render="isMaker">
         <div class="shelfie"></div>
         <div class="info">
-          <div class="specialty">Design & User experience</div>
-          <div class="name">Gilles Freluche</div>
+          <div class="specialty">{{maker.specialty}}</div>
+          <div class="name">{{maker.name}}</div>
           <div class="more">Learn more</div>
         </div>
         <span class="smallipop-hint">
-          <p>Gilles is a professional Graphic designer since 2005. His passion is to visually reveal the key points of a project, enabling it to stand out of the mass. He is restlessly seeking new ideas driven by his curiosity for illustration, subculture and all things exotic.</p>
-        </span>
-      </div>
-      <div smallipop class="col-xs-4 maker">
-        <div class="shelfie"></div>
-        <div class="info">
-          <div class="specialty">Computer Eng, Phd Candidate</div>
-          <div class="name">Thimios Dimopulos</div>
-          <div class="more">Learn more</div>
-        </div>
-        <span class="smallipop-hint">
-          <p>Thimios counts twelve years of experience on software, networking and web technology. He worked as a research scientist at the Deutsche Telekom Laboratories and as an IT Consultant for E&E Consultants AG in Berlin. He has published research work on ACM and IEEE journals. Thimios is candidate for a Phd on Usability at the Technical University of Berlin. He plays jazz guitar and travels a lot.</p>
-        </span>
-      </div>
-      <div smallipop class="col-xs-4 maker">
-        <div class="shelfie"></div>
-        <div class="info">
-          <div class="specialty">Computer Eng, M.Sc.</div>
-          <div class="name">Spiros Dimopulos</div>
-          <div class="more">Learn more</div>
-        </div>
-        <span class="smallipop-hint">
-          <p>Spiros has a passion for all things web and mobile. He has been developing websites and mobile applications for seven years. Spiros' mastery on programming combined with his eye for detail on design are especially appreciated at Wanted Pixel.</p>
+          <p>{{maker.description}}</p>
         </span>
       </div>
     </div>

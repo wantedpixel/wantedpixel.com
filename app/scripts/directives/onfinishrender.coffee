@@ -14,6 +14,8 @@ angular.module('wantedpixelApp')
         $timeout ->
           if attrs.onFinishRender == 'isService'
             scope.$emit('ngRepeatFinishedService');
+          else if attrs.onFinishRender == 'isMaker'
+            scope.$emit('ngRepeatFinishedMaker');
           else
             scope.$emit('ngRepeatFinished');
   )
