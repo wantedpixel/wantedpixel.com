@@ -19,8 +19,8 @@
     <p>Ranging from a simple 3 page website to a bespoke eCommerce platform combined with your own branded iPhone application; Wanted Pixel offers affordable, high quality design and functionality that will perform for your business.</p>
     <p>Wanted Pixel brings together creativity, technology, and marketing to transform your vision into reality.</p>
     <div class="links">
-      <a>See our portfolio</a>
-      <a>Contact us</a>
+      <a ng-click="navigateTo('works')">See our portfolio</a>
+      <a ng-click="navigateTo('contact-us')">Contact us</a>
     </div>
   </div>
 </div>
@@ -84,7 +84,7 @@
     <h2 class="section-title products">What we make</h2>
     <div class="row">
       <div class="service" ng-class="{'col-sm-4': $index < 3, 'col-sm-6': $index > 2}" on-finish-render="isService" ng-repeat="service in services">
-        <img src="images/services/web-design.png" alt="{{service.title}}"/>
+        <img src="{{service.image}}" alt="{{service.title}}"/>
         <div>{{service.title}}</div>
         <span class="smallipop-hint">
           <h6>{{service.title}}</h6>
