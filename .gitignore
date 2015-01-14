@@ -14,3 +14,7 @@ bower_components
 .idea/wantedpixel.iml
 .idea/workspace.xml
 profiles_settings.xml
+Generated_files.xml
+main.js
+main.js.map
+watcherTasks.xml

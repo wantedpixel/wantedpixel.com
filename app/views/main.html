@@ -84,7 +84,7 @@
     <h2 class="section-title products">What we make</h2>
     <div class="row">
       <div class="service" ng-class="{'col-sm-4': $index < 3, 'col-sm-6': $index > 2}" on-finish-render="isService" ng-repeat="service in services">
-        <img src="{{service.image}}" alt="{{service.title}}"/>
+        <img ng-src="{{service.image}}" alt="{{service.title}}"/>
         <div>{{service.title}}</div>
         <span class="smallipop-hint">
           <h6>{{service.title}}</h6>
@@ -135,34 +135,34 @@
         <p>So go on, get in touch.</p>
       </div>
       <div class="col-xs-6">
-        <form class="form-horizontal" role="form">
+        <form name="contactForm" novalidate class="form-horizontal" role="form">
           <div class="form-group">
             <label class="control-label col-sm-3" for="first_name">First name:</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="first_name" placeholder="First name">
+              <input type="text" ng-model="user.firstName" class="form-control" id="first_name" placeholder="First name">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-3" for="last_name">Last name:</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="last_name" placeholder="Last name">
+              <input type="text" ng-model="user.lastName" class="form-control" id="last_name" placeholder="Last name">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-3" for="email_address">Email address:</label>
             <div class="col-sm-9">
-              <input type="email" class="form-control" id="email_address" placeholder="Email address">
+              <input type="email" ng-model="user.email" required class="form-control" id="email_address" placeholder="Email address">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-3" for="message">Message:</label>
             <div class="col-sm-9">
-              <textarea class="form-control" id="message" placeholder="Message"></textarea>
+              <textarea ng-model="user.message" required class="form-control" id="message" placeholder="Message"></textarea>
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9">
-              <button type="submit" class="btn btn-default">Send</button>
+              <button type="submit" ng-click="contactForm.$valid && sendEmail()" class="btn btn-default">Send</button>
             </div>
           </div>
         </form>

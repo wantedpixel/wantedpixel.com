@@ -28,3 +28,6 @@ angular.module('wantedpixelApp')
     $scope.services = dataFactory.service.query()
     $scope.methodology = dataFactory.methodology.query()
     $scope.makers = dataFactory.maker.query()
+
+    $scope.sendEmail = ()->
+      console.log("send")
