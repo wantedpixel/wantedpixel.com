@@ -24,4 +24,5 @@ angular.module('wantedpixelApp')
     $scope.$on '$locationChangeSuccess', (event) ->
       $route.current = lastRoute
 
-    $scope.projects=dataFactory.project.query()
+    $scope.projects = dataFactory.project.query()
+    $scope.services = dataFactory.service.query()
