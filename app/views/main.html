@@ -99,42 +99,9 @@
   <div class="container">
     <h2 class="section-title framework">How we make things</h2>
     <div class="how-container">
-      <div class="how-title" toggle-details>
-        <h3>Wanted Pixel is no agency. We are a real family (Spiros and Thimios are brothers) and take each project personally.</h3>
-      </div>
-      <div class="details">
-        <p>Artistic ability and technical knowledge combined ensure that our creations:</p>
-        <ul>
-          <li>look beautiful,</li>
-          <li>offer a great user experience,</li>
-          <li>index well on search engines: Google, Bing & Yahoo,</li>
-          <li>functionally integrate in your business and support every day business processes</li>
-        </ul>
-        <p>We do this by attracting the right talent and offering an environment where everyone has the opportunity to make a difference. We do not have account managers and we arguably do not have job titles. We just have responsibilities. Everyone at Wanted Pixel works with the clients to come up with great ideas and deliver them.</p>
-      </div>
-      <div class="how-title" toggle-details>
-        <h3>Discovering your vision</h3><h4>It all starts with a discovery session where we chat about your vision, requirements and expectations for your digital presence.</h4>
-      </div>
-      <div class="details">
-        <p>We listen carefully to your ideas, analyse your Marketing strategy and Business requirements. We provide User experience recommendations and already start thinking about the technical Architecture of the solution.</p>
-      </div>
-      <div class="how-title" toggle-details>
-        <h3>Architecture and Development</h3><h4>We follow an agile and iterative approach to development.</h4>
-      </div>
-      <div class="details">
-        <p>We get going quickly, deliver a new feature on planned time periods and every time ask for your feedback. We follow this process iteratively and develop a bespoke system according to your expectations. We do not spend your money writing long-winded project specifications or stuffy documentation. No-one will read them after the project is finished. We rather use the time to get the first release live, and develop the system based on actual user feedback rather than guess work.</p>
-      </div>
-      <div class="how-title" toggle-details>
-        <h3>Web and Graphics Design</h3><h4>All Wanted Pixel website and graphics designs are individual, one-off and based on your exact requirements.</h4>
-      </div>
-      <div class="details">
-        <p>Design is not just pushing pixels around a page, it is how you communicate your message to your customers. We do not use ready made templates and we do not fit your visual identity into a pre-existing design. All our designs are created by ourselves - we do not use contractors. We like to be in complete charge over all stages of the project development to ensure the quality of the work. We have an eye for detail that is hard to find elsewhere.</p>
-      </div>
-      <div class="how-title" toggle-details>
-        <h3>Support</h3><h4>We see every project as an on going relationship so we are still there for you after the website or application is delivered.</h4>
-      </div>
-      <div class="details">
-        <p>We will train you on how to use and administer the system before launching it. After the launch, all websites and applications need a "special care period". During this time we will monitor your system, fix any bugs and make the inevitable tweaks and changes you require once you really start using it. This is also the time to further review your site' s performance on search engine results pages.</p>
+      <div class="how-step-container" ng-repeat="step in methodology">
+        <div class="how-title" ng-bind-html="step.title" toggle-details></div>
+        <div class="details" ng-bind-html="step.description"></div>
       </div>
     </div>
   </div>

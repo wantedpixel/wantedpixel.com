@@ -231,77 +231,79 @@ body
   .how-container
     font-family: titillium
     color: #444
-    .how-title
-      background: url('../images/what_border.jpg') repeat-x bottom
-      cursor: pointer
-      user-select: none
-      position: relative
-      h3, h4
-        padding-left: 15px
-      h3
-        font-size: 23px
-        letter-spacing: 1px
-        margin-bottom: 0px
-        margin-top: 0px
-        padding-top: 18px
-        position: relative
-        &:after
-          content: ''
-          background: url("../images/down2.jpg")
-          position: absolute
-          top: 33px
-          right: 15px
-          width: 22px
-          height: 14px
-      h4
-        font-size: 14px
-        font-family: titilliumlight
-        margin-top: 0px
-        margin-bottom: 0px
-        padding-bottom: 10px
-        position: relative
+    .how-step-container
       &:first-child
-        h3
-          color: #ffffff
-          font-size: 18px
-          background: url("../images/howheadbg.jpg")
-          padding: 18px 15px 9px
+        .how-title
+          h3
+            color: #ffffff
+            font-size: 18px
+            background: url("../images/howheadbg.jpg")
+            padding: 18px 15px 9px
+            &:after
+              background: url("../images/down.png")
+              background-size: cover
+              width: 40px
+              height: 40px
+              background-position: 9px
+              background-repeat: no-repeat
+              top: 18px
+              display: block !important
           &:after
-            background: url("../images/down.png")
-            background-size: cover
-            width: 40px
-            height: 40px
-            background-position: 9px
-            background-repeat: no-repeat
-            top: 18px
-            display: block !important
-        &:after
-          display: none
+            display: none
+          &.visible
+            h3:after
+              transform: rotate(180deg)
+              right: -4px
+      .how-title
+        background: url('../images/what_border.jpg') repeat-x bottom
+        cursor: pointer
+        user-select: none
+        position: relative
+        h3, h4
+          padding-left: 15px
+        h3
+          font-size: 23px
+          letter-spacing: 1px
+          margin-bottom: 0px
+          margin-top: 0px
+          padding-top: 18px
+          position: relative
+          &:after
+            content: ''
+            background: url("../images/down2.jpg")
+            position: absolute
+            top: 33px
+            right: 15px
+            width: 22px
+            height: 14px
+        h4
+          font-size: 14px
+          font-family: titilliumlight
+          margin-top: 0px
+          margin-bottom: 0px
+          padding-bottom: 10px
+          position: relative
         &.visible
+          &:after
+            content: " "
+            background: url("../images/down3.jpg")
+            height: 20px
+            width: 40px
+            position: absolute
+            right: 5px
+            bottom: -18px
           h3:after
-            transform: rotate(180deg)
-            right: -4px
-      &.visible
-        &:after
-          content: " "
-          background: url("../images/down3.jpg")
-          height: 20px
-          width: 40px
-          position: absolute
-          right: 5px
-          bottom: -18px
-        h3:after
-          display: none
-    .details
-      background: white
-      font-size: 14px
-      padding: 16px 13px
-      border-left: 1px solid #DDD
-      display: none
-      ul
-        padding: 0px 15px
-        margin-top: -7px
-        line-height: 15px
+            display: none
+      .details
+        background: white
+        font-size: 14px
+        padding: 16px 13px
+        border-left: 1px solid #DDD
+        display: none
+        ul
+          padding: 0px 15px
+          margin-top: -7px
+          line-height: 15px
 
 // MAKERS
 .makers

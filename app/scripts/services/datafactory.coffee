@@ -12,5 +12,6 @@ angular.module('wantedpixelApp')
     dataFactory = {}
     dataFactory.project = $resource('/mockups/project.json')
     dataFactory.service = $resource('/mockups/service.json')
+    dataFactory.methodology = $resource('/mockups/methodology.json')
     dataFactory
   ]

@@ -26,3 +26,4 @@ angular.module('wantedpixelApp')
 
     $scope.projects = dataFactory.project.query()
     $scope.services = dataFactory.service.query()
+    $scope.methodology = dataFactory.methodology.query()
