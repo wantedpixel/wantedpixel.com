@@ -18,3 +18,5 @@ Generated_files.xml
 main.js
 main.js.map
 watcherTasks.xml
+app/scripts/services/datafactory.js
+app/scripts/services/datafactory.js.map
