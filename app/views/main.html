@@ -162,7 +162,19 @@
           </div>
           <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9">
-              <button type="submit" ng-click="contactForm.$valid && sendEmail()" class="btn btn-default">Send</button>
+              <button type="submit" ng-click="contactForm.$valid && sendEmail()" class="btn btn-default">Send<span class="loading" ng-show="messageSending">ing...</span></button>
+            </div>
+          </div>
+          <div class="modal email-modal" tabindex="-1" role="dialog" ng-show="messageResponse">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div>{{messageResponse}}</div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" ng-click="messageResponse=undefined">Ok</button>
+                </div>
+              </div>
             </div>
           </div>
         </form>

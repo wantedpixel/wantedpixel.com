@@ -30,4 +30,12 @@ angular.module('wantedpixelApp')
     $scope.makers = dataFactory.maker.query()
 
     $scope.sendEmail = ()->
-      console.log("send")
+      $scope.messageSending = true
+      dataFactory.email.save($scope.user,
+        (value, responseHeaders)->
+          $scope.messageSending = false
+          $scope.messageResponse = "thank you for your message, we will contact you as soon as possible."
+        (httpResponse)->
+          $scope.messageSending = false
+          $scope.messageResponse = "something is wrong, please try again later"
+      )
