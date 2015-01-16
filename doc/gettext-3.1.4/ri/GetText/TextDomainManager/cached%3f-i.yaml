@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return the cached value.
+full_name: GetText::TextDomainManager#cached?
+is_singleton: false
+name: cached?
+params: ()
+visibility: public

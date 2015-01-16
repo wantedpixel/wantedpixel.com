@@ -1,0 +1,62 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: extended
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This module is the base to use native functions.
+- !ruby/struct:SM::Flow::P 
+  body: "A basic usage may be:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " require 'ffi'\n\n module Hello\n   extend FFI::Library\n   ffi_lib FFI::Library::LIBC\n   attach_function 'puts', [ :string ], :int\n end\n\n Hello.puts(&quot;Hello, World&quot;)\n"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CURRENT_PROCESS
+  value: FFI::CURRENT_PROCESS
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LIBC
+  value: FFI::Platform::LIBC
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Flags used in {#ffi_lib}.
+  - !ruby/struct:SM::Flow::P 
+    body: This map allows you to supply symbols to {#ffi_lib_flags} instead of the actual constants.
+  name: FlagsMap
+  value: "{       :global => DynamicLibrary::RTLD_GLOBAL,       :local => DynamicLibrary::RTLD_LOCAL,       :lazy => DynamicLibrary::RTLD_LAZY,       :now => DynamicLibrary::RTLD_NOW"
+full_name: FFI::Library
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: attach_function
+- !ruby/object:RI::MethodSummary 
+  name: attach_variable
+- !ruby/object:RI::MethodSummary 
+  name: callback
+- !ruby/object:RI::MethodSummary 
+  name: enum
+- !ruby/object:RI::MethodSummary 
+  name: enum_type
+- !ruby/object:RI::MethodSummary 
+  name: enum_value
+- !ruby/object:RI::MethodSummary 
+  name: ffi_convention
+- !ruby/object:RI::MethodSummary 
+  name: ffi_lib
+- !ruby/object:RI::MethodSummary 
+  name: ffi_lib_flags
+- !ruby/object:RI::MethodSummary 
+  name: ffi_libraries
+- !ruby/object:RI::MethodSummary 
+  name: find_type
+- !ruby/object:RI::MethodSummary 
+  name: function_names
+- !ruby/object:RI::MethodSummary 
+  name: typedef
+name: Library
+superclass: 

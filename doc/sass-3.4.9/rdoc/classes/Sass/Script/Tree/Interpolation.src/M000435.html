@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>_perform (Sass::Script::Tree::Interpolation)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/sass/script/tree/interpolation.rb, line 95</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_perform</span>(<span class="ruby-identifier">environment</span>)
+      <span class="ruby-identifier">res</span> = <span class="ruby-value str">&quot;&quot;</span>
+      <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@before</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-identifier">environment</span>).<span class="ruby-identifier">to_s</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@before</span>
+      <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot; &quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@before</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@whitespace_before</span>
+
+      <span class="ruby-identifier">val</span> = <span class="ruby-ivar">@mid</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-identifier">environment</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@warn_for_color</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">name</span>
+        <span class="ruby-identifier">alternative</span> = <span class="ruby-constant">Operation</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-identifier">:string</span>), <span class="ruby-ivar">@mid</span>, <span class="ruby-identifier">:plus</span>)
+        <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">sass_warn</span> <span class="ruby-value str">&quot;WARNING on line \#{line}, column \#{source_range.start_pos.offset}\#{\&quot; of \#{filename}\&quot; if filename}:\nYou probably don't mean to use the color value `\#{val}' in interpolation here.\nIt may end up represented as \#{val.inspect}, which will likely produce invalid CSS.\nAlways quote color names when using them as strings (for example, \&quot;\#{val}\&quot;).\nIf you really want to use the color value here, use `\#{alternative.to_sass}'.\n&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-identifier">:quote</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:none</span>)
+      <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot; &quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@after</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@whitespace_after</span>
+      <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@after</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-identifier">environment</span>).<span class="ruby-identifier">to_s</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@after</span>
+      <span class="ruby-identifier">opts</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">res</span>))
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

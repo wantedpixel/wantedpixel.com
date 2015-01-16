@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>compute_image_positions! (Compass::SassExtensions::Sprites::LayoutMethods)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/sass_extensions/sprites/layout_methods.rb, line 32</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compute_image_positions!</span>
+          <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">layout</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-constant">SMART</span>
+            <span class="ruby-identifier">require</span> <span class="ruby-value str">'compass/sass_extensions/sprites/layout/smart'</span>
+            <span class="ruby-ivar">@images</span>, <span class="ruby-ivar">@width</span>, <span class="ruby-ivar">@height</span> = <span class="ruby-constant">Layout</span><span class="ruby-operator">::</span><span class="ruby-constant">Smart</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@images</span>, <span class="ruby-ivar">@kwargs</span>).<span class="ruby-identifier">properties</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-constant">DIAGONAL</span>
+            <span class="ruby-identifier">require</span> <span class="ruby-value str">'compass/sass_extensions/sprites/layout/diagonal'</span>
+            <span class="ruby-ivar">@images</span>, <span class="ruby-ivar">@width</span>, <span class="ruby-ivar">@height</span> = <span class="ruby-constant">Layout</span><span class="ruby-operator">::</span><span class="ruby-constant">Diagonal</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@images</span>, <span class="ruby-ivar">@kwargs</span>).<span class="ruby-identifier">properties</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-constant">HORIZONTAL</span>
+            <span class="ruby-identifier">require</span> <span class="ruby-value str">'compass/sass_extensions/sprites/layout/horizontal'</span>
+            <span class="ruby-ivar">@images</span>, <span class="ruby-ivar">@width</span>, <span class="ruby-ivar">@height</span> = <span class="ruby-constant">Layout</span><span class="ruby-operator">::</span><span class="ruby-constant">Horizontal</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@images</span>, <span class="ruby-ivar">@kwargs</span>).<span class="ruby-identifier">properties</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">require</span> <span class="ruby-value str">'compass/sass_extensions/sprites/layout/vertical'</span>
+            <span class="ruby-ivar">@images</span>, <span class="ruby-ivar">@width</span>, <span class="ruby-ivar">@height</span> = <span class="ruby-constant">Layout</span><span class="ruby-operator">::</span><span class="ruby-constant">Vertical</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@images</span>, <span class="ruby-ivar">@kwargs</span>).<span class="ruby-identifier">properties</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

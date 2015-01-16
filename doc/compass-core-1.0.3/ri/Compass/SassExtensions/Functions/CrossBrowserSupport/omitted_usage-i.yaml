@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The percent of users that are omitted by setting the min_version of browser as specified.
+full_name: Compass::SassExtensions::Functions::CrossBrowserSupport#omitted_usage
+is_singleton: false
+name: omitted_usage
+params: (browser, min_version, max_version = nil)
+visibility: public

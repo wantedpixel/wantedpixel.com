@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Pointer] val @param [] ctx @return [Array(String, Pointer)] Returns a [ String, Pointer ] tuple so the C memory for the string can be freed"
+full_name: FFI::StrPtrConverter::from_native
+is_singleton: true
+name: from_native
+params: (val, ctx)
+visibility: public

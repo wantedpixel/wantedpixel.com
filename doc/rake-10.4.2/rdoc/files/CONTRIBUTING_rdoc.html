@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: CONTRIBUTING.rdoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>CONTRIBUTING.rdoc</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>CONTRIBUTING.rdoc
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Fri Jan 16 08:46:46 +0100 2015</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>Source Repository</h1>
+<p>
+<a href="../classes/Rake.html">Rake</a> is currently hosted at github. The
+github web page is <a
+href="http://github.com/ruby/rake">github.com/ruby/rake</a> . The public
+git clone URL is
+</p>
+<pre>
+  git://github.com/ruby/rake.git
+</pre>
+<h1>Running the <a href="../classes/Rake.html">Rake</a> Test Suite</h1>
+<p>
+If you wish to run the unit and functional tests that come with <a
+href="../classes/Rake.html">Rake</a>:
+</p>
+<ul>
+<li>CD into the top project directory of rake.
+
+</li>
+<li>Type one of the following:
+
+<pre>
+  rake newb    # If you have never run rake's tests
+  rake         # If you have run rake's tests
+</pre>
+</li>
+</ul>
+<h1>Issues and Bug Reports</h1>
+<p>
+Feel free to submit commits or feature requests. If you send a patch,
+remember to update the corresponding unit tests. In fact, I prefer new
+feature to be submitted in the form of new unit tests.
+</p>
+<p>
+For other information, feel free to ask on the ruby-talk mailing list.
+</p>
+<p>
+If you have found a bug in rake please try with the latest version of rake
+before filing an issue. Also check History.rdoc for bug fixes that may have
+addressed your issue.
+</p>
+<p>
+When submitting pull requests please check the rake Travis-CI page for test
+failures:
+</p>
+<pre>
+  https://travis-ci.org/ruby/rake
+</pre>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

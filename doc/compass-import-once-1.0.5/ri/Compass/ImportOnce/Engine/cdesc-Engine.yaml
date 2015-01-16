@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: All sass engines will be extended with this module to manage the lifecycle around each
+constants: []
+
+full_name: Compass::ImportOnce::Engine
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: render
+- !ruby/object:RI::MethodSummary 
+  name: render_with_sourcemap
+- !ruby/object:RI::MethodSummary 
+  name: to_css
+- !ruby/object:RI::MethodSummary 
+  name: with_import_scope
+name: Engine
+superclass: 

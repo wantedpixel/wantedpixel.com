@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A map of css filenames to a set of engine cache keys that uniquely identify what has been imported. The lifecycle of each key is handled by code wrapped around Sass's render, to_css and render_with_sourcemap methods on the Sass::Engine.
+- !ruby/struct:SM::Flow::P 
+  body: Ideally, Sass would provide a place in it's public API to put information that persists for only the duration of a single compile and would be accessible for all sass engines and sass functions written in ruby.
+full_name: Compass::ImportOnce::import_tracker
+is_singleton: true
+name: import_tracker
+params: ()
+visibility: public

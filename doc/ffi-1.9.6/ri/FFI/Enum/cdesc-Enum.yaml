@@ -1,0 +1,54 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: tag
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Represents a C enum.
+- !ruby/struct:SM::Flow::P 
+  body: "For a C enum:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " enum fruits {\n   apple,\n   banana,\n   orange,\n   pineapple\n };\n"
+- !ruby/struct:SM::Flow::P 
+  body: "are defined this vocabulary:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: a <em>symbol</em> is a word from the enumeration (ie. <em>apple</em>, by example);
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: a <em>value</em> is the value of a symbol in the enumeration (by example, apple has value _0_ and banana _1_).
+  type: :BULLET
+constants: []
+
+full_name: FFI::Enum
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: DataConverter
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: find
+- !ruby/object:RI::MethodSummary 
+  name: from_native
+- !ruby/object:RI::MethodSummary 
+  name: native_type
+- !ruby/object:RI::MethodSummary 
+  name: symbol_map
+- !ruby/object:RI::MethodSummary 
+  name: symbols
+- !ruby/object:RI::MethodSummary 
+  name: to_h
+- !ruby/object:RI::MethodSummary 
+  name: to_hash
+- !ruby/object:RI::MethodSummary 
+  name: to_native
+name: Enum
+superclass: Object

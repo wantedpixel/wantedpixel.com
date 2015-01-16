@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::Commands::ProjectStats#format_kb
+is_singleton: false
+name: format_kb
+params: (v)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param (see #add) @return (see #add) Add a struct as a field to the builder."
+full_name: FFI::StructLayoutBuilder#add_struct
+is_singleton: false
+name: add_struct
+params: (name, type, offset = nil)
+visibility: public

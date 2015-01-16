@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: autorelease
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@abstract Base class for {AutoPointer}'s releasers."
+- !ruby/struct:SM::Flow::VERB 
+  body: " All subclasses of Releaser should define a +#release(ptr)+ method.\n"
+- !ruby/struct:SM::Flow::P 
+  body: A releaser is an object in charge of release an {AutoPointer}.
+constants: []
+
+full_name: FFI::AutoPointer::Releaser
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: free
+name: Releaser
+superclass: Object

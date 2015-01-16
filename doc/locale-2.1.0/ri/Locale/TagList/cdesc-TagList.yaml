@@ -1,0 +1,52 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This provides the subclass of Array which behaves like the first(top priority) Locale::Tag object. &quot;Locale.current.language&quot; is same with &quot;Locale.current[0].language&quot;.
+- !ruby/struct:SM::Flow::P 
+  body: Locale.current returns an Array of Tag(s) now. But the old Locale.current(Ruby-GetText) and Locale.get returns Locale::Object (similier with Locale::Tag::Posix). This is the class for backward compatibility.
+- !ruby/struct:SM::Flow::P 
+  body: It is recommanded to use Locale.current[0] or Locale.candidates to find the current locale instead of this function.
+constants: []
+
+full_name: Locale::TagList
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: charset
+- !ruby/object:RI::MethodSummary 
+  name: country
+- !ruby/object:RI::MethodSummary 
+  name: extensions
+- !ruby/object:RI::MethodSummary 
+  name: language
+- !ruby/object:RI::MethodSummary 
+  name: modifier
+- !ruby/object:RI::MethodSummary 
+  name: privateuse
+- !ruby/object:RI::MethodSummary 
+  name: region
+- !ruby/object:RI::MethodSummary 
+  name: script
+- !ruby/object:RI::MethodSummary 
+  name: to_cldr
+- !ruby/object:RI::MethodSummary 
+  name: to_common
+- !ruby/object:RI::MethodSummary 
+  name: to_posix
+- !ruby/object:RI::MethodSummary 
+  name: to_rfc
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: to_simple
+- !ruby/object:RI::MethodSummary 
+  name: to_str
+- !ruby/object:RI::MethodSummary 
+  name: variants
+name: TagList
+superclass: Array

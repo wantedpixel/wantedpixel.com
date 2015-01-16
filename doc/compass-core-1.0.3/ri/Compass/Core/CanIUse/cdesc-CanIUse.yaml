@@ -1,0 +1,53 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DATA_FILE_NAME
+  value: File.join(Compass::Core.base_directory, "data", "caniuse.json")
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DATA_FEATURE_FILES
+  value: Dir.glob(File.join(Compass::Core.base_directory, "data", "caniuse_extras", "**", "*.json"))
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The browser names from caniuse are ugly.
+  name: PUBLIC_BROWSER_NAMES
+  value: Hash.new {|h, k| k}
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CAN_I_USE_NAMES
+  value: Hash.new {|h, k| k}
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SPEC_VERSION_MATCHERS
+  value: Hash.new do |h, k|     h[k] = /##{k}\b/
+full_name: Compass::Core::CanIUse
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Singleton
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: all_prefixes
+- !ruby/object:RI::MethodSummary 
+  name: browser_ranges
+- !ruby/object:RI::MethodSummary 
+  name: browsers
+- !ruby/object:RI::MethodSummary 
+  name: browsers_with_prefix
+- !ruby/object:RI::MethodSummary 
+  name: find_first_prefixed_version
+- !ruby/object:RI::MethodSummary 
+  name: omitted_usage
+- !ruby/object:RI::MethodSummary 
+  name: prefix
+- !ruby/object:RI::MethodSummary 
+  name: prefixes
+name: CanIUse
+superclass: Object

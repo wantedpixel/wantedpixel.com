@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Numeric] alignment Set alignment attribute with <tt>alignment</tt> only if it is greater than attribute value."
+full_name: FFI::StructLayoutBuilder#alignment=
+is_singleton: false
+name: alignment=
+params: (align)
+visibility: public

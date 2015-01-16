@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [nil, Enumerable] info @param tag enum tag"
+full_name: FFI::Enum::new
+is_singleton: true
+name: new
+params: (info, tag=nil)
+visibility: public

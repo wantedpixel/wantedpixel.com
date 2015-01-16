@@ -1,0 +1,106 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: comment
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: extracted_comment
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Array&lt;String&gt;] The flags for this PO entry. @since 3.0.4"
+  name: flags
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: msgctxt
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: msgid
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Options
+  name: msgid_plural
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: msgstr
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: previous
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: references
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: separator
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: translator_comment
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Required
+  name: type
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Contains data related to the expression or sentence that is to be translated.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PARAMS
+  value: "{       :normal => [:msgid, :separator, :msgstr],       :plural => [:msgid, :msgid_plural, :separator, :msgstr],       :msgctxt => [:msgctxt, :msgid, :msgstr],       :msgctxt_plural => [:msgctxt, :msgid, :msgid_plural, :msgstr]"
+full_name: GetText::POEntry
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: POEntryForRubyParser
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: ==
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: add_comment
+- !ruby/object:RI::MethodSummary 
+  name: flag
+- !ruby/object:RI::MethodSummary 
+  name: flag=
+- !ruby/object:RI::MethodSummary 
+  name: fuzzy?
+- !ruby/object:RI::MethodSummary 
+  name: header?
+- !ruby/object:RI::MethodSummary 
+  name: merge
+- !ruby/object:RI::MethodSummary 
+  name: mergeable?
+- !ruby/object:RI::MethodSummary 
+  name: msgctxt?
+- !ruby/object:RI::MethodSummary 
+  name: obsolete?
+- !ruby/object:RI::MethodSummary 
+  name: plural?
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: translated?
+- !ruby/object:RI::MethodSummary 
+  name: type=
+name: POEntry
+superclass: Object

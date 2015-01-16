@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: for Ruby 1.8.6 support
+full_name: FSEvent#shellescape
+is_singleton: false
+name: shellescape
+params: (str)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Functions::Urls::FontUrl#font_url
+is_singleton: false
+name: font_url
+params: (path, only_path = bool(false), cache_buster = bool(true))
+visibility: public

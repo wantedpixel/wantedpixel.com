@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Functions::Urls::GeneratedImageUrl#generated_image_url
+is_singleton: false
+name: generated_image_url
+params: (path, cache_buster = bool(false))
+visibility: public

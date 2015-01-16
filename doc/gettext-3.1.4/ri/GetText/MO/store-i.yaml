@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: GetText::MO#store
+is_singleton: false
+name: store
+params: (msgid, msgstr, options)
+visibility: public

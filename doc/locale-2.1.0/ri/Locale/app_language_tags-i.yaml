@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the app_language_tags. Default is nil. See set_app_language_tags for more details.
+full_name: Locale#app_language_tags
+is_singleton: false
+name: app_language_tags
+params: ()
+visibility: public

@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Text::Metaphone
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: double_metaphone
+- !ruby/object:RI::MethodSummary 
+  name: metaphone
+name: Metaphone
+superclass: 

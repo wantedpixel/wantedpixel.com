@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>save_to_stream (GetText::MO)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/gettext/mo.rb, line 205</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">save_to_stream</span>(<span class="ruby-identifier">io</span>)
+      <span class="ruby-comment cmt"># remove untranslated message</span>
+      <span class="ruby-identifier">translated_messages</span> = <span class="ruby-identifier">reject</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">msgid</span>, <span class="ruby-identifier">msgstr</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">msgstr</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">size</span> = <span class="ruby-identifier">translated_messages</span>.<span class="ruby-identifier">size</span>
+      <span class="ruby-identifier">header_size</span> = <span class="ruby-value">4</span> <span class="ruby-operator">*</span> <span class="ruby-value">7</span>
+      <span class="ruby-identifier">table_size</span>  = <span class="ruby-value">4</span> <span class="ruby-operator">*</span> <span class="ruby-value">2</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">size</span>
+
+      <span class="ruby-identifier">hash_table_size</span> = <span class="ruby-identifier">next_prime</span>((<span class="ruby-identifier">size</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>) <span class="ruby-operator">/</span> <span class="ruby-value">3</span>)
+      <span class="ruby-identifier">hash_table_size</span> = <span class="ruby-value">3</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">hash_table_size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">2</span>
+      <span class="ruby-identifier">header</span> = <span class="ruby-constant">Header</span>.<span class="ruby-identifier">new</span>(
+                          <span class="ruby-constant">MAGIC_LITTLE_ENDIAN</span>,          <span class="ruby-comment cmt"># magic</span>
+                          <span class="ruby-value">0</span>,                            <span class="ruby-comment cmt"># revision</span>
+                          <span class="ruby-identifier">size</span>,                         <span class="ruby-comment cmt"># nstrings</span>
+                          <span class="ruby-identifier">header_size</span>,                  <span class="ruby-comment cmt"># orig_table_offset</span>
+                          <span class="ruby-identifier">header_size</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">table_size</span>,     <span class="ruby-comment cmt"># translated_table_offset</span>
+                          <span class="ruby-identifier">hash_table_size</span>,              <span class="ruby-comment cmt"># hash_table_size</span>
+                          <span class="ruby-identifier">header_size</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">table_size</span> <span class="ruby-operator">*</span> <span class="ruby-value">2</span>  <span class="ruby-comment cmt"># hash_table_offset</span>
+                          )
+      <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">header</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-value str">'a4V*'</span>))
+
+      <span class="ruby-identifier">ary</span> = <span class="ruby-identifier">translated_messages</span>.<span class="ruby-identifier">to_a</span>
+      <span class="ruby-identifier">ary</span>.<span class="ruby-identifier">sort!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>]} <span class="ruby-comment cmt"># sort by original string</span>
+
+      <span class="ruby-identifier">pos</span> = <span class="ruby-identifier">header</span>.<span class="ruby-identifier">hash_table_size</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">header</span>.<span class="ruby-identifier">hash_table_offset</span>
+
+      <span class="ruby-identifier">orig_table_data</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>()
+      <span class="ruby-identifier">ary</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">item</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">orig_table_data</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">item</span>.<span class="ruby-identifier">bytesize</span>)
+        <span class="ruby-identifier">orig_table_data</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">pos</span>)
+        <span class="ruby-identifier">pos</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">bytesize</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span> <span class="ruby-comment cmt"># +1 is &lt;NUL&gt;</span>
+      }
+      <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">orig_table_data</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-value str">'V*'</span>))
+
+      <span class="ruby-identifier">trans_table_data</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>()
+      <span class="ruby-identifier">ary</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">trans_table_data</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">item</span>.<span class="ruby-identifier">bytesize</span>)
+        <span class="ruby-identifier">trans_table_data</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">pos</span>)
+        <span class="ruby-identifier">pos</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">bytesize</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span> <span class="ruby-comment cmt"># +1 is &lt;NUL&gt;</span>
+      }
+      <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">trans_table_data</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-value str">'V*'</span>))
+
+      <span class="ruby-identifier">hash_tab</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">hash_table_size</span>)
+      <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">ary</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">size</span>].<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">hash_val</span> = <span class="ruby-identifier">hash_string</span>(<span class="ruby-identifier">key</span>)
+        <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">hash_val</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">hash_table_size</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">hash_tab</span>[<span class="ruby-identifier">idx</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+          <span class="ruby-identifier">incr</span> = <span class="ruby-value">1</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">hash_val</span> <span class="ruby-operator">%</span> (<span class="ruby-identifier">hash_table_size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>))
+          <span class="ruby-keyword kw">begin</span>
+            <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">idx</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">hash_table_size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">incr</span>)
+              <span class="ruby-identifier">idx</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">hash_table_size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">incr</span>
+            <span class="ruby-keyword kw">else</span>
+              <span class="ruby-identifier">idx</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">incr</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span> <span class="ruby-keyword kw">until</span> (<span class="ruby-identifier">hash_tab</span>[<span class="ruby-identifier">idx</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">hash_tab</span>[<span class="ruby-identifier">idx</span>] = <span class="ruby-identifier">j</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+        <span class="ruby-identifier">j</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      }
+      <span class="ruby-identifier">hash_tab</span>.<span class="ruby-identifier">collect!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span> <span class="ruby-value">? </span><span class="ruby-identifier">i</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>}
+
+      <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">hash_tab</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-value str">'V*'</span>))
+
+      <span class="ruby-identifier">ary</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">item</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">item</span>); <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-value str">&quot;\0&quot;</span>) }
+      <span class="ruby-identifier">ary</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">item</span>); <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-value str">&quot;\0&quot;</span>) }
+
+      <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

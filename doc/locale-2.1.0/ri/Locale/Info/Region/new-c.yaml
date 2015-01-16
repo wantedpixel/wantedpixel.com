@@ -1,0 +1,19 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "code:"
+    body: The 2 or 3 digit ISO 3166 region code.
+  - !ruby/struct:SM::Flow::LI 
+    label: "name:"
+    body: The name of the region.
+  type: :NOTE
+full_name: Locale::Info::Region::new
+is_singleton: true
+name: new
+params: (code, name)
+visibility: public

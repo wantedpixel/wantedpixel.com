@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::Configuration::Inheritance::ClassMethods::ArrayProxy::new
+is_singleton: true
+name: new
+params: (data, attr)
+visibility: public

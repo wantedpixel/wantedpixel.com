@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@private"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Merge the reference with the definition: take the #. and"
+  - !ruby/struct:SM::Flow::VERB 
+    body: " #: comments from the reference, take the # comments from\n"
+  - !ruby/struct:SM::Flow::P 
+    body: the definition, take the msgstr from the definition. Add this merged entry to the output message list.
+  name: POT_DATE_EXTRACT_RE
+  value: /POT-Creation-Date:\s*(.*)?\s*$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POT_DATE_RE
+  value: /POT-Creation-Date:.*?$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAX_FUZZY_DISTANCE
+  value: "0.5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAX_N_CHARACTERS_DIFFERENCE
+  value: "10"
+full_name: GetText::Tools::MsgMerge::Merger
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: merge
+name: Merger
+superclass: Object

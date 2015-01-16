@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::AppIntegration::Helpers#project_types
+is_singleton: false
+name: project_types
+params: ()
+visibility: public

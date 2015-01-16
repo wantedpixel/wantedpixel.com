@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return native type of AutoPointer.
+- !ruby/struct:SM::Flow::P 
+  body: Override {DataConverter#native_type}. @return [Type::POINTER] @raise {RuntimeError} if class does not implement a +#release+ method
+full_name: FFI::AutoPointer::native_type
+is_singleton: true
+name: native_type
+params: ()
+visibility: public

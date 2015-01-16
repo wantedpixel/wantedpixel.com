@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "From gettext-0.12.1/gettext-runtime/intl/hash-string.h Defines the so called `hashpjw' function by P.J. Weinberger [see Aho/Sethi/Ullman, COMPILERS: Principles, Techniques and Tools, 1986, 1987 Bell Telephone Laboratories, Inc.]"
+full_name: GetText::MO#hash_string
+is_singleton: false
+name: hash_string
+params: (str)
+visibility: public

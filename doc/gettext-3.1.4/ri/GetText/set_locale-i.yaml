@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: locale=
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Set the locale. This value forces the locale whole the programs. This method calls Locale.set_app_language_tags, Locale.default, Locale.current. Use Locale methods if you need to handle locales more flexible.
+full_name: GetText#set_locale
+is_singleton: false
+name: set_locale
+params: (lang)
+visibility: public

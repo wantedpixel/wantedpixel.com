@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Functions::Env#current_date
+is_singleton: false
+name: current_date
+params: (format = DEFAULT_DATE)
+visibility: public

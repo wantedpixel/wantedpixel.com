@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Sass::Script::Functions
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Compass::SassExtensions::Functions::Sprites
+instance_methods: []
+
+name: Functions
+superclass: 

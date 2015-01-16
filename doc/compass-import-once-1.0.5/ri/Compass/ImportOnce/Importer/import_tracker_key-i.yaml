@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::ImportOnce::Importer#import_tracker_key
+is_singleton: false
+name: import_tracker_key
+params: (engine, options)
+visibility: protected

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: GetText::Tools::MsgCat::Config#parse
+is_singleton: false
+name: parse
+params: (command_line)
+visibility: public

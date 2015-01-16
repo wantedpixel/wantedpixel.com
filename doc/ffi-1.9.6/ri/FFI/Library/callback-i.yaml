@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@overload callback(name, params, ret) @overload callback(params, ret) @param name callback name to add to type map @param [Array] params array of parameters' types @param [DataConverter, Struct, Symbol, Type] ret callback return type @return [FFI::CallbackInfo]"
+full_name: FFI::Library#callback
+is_singleton: false
+name: callback
+params: (*args)
+visibility: public

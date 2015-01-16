@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Parses eRuby script located at `path`.
+- !ruby/struct:SM::Flow::P 
+  body: This is a short cut method. It equals to `new(path, options).parse`.
+- !ruby/struct:SM::Flow::P 
+  body: "@return [Array&lt;POEntry&gt;] Extracted messages @see #initialize and #parse"
+full_name: GetText::ErbParser::parse
+is_singleton: true
+name: parse
+params: (path, options={})
+visibility: public

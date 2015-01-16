@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ChunkyPNG::Canvas::Resampling#resample_bilinear
+is_singleton: false
+name: resample_bilinear
+params: (new_width, new_height)
+visibility: public

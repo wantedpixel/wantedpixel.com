@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Compass::Core::CanIUse</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Compass::Core::CanIUse</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/compass/core/caniuse_rb.html">
+                lib/compass/core/caniuse.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000375">all_prefixes</a>&nbsp;&nbsp;
+      <a href="#M000377">browser_ranges</a>&nbsp;&nbsp;
+      <a href="#M000373">browsers</a>&nbsp;&nbsp;
+      <a href="#M000380">browsers_with_prefix</a>&nbsp;&nbsp;
+      <a href="#M000378">find_first_prefixed_version</a>&nbsp;&nbsp;
+      <a href="#M000372">new</a>&nbsp;&nbsp;
+      <a href="#M000379">omitted_usage</a>&nbsp;&nbsp;
+      <a href="#M000374">prefix</a>&nbsp;&nbsp;
+      <a href="#M000376">prefixes</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Singleton</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DATA_FILE_NAME</td>
+          <td>=</td>
+          <td class="context-item-value">File.join(Compass::Core.base_directory, &quot;data&quot;, &quot;caniuse.json&quot;)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DATA_FEATURE_FILES</td>
+          <td>=</td>
+          <td class="context-item-value">Dir.glob(File.join(Compass::Core.base_directory, &quot;data&quot;, &quot;caniuse_extras&quot;, &quot;**&quot;, &quot;*.json&quot;))</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">PUBLIC_BROWSER_NAMES</td>
+          <td>=</td>
+          <td class="context-item-value">Hash.new {|h, k| k}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+The browser names from caniuse are ugly.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CAN_I_USE_NAMES</td>
+          <td>=</td>
+          <td class="context-item-value">Hash.new {|h, k| k}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SPEC_VERSION_MATCHERS</td>
+          <td>=</td>
+          <td class="context-item-value">Hash.new do |h, k|     h[k] = /##{k}\b/</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000372" class="method-detail">
+        <a name="M000372"></a>
+
+        <div class="method-heading">
+          <a href="CanIUse.src/M000372.html" target="Code" class="method-signature"
+            onclick="popupCode('CanIUse.src/M000372.html');return false;">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000375" class="method-detail">
+        <a name="M000375"></a>
+
+        <div class="method-heading">
+          <a href="CanIUse.src/M000375.html" target="Code" class="method-signature"
+            onclick="popupCode('CanIUse.src/M000375.html');return false;">
+          <span class="method-name">all_prefixes</span><span class="method-args">(browser)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+returns all possible <a href="CanIUse.html#M000376">prefixes</a> a browser
+might use.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000377" class="method-detail">
+        <a name="M000377"></a>
+
+        <div class="method-heading">
+          <a href="CanIUse.src/M000377.html" target="Code" class="method-signature"
+            onclick="popupCode('CanIUse.src/M000377.html');return false;">
+          <span class="method-name">browser_ranges</span><span class="method-args">(capability, prefix = nil, include_unprefixed_versions = true)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000373" class="method-detail">
+        <a name="M000373"></a>
+
+        <div class="method-heading">
+          <a href="CanIUse.src/M000373.html" target="Code" class="method-signature"
+            onclick="popupCode('CanIUse.src/M000373.html');return false;">
+          <span class="method-name">browsers</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns all the known <a href="CanIUse.html#M000373">browsers</a> according
+to caniuse
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000380" class="method-detail">
+        <a name="M000380"></a>
+
+        <div class="method-heading">
+          <a href="CanIUse.src/M000380.html" target="Code" class="method-signature"
+            onclick="popupCode('CanIUse.src/M000380.html');return false;">
+          <span class="method-name">browsers_with_prefix</span><span class="method-args">(prefix)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+returns the list of <a href="CanIUse.html#M000373">browsers</a> that use
+the given <a href="CanIUse.html#M000374">prefix</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000378" class="method-detail">
+        <a name="M000378"></a>
+
+        <div class="method-heading">
+          <a href="CanIUse.src/M000378.html" target="Code" class="method-signature"
+            onclick="popupCode('CanIUse.src/M000378.html');return false;">
+          <span class="method-name">find_first_prefixed_version</span><span class="method-args">(browser, versions, capability, prefix)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000379" class="method-detail">
+        <a name="M000379"></a>
+
+        <div class="method-heading">
+          <a href="CanIUse.src/M000379.html" target="Code" class="method-signature"
+            onclick="popupCode('CanIUse.src/M000379.html');return false;">
+          <span class="method-name">omitted_usage</span><span class="method-args">(browser, min_version, max_version = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@overload <a href="CanIUse.html#M000379">omitted_usage</a>(browser,
+min_supported_version)
+</p>
+<pre>
+  How many users would be omitted if support for the given browser starts
+  with the given version.
+</pre>
+<p>
+@overload <a href="CanIUse.html#M000379">omitted_usage</a>(browser,
+min_unsupported_version, max_unsupported_version)
+</p>
+<pre>
+  How many users would be omitted if the browsers with version
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000374" class="method-detail">
+        <a name="M000374"></a>
+
+        <div class="method-heading">
+          <a href="CanIUse.src/M000374.html" target="Code" class="method-signature"
+            onclick="popupCode('CanIUse.src/M000374.html');return false;">
+          <span class="method-name">prefix</span><span class="method-args">(browser, version = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="CanIUse.html#M000374">prefix</a> corresponding to a
+particular browser
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000376" class="method-detail">
+        <a name="M000376"></a>
+
+        <div class="method-heading">
+          <a href="CanIUse.src/M000376.html" target="Code" class="method-signature"
+            onclick="popupCode('CanIUse.src/M000376.html');return false;">
+          <span class="method-name">prefixes</span><span class="method-args">(browsers = browsers())</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+returns the <a href="CanIUse.html#M000376">prefixes</a> needed by the list
+of <a href="CanIUse.html#M000373">browsers</a> given
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Merge a po-file inluding translated messages and a new pot-file.
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Array&lt;String&gt;] command_line"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  command line arguments for rmsgmerge.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@return [void]"
+full_name: GetText::Tools::MsgMerge#run
+is_singleton: false
+name: run
+params: (*command_line)
+visibility: public

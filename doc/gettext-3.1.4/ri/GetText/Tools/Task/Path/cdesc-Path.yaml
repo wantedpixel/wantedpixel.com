@@ -1,0 +1,48 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: domain
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: locale
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: mo_base_directory
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: po_base_directory
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: GetText::Tools::Task::Path
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: edit_po_directory
+- !ruby/object:RI::MethodSummary 
+  name: edit_po_file
+- !ruby/object:RI::MethodSummary 
+  name: mo_directory
+- !ruby/object:RI::MethodSummary 
+  name: mo_file
+- !ruby/object:RI::MethodSummary 
+  name: po_directory
+- !ruby/object:RI::MethodSummary 
+  name: po_file
+- !ruby/object:RI::MethodSummary 
+  name: po_file_is_updated?
+- !ruby/object:RI::MethodSummary 
+  name: po_time_stamp_file
+- !ruby/object:RI::MethodSummary 
+  name: pot_file
+name: Path
+superclass: Object

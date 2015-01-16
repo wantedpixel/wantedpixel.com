@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::Commands::WatchProject#happy_styling!
+is_singleton: false
+name: happy_styling!
+params: (logger)
+visibility: public

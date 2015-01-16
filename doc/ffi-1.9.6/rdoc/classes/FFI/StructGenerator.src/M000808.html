@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>calculate (FFI::StructGenerator)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/ffi/tools/struct_generator.rb, line 58</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">calculate</span>(<span class="ruby-identifier">options</span> = {})
+      <span class="ruby-identifier">binary</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">tmpdir</span>, <span class="ruby-node">&quot;rb_struct_gen_bin_#{Process.pid}&quot;</span>
+
+      <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;struct name not set&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@struct_name</span>.<span class="ruby-identifier">nil?</span>
+
+      <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{@name}.struct_generator&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;#include &lt;stdio.h&gt;&quot;</span>
+
+        <span class="ruby-ivar">@includes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">inc</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#include &lt;#{inc}&gt;&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;#include &lt;stddef.h&gt;\n\n&quot;</span>
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;int main(int argc, char **argv)\n{&quot;</span>
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  #{@struct_name} s;&quot;</span>
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">%[  printf(&quot;sizeof(#{@struct_name}) %u\\n&quot;, (unsigned int) sizeof(#{@struct_name}));]</span>
+
+        <span class="ruby-ivar">@fields</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;printf(\&quot;\#{field.name} %u %u\\\\n\&quot;, (unsigned int) offsetof(\#{@struct_name}, \#{field.name}),\n(unsigned int) sizeof(s.\#{field.name}));\n&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;\n  return 0;\n}&quot;</span>
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">flush</span>
+
+        <span class="ruby-identifier">output</span> = <span class="ruby-node">`gcc #{options[:cppflags]} #{options[:cflags]} -D_DARWIN_USE_64_BIT_INODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -x c -Wall -Werror #{f.path} -o #{binary} 2&gt;&amp;1`</span>
+
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">$?</span>.<span class="ruby-identifier">success?</span> <span class="ruby-keyword kw">then</span>
+          <span class="ruby-ivar">@found</span> = <span class="ruby-keyword kw">false</span>
+          <span class="ruby-identifier">output</span> = <span class="ruby-identifier">output</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;\t#{l}&quot;</span> }.<span class="ruby-identifier">join</span> <span class="ruby-value str">&quot;\n&quot;</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Compilation error generating struct #{@name} (#{@struct_name}):\n#{output}&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-identifier">output</span> = <span class="ruby-node">`#{binary}`</span>.<span class="ruby-identifier">split</span> <span class="ruby-value str">&quot;\n&quot;</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span>(<span class="ruby-identifier">binary</span> <span class="ruby-operator">+</span> (<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">windows?</span> <span class="ruby-value">? </span><span class="ruby-value str">&quot;.exe&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;&quot;</span>))
+      <span class="ruby-identifier">sizeof</span> = <span class="ruby-identifier">output</span>.<span class="ruby-identifier">shift</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@size</span>
+        <span class="ruby-identifier">m</span> = <span class="ruby-regexp re">/\s*sizeof\([^)]+\) (\d+)/</span>.<span class="ruby-identifier">match</span> <span class="ruby-identifier">sizeof</span>
+        <span class="ruby-ivar">@size</span> = <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>]
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">line_no</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">output</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">md</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp re">/.+ (\d+) (\d+)/</span>)
+        <span class="ruby-ivar">@fields</span>[<span class="ruby-identifier">line_no</span>].<span class="ruby-identifier">offset</span> = <span class="ruby-identifier">md</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_i</span>
+        <span class="ruby-ivar">@fields</span>[<span class="ruby-identifier">line_no</span>].<span class="ruby-identifier">size</span>   = <span class="ruby-identifier">md</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_i</span>
+
+        <span class="ruby-identifier">line_no</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-ivar">@found</span> = <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

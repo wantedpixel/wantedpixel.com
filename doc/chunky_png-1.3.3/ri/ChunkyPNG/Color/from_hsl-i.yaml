@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a new color from an HSL triple.
+- !ruby/struct:SM::Flow::P 
+  body: This implementation follows the modern convention of 0 degrees hue indicating red.
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Fixnum] hue The hue component (0-360) @param [Fixnum] saturation The saturation component (0-1) @param [Fixnum] lightness The lightness component (0-1) @param [Fixnum] alpha Defaults to opaque (255). @return [Integer] The newly constructed color value. @raise [ArgumentError] if the hsl triple is invalid. @see http://en.wikipedia.org/wiki/HSL_and_HSV"
+full_name: ChunkyPNG::Color#from_hsl
+is_singleton: false
+name: from_hsl
+params: (hue, saturation, lightness, alpha = 255)
+visibility: public

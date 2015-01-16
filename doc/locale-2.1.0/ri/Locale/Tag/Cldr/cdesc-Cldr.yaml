@@ -1,0 +1,35 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: extensions
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: parse
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Unicode locale identifier class for CLDR-1.6.1. (Unicode Common Locale Data Repository).
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARIANT
+  value: "\"(#{ALPHANUM}{5,8}|#{DIGIT}#{ALPHANUM}{3})\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: EXTENSION
+  value: "\"#{ALPHANUM}+=[a-z0-9\\-]+\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TAG_RE
+  value: /\A#{LANGUAGE}(?:[-_]#{SCRIPT})?                   (?:[-_]#{REGION})?((?:[-_]#{VARIANT})*                   (?:@(#{EXTENSION};?)+)*)\Z/ix
+full_name: Locale::Tag::Cldr
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: extensions=
+name: Cldr
+superclass: Common

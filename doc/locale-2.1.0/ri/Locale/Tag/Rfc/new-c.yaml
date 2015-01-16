@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Locale::Tag::Rfc::new
+is_singleton: true
+name: new
+params: (language, script = nil, region = nil, variants = [], extensions = [], privateuse = nil)
+visibility: public

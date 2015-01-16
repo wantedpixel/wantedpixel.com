@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a single pixel's color value from this canvas. @param [Integer] x The x-coordinate of the pixel (column) @param [Integer] y The y-coordinate of the pixel (row) @return [Integer] The current color value at the provided coordinates. @raise [ChunkyPNG::OutOfBounds] when the coordinates are outside of the
+- !ruby/struct:SM::Flow::VERB 
+  body: "  image's dimensions.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@see #get_pixel"
+full_name: ChunkyPNG::Canvas#[]
+is_singleton: false
+name: "[]"
+params: (x, y)
+visibility: public

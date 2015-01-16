@@ -1,0 +1,54 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: fields
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: size
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: options
+- !ruby/object:RI::MethodSummary 
+  name: options=
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Generates an FFI Struct layout.
+- !ruby/struct:SM::Flow::P 
+  body: "Given the @@@ portion in:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  module Zlib::ZStream &lt; FFI::Struct\n    @@@\n    name &quot;struct z_stream_s&quot;\n    include &quot;zlib.h&quot;\n\n    field :next_in,   :pointer\n    field :avail_in,  :uint\n    field :total_in,  :ulong\n\n    # ...\n    @@@\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: "StructGenerator will create the layout:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  layout :next_in, :pointer, 0,\n         :avail_in, :uint, 4,\n         :total_in, :ulong, 8,\n         # ...\n"
+- !ruby/struct:SM::Flow::P 
+  body: StructGenerator does its best to pad the layout it produces to preserve line numbers. Place the struct definition as close to the top of the file for best results.
+constants: []
+
+full_name: FFI::StructGenerator
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: calculate
+- !ruby/object:RI::MethodSummary 
+  name: dump_config
+- !ruby/object:RI::MethodSummary 
+  name: field
+- !ruby/object:RI::MethodSummary 
+  name: found?
+- !ruby/object:RI::MethodSummary 
+  name: generate_layout
+- !ruby/object:RI::MethodSummary 
+  name: get_field
+- !ruby/object:RI::MethodSummary 
+  name: include
+- !ruby/object:RI::MethodSummary 
+  name: name
+name: StructGenerator
+superclass: Object

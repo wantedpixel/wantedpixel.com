@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: code
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: name
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This class models out a region/country from the ISO 3166 standard for region codes. In ISO3166, it's called &quot;Country&quot; but Ruby/Locale the word &quot;Region&quot; instead.
+constants: []
+
+full_name: Locale::Info::Region
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: iso_region?
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+name: Region
+superclass: Object

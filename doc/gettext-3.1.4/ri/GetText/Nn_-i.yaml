@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is same function as N_ but for ngettext.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid: the message id."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid_plural: the plural message id."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: msgid."
+  type: :BULLET
+full_name: GetText#Nn_
+is_singleton: false
+name: Nn_
+params: (msgid, msgid_plural)
+visibility: public

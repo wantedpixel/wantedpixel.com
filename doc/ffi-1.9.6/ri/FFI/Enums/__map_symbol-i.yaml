@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param symbol a symbol to find in merge symbol maps of all enums. @return a symbol"
+full_name: FFI::Enums#__map_symbol
+is_singleton: false
+name: __map_symbol
+params: (symbol)
+visibility: public

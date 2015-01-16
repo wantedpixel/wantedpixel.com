@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>extended (Compass::HasDeprecatedConstantsFromCore)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/core.rb, line 19</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">extended</span>(<span class="ruby-identifier">base</span>)
+      <span class="ruby-identifier">new_base</span> = <span class="ruby-identifier">base</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/^Compass/</span>,<span class="ruby-value str">&quot;Compass::Core&quot;</span>)
+      <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-value str">&quot;def self.const_missing(const_name)\nputs \&quot;cannot find \\\#{const_name}\&quot;\nif \#{new_base}.const_defined?(const_name)\nunless Compass::Core.module_deprecation_warning_issued\nCompass::Core.module_deprecation_warning_issued = true\nCompass::Util.compass_warn(\n\&quot;DEPRECATED: \#{base.name}::\\\#{const_name} has been moved to \&quot; +\n\&quot;\#{new_base}::\\\#{const_name}.\\\\n\&quot; +\n\&quot;Please update \\\#{caller[0]}\&quot;)\nend\n\#{new_base}.const_get(const_name)\nend\nend\n&quot;</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

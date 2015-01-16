@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Bundler::Resolver</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Bundler::Resolver</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/bundler/resolver_rb.html">
+                lib/bundler/resolver.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000225">activate_gem</a>&nbsp;&nbsp;
+      <a href="#M000232">clean_req</a>&nbsp;&nbsp;
+      <a href="#M000230">clear_search_cache</a>&nbsp;&nbsp;
+      <a href="#M000217">debug</a>&nbsp;&nbsp;
+      <a href="#M000236">dependency_tree</a>&nbsp;&nbsp;
+      <a href="#M000237">error_message</a>&nbsp;&nbsp;
+      <a href="#M000224">find_conflict_state</a>&nbsp;&nbsp;
+      <a href="#M000222">find_state</a>&nbsp;&nbsp;
+      <a href="#M000235">gem_message</a>&nbsp;&nbsp;
+      <a href="#M000229">gems_size</a>&nbsp;&nbsp;
+      <a href="#M000220">handle_conflict</a>&nbsp;&nbsp;
+      <a href="#M000216">new</a>&nbsp;&nbsp;
+      <a href="#M000223">other_possible?</a>&nbsp;&nbsp;
+      <a href="#M000234">reset_state</a>&nbsp;&nbsp;
+      <a href="#M000228">resolve</a>&nbsp;&nbsp;
+      <a href="#M000215">resolve</a>&nbsp;&nbsp;
+      <a href="#M000227">resolve_conflict</a>&nbsp;&nbsp;
+      <a href="#M000226">resolve_for_conflict</a>&nbsp;&nbsp;
+      <a href="#M000231">search</a>&nbsp;&nbsp;
+      <a href="#M000219">start</a>&nbsp;&nbsp;
+      <a href="#M000221">state_any?</a>&nbsp;&nbsp;
+      <a href="#M000218">successify</a>&nbsp;&nbsp;
+      <a href="#M000233">version_conflict</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="Resolver/SpecGroup.html" class="link">Bundler::Resolver::SpecGroup</a><br />
+Class <a href="Resolver/State.html" class="link">Bundler::Resolver::State</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ALL</td>
+          <td>=</td>
+          <td class="context-item-value">Bundler::Dependency::PLATFORM_MAP.values.uniq.freeze</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">errors</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">initial_reqs</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">iteration_counter</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">iteration_rate</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">started_at</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000216" class="method-detail">
+        <a name="M000216"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000216.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000216.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(index, source_requirements, base)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000215" class="method-detail">
+        <a name="M000215"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000215.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000215.html');return false;">
+          <span class="method-name">resolve</span><span class="method-args">(requirements, index, source_requirements = {}, base = [])</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Figures out the best possible configuration of gems that satisfies the list
+of passed dependencies and any child dependencies without causing any gem
+activation errors.
+</p>
+<h4>Parameters</h4>
+<table>
+<tr><td valign="top">*dependencies&lt;<a href="../Gem/Dependency.html">Gem::Dependency</a>&gt;:</td><td>The list of dependencies to <a href="Resolver.html#M000215">resolve</a>
+
+</td></tr>
+</table>
+<h4>Returns</h4>
+<table>
+<tr><td valign="top">&lt;GemBundle&gt;,nil:</td><td>If the list of dependencies can be resolved, a
+
+</td></tr>
+</table>
+<pre>
+  collection of gemspecs is returned. Otherwise, nil is returned.
+</pre>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000225" class="method-detail">
+        <a name="M000225"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000225.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000225.html');return false;">
+          <span class="method-name">activate_gem</span><span class="method-args">(reqs, activated, requirement, current)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000232" class="method-detail">
+        <a name="M000232"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000232.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000232.html');return false;">
+          <span class="method-name">clean_req</span><span class="method-args">(req)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000230" class="method-detail">
+        <a name="M000230"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000230.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000230.html');return false;">
+          <span class="method-name">clear_search_cache</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000217" class="method-detail">
+        <a name="M000217"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000217.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000217.html');return false;">
+          <span class="method-name">debug</span><span class="method-args">() {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000236" class="method-detail">
+        <a name="M000236"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000236.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000236.html');return false;">
+          <span class="method-name">dependency_tree</span><span class="method-args">(m, requirements)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000237" class="method-detail">
+        <a name="M000237"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000237.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000237.html');return false;">
+          <span class="method-name">error_message</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000224" class="method-detail">
+        <a name="M000224"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000224.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000224.html');return false;">
+          <span class="method-name">find_conflict_state</span><span class="method-args">(conflict, states)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000222" class="method-detail">
+        <a name="M000222"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000222.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000222.html');return false;">
+          <span class="method-name">find_state</span><span class="method-args">(current, states)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000235" class="method-detail">
+        <a name="M000235"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000235.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000235.html');return false;">
+          <span class="method-name">gem_message</span><span class="method-args">(requirement, required_by=[])</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+For a given conflicted requirement, print out what exactly went wrong
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000229" class="method-detail">
+        <a name="M000229"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000229.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000229.html');return false;">
+          <span class="method-name">gems_size</span><span class="method-args">(dep)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000220" class="method-detail">
+        <a name="M000220"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000220.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000220.html');return false;">
+          <span class="method-name">handle_conflict</span><span class="method-args">(current, states, existing=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000223" class="method-detail">
+        <a name="M000223"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000223.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000223.html');return false;">
+          <span class="method-name">other_possible?</span><span class="method-args">(conflict, states)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000234" class="method-detail">
+        <a name="M000234"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000234.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000234.html');return false;">
+          <span class="method-name">reset_state</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000228" class="method-detail">
+        <a name="M000228"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000228.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000228.html');return false;">
+          <span class="method-name">resolve</span><span class="method-args">(reqs, activated, current_traversal)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000227" class="method-detail">
+        <a name="M000227"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000227.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000227.html');return false;">
+          <span class="method-name">resolve_conflict</span><span class="method-args">(current, states)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000226" class="method-detail">
+        <a name="M000226"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000226.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000226.html');return false;">
+          <span class="method-name">resolve_for_conflict</span><span class="method-args">(state)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000231" class="method-detail">
+        <a name="M000231"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000231.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000231.html');return false;">
+          <span class="method-name">search</span><span class="method-args">(dep)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000219" class="method-detail">
+        <a name="M000219"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000219.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000219.html');return false;">
+          <span class="method-name">start</span><span class="method-args">(reqs, current_traversal=false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000221" class="method-detail">
+        <a name="M000221"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000221.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000221.html');return false;">
+          <span class="method-name">state_any?</span><span class="method-args">(state)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000218" class="method-detail">
+        <a name="M000218"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000218.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000218.html');return false;">
+          <span class="method-name">successify</span><span class="method-args">(activated)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000233" class="method-detail">
+        <a name="M000233"></a>
+
+        <div class="method-heading">
+          <a href="Resolver.src/M000233.html" target="Code" class="method-signature"
+            onclick="popupCode('Resolver.src/M000233.html');return false;">
+          <span class="method-name">version_conflict</span><span class="method-args">(current_traversal=true)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "This is the Porter Stemming algorithm, ported to Ruby from the version coded up in Perl. It's easy to follow against the rules in the original paper in:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Porter, 1980, An algorithm for suffix stripping, Program, Vol. 14,\n  no. 3, pp 130-137,\n"
+- !ruby/struct:SM::Flow::P 
+  body: Taken from http://www.tartarus.org/~martin/PorterStemmer (Public Domain)
+constants: []
+
+full_name: Text
+includes: []
+
+instance_methods: []
+
+name: Text
+superclass: 

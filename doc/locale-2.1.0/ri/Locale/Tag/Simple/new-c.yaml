@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a Locale::Tag::Simple
+full_name: Locale::Tag::Simple::new
+is_singleton: true
+name: new
+params: (language, region = nil)
+visibility: public

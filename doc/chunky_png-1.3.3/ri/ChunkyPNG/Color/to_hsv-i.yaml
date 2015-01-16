@@ -1,0 +1,27 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: to_hsb
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns an array with the separate HSV components of a color.
+- !ruby/struct:SM::Flow::P 
+  body: "Because ChunkyPNG internally handles colors as Integers for performance reasons, some rounding occurs when importing or exporting HSV colors whose coordinates are float-based. Because of this rounding, #to_hsv and #from_hsv may not be perfect inverses."
+- !ruby/struct:SM::Flow::P 
+  body: This implementation follows the modern convention of 0 degrees hue indicating red.
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Integer] color The ChunkyPNG color to convert. @param [Boolean] include_alpha Flag indicates whether a fourth element"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   representing alpha channel should be included in the returned array.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@return [Array[0]] The hue of the color (0-360) @return [Array[1]] The saturation of the color (0-1) @return [Array[2]] The value of the color (0-1) @return [Array[3]] Optional fourth element for alpha, included if"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   include_alpha=true (0-255)\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@see http://en.wikipedia.org/wiki/HSL_and_HSV"
+full_name: ChunkyPNG::Color#to_hsv
+is_singleton: false
+name: to_hsv
+params: (color, include_alpha = false)
+visibility: public

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Locale::Tag::Common</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Locale::Tag::Common</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/locale/tag/common_rb.html">
+                lib/locale/tag/common.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Simple.html">
+                Simple
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="Common.html">Common</a> Language tag class for Ruby. Java and MS
+Windows use this format.
+</p>
+<ul>
+<li>ja (language: RFC4646)
+
+</li>
+<li>ja_JP (country: RFC4646(2 alpha or 3 digit))
+
+</li>
+<li>ja-JP
+
+</li>
+<li>ja_Hira_JP (script: 4 characters)
+
+</li>
+<li>ja-Hira-JP
+
+</li>
+<li>ja_Hira_JP_MOBILE (variants: more than 2 characters or 3 digit)
+
+</li>
+<li>ja_Hira_JP_MOBILE_IPHONE (2 variants example)
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000225">candidates</a>&nbsp;&nbsp;
+      <a href="#M000222">new</a>&nbsp;&nbsp;
+      <a href="#M000221">parse</a>&nbsp;&nbsp;
+      <a href="#M000223">script=</a>&nbsp;&nbsp;
+      <a href="#M000224">variants=</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LANGUAGE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;(#{ALPHA}{2,3}|#{ALPHA}{4}|#{ALPHA}{5,8})&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SCRIPT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;(#{ALPHA}{4})&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VARIANT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;(#{ALPHANUM}{3,}|#{DIGIT}#{ALPHANUM}{3})&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TAG_RE</td>
+          <td>=</td>
+          <td class="context-item-value">/\A#{LANGUAGE}(?:[-_]#{SCRIPT})?                   (?:[-_]#{REGION})?((?:[-_]#{VARIANT})*)\Z/ix</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">script</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">variants</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000222" class="method-detail">
+        <a name="M000222"></a>
+
+        <div class="method-heading">
+          <a href="Common.src/M000222.html" target="Code" class="method-signature"
+            onclick="popupCode('Common.src/M000222.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(language, script = nil, region = nil, variants = [])</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Create a <a href="Common.html">Locale::Tag::Common</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000221" class="method-detail">
+        <a name="M000221"></a>
+
+        <div class="method-heading">
+          <a href="Common.src/M000221.html" target="Code" class="method-signature"
+            onclick="popupCode('Common.src/M000221.html');return false;">
+          <span class="method-name">parse</span><span class="method-args">(tag)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Parse the language tag and return the <a href="Common.html#M000222">new</a>
+<a href="Common.html">Locale::Tag::Common</a>.
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000225" class="method-detail">
+        <a name="M000225"></a>
+
+        <div class="method-heading">
+          <a href="Common.src/M000225.html" target="Code" class="method-signature"
+            onclick="popupCode('Common.src/M000225.html');return false;">
+          <span class="method-name">candidates</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an Array of tag-<a href="Common.html#M000225">candidates</a> order
+by priority. Use <a href="../../Locale.html#M000175">Locale.candidates</a>
+instead of this method.
+</p>
+<p>
+<a href="Rfc.html">Locale::Tag::Rfc</a>, <a href="Cldr.html">Cldr</a>
+don&#8216;t have their own <a href="Common.html#M000225">candidates</a>,
+because it&#8216;s meaningless to compare the extensions, privateuse, etc.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000223" class="method-detail">
+        <a name="M000223"></a>
+
+        <div class="method-heading">
+          <a href="Common.src/M000223.html" target="Code" class="method-signature"
+            onclick="popupCode('Common.src/M000223.html');return false;">
+          <span class="method-name">script=</span><span class="method-args">(val)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the script (with capitalize)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000224" class="method-detail">
+        <a name="M000224"></a>
+
+        <div class="method-heading">
+          <a href="Common.src/M000224.html" target="Code" class="method-signature"
+            onclick="popupCode('Common.src/M000224.html');return false;">
+          <span class="method-name">variants=</span><span class="method-args">(val)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the variants as an Array.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

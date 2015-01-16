@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::Configuration::Watch#run_once_per_changeset?
+is_singleton: false
+name: run_once_per_changeset?
+params: ()
+visibility: public

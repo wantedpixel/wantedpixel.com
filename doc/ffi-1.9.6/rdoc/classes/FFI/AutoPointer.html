@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: FFI::AutoPointer</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">FFI::AutoPointer</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/ffi/autopointer_rb.html">
+                lib/ffi/autopointer.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Pointer.html">
+                Pointer
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000821">autorelease=</a>&nbsp;&nbsp;
+      <a href="#M000822">autorelease?</a>&nbsp;&nbsp;
+      <a href="#M000820">free</a>&nbsp;&nbsp;
+      <a href="#M000824">from_native</a>&nbsp;&nbsp;
+      <a href="#M000823">native_type</a>&nbsp;&nbsp;
+      <a href="#M000819">new</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="AutoPointer/CallableReleaser.html" class="link">FFI::AutoPointer::CallableReleaser</a><br />
+Class <a href="AutoPointer/DefaultReleaser.html" class="link">FFI::AutoPointer::DefaultReleaser</a><br />
+Class <a href="AutoPointer/Releaser.html" class="link">FFI::AutoPointer::Releaser</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000824" class="method-detail">
+        <a name="M000824"></a>
+
+        <div class="method-heading">
+          <a href="AutoPointer.src/M000824.html" target="Code" class="method-signature"
+            onclick="popupCode('AutoPointer.src/M000824.html');return false;">
+          <span class="method-name">from_native</span><span class="method-args">(val, ctx)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Create a <a href="AutoPointer.html#M000819">new</a> <a
+href="AutoPointer.html">AutoPointer</a>.
+</p>
+<p>
+Override {DataConverter#from_native}. @overload self.from_native(ptr, ctx)
+@param [<a href="Pointer.html">Pointer</a>] ptr @param ctx not used. Please
+set <tt>nil</tt>. @return [<a href="AutoPointer.html">AutoPointer</a>]
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000823" class="method-detail">
+        <a name="M000823"></a>
+
+        <div class="method-heading">
+          <a href="AutoPointer.src/M000823.html" target="Code" class="method-signature"
+            onclick="popupCode('AutoPointer.src/M000823.html');return false;">
+          <span class="method-name">native_type</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return native type of <a href="AutoPointer.html">AutoPointer</a>.
+</p>
+<p>
+Override {DataConverter#native_type}. @return [Type::POINTER] @raise
+{RuntimeError} if class does not implement a +release+ method
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000819" class="method-detail">
+        <a name="M000819"></a>
+
+        <div class="method-heading">
+          <a href="AutoPointer.src/M000819.html" target="Code" class="method-signature"
+            onclick="popupCode('AutoPointer.src/M000819.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(ptr, proc=nil, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@overload initialize(pointer, method)
+</p>
+<pre>
+ @param [Pointer] pointer
+ @param [Method] method
+ @return [self]
+ The passed Method will be invoked at GC time.
+</pre>
+<p>
+@overload initialize(pointer, proc)
+</p>
+<pre>
+ @param [Pointer] pointer
+ @return [self]
+ The passed Proc will be invoked at GC time (SEE WARNING BELOW!)
+ @note WARNING: passing a proc _may_ cause your pointer to never be GC'd, unless you're
+  careful to avoid trapping a reference to the pointer in the proc. See the test
+  specs for examples.
+</pre>
+<p>
+@overload initialize(pointer) { |p| &#8230; }
+</p>
+<pre>
+ @param [Pointer] pointer
+ @yieldparam [Pointer] p +pointer+ passed to the block
+ @return [self]
+ The passed block will be invoked at GC time.
+ @note WARNING: passing a block will cause your pointer to never be GC'd. This is bad.
+</pre>
+<p>
+@overload initialize(pointer)
+</p>
+<pre>
+ @param [Pointer] pointer
+ @return [self]
+ The pointer's release() class method will be invoked at GC time.
+</pre>
+<p>
+@note The safest, and therefore preferred, calling
+</p>
+<pre>
+ idiom is to pass a Method as the second parameter. Example usage:
+
+  class PointerHelper
+    def self.release(pointer)
+      ...
+    end
+  end
+
+  p = AutoPointer.new(other_pointer, PointerHelper.method(:release))
+
+ The above code will cause PointerHelper#release to be invoked at GC time.
+</pre>
+<p>
+@note
+</p>
+<pre>
+ The last calling idiom (only one parameter) is generally only
+ going to be useful if you subclass {AutoPointer}, and override
+ #release, which by default does nothing.
+</pre>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000821" class="method-detail">
+        <a name="M000821"></a>
+
+        <div class="method-heading">
+          <a href="AutoPointer.src/M000821.html" target="Code" class="method-signature"
+            onclick="popupCode('AutoPointer.src/M000821.html');return false;">
+          <span class="method-name">autorelease=</span><span class="method-args">(autorelease)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param [Boolean] autorelease @return [Boolean] <tt>autorelease</tt> Set
+<tt>autorelease</tt> property. See {<a href="Pointer.html">Pointer</a>
+Autorelease section at <a href="Pointer.html">Pointer</a>}.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000822" class="method-detail">
+        <a name="M000822"></a>
+
+        <div class="method-heading">
+          <a href="AutoPointer.src/M000822.html" target="Code" class="method-signature"
+            onclick="popupCode('AutoPointer.src/M000822.html');return false;">
+          <span class="method-name">autorelease?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@return [Boolean] <tt>autorelease</tt> Get <tt>autorelease</tt> property.
+See {<a href="Pointer.html">Pointer</a> Autorelease section at <a
+href="Pointer.html">Pointer</a>}.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000820" class="method-detail">
+        <a name="M000820"></a>
+
+        <div class="method-heading">
+          <a href="AutoPointer.src/M000820.html" target="Code" class="method-signature"
+            onclick="popupCode('AutoPointer.src/M000820.html');return false;">
+          <span class="method-name">free</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@return [nil] Free the pointer.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

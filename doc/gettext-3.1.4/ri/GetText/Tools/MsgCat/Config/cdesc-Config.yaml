@@ -1,0 +1,75 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: (see include_fuzzy?)
+  name: include_fuzzy
+  rw: W
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [:reference, :msgid] The sort key."
+  name: order
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [String] The output file name."
+  name: output
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: (see output_obsolete_entries?)
+  name: output_obsolete_entries
+  rw: W
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Hash] The PO format options. @see PO#to_s @see POEntry#to_s"
+  name: po_format_options
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Array&lt;String&gt;] The input PO file names."
+  name: pos
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Array&lt;String&gt;] The field names to be removed from"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  header entry.\n"
+  name: remove_header_fields
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: (see report_warning?)
+  name: report_warning
+  rw: W
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@private"
+constants: []
+
+full_name: GetText::Tools::MsgCat::Config
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: GetText
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: include_fuzzy?
+- !ruby/object:RI::MethodSummary 
+  name: output_obsolete_entries?
+- !ruby/object:RI::MethodSummary 
+  name: parse
+- !ruby/object:RI::MethodSummary 
+  name: report_warning?
+name: Config
+superclass: Object

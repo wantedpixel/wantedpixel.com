@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@overload attach_variable(mname, cname, type)"
+- !ruby/struct:SM::Flow::VERB 
+  body: " @example\n  module Bar\n    extend FFI::Library\n    ffi_lib 'my_lib'\n    attach_variable :c_myvar, :myvar, :long\n  end\n  # now callable via Bar.c_myvar\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload attach_variable(cname, type)"
+- !ruby/struct:SM::Flow::VERB 
+  body: " @example\n  module Bar\n    extend FFI::Library\n    ffi_lib 'my_lib'\n    attach_variable :myvar, :long\n  end\n  # now callable via Bar.myvar\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@param [#to_s] mname name of ruby method to attach as @param [#to_s] cname name of C variable to attach @param [DataConverter, Struct, Symbol, Type] type C varaible's type @return [DynamicLibrary::Symbol] @raise {FFI::NotFoundError} if <tt>cname</tt> cannot be found in libraries"
+- !ruby/struct:SM::Flow::P 
+  body: Attach C variable <tt>cname</tt> to this module.
+full_name: FFI::Library#attach_variable
+is_singleton: false
+name: attach_variable
+params: (mname, a1, a2 = nil)
+visibility: public

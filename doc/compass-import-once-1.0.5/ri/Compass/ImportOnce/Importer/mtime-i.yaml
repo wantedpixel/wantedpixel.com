@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::ImportOnce::Importer#mtime
+is_singleton: false
+name: mtime
+params: (uri, options, *args)
+visibility: public

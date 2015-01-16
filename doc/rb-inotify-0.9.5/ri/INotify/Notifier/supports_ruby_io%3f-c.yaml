@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@return [Boolean] Whether or not this Ruby implementation supports"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  wrapping the native file descriptor in a Ruby IO wrapper.\n"
+full_name: INotify::Notifier::supports_ruby_io?
+is_singleton: true
+name: supports_ruby_io?
+params: ()
+visibility: public

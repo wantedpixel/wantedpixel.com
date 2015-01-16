@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Giant hack to support sass-globbing. Need to find a better fix.
+full_name: Compass::ImportOnce::Importer#normalize_filesystem_importers
+is_singleton: false
+name: normalize_filesystem_importers
+params: (key)
+visibility: protected

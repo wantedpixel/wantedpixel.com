@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the system path of the sprite file
+full_name: Compass::SassExtensions::Functions::Sprites#sprite_path
+is_singleton: false
+name: sprite_path
+params: (map)
+visibility: public

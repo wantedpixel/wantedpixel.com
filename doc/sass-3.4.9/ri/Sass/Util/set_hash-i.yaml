@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the hash code for a set in a cross-version manner. Aggravatingly, this is order-dependent in Ruby 1.8.6.
+- !ruby/struct:SM::Flow::P 
+  body: "@param set [Set] @return [Fixnum] The order-independent hashcode of `set`"
+full_name: Sass::Util#set_hash
+is_singleton: false
+name: set_hash
+params: (set)
+visibility: public

@@ -1,0 +1,54 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The {INotify::Notifier#watch flags} specifying the events that this Watcher is watching for, and potentially some options as well.
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Array&lt;Symbol&gt;]"
+  name: flags
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The id for this Watcher. Used to retrieve this Watcher from {Notifier#watchers}.
+  - !ruby/struct:SM::Flow::P 
+    body: "@private @return [Fixnum]"
+  name: id
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The {Notifier} that this Watcher belongs to.
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Notifier]"
+  name: notifier
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The path that this Watcher is watching.
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [String]"
+  name: path
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Watchers monitor a single path for changes, specified by {INotify::Notifier#watch event flags}. A watcher is usually created via \{Notifier#watch}.
+- !ruby/struct:SM::Flow::P 
+  body: "One {Notifier} may have many {Watcher}s. The Notifier actually takes care of the checking for events, via \\{Notifier#run #run} or \\{Notifier#process #process}. The main purpose of having Watcher objects is to be able to disable them using \\{#close}."
+constants: []
+
+full_name: INotify::Watcher
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: callback!
+- !ruby/object:RI::MethodSummary 
+  name: close
+name: Watcher
+superclass: Object

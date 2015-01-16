@@ -1,0 +1,23 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets a current locale. This is a single argument version of Locale.set_current.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "tag: the language tag such as &quot;ja-JP&quot;"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: an Array of the current locale (Locale::Tag's class)."
+  - !ruby/struct:SM::Flow::VERB 
+    body: " Locale.current = &quot;ja-JP&quot;\n Locale.current = &quot;ja_JP.eucJP&quot;\n"
+  type: :BULLET
+full_name: Locale#current=
+is_singleton: false
+name: current=
+params: (tag)
+visibility: public

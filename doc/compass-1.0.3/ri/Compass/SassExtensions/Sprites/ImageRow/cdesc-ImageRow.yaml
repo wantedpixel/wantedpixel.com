@@ -1,0 +1,36 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: images
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: max_width
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Compass::SassExtensions::Sprites::ImageRow
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "<<"
+- !ruby/object:RI::MethodSummary 
+  name: add
+- !ruby/object:RI::MethodSummary 
+  name: efficiency
+- !ruby/object:RI::MethodSummary 
+  name: height
+- !ruby/object:RI::MethodSummary 
+  name: total_width
+- !ruby/object:RI::MethodSummary 
+  name: width
+- !ruby/object:RI::MethodSummary 
+  name: will_fit?
+name: ImageRow
+superclass: Object

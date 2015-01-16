@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: GetText::TextDomainManager</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">GetText::TextDomainManager</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/gettext/text_domain_manager_rb.html">
+                lib/gettext/text_domain_manager.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000044">bind_to</a>&nbsp;&nbsp;
+      <a href="#M000040">cached=</a>&nbsp;&nbsp;
+      <a href="#M000041">cached?</a>&nbsp;&nbsp;
+      <a href="#M000049">clear_all_text_domains</a>&nbsp;&nbsp;
+      <a href="#M000050">clear_caches</a>&nbsp;&nbsp;
+      <a href="#M000047">dump_all_text_domains</a>&nbsp;&nbsp;
+      <a href="#M000042">output_charset</a>&nbsp;&nbsp;
+      <a href="#M000043">output_charset=</a>&nbsp;&nbsp;
+      <a href="#M000048">restore_all_text_domains</a>&nbsp;&nbsp;
+      <a href="#M000039">text_domain_pool</a>&nbsp;&nbsp;
+      <a href="#M000046">translate_plural_message</a>&nbsp;&nbsp;
+      <a href="#M000045">translate_singular_message</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000044" class="method-detail">
+        <a name="M000044"></a>
+
+        <div class="method-heading">
+          <a href="TextDomainManager.src/M000044.html" target="Code" class="method-signature"
+            onclick="popupCode('TextDomainManager.src/M000044.html');return false;">
+          <span class="method-name">bind_to</span><span class="method-args">(klass, domainname, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+bind text domain to the class.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+          <a href="TextDomainManager.src/M000040.html" target="Code" class="method-signature"
+            onclick="popupCode('TextDomainManager.src/M000040.html');return false;">
+          <span class="method-name">cached=</span><span class="method-args">(val)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the value whether cache messages or not. true to cache messages,
+otherwise false.
+</p>
+<p>
+Default is true. If $DEBUG is false, messages are not checked even if this
+value is true.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+          <a href="TextDomainManager.src/M000041.html" target="Code" class="method-signature"
+            onclick="popupCode('TextDomainManager.src/M000041.html');return false;">
+          <span class="method-name">cached?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return the cached value.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000049" class="method-detail">
+        <a name="M000049"></a>
+
+        <div class="method-heading">
+          <a href="TextDomainManager.src/M000049.html" target="Code" class="method-signature"
+            onclick="popupCode('TextDomainManager.src/M000049.html');return false;">
+          <span class="method-name">clear_all_text_domains</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+for testing.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000050" class="method-detail">
+        <a name="M000050"></a>
+
+        <div class="method-heading">
+          <a href="TextDomainManager.src/M000050.html" target="Code" class="method-signature"
+            onclick="popupCode('TextDomainManager.src/M000050.html');return false;">
+          <span class="method-name">clear_caches</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+for testing.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000047" class="method-detail">
+        <a name="M000047"></a>
+
+        <div class="method-heading">
+          <a href="TextDomainManager.src/M000047.html" target="Code" class="method-signature"
+            onclick="popupCode('TextDomainManager.src/M000047.html');return false;">
+          <span class="method-name">dump_all_text_domains</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+for testing.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000042" class="method-detail">
+        <a name="M000042"></a>
+
+        <div class="method-heading">
+          <a href="TextDomainManager.src/M000042.html" target="Code" class="method-signature"
+            onclick="popupCode('TextDomainManager.src/M000042.html');return false;">
+          <span class="method-name">output_charset</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Gets the output charset.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000043" class="method-detail">
+        <a name="M000043"></a>
+
+        <div class="method-heading">
+          <a href="TextDomainManager.src/M000043.html" target="Code" class="method-signature"
+            onclick="popupCode('TextDomainManager.src/M000043.html');return false;">
+          <span class="method-name">output_charset=</span><span class="method-args">(charset)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the output charset.The program can have a output charset.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000048" class="method-detail">
+        <a name="M000048"></a>
+
+        <div class="method-heading">
+          <a href="TextDomainManager.src/M000048.html" target="Code" class="method-signature"
+            onclick="popupCode('TextDomainManager.src/M000048.html');return false;">
+          <span class="method-name">restore_all_text_domains</span><span class="method-args">(dumped_all_text_domains)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+for testing.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+          <a href="TextDomainManager.src/M000039.html" target="Code" class="method-signature"
+            onclick="popupCode('TextDomainManager.src/M000039.html');return false;">
+          <span class="method-name">text_domain_pool</span><span class="method-args">(domainname)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Find text domain by name
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
+
+        <div class="method-heading">
+          <a href="TextDomainManager.src/M000046.html" target="Code" class="method-signature"
+            onclick="popupCode('TextDomainManager.src/M000046.html');return false;">
+          <span class="method-name">translate_plural_message</span><span class="method-args">(klass, arg1, arg2, arg3 = &quot;|&quot;, arg4 = &quot;|&quot;)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This function is similar to the get_singular_message function as it finds
+the message catalogs in the same way. But it takes two extra arguments for
+plural form. The msgid parameter must contain the singular form of the
+string to be converted. It is also used as the key for the search in the
+catalog. The msgid_plural parameter is the plural form. The parameter n is
+used to determine the plural form. If no message catalog is found msgid1 is
+returned if n == 1, otherwise msgid2. And if msgid includes
+&quot;div&quot;, it returns a last part of msgid separeted &quot;div&quot;.
+</p>
+<ul>
+<li>msgid: the singular form with &quot;div&quot;. (e.g. &quot;Special|An
+apple&quot;, &quot;An apple&quot;)
+
+</li>
+<li>msgid_plural: the plural form. (e.g. &quot;%{num} Apples&quot;)
+
+</li>
+<li>n: a number used to determine the plural form.
+
+</li>
+<li>div: the separator. Default is &quot;|&quot;.
+
+</li>
+<li>Returns: the localized text which key is msgid_plural if n is plural(follow
+plural-rule) or msgid. &quot;plural-rule&quot; is defined in po-file.
+
+</li>
+</ul>
+<p>
+or
+</p>
+<ul>
+<li>[msgid, msgid_plural] : msgid and msgid_plural an Array
+
+</li>
+<li>n: a number used to determine the plural form.
+
+</li>
+<li>div: the separator. Default is &quot;|&quot;.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
+
+        <div class="method-heading">
+          <a href="TextDomainManager.src/M000045.html" target="Code" class="method-signature"
+            onclick="popupCode('TextDomainManager.src/M000045.html');return false;">
+          <span class="method-name">translate_singular_message</span><span class="method-args">(klass, msgid, div = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Translates msgid, but if there are no localized text, it returns a last
+part of msgid separeted &quot;div&quot; or whole of the msgid with no
+&quot;div&quot;.
+</p>
+<ul>
+<li>msgid: the message id.
+
+</li>
+<li>div: separator or nil.
+
+</li>
+<li>Returns: the localized text by msgid. If there are no localized text, it
+returns a last part of msgid separeted &quot;div&quot;.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Locale::Info
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: get_language
+- !ruby/object:RI::MethodSummary 
+  name: get_region
+- !ruby/object:RI::MethodSummary 
+  name: language_code?
+- !ruby/object:RI::MethodSummary 
+  name: regions
+- !ruby/object:RI::MethodSummary 
+  name: three_languages
+- !ruby/object:RI::MethodSummary 
+  name: two_languages
+- !ruby/object:RI::MethodSummary 
+  name: valid_region_code?
+name: Info
+superclass: 

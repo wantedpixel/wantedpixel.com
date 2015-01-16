@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>format (GetText::POEntry::Formatter)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/gettext/po_entry.rb, line 281</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">format</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@entry</span>.<span class="ruby-identifier">obsolete?</span>
+          <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">format_obsolete_comment</span>(<span class="ruby-ivar">@entry</span>.<span class="ruby-identifier">comment</span>)
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">str</span> = <span class="ruby-identifier">format_comments</span>
+
+        <span class="ruby-comment cmt"># msgctxt, msgid, msgstr</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@entry</span>.<span class="ruby-identifier">msgctxt?</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@entry</span>.<span class="ruby-identifier">msgctxt</span>.<span class="ruby-identifier">nil?</span>
+            <span class="ruby-identifier">no_msgctxt_message</span> = <span class="ruby-value str">&quot;This POEntry is a kind of msgctxt &quot;</span> <span class="ruby-operator">+</span>
+                                   <span class="ruby-value str">&quot;but the msgctxt property is nil. &quot;</span> <span class="ruby-operator">+</span>
+                                   <span class="ruby-node">&quot;msgid: #{@entry.msgid}&quot;</span>
+            <span class="ruby-identifier">raise</span>(<span class="ruby-constant">NoMsgctxtError</span>, <span class="ruby-identifier">no_msgctxt_message</span>)
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;msgctxt &quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">format_message</span>(<span class="ruby-ivar">@entry</span>.<span class="ruby-identifier">msgctxt</span>)
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;msgid &quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">format_message</span>(<span class="ruby-ivar">@entry</span>.<span class="ruby-identifier">msgid</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@entry</span>.<span class="ruby-identifier">plural?</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@entry</span>.<span class="ruby-identifier">msgid_plural</span>.<span class="ruby-identifier">nil?</span>
+            <span class="ruby-identifier">no_plural_message</span> = <span class="ruby-value str">&quot;This POEntry is a kind of plural &quot;</span> <span class="ruby-operator">+</span>
+                                  <span class="ruby-value str">&quot;but the msgid_plural property is nil. &quot;</span> <span class="ruby-operator">+</span>
+                                  <span class="ruby-node">&quot;msgid: #{@entry.msgid}&quot;</span>
+            <span class="ruby-identifier">raise</span>(<span class="ruby-constant">NoMsgidPluralError</span>, <span class="ruby-identifier">no_plural_message</span>)
+          <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;msgid_plural &quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">format_message</span>(<span class="ruby-ivar">@entry</span>.<span class="ruby-identifier">msgid_plural</span>)
+
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@entry</span>.<span class="ruby-identifier">msgstr</span>.<span class="ruby-identifier">nil?</span>
+            <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;msgstr[0] \&quot;\&quot;\n&quot;</span>
+            <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;msgstr[1] \&quot;\&quot;\n&quot;</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">msgstrs</span> = <span class="ruby-ivar">@entry</span>.<span class="ruby-identifier">msgstr</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\000&quot;</span>, <span class="ruby-value">-1</span>)
+            <span class="ruby-identifier">msgstrs</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">msgstr</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;msgstr[#{index}] &quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">format_message</span>(<span class="ruby-identifier">msgstr</span>)
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;msgstr &quot;</span>
+          <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">format_message</span>(<span class="ruby-ivar">@entry</span>.<span class="ruby-identifier">msgstr</span>)
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">encode</span>(<span class="ruby-identifier">str</span>)
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

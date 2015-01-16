@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Functions::FontFiles#font_formats
+is_singleton: false
+name: font_formats
+params: (*args)
+visibility: public

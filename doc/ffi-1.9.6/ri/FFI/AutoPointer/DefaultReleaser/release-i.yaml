@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Pointer] ptr @return [nil] Release <tt>ptr</tt> by using his #release class method."
+full_name: FFI::AutoPointer::DefaultReleaser#release
+is_singleton: false
+name: release
+params: (ptr)
+visibility: public

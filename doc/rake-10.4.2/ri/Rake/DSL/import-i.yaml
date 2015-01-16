@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Import the partial Rakefiles <tt>fn</tt>. Imported files are loaded <em>after</em> the current file is completely loaded. This allows the import statement to appear anywhere in the importing file, and yet allowing the imported files to depend on objects defined in the importing file.
+- !ruby/struct:SM::Flow::P 
+  body: A common use of the import statement is to include files containing dependency declarations.
+- !ruby/struct:SM::Flow::P 
+  body: See also the --rakelibdir command line option.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  import &quot;.depend&quot;, &quot;my_rules&quot;\n"
+full_name: Rake::DSL#import
+is_singleton: false
+name: import
+params: (*fns)
+visibility: private

@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: constants
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: options
+- !ruby/object:RI::MethodSummary 
+  name: options=
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: ConstGenerator turns C constants into ruby values.
+- !ruby/struct:SM::Flow::P 
+  body: "@example a simple example for stdio"
+- !ruby/struct:SM::Flow::VERB 
+  body: " cg = FFI::ConstGenerator.new('stdio') do |gen|\n   gen.const(:SEEK_SET)\n   gen.const('SEEK_CUR')\n   gen.const('seek_end')   # this constant does not exist\n end            # #calculate called automatically at the end of the block\n\n cg['SEEK_SET'] # =&gt; 0\n cg['SEEK_CUR'] # =&gt; 1\n cg['seek_end'] # =&gt; nil\n cg.to_ruby     # =&gt; &quot;SEEK_SET = 0\\nSEEK_CUR = 1\\n# seek_end not available&quot;\n"
+constants: []
+
+full_name: FFI::ConstGenerator
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: calculate
+- !ruby/object:RI::MethodSummary 
+  name: const
+- !ruby/object:RI::MethodSummary 
+  name: dump_constants
+- !ruby/object:RI::MethodSummary 
+  name: include
+- !ruby/object:RI::MethodSummary 
+  name: to_ruby
+name: ConstGenerator
+superclass: Object

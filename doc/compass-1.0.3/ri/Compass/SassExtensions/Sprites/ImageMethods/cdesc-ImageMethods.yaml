@@ -1,0 +1,31 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SEPERATORS
+  value: "['_', '-']"
+full_name: Compass::SassExtensions::Sprites::ImageMethods
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: get_magic_selector_image
+- !ruby/object:RI::MethodSummary 
+  name: has_active?
+- !ruby/object:RI::MethodSummary 
+  name: has_focus?
+- !ruby/object:RI::MethodSummary 
+  name: has_hover?
+- !ruby/object:RI::MethodSummary 
+  name: has_target?
+- !ruby/object:RI::MethodSummary 
+  name: image_for
+- !ruby/object:RI::MethodSummary 
+  name: sprite_names
+name: ImageMethods
+superclass: 

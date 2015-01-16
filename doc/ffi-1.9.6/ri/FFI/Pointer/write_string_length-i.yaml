@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [String] str string to write @param [Numeric] len length of string to return @return [self] Write <tt>len</tt> first bytes of <tt>str</tt> in pointer's contents."
+- !ruby/struct:SM::Flow::P 
+  body: "Same as:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " ptr.write_string(str, len)   # with len not nil\n"
+full_name: FFI::Pointer#write_string_length
+is_singleton: false
+name: write_string_length
+params: (str, len)
+visibility: public

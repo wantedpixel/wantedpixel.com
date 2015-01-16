@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Find text domain by name
+full_name: GetText::TextDomainManager#text_domain_pool
+is_singleton: false
+name: text_domain_pool
+params: (domainname)
+visibility: public

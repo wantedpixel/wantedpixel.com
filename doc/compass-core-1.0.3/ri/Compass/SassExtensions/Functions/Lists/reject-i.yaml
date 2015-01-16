@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: removes the given values from the list.
+full_name: Compass::SassExtensions::Functions::Lists#reject
+is_singleton: false
+name: reject
+params: (list, *values)
+visibility: public

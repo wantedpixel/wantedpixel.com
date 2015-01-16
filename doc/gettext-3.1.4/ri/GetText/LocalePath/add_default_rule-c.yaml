@@ -1,0 +1,21 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Add default locale path. Usually you should use GetText.add_default_locale_path instead.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "path: a new locale path. (e.g.) &quot;/usr/share/locale/%{lang}/LC_MESSAGES/%{name}.mo&quot; ('locale' =&gt; &quot;ja_JP&quot;, 'name' =&gt; &quot;textdomain&quot;)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: the new DEFAULT_LOCALE_PATHS"
+  type: :BULLET
+full_name: GetText::LocalePath::add_default_rule
+is_singleton: true
+name: add_default_rule
+params: (path)
+visibility: public

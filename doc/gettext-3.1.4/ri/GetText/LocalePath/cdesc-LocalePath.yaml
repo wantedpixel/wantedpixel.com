@@ -1,0 +1,39 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: locale_paths
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: supported_locales
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_default_rule
+- !ruby/object:RI::MethodSummary 
+  name: default_path_rules
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Treats locale-path for mo-files.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The default locale paths.
+  name: CONFIG_PREFIX
+  value: RbConfig::CONFIG['prefix'].gsub(/\/local/, "")
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULT_RULES
+  value: "[                      \"./locale/%{lang}/LC_MESSAGES/%{name}.mo\",                      \"./locale/%{lang}/%{name}.mo\",                      \"#{RbConfig::CONFIG['datadir']}/locale/%{lang}/LC_MESSAGES/%{name}.mo\",                      \"#{RbConfig::CONFIG['datadir'].gsub(/\\/local/, \"\")}/locale/%{lang}/LC_MESSAGES/%{name}.mo\",                      \"#{CONFIG_PREFIX}/share/locale/%{lang}/LC_MESSAGES/%{name}.mo\",                      \"#{CONFIG_PREFIX}/local/share/locale/%{lang}/LC_MESSAGES/%{name}.mo\""
+full_name: GetText::LocalePath
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: current_path
+name: LocalePath
+superclass: Object

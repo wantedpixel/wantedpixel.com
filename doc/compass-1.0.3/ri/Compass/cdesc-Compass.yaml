@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: File.read(scope("VERSION")).strip
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION_NAME
+  value: File.read(scope("VERSION_NAME")).strip
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION_DETAILS
+  value: parse_version(VERSION, VERSION_NAME)
+full_name: Compass
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: base_directory
+- !ruby/object:RI::MethodSummary 
+  name: lib_directory
+name: Compass
+superclass: 

@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@example `:comment_tag` option: String tag"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  path = &quot;hello.rb&quot;\n  # content:\n  #   # TRANSLATORS: This is a comment to translators.\n  #   _(&quot;Hello&quot;)\n  #\n  #   # This is a comment for programmers.\n  #   # TRANSLATORS: This is a comment to translators.\n  #   # This is also a comment to translators.\n  #   _(&quot;World&quot;)\n  #\n  #   # This is a comment for programmers.\n  #   # This is also a comment for programmers\n  #   # because all lines don't start with &quot;TRANSRATORS:&quot;.\n  #   _(&quot;Bye&quot;)\n  options = {:comment_tag =&gt; &quot;TRANSLATORS:&quot;}\n  parser = GetText::RubyParser.new(path, options)\n  parser.parse\n  # =&gt; [\n  #   POEntry&lt;\n  #     :msgid =&gt; &quot;Hello&quot;,\n  #     :extracted_comment =&gt;\n  #       &quot;TRANSLATORS: This is a comment to translators.&quot;,\n  #   &gt;,\n  #   POEntry&lt;\n  #     :msgid =&gt; &quot;World&quot;,\n  #     :extracted_comment =&gt;\n  #       &quot;TRANSLATORS: This is a comment to translators.\\n&quot; +\n  #       &quot;This is also a comment to translators.&quot;,\n  #   &gt;,\n  #   POEntry&lt;\n  #     :msgid =&gt; &quot;Bye&quot;,\n  #     :extracted_comment =&gt; nil,\n  #   &gt;,\n  # ]\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@example `:comment_tag` option: nil tag"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  path = &quot;hello.rb&quot;\n  # content:\n  #   # This is a comment to translators.\n  #   # This is also a comment for translators.\n  #   _(&quot;Hello&quot;)\n  options = {:comment_tag =&gt; nil}\n  parser = GetText::RubyParser.new(path, options)\n  parser.parse\n  # =&gt; [\n  #   POEntry&lt;\n  #     :msgid =&gt; &quot;Hello&quot;,\n  #     :extracted_comment =&gt;\n  #       &quot;This is a comment to translators.\\n&quot; +\n  #       &quot; This is also a comment for translators.&quot;,\n  #   &gt;,\n  # ]\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@param path [String] Ruby script path to be parsed @param options [Hash] Options @option options [String, nil] :comment_tag The tag to"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  detect comments to be extracted. The extracted comments are\n  used to deliver messages to translators from programmers.\n\n  If the tag is String and a line in a comment start with the\n  tag, the line and the following lines are extracted.\n\n  If the tag is nil, all comments are extracted.\n"
+full_name: GetText::RubyParser::new
+is_singleton: true
+name: new
+params: (path, options={})
+visibility: public

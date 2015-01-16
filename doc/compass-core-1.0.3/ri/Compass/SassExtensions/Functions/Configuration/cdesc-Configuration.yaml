@@ -1,0 +1,31 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OPTION_TRANSFORMER
+  value: Hash.new() {|h, k| proc {|v, ctx| v.value } }
+full_name: Compass::SassExtensions::Functions::Configuration
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: absolute_path
+- !ruby/object:RI::MethodSummary 
+  name: add_configuration
+- !ruby/object:RI::MethodSummary 
+  name: add_sass_configuration
+- !ruby/object:RI::MethodSummary 
+  name: join_file_segments
+- !ruby/object:RI::MethodSummary 
+  name: reset_configuration
+- !ruby/object:RI::MethodSummary 
+  name: split_filename
+- !ruby/object:RI::MethodSummary 
+  name: using_compass_compiler
+name: Configuration
+superclass: 

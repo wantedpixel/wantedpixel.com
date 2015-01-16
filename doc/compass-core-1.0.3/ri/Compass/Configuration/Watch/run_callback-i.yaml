@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::Configuration::Watch#run_callback
+is_singleton: false
+name: run_callback
+params: (base, relative, action)
+visibility: public

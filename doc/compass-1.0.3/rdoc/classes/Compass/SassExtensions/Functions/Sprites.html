@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Compass::SassExtensions::Functions::Sprites</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Compass::SassExtensions::Functions::Sprites</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../../files/lib/compass/sass_extensions/functions/sprites_rb.html">
+                lib/compass/sass_extensions/functions/sprites.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M001074">convert_sprite_name</a>&nbsp;&nbsp;
+      <a href="#M001072">get_sprite_file</a>&nbsp;&nbsp;
+      <a href="#M001061">inline_sprite</a>&nbsp;&nbsp;
+      <a href="#M001077">missing_image!</a>&nbsp;&nbsp;
+      <a href="#M001078">missing_sprite!</a>&nbsp;&nbsp;
+      <a href="#M001073">reversed_color_names</a>&nbsp;&nbsp;
+      <a href="#M001063">sprite</a>&nbsp;&nbsp;
+      <a href="#M001066">sprite_does_not_have_parent</a>&nbsp;&nbsp;
+      <a href="#M001065">sprite_file</a>&nbsp;&nbsp;
+      <a href="#M001068">sprite_has_selector</a>&nbsp;&nbsp;
+      <a href="#M001069">sprite_has_valid_selector</a>&nbsp;&nbsp;
+      <a href="#M001058">sprite_height</a>&nbsp;&nbsp;
+      <a href="#M001062">sprite_map</a>&nbsp;&nbsp;
+      <a href="#M001064">sprite_map_name</a>&nbsp;&nbsp;
+      <a href="#M001059">sprite_names</a>&nbsp;&nbsp;
+      <a href="#M001060">sprite_path</a>&nbsp;&nbsp;
+      <a href="#M001071">sprite_position</a>&nbsp;&nbsp;
+      <a href="#M001067">sprite_selector_file</a>&nbsp;&nbsp;
+      <a href="#M001070">sprite_url</a>&nbsp;&nbsp;
+      <a href="#M001057">sprite_width</a>&nbsp;&nbsp;
+      <a href="#M001075">verify_map</a>&nbsp;&nbsp;
+      <a href="#M001076">verify_sprite</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Sass::Script::Value::Helpers</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="Sprites/VariableReader.html" class="link">Compass::SassExtensions::Functions::Sprites::VariableReader</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ZERO</td>
+          <td>=</td>
+          <td class="context-item-value">number(0)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BOOL_FALSE</td>
+          <td>=</td>
+          <td class="context-item-value">bool(false)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VALID_SELECTORS</td>
+          <td>=</td>
+          <td class="context-item-value">%w(hover active target focus)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">IDENTIFIER_RX</td>
+          <td>=</td>
+          <td class="context-item-value">/\A#{Sass::SCSS::RX::IDENT}\Z/</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Determines if the CSS selector is valid
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M001061" class="method-detail">
+        <a name="M001061"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001061.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001061.html');return false;">
+          <span class="method-name">inline_sprite</span><span class="method-args">(map)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Sprites.html#M001063">sprite</a> file as an inline
+image
+</p>
+<pre>
+   @include &quot;icon/*.png&quot;;
+    #{$icon-sprite-base-class} {
+      background-image: inline-sprite($icon-sprites);
+     }
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001063" class="method-detail">
+        <a name="M001063"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001063.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001063.html');return false;">
+          <span class="method-name">sprite</span><span class="method-args">(map, sprite, offset_x = ZERO, offset_y = ZERO, use_percentages = BOOL_FALSE)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the image and background position for use in a single shorthand
+property:
+</p>
+<pre>
+    $icons: sprite-map(&quot;icons/*.png&quot;); // contains icons/new.png among others.
+    background: sprite($icons, new) no-repeat;
+</pre>
+<p>
+Becomes:
+</p>
+<pre>
+    background: url('/images/icons.png?12345678') 0 -24px no-repeat;
+</pre>
+<p>
+If the `use_percentages` parameter is passed as true, percentages will be
+used to position the <a href="Sprites.html#M001063">sprite</a>. Example
+output:
+</p>
+<pre>
+    background: url('/images/icons.png?12345678') 0 50% no-repeat;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001066" class="method-detail">
+        <a name="M001066"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001066.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001066.html');return false;">
+          <span class="method-name">sprite_does_not_have_parent</span><span class="method-args">(map, sprite)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns boolean if <a href="Sprites.html#M001063">sprite</a> has a parent
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001065" class="method-detail">
+        <a name="M001065"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001065.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001065.html');return false;">
+          <span class="method-name">sprite_file</span><span class="method-args">(map, sprite)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the path to the original image file for the <a
+href="Sprites.html#M001063">sprite</a> with the given name
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001068" class="method-detail">
+        <a name="M001068"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001068.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001068.html');return false;">
+          <span class="method-name">sprite_has_selector</span><span class="method-args">(map, sprite, selector)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns boolean if <a href="Sprites.html#M001063">sprite</a> has the
+selector
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001069" class="method-detail">
+        <a name="M001069"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001069.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001069.html');return false;">
+          <span class="method-name">sprite_has_valid_selector</span><span class="method-args">(selector)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001058" class="method-detail">
+        <a name="M001058"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001058.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001058.html');return false;">
+          <span class="method-name">sprite_height</span><span class="method-args">(map, sprite=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the height of the generated <a
+href="Sprites.html#M001063">sprite</a> map
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001062" class="method-detail">
+        <a name="M001062"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001062.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001062.html');return false;">
+          <span class="method-name">sprite_map</span><span class="method-args">(glob, kwargs = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a
+href="../Sprites/SpriteMap.html">Compass::SassExtensions::Sprites::SpriteMap</a>
+object. A <a href="Sprites.html#M001063">sprite</a> map, when used in a
+property is the same as calling <a
+href="Sprites.html#M001063">sprite</a>-url. So the following background
+properties are equivalent:
+</p>
+<pre>
+    $icons: sprite-map(&quot;icons/*.png&quot;);
+    background: sprite-url($icons) no-repeat;
+    background: $icons no-repeat;
+</pre>
+<p>
+The <a href="Sprites.html#M001063">sprite</a> map object will generate the
+<a href="Sprites.html#M001063">sprite</a> map image, if necessary, the
+first time it is converted to a url. Simply constructing it has no
+side-effects.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001064" class="method-detail">
+        <a name="M001064"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001064.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001064.html');return false;">
+          <span class="method-name">sprite_map_name</span><span class="method-args">(map)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the name of a <a href="Sprites.html#M001063">sprite</a> map The
+name is derived from the folder than contains the sprites.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001059" class="method-detail">
+        <a name="M001059"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001059.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001059.html');return false;">
+          <span class="method-name">sprite_names</span><span class="method-args">(map)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a list of all <a href="Sprites.html#M001063">sprite</a> names
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001060" class="method-detail">
+        <a name="M001060"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001060.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001060.html');return false;">
+          <span class="method-name">sprite_path</span><span class="method-args">(map)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the system path of the <a href="Sprites.html#M001063">sprite</a>
+file
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001071" class="method-detail">
+        <a name="M001071"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001071.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001071.html');return false;">
+          <span class="method-name">sprite_position</span><span class="method-args">(map, sprite = nil, offset_x = ZERO, offset_y = ZERO, use_percentages = BOOL_FALSE)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the position for the original image in the <a
+href="Sprites.html#M001063">sprite</a>. This is suitable for use as a value
+to background-position:
+</p>
+<pre>
+    $icons: sprite-map(&quot;icons/*.png&quot;);
+    background-position: sprite-position($icons, new);
+</pre>
+<p>
+Might generate something like:
+</p>
+<pre>
+    background-position: 0 -34px;
+</pre>
+<p>
+You can adjust the background relative to this position by passing values
+for `$offset-x` and `$offset-y`:
+</p>
+<pre>
+    $icons: sprite-map(&quot;icons/*.png&quot;);
+    background-position: sprite-position($icons, new, 3px, -2px);
+</pre>
+<p>
+Would change the above output to:
+</p>
+<pre>
+    background-position: 3px -36px;
+</pre>
+<p>
+If you set the `use_percentages` parameter to true, the position will be
+expressed in percentages. An example:
+</p>
+<pre>
+    background-position: sprite-position($icons, new, 0, 0, true);
+</pre>
+<p>
+Would result in something like this:
+</p>
+<pre>
+    background-position: 0 42%;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001067" class="method-detail">
+        <a name="M001067"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001067.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001067.html');return false;">
+          <span class="method-name">sprite_selector_file</span><span class="method-args">(map, sprite, selector)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return the name of the selector file
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001070" class="method-detail">
+        <a name="M001070"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001070.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001070.html');return false;">
+          <span class="method-name">sprite_url</span><span class="method-args">(map)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a url to the <a href="Sprites.html#M001063">sprite</a> image.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001057" class="method-detail">
+        <a name="M001057"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001057.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001057.html');return false;">
+          <span class="method-name">sprite_width</span><span class="method-args">(map, sprite=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the width of the generated <a
+href="Sprites.html#M001063">sprite</a> map
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M001074" class="method-detail">
+        <a name="M001074"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001074.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001074.html');return false;">
+          <span class="method-name">convert_sprite_name</span><span class="method-args">(sprite)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001072" class="method-detail">
+        <a name="M001072"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001072.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001072.html');return false;">
+          <span class="method-name">get_sprite_file</span><span class="method-args">(map, sprite=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001077" class="method-detail">
+        <a name="M001077"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001077.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001077.html');return false;">
+          <span class="method-name">missing_image!</span><span class="method-args">(map, sprite)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001078" class="method-detail">
+        <a name="M001078"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001078.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001078.html');return false;">
+          <span class="method-name">missing_sprite!</span><span class="method-args">(function_name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001073" class="method-detail">
+        <a name="M001073"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001073.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001073.html');return false;">
+          <span class="method-name">reversed_color_names</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001075" class="method-detail">
+        <a name="M001075"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001075.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001075.html');return false;">
+          <span class="method-name">verify_map</span><span class="method-args">(map, error = &quot;sprite&quot;)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001076" class="method-detail">
+        <a name="M001076"></a>
+
+        <div class="method-heading">
+          <a href="Sprites.src/M001076.html" target="Code" class="method-signature"
+            onclick="popupCode('Sprites.src/M001076.html');return false;">
+          <span class="method-name">verify_sprite</span><span class="method-args">(sprite)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

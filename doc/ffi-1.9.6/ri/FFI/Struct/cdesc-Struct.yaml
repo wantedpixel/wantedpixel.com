@@ -1,0 +1,71 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: aligned
+- !ruby/object:RI::MethodSummary 
+  name: alignment
+- !ruby/object:RI::MethodSummary 
+  name: auto_ptr
+- !ruby/object:RI::MethodSummary 
+  name: by_ref
+- !ruby/object:RI::MethodSummary 
+  name: by_value
+- !ruby/object:RI::MethodSummary 
+  name: callback
+- !ruby/object:RI::MethodSummary 
+  name: enclosing_module
+- !ruby/object:RI::MethodSummary 
+  name: find_field_type
+- !ruby/object:RI::MethodSummary 
+  name: find_type
+- !ruby/object:RI::MethodSummary 
+  name: in
+- !ruby/object:RI::MethodSummary 
+  name: layout
+- !ruby/object:RI::MethodSummary 
+  name: members
+- !ruby/object:RI::MethodSummary 
+  name: offset_of
+- !ruby/object:RI::MethodSummary 
+  name: offsets
+- !ruby/object:RI::MethodSummary 
+  name: out
+- !ruby/object:RI::MethodSummary 
+  name: packed
+- !ruby/object:RI::MethodSummary 
+  name: ptr
+- !ruby/object:RI::MethodSummary 
+  name: size
+- !ruby/object:RI::MethodSummary 
+  name: size=
+- !ruby/object:RI::MethodSummary 
+  name: val
+comment: 
+constants: []
+
+full_name: FFI::Struct
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: align
+- !ruby/object:RI::MethodSummary 
+  name: alignment
+- !ruby/object:RI::MethodSummary 
+  name: clear
+- !ruby/object:RI::MethodSummary 
+  name: members
+- !ruby/object:RI::MethodSummary 
+  name: offset_of
+- !ruby/object:RI::MethodSummary 
+  name: offsets
+- !ruby/object:RI::MethodSummary 
+  name: size
+- !ruby/object:RI::MethodSummary 
+  name: to_ptr
+- !ruby/object:RI::MethodSummary 
+  name: values
+name: Struct
+superclass: Object

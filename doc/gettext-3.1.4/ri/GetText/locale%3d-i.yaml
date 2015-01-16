@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #set_locale"
+full_name: GetText#locale=
+is_singleton: false
+name: locale=
+params: (lang)
+visibility: public

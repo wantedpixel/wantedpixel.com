@@ -1,0 +1,28 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Stores {POEntry} or msgstr binding msgctxt and msgid. If you specify msgstr, this method creates {POEntry} containing it. If you specify the two argument, the first argument is treated as msgid.
+- !ruby/struct:SM::Flow::P 
+  body: "@overload []=(msgid, po_entry)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  @!macro [new] po.store.entry.arguments\n    @param [String] msgid msgid binded {POEntry}.\n    @param [POEntry] po_entry stored {POEntry}.\n  @!macro po.store.entry.arguments\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload []=(msgctxt, msgid, po_entry)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  @param [String] msgctxt msgctxt binded {POEntry}.\n  @!macro po.store.entry.arguments\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload []=(msgid, msgstr)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  @!macro [new] po.store.msgstr.arguments\n    @param [String] msgid msgid binded {POEntry}.\n    @param [String] msgstr msgstr contained {POEntry} stored PO.\n      This {POEntry} is generated in this method.\n  @!macro po.store.msgstr.arguments\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload []=(msgctxt, msgid, msgstr)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  @param [String] msgctxt msgctxt binded {POEntry}.\n  @!macro po.store.msgstr.arguments\n"
+full_name: GetText::PO#[]=
+is_singleton: false
+name: "[]="
+params: (*arguments)
+visibility: public

@@ -1,0 +1,19 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: find
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Get a symbol or a value from the enum. @overload [](query)
+- !ruby/struct:SM::Flow::VERB 
+  body: " Get enum value from symbol.\n @param [Symbol] query\n @return [Integer]\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload [](query)"
+- !ruby/struct:SM::Flow::VERB 
+  body: " Get enum symbol from value.\n @param [Integer] query\n @return [Symbol]\n"
+full_name: FFI::Enum#[]
+is_singleton: false
+name: "[]"
+params: (query)
+visibility: public

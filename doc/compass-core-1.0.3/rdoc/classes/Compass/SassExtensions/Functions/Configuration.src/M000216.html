@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>add_sass_configuration (Compass::SassExtensions::Functions::Configuration)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/core/sass_extensions/functions/configuration.rb, line 40</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_sass_configuration</span>(<span class="ruby-identifier">project_path</span>)
+    <span class="ruby-identifier">css_location</span> = <span class="ruby-identifier">template_location</span> = <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:template_location</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:template_location</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-identifier">css_location</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:template_location</span>].<span class="ruby-identifier">first</span>.<span class="ruby-identifier">last</span>)
+      <span class="ruby-identifier">template_location</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:template_location</span>].<span class="ruby-identifier">first</span>.<span class="ruby-identifier">first</span>)
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">css_location</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:css_location</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:css_location</span>]
+      <span class="ruby-identifier">template_location</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:template_location</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:template_location</span>]
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">original_filename</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:original_filename</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:original_filename</span>]
+    <span class="ruby-identifier">project_path</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">project_path</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">css_location</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">template_location</span>
+                       <span class="ruby-identifier">common_parent_directory</span>(<span class="ruby-identifier">css_location</span>, <span class="ruby-identifier">template_location</span>)
+                     <span class="ruby-keyword kw">end</span>
+                   <span class="ruby-keyword kw">else</span>
+                     <span class="ruby-identifier">project_path</span>.<span class="ruby-identifier">value</span>
+                   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">config</span> = {
+      <span class="ruby-identifier">:project_path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">project_path</span>,
+      <span class="ruby-identifier">:cache</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:cache</span>],
+      <span class="ruby-identifier">:additional_import_paths</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:load_paths</span>],
+      <span class="ruby-identifier">:line_comments</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:line_comments</span>]
+    }
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:quiet</span>].<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">config</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">:disable_warnings</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:quiet</span>])
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">project_path</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">css_location</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">css_dir</span> = <span class="ruby-identifier">relative_path_from</span>(<span class="ruby-identifier">css_location</span>, <span class="ruby-identifier">project_path</span>))
+      <span class="ruby-identifier">config</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">:css_dir</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">css_dir</span>)
+    <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">css_location</span>
+      <span class="ruby-identifier">config</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">:css_path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">css_location</span>)
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">project_path</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">template_location</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">sass_dir</span> = <span class="ruby-identifier">relative_path_from</span>(<span class="ruby-identifier">template_location</span>, <span class="ruby-identifier">project_path</span>))
+      <span class="ruby-identifier">config</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">:sass_dir</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sass_dir</span>)
+    <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">template_location</span>
+      <span class="ruby-identifier">config</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">:css_path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">template_location</span>)
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">config_name</span> = <span class="ruby-node">&quot;Sass Defaults: #{project_path ? relative_path_from(original_filename, project_path) : original_filename}&quot;</span>
+    <span class="ruby-constant">Compass</span>.<span class="ruby-identifier">add_configuration</span>(<span class="ruby-constant">Compass</span><span class="ruby-operator">::</span><span class="ruby-constant">Configuration</span><span class="ruby-operator">::</span><span class="ruby-constant">Data</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">config_name</span>, <span class="ruby-identifier">config</span>))
+    <span class="ruby-identifier">update_sass_options!</span>
+    <span class="ruby-identifier">null</span>
+  <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+    <span class="ruby-identifier">raise</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

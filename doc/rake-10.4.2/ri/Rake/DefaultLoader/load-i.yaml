@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Loads a rakefile into the current application from <tt>fn</tt>
+full_name: Rake::DefaultLoader#load
+is_singleton: false
+name: load
+params: (fn)
+visibility: public

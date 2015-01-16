@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Calls the callback of the watcher that fired this event, passing in the event itself.
+- !ruby/struct:SM::Flow::P 
+  body: "@private"
+full_name: INotify::Event#callback!
+is_singleton: false
+name: callback!
+params: ()
+visibility: public

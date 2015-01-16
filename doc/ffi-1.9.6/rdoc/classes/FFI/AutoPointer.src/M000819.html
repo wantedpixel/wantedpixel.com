@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (FFI::AutoPointer)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/ffi/autopointer.rb, line 76</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-identifier">proc</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">type_size</span>, <span class="ruby-identifier">ptr</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-value str">&quot;Invalid pointer&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Pointer</span>) \
+        <span class="ruby-operator">||</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">MemoryPointer</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">AutoPointer</span>)
+
+      <span class="ruby-ivar">@releaser</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">proc</span>
+                    <span class="ruby-identifier">raise</span> <span class="ruby-constant">RuntimeError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;proc must be callable&quot;</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">proc</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:call</span>)
+                    <span class="ruby-constant">CallableReleaser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-identifier">proc</span>)
+
+                  <span class="ruby-keyword kw">else</span>
+                    <span class="ruby-identifier">raise</span> <span class="ruby-constant">RuntimeError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;no release method defined&quot;</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:release</span>)
+                    <span class="ruby-constant">DefaultReleaser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>)
+                  <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">define_finalizer</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-ivar">@releaser</span>)
+      <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

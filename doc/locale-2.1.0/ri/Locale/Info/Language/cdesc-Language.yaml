@@ -1,0 +1,58 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: scope
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: three_code
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: two_code
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: type
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This class contains all the of the ISO information for the ISO 639-3 languages. This class is immutable once constructed.
+constants: []
+
+full_name: Locale::Info::Language
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: ancient?
+- !ruby/object:RI::MethodSummary 
+  name: constructed?
+- !ruby/object:RI::MethodSummary 
+  name: extinct?
+- !ruby/object:RI::MethodSummary 
+  name: historical?
+- !ruby/object:RI::MethodSummary 
+  name: individual?
+- !ruby/object:RI::MethodSummary 
+  name: iso_language?
+- !ruby/object:RI::MethodSummary 
+  name: living?
+- !ruby/object:RI::MethodSummary 
+  name: macro?
+- !ruby/object:RI::MethodSummary 
+  name: special?
+- !ruby/object:RI::MethodSummary 
+  name: special_type?
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+name: Language
+superclass: Object

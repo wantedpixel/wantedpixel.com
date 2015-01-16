@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Flattens the first `n` nested arrays in a cross-version manner.
+- !ruby/struct:SM::Flow::P 
+  body: "@param arr [Array] The array to flatten @param n [Fixnum] The number of levels to flatten @return [Array] The flattened array"
+full_name: Sass::Util#flatten
+is_singleton: false
+name: flatten
+params: (arr, n)
+visibility: public

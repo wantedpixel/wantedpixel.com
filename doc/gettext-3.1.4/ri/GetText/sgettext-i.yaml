@@ -1,0 +1,30 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: s_
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Translates msgid, but if there are no localized text, it returns a last part of msgid separeted &quot;div&quot;.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid: the message id."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "separator: separator or nil for no seperation."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: the localized text by msgid. If there are no localized text, it returns a last part of the msgid separeted by &quot;seperator&quot;. <tt>Movie|Location -&gt; Location</tt>"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: "See: http://www.gnu.org/software/gettext/manual/html_mono/gettext.html#SEC151"
+full_name: GetText#sgettext
+is_singleton: false
+name: sgettext
+params: |
+  sgettext(msgid, div = '|')
+  s_(msgid, div = '|')
+
+visibility: public

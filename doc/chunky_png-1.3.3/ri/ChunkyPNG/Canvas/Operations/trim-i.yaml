@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Trims the border around the image, presumed to be the color of the first pixel.
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Integer] border The color to attempt to trim. @return [ChunkyPNG::Canvas] The trimmed image. @see #trim!"
+full_name: ChunkyPNG::Canvas::Operations#trim
+is_singleton: false
+name: trim
+params: (border = pixels.first)
+visibility: public

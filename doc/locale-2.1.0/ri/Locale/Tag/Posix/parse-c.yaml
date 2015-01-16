@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Locale::Tag::Posix::parse
+is_singleton: true
+name: parse
+params: (tag)
+visibility: public

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Interpolates the foreground and background colors by the given alpha value. This also blends the alpha channels themselves.
+- !ruby/struct:SM::Flow::P 
+  body: A blending factor of 255 will give entirely the foreground, while a blending factor of 0 will give the background.
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Integer] fg The foreground color. @param [Integer] bg The background color. @param [Integer] alpha The blending factor (fixed 8bit) @param [Integer] The interpolated color."
+full_name: ChunkyPNG::Color#interpolate_quick
+is_singleton: false
+name: interpolate_quick
+params: (fg, bg, alpha)
+visibility: public

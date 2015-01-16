@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::Commands::WatchProject#relative_to
+is_singleton: false
+name: relative_to
+params: (f, dir)
+visibility: public

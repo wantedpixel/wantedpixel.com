@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param args Release pointer if <tt>autorelease</tt> is set."
+full_name: FFI::AutoPointer::Releaser#call
+is_singleton: false
+name: call
+params: (*args)
+visibility: public

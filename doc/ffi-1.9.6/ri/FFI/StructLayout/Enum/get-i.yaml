@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [AbstractMemory] ptr pointer on a {Struct} @return [Object] Get an object of type {#type} from memory pointed by <tt>ptr</tt>."
+full_name: FFI::StructLayout::Enum#get
+is_singleton: false
+name: get
+params: (ptr)
+visibility: public

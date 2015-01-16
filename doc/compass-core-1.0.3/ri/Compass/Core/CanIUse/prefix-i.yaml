@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the prefix corresponding to a particular browser
+full_name: Compass::Core::CanIUse#prefix
+is_singleton: false
+name: prefix
+params: (browser, version = nil)
+visibility: public

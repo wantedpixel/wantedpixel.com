@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Locale::Driver::CGI
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: charset
+- !ruby/object:RI::MethodSummary 
+  name: clear_current_request
+- !ruby/object:RI::MethodSummary 
+  name: locales
+- !ruby/object:RI::MethodSummary 
+  name: set_request
+name: CGI
+superclass: 

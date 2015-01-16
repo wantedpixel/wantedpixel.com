@@ -1,0 +1,34 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@overload initialize(pointer, method)"
+- !ruby/struct:SM::Flow::VERB 
+  body: " @param [Pointer] pointer\n @param [Method] method\n @return [self]\n The passed Method will be invoked at GC time.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload initialize(pointer, proc)"
+- !ruby/struct:SM::Flow::VERB 
+  body: " @param [Pointer] pointer\n @return [self]\n The passed Proc will be invoked at GC time (SEE WARNING BELOW!)\n @note WARNING: passing a proc <em>may</em> cause your pointer to never be GC'd, unless you're\n  careful to avoid trapping a reference to the pointer in the proc. See the test\n  specs for examples.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload initialize(pointer) { |p| ... }"
+- !ruby/struct:SM::Flow::VERB 
+  body: " @param [Pointer] pointer\n @yieldparam [Pointer] p <tt>pointer</tt> passed to the block\n @return [self]\n The passed block will be invoked at GC time.\n @note WARNING: passing a block will cause your pointer to never be GC'd. This is bad.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload initialize(pointer)"
+- !ruby/struct:SM::Flow::VERB 
+  body: " @param [Pointer] pointer\n @return [self]\n The pointer's release() class method will be invoked at GC time.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@note The safest, and therefore preferred, calling"
+- !ruby/struct:SM::Flow::VERB 
+  body: " idiom is to pass a Method as the second parameter. Example usage:\n\n  class PointerHelper\n    def self.release(pointer)\n      ...\n    end\n  end\n\n  p = AutoPointer.new(other_pointer, PointerHelper.method(:release))\n\n The above code will cause PointerHelper#release to be invoked at GC time.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@note"
+- !ruby/struct:SM::Flow::VERB 
+  body: " The last calling idiom (only one parameter) is generally only\n going to be useful if you subclass {AutoPointer}, and override\n #release, which by default does nothing.\n"
+full_name: FFI::AutoPointer::new
+is_singleton: true
+name: new
+params: (ptr, proc=nil, &block)
+visibility: public

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>compass_extensions (Compass::SassExtensions::Functions::Env)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/core/sass_extensions/functions/env.rb, line 53</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compass_extensions</span>
+    <span class="ruby-identifier">exts</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">ordered_hash</span>(<span class="ruby-identifier">identifier</span>(<span class="ruby-value str">&quot;compass&quot;</span>) =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">quoted_string</span>(<span class="ruby-constant">Compass</span><span class="ruby-operator">::</span><span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>))
+    <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">Compass</span><span class="ruby-operator">::</span><span class="ruby-constant">Frameworks</span><span class="ruby-operator">::</span><span class="ruby-constant">ALL</span>)
+      <span class="ruby-constant">Compass</span><span class="ruby-operator">::</span><span class="ruby-constant">Frameworks</span><span class="ruby-operator">::</span><span class="ruby-constant">ALL</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">framework</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">framework</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;compass&quot;</span>
+        <span class="ruby-identifier">exts</span>[<span class="ruby-identifier">identifier</span>(<span class="ruby-identifier">framework</span>.<span class="ruby-identifier">name</span>)] =
+          <span class="ruby-identifier">framework</span>.<span class="ruby-identifier">version</span> <span class="ruby-value">? </span><span class="ruby-identifier">quoted_string</span>(<span class="ruby-identifier">framework</span>.<span class="ruby-identifier">version</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">bool</span>(<span class="ruby-keyword kw">true</span>);
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">map</span>(<span class="ruby-identifier">exts</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

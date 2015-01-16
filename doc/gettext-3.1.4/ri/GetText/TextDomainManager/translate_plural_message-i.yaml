@@ -1,0 +1,44 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This function is similar to the get_singular_message function as it finds the message catalogs in the same way. But it takes two extra arguments for plural form. The msgid parameter must contain the singular form of the string to be converted. It is also used as the key for the search in the catalog. The msgid_plural parameter is the plural form. The parameter n is used to determine the plural form. If no message catalog is found msgid1 is returned if n == 1, otherwise msgid2. And if msgid includes &quot;div&quot;, it returns a last part of msgid separeted &quot;div&quot;.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid: the singular form with &quot;div&quot;. (e.g. &quot;Special|An apple&quot;, &quot;An apple&quot;)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid_plural: the plural form. (e.g. &quot;%{num} Apples&quot;)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "n: a number used to determine the plural form."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "div: the separator. Default is &quot;|&quot;."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: the localized text which key is msgid_plural if n is plural(follow plural-rule) or msgid. &quot;plural-rule&quot; is defined in po-file."
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: or
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "[msgid, msgid_plural] : msgid and msgid_plural an Array"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "n: a number used to determine the plural form."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "div: the separator. Default is &quot;|&quot;."
+  type: :BULLET
+full_name: GetText::TextDomainManager#translate_plural_message
+is_singleton: false
+name: translate_plural_message
+params: (klass, arg1, arg2, arg3 = "|", arg4 = "|")
+visibility: public

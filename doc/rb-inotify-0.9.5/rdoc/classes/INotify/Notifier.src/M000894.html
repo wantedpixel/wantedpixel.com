@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>read_events (INotify::Notifier)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/rb-inotify/notifier.rb, line 263</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">read_events</span>
+      <span class="ruby-identifier">size</span> = <span class="ruby-value">64</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Native</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>.<span class="ruby-identifier">size</span>
+      <span class="ruby-identifier">tries</span> = <span class="ruby-value">1</span>
+
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-identifier">data</span> = <span class="ruby-identifier">readpartial</span>(<span class="ruby-identifier">size</span>)
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">SystemCallError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">er</span>
+        <span class="ruby-comment cmt"># EINVAL means that there's more data to be read</span>
+        <span class="ruby-comment cmt"># than will fit in the buffer size</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-identifier">er</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">er</span>.<span class="ruby-identifier">errno</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EINVAL</span><span class="ruby-operator">::</span><span class="ruby-constant">Errno</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">tries</span> <span class="ruby-operator">==</span> <span class="ruby-value">5</span>
+        <span class="ruby-identifier">size</span> <span class="ruby-operator">*=</span> <span class="ruby-value">2</span>
+        <span class="ruby-identifier">tries</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword kw">retry</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">events</span> = []
+      <span class="ruby-identifier">cookies</span> = {}
+      <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">consume</span>(<span class="ruby-identifier">data</span>, <span class="ruby-keyword kw">self</span>)
+        <span class="ruby-identifier">events</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">event</span>
+        <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">event</span>.<span class="ruby-identifier">cookie</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">cookies</span>[<span class="ruby-identifier">event</span>.<span class="ruby-identifier">cookie</span>] <span class="ruby-operator">||=</span> []
+        <span class="ruby-identifier">cookies</span>[<span class="ruby-identifier">event</span>.<span class="ruby-identifier">cookie</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">event</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">cookies</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span>, <span class="ruby-identifier">evs</span><span class="ruby-operator">|</span> <span class="ruby-identifier">evs</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">ev</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ev</span>.<span class="ruby-identifier">related</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-identifier">evs</span> <span class="ruby-operator">-</span> [<span class="ruby-identifier">ev</span>]).<span class="ruby-identifier">freeze</span>}}
+      <span class="ruby-identifier">events</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

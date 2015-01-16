@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Internal method for related_classes.
+full_name: GetText::ClassInfo#related_classes_internal
+is_singleton: false
+name: related_classes_internal
+params: (klass, all_classes = [], analyzed_classes = [] )
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Boolean] is_union @return [is_union] Set union attribute. Set to <tt>true</tt> to build a {Union} instead of a {Struct}."
+full_name: FFI::StructLayoutBuilder#union=
+is_singleton: false
+name: union=
+params: (is_union)
+visibility: public

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>generate (FFI::TypesGenerator)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/ffi/tools/types_generator.rb, line 46</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">generate</span>(<span class="ruby-identifier">options</span> = {})
+      <span class="ruby-identifier">typedefs</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">open</span> <span class="ruby-value str">'ffi_types_generator'</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;#include &lt;sys/types.h&gt;\n#if !(defined(WIN32))\n#include &lt;sys/socket.h&gt;\n#include &lt;sys/resource.h&gt;\n#endif\n&quot;</span>
+
+        <span class="ruby-identifier">io</span>.<span class="ruby-identifier">close</span>
+        <span class="ruby-identifier">cc</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'CC'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'gcc'</span>
+        <span class="ruby-identifier">cmd</span> = <span class="ruby-node">&quot;#{cc} -E -x c #{options[:cppflags]} -D_DARWIN_USE_64_BIT_INODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -c&quot;</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:input</span>]
+          <span class="ruby-identifier">typedefs</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:input</span>])
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:remote</span>]
+          <span class="ruby-identifier">typedefs</span> = <span class="ruby-node">`ssh #{options[:remote]} #{cmd} - &lt; #{io.path}`</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">typedefs</span> = <span class="ruby-node">`#{cmd} #{io.path}`</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-identifier">code</span> = <span class="ruby-value str">&quot;&quot;</span>
+
+      <span class="ruby-identifier">typedefs</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+        <span class="ruby-comment cmt"># We only care about single line typedef</span>
+        <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/typedef/</span>
+        <span class="ruby-comment cmt"># Ignore unions or structs</span>
+        <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/union|struct/</span>
+        
+        <span class="ruby-comment cmt"># strip off the starting typedef and ending ;</span>
+        <span class="ruby-identifier">type</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/^(.*typedef\s*)/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+        <span class="ruby-identifier">type</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\s*;\s*$/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+    
+        <span class="ruby-identifier">parts</span> = <span class="ruby-identifier">type</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\s+/</span>)
+        <span class="ruby-identifier">def_type</span>   = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot; &quot;</span>)
+
+        <span class="ruby-comment cmt"># GCC does mapping with __attribute__ stuf, also see</span>
+        <span class="ruby-comment cmt"># http://hal.cs.berkeley.edu/cil/cil016.html section 16.2.7.  Problem</span>
+        <span class="ruby-comment cmt"># with this is that the __attribute__ stuff can either occur before or</span>
+        <span class="ruby-comment cmt"># after the new type that is defined...</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/__attribute__/</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/__QI__|__HI__|__SI__|__DI__|__word__/</span>
+
+            <span class="ruby-comment cmt"># In this case, the new type is BEFORE __attribute__ we need to</span>
+            <span class="ruby-comment cmt"># find the final_type as the type before the part that starts with</span>
+            <span class="ruby-comment cmt"># __attribute__</span>
+            <span class="ruby-identifier">final_type</span> = <span class="ruby-value str">&quot;&quot;</span>
+            <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+              <span class="ruby-keyword kw">break</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/__attribute__/</span>
+              <span class="ruby-identifier">final_type</span> = <span class="ruby-identifier">p</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">final_type</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">pop</span>
+          <span class="ruby-keyword kw">end</span>
+          
+          <span class="ruby-identifier">def_type</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">type</span>
+                     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/__QI__/</span>   <span class="ruby-keyword kw">then</span> <span class="ruby-value str">&quot;char&quot;</span>
+                     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/__HI__/</span>   <span class="ruby-keyword kw">then</span> <span class="ruby-value str">&quot;short&quot;</span>
+                     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/__SI__/</span>   <span class="ruby-keyword kw">then</span> <span class="ruby-value str">&quot;int&quot;</span>
+                     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/__DI__/</span>   <span class="ruby-keyword kw">then</span> <span class="ruby-value str">&quot;long long&quot;</span>
+                     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/__word__/</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">&quot;long&quot;</span>
+                     <span class="ruby-keyword kw">else</span>                 <span class="ruby-value str">&quot;int&quot;</span>
+                     <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-identifier">def_type</span> = <span class="ruby-node">&quot;unsigned #{def_type}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/unsigned/</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">final_type</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">pop</span>
+          <span class="ruby-identifier">def_type</span>   = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot; &quot;</span>)
+        <span class="ruby-keyword kw">end</span>
+        
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span> = <span class="ruby-constant">TYPE_MAP</span>[<span class="ruby-identifier">def_type</span>]
+          <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;rbx.platform.typedef.#{final_type} = #{type}\n&quot;</span>
+          <span class="ruby-constant">TYPE_MAP</span>[<span class="ruby-identifier">final_type</span>] = <span class="ruby-constant">TYPE_MAP</span>[<span class="ruby-identifier">def_type</span>]
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-comment cmt"># Fallback to an ordinary pointer if we don't know the type</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">def_type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\*/</span>
+            <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;rbx.platform.typedef.#{final_type} = pointer\n&quot;</span>
+            <span class="ruby-constant">TYPE_MAP</span>[<span class="ruby-identifier">final_type</span>] = <span class="ruby-identifier">:pointer</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">code</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

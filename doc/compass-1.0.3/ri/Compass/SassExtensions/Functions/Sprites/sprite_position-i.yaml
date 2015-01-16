@@ -1,0 +1,34 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Returns the position for the original image in the sprite. This is suitable for use as a value to background-position:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    $icons: sprite-map(&quot;icons/*.png&quot;);\n    background-position: sprite-position($icons, new);\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Might generate something like:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    background-position: 0 -34px;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "You can adjust the background relative to this position by passing values for `$offset-x` and `$offset-y`:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    $icons: sprite-map(&quot;icons/*.png&quot;);\n    background-position: sprite-position($icons, new, 3px, -2px);\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Would change the above output to:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    background-position: 3px -36px;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "If you set the `use_percentages` parameter to true, the position will be expressed in percentages. An example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    background-position: sprite-position($icons, new, 0, 0, true);\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Would result in something like this:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    background-position: 0 42%;\n"
+full_name: Compass::SassExtensions::Functions::Sprites#sprite_position
+is_singleton: false
+name: sprite_position
+params: (map, sprite = nil, offset_x = ZERO, offset_y = ZERO, use_percentages = BOOL_FALSE)
+visibility: public

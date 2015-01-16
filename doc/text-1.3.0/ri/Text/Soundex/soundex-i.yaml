@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Text::Soundex#soundex
+is_singleton: false
+name: soundex
+params: (str_or_arr)
+visibility: public

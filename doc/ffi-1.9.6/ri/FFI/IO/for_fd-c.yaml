@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Integer] fd file decriptor @param [String] mode mode string @return [::IO] Synonym for IO::for_fd."
+full_name: FFI::IO::for_fd
+is_singleton: true
+name: for_fd
+params: (fd, mode = "r")
+visibility: public

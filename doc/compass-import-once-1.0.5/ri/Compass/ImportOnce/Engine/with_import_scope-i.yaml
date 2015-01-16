@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+full_name: Compass::ImportOnce::Engine#with_import_scope
+is_singleton: false
+name: with_import_scope
+params: (css_filename) {|| ...}
+visibility: public

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>merge (GetText::POEntry)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/gettext/po_entry.rb, line 144</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge</span>(<span class="ruby-identifier">other</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">other</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">mergeable?</span>(<span class="ruby-identifier">other</span>)
+        <span class="ruby-identifier">message</span> = <span class="ruby-value str">&quot;Translation targets do not match: \n&quot;</span> <span class="ruby-operator">+</span>
+          <span class="ruby-node">&quot;  self: #{self.inspect}\n  other: '#{other.inspect}'&quot;</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ParseError</span>, <span class="ruby-identifier">message</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">msgid_plural</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">msgid_plural</span>
+        <span class="ruby-identifier">res</span> = <span class="ruby-identifier">other</span>
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">res</span>.<span class="ruby-identifier">references</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">references</span>[<span class="ruby-value">0</span>])
+          <span class="ruby-identifier">res</span>.<span class="ruby-identifier">references</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">references</span>
+          <span class="ruby-identifier">res</span>.<span class="ruby-identifier">add_comment</span>(<span class="ruby-identifier">extracted_comment</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">res</span> = <span class="ruby-keyword kw">self</span>
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">res</span>.<span class="ruby-identifier">references</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">references</span>[<span class="ruby-value">0</span>])
+          <span class="ruby-identifier">res</span>.<span class="ruby-identifier">references</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">references</span>
+          <span class="ruby-identifier">res</span>.<span class="ruby-identifier">add_comment</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">extracted_comment</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">res</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

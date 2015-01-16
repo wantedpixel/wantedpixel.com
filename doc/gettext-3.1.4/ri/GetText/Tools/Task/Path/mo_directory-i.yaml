@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: GetText::Tools::Task::Path#mo_directory
+is_singleton: false
+name: mo_directory
+params: ()
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+full_name: Compass::Logger#wrap
+is_singleton: false
+name: wrap
+params: (c, reset_to = :clear) {|| ...}
+visibility: public

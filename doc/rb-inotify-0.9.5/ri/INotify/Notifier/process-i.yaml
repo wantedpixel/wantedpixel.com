@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Blocks until there are one or more filesystem events that this notifier has watchers registered for. Once there are events, the appropriate callbacks are called and this function returns.
+- !ruby/struct:SM::Flow::P 
+  body: "@see #run"
+full_name: INotify::Notifier#process
+is_singleton: false
+name: process
+params: ()
+visibility: public

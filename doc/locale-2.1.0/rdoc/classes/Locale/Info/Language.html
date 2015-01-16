@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Locale::Info::Language</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Locale::Info::Language</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/locale/info/language_rb.html">
+                lib/locale/info/language.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+This class contains all the of the ISO information for the ISO 639-3
+languages. This class is immutable once constructed.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000195">ancient?</a>&nbsp;&nbsp;
+      <a href="#M000192">constructed?</a>&nbsp;&nbsp;
+      <a href="#M000194">extinct?</a>&nbsp;&nbsp;
+      <a href="#M000196">historical?</a>&nbsp;&nbsp;
+      <a href="#M000189">individual?</a>&nbsp;&nbsp;
+      <a href="#M000199">iso_language?</a>&nbsp;&nbsp;
+      <a href="#M000193">living?</a>&nbsp;&nbsp;
+      <a href="#M000190">macro?</a>&nbsp;&nbsp;
+      <a href="#M000188">new</a>&nbsp;&nbsp;
+      <a href="#M000191">special?</a>&nbsp;&nbsp;
+      <a href="#M000197">special_type?</a>&nbsp;&nbsp;
+      <a href="#M000198">to_s</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">name</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">scope</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">three_code</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">two_code</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">type</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000188" class="method-detail">
+        <a name="M000188"></a>
+
+        <div class="method-heading">
+          <a href="Language.src/M000188.html" target="Code" class="method-signature"
+            onclick="popupCode('Language.src/M000188.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(two_code, three_code, scope, type, name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Constructs a <a href="Language.html#M000188">new</a> <a
+href="Language.html">Language</a> instance.
+</p>
+<ul>
+<li>code The 2 or 3 digit ISO 639-3 language code.
+
+</li>
+<li>scope A single character that defines the ISO scope of the language -
+<tt>(I)ndividual</tt>, <tt>(M)acrolanguage</tt>, or <tt>(S)pecial</tt>.
+
+</li>
+<li>type A single character that defines the ISO type of the language -
+<tt>(A)ncient</tt>, <tt>(C)onstructed</tt>, <tt>(E)xtinct</tt>,
+<tt>(H)istorical</tt>, <tt>(L)iving</tt>, or <tt>(S)pecial</tt>.
+
+</li>
+<li>name The name of the language.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000195" class="method-detail">
+        <a name="M000195"></a>
+
+        <div class="method-heading">
+          <a href="Language.src/M000195.html" target="Code" class="method-signature"
+            onclick="popupCode('Language.src/M000195.html');return false;">
+          <span class="method-name">ancient?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the language is an ancient language according to the ISO
+639-3 data.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000192" class="method-detail">
+        <a name="M000192"></a>
+
+        <div class="method-heading">
+          <a href="Language.src/M000192.html" target="Code" class="method-signature"
+            onclick="popupCode('Language.src/M000192.html');return false;">
+          <span class="method-name">constructed?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the language is a constructed language according to the ISO
+639-3 data.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000194" class="method-detail">
+        <a name="M000194"></a>
+
+        <div class="method-heading">
+          <a href="Language.src/M000194.html" target="Code" class="method-signature"
+            onclick="popupCode('Language.src/M000194.html');return false;">
+          <span class="method-name">extinct?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the language is an extinct language according to the ISO
+639-3 data.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000196" class="method-detail">
+        <a name="M000196"></a>
+
+        <div class="method-heading">
+          <a href="Language.src/M000196.html" target="Code" class="method-signature"
+            onclick="popupCode('Language.src/M000196.html');return false;">
+          <span class="method-name">historical?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the language is an historical language according to the ISO
+639-3 data.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000189" class="method-detail">
+        <a name="M000189"></a>
+
+        <div class="method-heading">
+          <a href="Language.src/M000189.html" target="Code" class="method-signature"
+            onclick="popupCode('Language.src/M000189.html');return false;">
+          <span class="method-name">individual?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the language is an individual language according to the ISO
+639-3 data.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000199" class="method-detail">
+        <a name="M000199"></a>
+
+        <div class="method-heading">
+          <a href="Language.src/M000199.html" target="Code" class="method-signature"
+            onclick="popupCode('Language.src/M000199.html');return false;">
+          <span class="method-name">iso_language?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns this object is valid as ISO 639 data.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000193" class="method-detail">
+        <a name="M000193"></a>
+
+        <div class="method-heading">
+          <a href="Language.src/M000193.html" target="Code" class="method-signature"
+            onclick="popupCode('Language.src/M000193.html');return false;">
+          <span class="method-name">living?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the language is a living language according to the ISO
+639-3 data.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000190" class="method-detail">
+        <a name="M000190"></a>
+
+        <div class="method-heading">
+          <a href="Language.src/M000190.html" target="Code" class="method-signature"
+            onclick="popupCode('Language.src/M000190.html');return false;">
+          <span class="method-name">macro?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the language is a macro language according to the ISO 639-3
+data.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000191" class="method-detail">
+        <a name="M000191"></a>
+
+        <div class="method-heading">
+          <a href="Language.src/M000191.html" target="Code" class="method-signature"
+            onclick="popupCode('Language.src/M000191.html');return false;">
+          <span class="method-name">special?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the language is a special language according to the ISO
+639-3 data.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000197" class="method-detail">
+        <a name="M000197"></a>
+
+        <div class="method-heading">
+          <a href="Language.src/M000197.html" target="Code" class="method-signature"
+            onclick="popupCode('Language.src/M000197.html');return false;">
+          <span class="method-name">special_type?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the language is a special type language according to the
+ISO 639-3 data.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000198" class="method-detail">
+        <a name="M000198"></a>
+
+        <div class="method-heading">
+          <a href="Language.src/M000198.html" target="Code" class="method-signature"
+            onclick="popupCode('Language.src/M000198.html');return false;">
+          <span class="method-name">to_s</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the two or three code.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

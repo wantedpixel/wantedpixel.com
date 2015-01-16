@@ -1,0 +1,33 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: parse
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: XML_RE
+  value: /<\?xml/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GLADE_RE
+  value: /glade-2.0.dtd/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TARGET1
+  value: /<property.*translatable="yes">(.*)/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TARGET2
+  value: /(.*)<\/property>/
+full_name: GetText::GladeParser
+includes: []
+
+instance_methods: []
+
+name: GladeParser
+superclass: Object

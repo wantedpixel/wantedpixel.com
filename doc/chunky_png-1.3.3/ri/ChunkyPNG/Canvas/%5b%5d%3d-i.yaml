@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Replaces a single pixel in this canvas. @param [Integer] x The x-coordinate of the pixel (column) @param [Integer] y The y-coordinate of the pixel (row) @param [Integer] color The new color for the provided coordinates. @return [Integer] The new color value for this pixel, i.e.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  <tt>color</tt>.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@raise [ChunkyPNG::OutOfBounds] when the coordinates are outside of the"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  image's dimensions.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@see #set_pixel"
+full_name: ChunkyPNG::Canvas#[]=
+is_singleton: false
+name: "[]="
+params: (x, y, color)
+visibility: public

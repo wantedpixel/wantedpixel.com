@@ -1,0 +1,15 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: to_h
+- !ruby/object:RI::AliasName 
+  name: to_hash
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Get the symbol map. @return [Hash]
+full_name: FFI::Enum#symbol_map
+is_singleton: false
+name: symbol_map
+params: ()
+visibility: public

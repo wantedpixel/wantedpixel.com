@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: height
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: images
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: options
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: width
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Compass::SassExtensions::Sprites::Layout::SpriteLayout
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: layout!
+- !ruby/object:RI::MethodSummary 
+  name: properties
+name: SpriteLayout
+superclass: Object

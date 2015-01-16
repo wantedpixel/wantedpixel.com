@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Draws a border around the image.
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Integer] size The size of the border. @param [Integer] color The color of the border. @return [ChunkyPNG::Canvas] Returns a bordered version of the image. @see #border!"
+full_name: ChunkyPNG::Canvas::Operations#border
+is_singleton: false
+name: border
+params: (size, color = ChunkyPNG::Color::BLACK)
+visibility: public

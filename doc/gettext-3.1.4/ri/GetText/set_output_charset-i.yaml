@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: output_charset=
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets charset(String) such as &quot;euc-jp&quot;, &quot;sjis&quot;, &quot;CP932&quot;, &quot;utf-8&quot;, ... You shouldn't use this in your own Libraries.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "charset: an output_charset"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: self"
+  type: :BULLET
+full_name: GetText#set_output_charset
+is_singleton: false
+name: set_output_charset
+params: (charset)
+visibility: public

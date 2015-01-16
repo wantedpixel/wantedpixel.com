@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>sprite_selector_file (Compass::SassExtensions::Functions::Sprites)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/sass_extensions/functions/sprites.rb, line 142</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sprite_selector_file</span>(<span class="ruby-identifier">map</span>, <span class="ruby-identifier">sprite</span>, <span class="ruby-identifier">selector</span>)
+    <span class="ruby-identifier">sprite</span> = <span class="ruby-identifier">convert_sprite_name</span>(<span class="ruby-identifier">sprite</span>)
+    <span class="ruby-identifier">image</span> = <span class="ruby-identifier">map</span>.<span class="ruby-identifier">image_for</span>(<span class="ruby-identifier">sprite</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">map</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;has_#{selector.value}?&quot;</span><span class="ruby-node">&quot;has_#{selector.value}?&quot;</span>, <span class="ruby-identifier">sprite</span>.<span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">identifier</span>(<span class="ruby-identifier">image</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">selector</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>, <span class="ruby-node">&quot;Sprite: #{sprite.value} does not have a #{selector} state&quot;</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

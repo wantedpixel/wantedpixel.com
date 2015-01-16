@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@return (see FFI::LastError.error) @see FFI::LastError.error"
+full_name: FFI::errno
+is_singleton: true
+name: errno
+params: ()
+visibility: public

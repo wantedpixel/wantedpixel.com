@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Type, DataConverter, Symbol] name @param [Hash] type_map if nil, {FFI::TypeDefs} is used @return [Type] Find a type in <tt>type_map</tt> ({FFI::TypeDefs}, by default) from a type objet, a type name (symbol). If <tt>name</tt> is a {DataConverter}, a new {Type::Mapped} is created."
+full_name: FFI::find_type
+is_singleton: true
+name: find_type
+params: (name, type_map = nil)
+visibility: public

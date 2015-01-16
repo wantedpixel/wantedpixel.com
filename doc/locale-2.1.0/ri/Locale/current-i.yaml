@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Gets the current locales (Locale::Tag's class). If the current locale is not set, this returns system/default locale.
+- !ruby/struct:SM::Flow::P 
+  body: This method returns the current language tags even if it isn't included in app_language_tags.
+- !ruby/struct:SM::Flow::P 
+  body: Usually, the programs should use Locale.candidates to find the correct locale, not this method.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: an Array of the current locales (Locale::Tag's class)."
+  type: :BULLET
+full_name: Locale#current
+is_singleton: false
+name: current
+params: ()
+visibility: public

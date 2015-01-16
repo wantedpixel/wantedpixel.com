@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: square_root
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Functions::Math#sqrt
+is_singleton: false
+name: sqrt
+params: (number)
+visibility: public

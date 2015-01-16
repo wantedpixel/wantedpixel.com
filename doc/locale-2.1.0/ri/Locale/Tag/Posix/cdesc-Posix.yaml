@@ -1,0 +1,59 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: charset
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: modifier
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: parse
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Locale tag class for POSIX locale
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ja
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ja_JP
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ja_JP.UTF-8
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ja_JP.UTF-8@Osaka
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: C/POSIX (-&gt; en_US)
+  type: :BULLET
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LANGUAGE
+  value: "\"([a-z]{2,})\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TAG_RE
+  value: /\A#{LANGUAGE}(?:_#{REGION})?(?:\.([^@]+))?(?:@(.*))?\Z/i
+full_name: Locale::Tag::Posix
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: candidates
+- !ruby/object:RI::MethodSummary 
+  name: charset=
+- !ruby/object:RI::MethodSummary 
+  name: modifier=
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+name: Posix
+superclass: Simple

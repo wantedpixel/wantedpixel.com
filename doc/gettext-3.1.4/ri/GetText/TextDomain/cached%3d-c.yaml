@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Set to cache the mo-file or not.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "val: true if cached, otherwise false."
+  type: :BULLET
+full_name: GetText::TextDomain::cached=
+is_singleton: true
+name: cached=
+params: (val)
+visibility: public

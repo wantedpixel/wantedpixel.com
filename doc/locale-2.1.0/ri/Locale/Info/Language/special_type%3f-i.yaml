@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns true if the language is a special type language according to the ISO 639-3 data.
+full_name: Locale::Info::Language#special_type?
+is_singleton: false
+name: special_type?
+params: ()
+visibility: public

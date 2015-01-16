@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Starts the notifier watching for filesystem events. Blocks until \{#stop} is called.
+- !ruby/struct:SM::Flow::P 
+  body: "@see #process"
+full_name: INotify::Notifier#run
+is_singleton: false
+name: run
+params: ()
+visibility: public

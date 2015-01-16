@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Calculate constants values. @param [Hash] options @option options [String] :cppflags flags for C compiler @return [nil] @raise if a constant is missing and +:required+ was set to <tt>true</tt> (see {#initialize})
+full_name: FFI::ConstGenerator#calculate
+is_singleton: false
+name: calculate
+params: (options = {})
+visibility: public

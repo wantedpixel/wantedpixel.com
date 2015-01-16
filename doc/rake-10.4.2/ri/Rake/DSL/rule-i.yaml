@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Declare a rule for auto-tasks.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " rule '.o' =&gt; '.c' do |t|\n   sh 'cc', '-o', t.name, t.source\n end\n"
+full_name: Rake::DSL#rule
+is_singleton: false
+name: rule
+params: (*args, &block)
+visibility: private

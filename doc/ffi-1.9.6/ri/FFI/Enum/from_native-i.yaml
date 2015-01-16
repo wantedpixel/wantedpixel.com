@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param val @return symbol name if it exists for <tt>val</tt>."
+full_name: FFI::Enum#from_native
+is_singleton: false
+name: from_native
+params: (val, ctx)
+visibility: public

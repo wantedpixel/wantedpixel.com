@@ -1,0 +1,41 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: color
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: stop
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: color_to_s
+- !ruby/object:RI::MethodSummary 
+  name: color_to_svg_alpha
+- !ruby/object:RI::MethodSummary 
+  name: color_to_svg_s
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Compass::SassExtensions::Functions::GradientSupport::ColorStop
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Sass::Script::Value::Helpers
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: assert_legal_color!
+- !ruby/object:RI::MethodSummary 
+  name: assert_legal_color_stop!
+- !ruby/object:RI::MethodSummary 
+  name: children
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: to_sass
+name: ColorStop
+superclass: Sass::Script::Value::Base

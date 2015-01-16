@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Gets the current charset.
+- !ruby/struct:SM::Flow::P 
+  body: This returns the current user/system charset. This value is read only, so you can't set it by yourself.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: the current charset."
+  type: :BULLET
+full_name: Locale#charset
+is_singleton: false
+name: charset
+params: ()
+visibility: public

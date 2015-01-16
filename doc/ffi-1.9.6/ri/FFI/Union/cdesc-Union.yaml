@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: builder
+comment: 
+constants: []
+
+full_name: FFI::Union
+includes: []
+
+instance_methods: []
+
+name: Union
+superclass: FFI::Struct

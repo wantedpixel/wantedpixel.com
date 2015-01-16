@@ -1,0 +1,63 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The underlying file descriptor for this notifier. This is a valid OS file descriptor, and can be used as such (except under JRuby -- see \{#to_io}).
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Fixnum]"
+  name: fd
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: A hash from {Watcher} ids to the instances themselves.
+  - !ruby/struct:SM::Flow::P 
+    body: "@private @return [{Fixnum =&gt; Watcher}]"
+  name: watchers
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: supports_ruby_io?
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Notifier wraps a single instance of inotify. It's possible to have more than one instance, but usually unnecessary.
+- !ruby/struct:SM::Flow::P 
+  body: "@example"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  # Create the notifier\n  notifier = INotify::Notifier.new\n\n  # Run this callback whenever the file path/to/foo.txt is read\n  notifier.watch(&quot;path/to/foo.txt&quot;, :access) do\n    puts &quot;Foo.txt was accessed!&quot;\n  end\n\n  # Watch for any file in the directory being deleted\n  # or moved out of the directory.\n  notifier.watch(&quot;path/to/directory&quot;, :delete, :moved_from) do |event|\n    # The #name field of the event object contains the name of the affected file\n    puts &quot;#{event.name} is no longer in the directory!&quot;\n  end\n\n  # Nothing happens until you run the notifier!\n  notifier.run\n"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: A list of directories that should never be recursively watched.
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+    - !ruby/struct:SM::Flow::LI 
+      label: "*"
+      body: Files in `/dev/fd` sometimes register as directories, but are not enumerable.
+    type: :BULLET
+  name: RECURSIVE_BLACKLIST
+  value: "%w[/dev/fd]"
+full_name: INotify::Notifier
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: close
+- !ruby/object:RI::MethodSummary 
+  name: process
+- !ruby/object:RI::MethodSummary 
+  name: read_events
+- !ruby/object:RI::MethodSummary 
+  name: run
+- !ruby/object:RI::MethodSummary 
+  name: stop
+- !ruby/object:RI::MethodSummary 
+  name: to_io
+- !ruby/object:RI::MethodSummary 
+  name: watch
+name: Notifier
+superclass: Object

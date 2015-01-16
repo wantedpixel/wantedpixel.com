@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: self
+comment: 
+full_name: FFI::StructGenerator::new
+is_singleton: true
+name: new
+params: (name, options = {}) {|self| ...}
+visibility: public

@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Sass::Tree::Visitors::Perform</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Sass::Tree::Visitors::Perform</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../../files/lib/sass/tree/visitors/perform_rb.html">
+                lib/sass/tree/visitors/perform.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Base.html">
+                Sass::Tree::Visitors::Base
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+A visitor for converting a dynamic <a href="../../../Sass.html">Sass</a>
+tree into a static <a href="../../../Sass.html">Sass</a> tree.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000889">new</a>&nbsp;&nbsp;
+      <a href="#M000887">perform_arguments</a>&nbsp;&nbsp;
+      <a href="#M000888">perform_splat</a>&nbsp;&nbsp;
+      <a href="#M000886">visit</a>&nbsp;&nbsp;
+      <a href="#M000890">visit</a>&nbsp;&nbsp;
+      <a href="#M000909">visit_atroot</a>&nbsp;&nbsp;
+      <a href="#M000891">visit_children</a>&nbsp;&nbsp;
+      <a href="#M000894">visit_comment</a>&nbsp;&nbsp;
+      <a href="#M000905">visit_content</a>&nbsp;&nbsp;
+      <a href="#M000916">visit_cssimport</a>&nbsp;&nbsp;
+      <a href="#M000895">visit_debug</a>&nbsp;&nbsp;
+      <a href="#M000913">visit_directive</a>&nbsp;&nbsp;
+      <a href="#M000897">visit_each</a>&nbsp;&nbsp;
+      <a href="#M000896">visit_error</a>&nbsp;&nbsp;
+      <a href="#M000898">visit_extend</a>&nbsp;&nbsp;
+      <a href="#M000899">visit_for</a>&nbsp;&nbsp;
+      <a href="#M000900">visit_function</a>&nbsp;&nbsp;
+      <a href="#M000901">visit_if</a>&nbsp;&nbsp;
+      <a href="#M000902">visit_import</a>&nbsp;&nbsp;
+      <a href="#M000914">visit_media</a>&nbsp;&nbsp;
+      <a href="#M000904">visit_mixin</a>&nbsp;&nbsp;
+      <a href="#M000903">visit_mixindef</a>&nbsp;&nbsp;
+      <a href="#M000906">visit_prop</a>&nbsp;&nbsp;
+      <a href="#M000907">visit_return</a>&nbsp;&nbsp;
+      <a href="#M000893">visit_root</a>&nbsp;&nbsp;
+      <a href="#M000908">visit_rule</a>&nbsp;&nbsp;
+      <a href="#M000915">visit_supports</a>&nbsp;&nbsp;
+      <a href="#M000910">visit_variable</a>&nbsp;&nbsp;
+      <a href="#M000911">visit_warn</a>&nbsp;&nbsp;
+      <a href="#M000912">visit_while</a>&nbsp;&nbsp;
+      <a href="#M000892">with_environment</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000889" class="method-detail">
+        <a name="M000889"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000889.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000889.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(env)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@comment
+</p>
+<pre>
+  rubocop:enable MethodLength
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000887" class="method-detail">
+        <a name="M000887"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000887.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000887.html');return false;">
+          <span class="method-name">perform_arguments</span><span class="method-args">(callable, args, splat, environment) {|env| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@api private @comment
+</p>
+<pre>
+  rubocop:disable MethodLength
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000888" class="method-detail">
+        <a name="M000888"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000888.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000888.html');return false;">
+          <span class="method-name">perform_splat</span><span class="method-args">(splat, performed_keywords, kwarg_splat, environment)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@api private @return [<a
+href="../../Script/Value/ArgList.html">Sass::Script::Value::ArgList</a>]
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000886" class="method-detail">
+        <a name="M000886"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000886.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000886.html');return false;">
+          <span class="method-name">visit</span><span class="method-args">(root, environment = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param root [<a href="../Node.html">Tree::Node</a>] The root node of the
+tree to <a href="Perform.html#M000886">visit</a>. @param environment [<a
+href="../../Environment.html">Sass::Environment</a>] The lexical
+environment. @return [<a href="../Node.html">Tree::Node</a>] The resulting
+tree of static nodes.
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M000890" class="method-detail">
+        <a name="M000890"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000890.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000890.html');return false;">
+          <span class="method-name">visit</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+If an exception is raised, this adds proper metadata to the backtrace.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000909" class="method-detail">
+        <a name="M000909"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000909.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000909.html');return false;">
+          <span class="method-name">visit_atroot</span><span class="method-args">(node) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets a variable that indicates that the first level of rule nodes
+shouldn&#8216;t include the parent selector by default.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000891" class="method-detail">
+        <a name="M000891"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000891.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000891.html');return false;">
+          <span class="method-name">visit_children</span><span class="method-args">(parent)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Keeps track of the current environment.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000894" class="method-detail">
+        <a name="M000894"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000894.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000894.html');return false;">
+          <span class="method-name">visit_comment</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Removes this node from the tree if it&#8216;s a silent comment.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000905" class="method-detail">
+        <a name="M000905"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000905.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000905.html');return false;">
+          <span class="method-name">visit_content</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000916" class="method-detail">
+        <a name="M000916"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000916.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000916.html');return false;">
+          <span class="method-name">visit_cssimport</span><span class="method-args">(node) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000895" class="method-detail">
+        <a name="M000895"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000895.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000895.html');return false;">
+          <span class="method-name">visit_debug</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Prints the expression to STDERR.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000913" class="method-detail">
+        <a name="M000913"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000913.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000913.html');return false;">
+          <span class="method-name">visit_directive</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000897" class="method-detail">
+        <a name="M000897"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000897.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000897.html');return false;">
+          <span class="method-name">visit_each</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Runs the child nodes once for each value in the list.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000896" class="method-detail">
+        <a name="M000896"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000896.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000896.html');return false;">
+          <span class="method-name">visit_error</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Throws the expression as an error.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000898" class="method-detail">
+        <a name="M000898"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000898.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000898.html');return false;">
+          <span class="method-name">visit_extend</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Runs SassScript interpolation in the selector, and then parses the result
+into a {<a
+href="../../Selector/CommaSequence.html">Sass::Selector::CommaSequence</a>}.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000899" class="method-detail">
+        <a name="M000899"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000899.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000899.html');return false;">
+          <span class="method-name">visit_for</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Runs the child nodes once for each time through the loop, varying the
+variable each time.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000900" class="method-detail">
+        <a name="M000900"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000900.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000900.html');return false;">
+          <span class="method-name">visit_function</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Loads the function into the environment.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000901" class="method-detail">
+        <a name="M000901"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000901.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000901.html');return false;">
+          <span class="method-name">visit_if</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Runs the child nodes if the conditional expression is true; otherwise,
+tries the else nodes.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000902" class="method-detail">
+        <a name="M000902"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000902.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000902.html');return false;">
+          <span class="method-name">visit_import</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a static <a href="../DirectiveNode.html">DirectiveNode</a> if this
+is importing a <a href="../../CSS.html">CSS</a> file, or parses and
+includes the imported <a href="../../../Sass.html">Sass</a> file.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000914" class="method-detail">
+        <a name="M000914"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000914.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000914.html');return false;">
+          <span class="method-name">visit_media</span><span class="method-args">(node) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000904" class="method-detail">
+        <a name="M000904"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000904.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000904.html');return false;">
+          <span class="method-name">visit_mixin</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Runs a mixin.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000903" class="method-detail">
+        <a name="M000903"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000903.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000903.html');return false;">
+          <span class="method-name">visit_mixindef</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Loads a mixin into the environment.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000906" class="method-detail">
+        <a name="M000906"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000906.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000906.html');return false;">
+          <span class="method-name">visit_prop</span><span class="method-args">(node) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Runs any SassScript that may be embedded in a property.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000907" class="method-detail">
+        <a name="M000907"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000907.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000907.html');return false;">
+          <span class="method-name">visit_return</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the value of the expression.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000893" class="method-detail">
+        <a name="M000893"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000893.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000893.html');return false;">
+          <span class="method-name">visit_root</span><span class="method-args">(node) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the options on the environment if this is the top-level root.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000908" class="method-detail">
+        <a name="M000908"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000908.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000908.html');return false;">
+          <span class="method-name">visit_rule</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Runs SassScript interpolation in the selector, and then parses the result
+into a {<a
+href="../../Selector/CommaSequence.html">Sass::Selector::CommaSequence</a>}.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000915" class="method-detail">
+        <a name="M000915"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000915.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000915.html');return false;">
+          <span class="method-name">visit_supports</span><span class="method-args">(node) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000910" class="method-detail">
+        <a name="M000910"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000910.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000910.html');return false;">
+          <span class="method-name">visit_variable</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Loads the <a href="Perform.html#M000889">new</a> variable value into the
+environment.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000911" class="method-detail">
+        <a name="M000911"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000911.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000911.html');return false;">
+          <span class="method-name">visit_warn</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Prints the expression to STDERR with a stylesheet trace.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000912" class="method-detail">
+        <a name="M000912"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000912.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000912.html');return false;">
+          <span class="method-name">visit_while</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Runs the child nodes until the continuation expression becomes false.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000892" class="method-detail">
+        <a name="M000892"></a>
+
+        <div class="method-heading">
+          <a href="Perform.src/M000892.html" target="Code" class="method-signature"
+            onclick="popupCode('Perform.src/M000892.html');return false;">
+          <span class="method-name">with_environment</span><span class="method-args">(env) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Runs a block of code with the current environment replaced with the given
+one.
+</p>
+<p>
+@param env [<a href="../../Environment.html">Sass::Environment</a>] The <a
+href="Perform.html#M000889">new</a> environment for the duration of the
+block. @yield A block in which the environment is set to `env`. @return
+[Object] The return value of the block.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

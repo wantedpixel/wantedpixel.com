@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@overload initialize(pointer)"
+- !ruby/struct:SM::Flow::VERB 
+  body: " @param [Pointer] pointer\n Create a new ManagedStruct which will invoke the class method #release on\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload initialize A new instance of FFI::ManagedStruct."
+full_name: FFI::ManagedStruct::new
+is_singleton: true
+name: new
+params: (pointer=nil)
+visibility: public

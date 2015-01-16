@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns all the known browsers according to caniuse
+full_name: Compass::Core::CanIUse#browsers
+is_singleton: false
+name: browsers
+params: ()
+visibility: public

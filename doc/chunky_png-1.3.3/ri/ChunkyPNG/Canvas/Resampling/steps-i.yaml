@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Integer Interpolation between two values
+- !ruby/struct:SM::Flow::P 
+  body: Used for generating indicies for interpolation (eg, nearest neighbour).
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Integer] width The width of the source @param [Integer] new_width The width of the destination @return [Array&lt;Integer&gt;] An Array of Integer indicies"
+full_name: ChunkyPNG::Canvas::Resampling#steps
+is_singleton: false
+name: steps
+params: (width, new_width)
+visibility: public

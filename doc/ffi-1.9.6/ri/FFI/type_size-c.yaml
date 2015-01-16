@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param type <tt>type</tt> is an instance of class accepted by {FFI.find_type} @return [Numeric] Get <tt>type</tt> size, in bytes."
+full_name: FFI::type_size
+is_singleton: true
+name: type_size
+params: (type)
+visibility: public

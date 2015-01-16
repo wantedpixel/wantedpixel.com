@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return constant value (converted if a <tt>converter</tt> was defined). @return constant value.
+full_name: FFI::ConstGenerator::Constant#converted_value
+is_singleton: false
+name: converted_value
+params: ()
+visibility: public

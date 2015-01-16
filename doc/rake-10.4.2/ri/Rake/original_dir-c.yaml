@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return the original directory where the Rake application was started.
+full_name: Rake::original_dir
+is_singleton: true
+name: original_dir
+params: ()
+visibility: public

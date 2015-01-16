@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Type] type type of data to write to pointer's contents @param [Symbol] writer method to send to <tt>self</tt> to write <tt>type</tt> @param [Array] ary @return [self] Write <tt>ary</tt> in pointer's contents as <tt>type</tt>. @example"
+- !ruby/struct:SM::Flow::VERB 
+  body: " ptr.write_array_of_type(TYPE_UINT8, :put_uint8, [1, 2, 3 ,4])\n"
+full_name: FFI::Pointer#write_array_of_type
+is_singleton: false
+name: write_array_of_type
+params: (type, writer, ary)
+visibility: public

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: from_native
+comment: 
+constants: []
+
+full_name: FFI::StrPtrConverter
+includes: []
+
+instance_methods: []
+
+name: StrPtrConverter
+superclass: Object

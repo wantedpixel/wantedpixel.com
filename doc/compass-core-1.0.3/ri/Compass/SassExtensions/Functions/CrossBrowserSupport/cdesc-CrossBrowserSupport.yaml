@@ -1,0 +1,51 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CAPABILITY_OPTION_KEYS
+  value: "{     \"full-support\" => :full_support,     \"partial-support\" => :partial_support,     \"prefixed\" => :prefixed,     \"spec-versions\" => :spec_versions,   }"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CAPABILITY_OPTION_UNBOXER
+  value: "{     :full_support => lambda {|v| v.to_bool },     :partial_support => lambda {|v| v.to_bool },     :prefixed => lambda {|v| v.to_bool },     :spec_versions => lambda {|versions| versions.to_a.map {|v| v.value } }"
+full_name: Compass::SassExtensions::Functions::CrossBrowserSupport
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: browser_capabilities
+- !ruby/object:RI::MethodSummary 
+  name: browser_prefix
+- !ruby/object:RI::MethodSummary 
+  name: browser_prefixes
+- !ruby/object:RI::MethodSummary 
+  name: browser_ranges
+- !ruby/object:RI::MethodSummary 
+  name: browser_requires_prefix
+- !ruby/object:RI::MethodSummary 
+  name: browser_versions
+- !ruby/object:RI::MethodSummary 
+  name: browsers
+- !ruby/object:RI::MethodSummary 
+  name: compare_browser_versions
+- !ruby/object:RI::MethodSummary 
+  name: css2_fallback
+- !ruby/object:RI::MethodSummary 
+  name: next_version
+- !ruby/object:RI::MethodSummary 
+  name: omitted_usage
+- !ruby/object:RI::MethodSummary 
+  name: prefix
+- !ruby/object:RI::MethodSummary 
+  name: prefix_usage
+- !ruby/object:RI::MethodSummary 
+  name: prefixed
+- !ruby/object:RI::MethodSummary 
+  name: previous_version
+name: CrossBrowserSupport
+superclass: 

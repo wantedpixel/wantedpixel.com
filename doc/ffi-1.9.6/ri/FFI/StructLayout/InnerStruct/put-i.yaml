@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: FFI::StructLayout::InnerStruct#put
+is_singleton: false
+name: put
+params: (ptr, value)
+visibility: public

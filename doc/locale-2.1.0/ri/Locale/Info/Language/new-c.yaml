@@ -1,0 +1,27 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Constructs a new Language instance.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: code The 2 or 3 digit ISO 639-3 language code.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: scope A single character that defines the ISO scope of the language - <tt>(I)ndividual</tt>, <tt>(M)acrolanguage</tt>, or <tt>(S)pecial</tt>.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: type A single character that defines the ISO type of the language - <tt>(A)ncient</tt>, <tt>(C)onstructed</tt>, <tt>(E)xtinct</tt>, <tt>(H)istorical</tt>, <tt>(L)iving</tt>, or <tt>(S)pecial</tt>.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: name The name of the language.
+  type: :BULLET
+full_name: Locale::Info::Language::new
+is_singleton: true
+name: new
+params: (two_code, three_code, scope, type, name)
+visibility: public

@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Compass::SassExtensions::Functions::CrossBrowserSupport</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Compass::SassExtensions::Functions::CrossBrowserSupport</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../../files/lib/compass/core/sass_extensions/functions/cross_browser_support_rb.html">
+                lib/compass/core/sass_extensions/functions/cross_browser_support.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000233">browser_capabilities</a>&nbsp;&nbsp;
+      <a href="#M000236">browser_prefix</a>&nbsp;&nbsp;
+      <a href="#M000237">browser_prefixes</a>&nbsp;&nbsp;
+      <a href="#M000243">browser_ranges</a>&nbsp;&nbsp;
+      <a href="#M000235">browser_requires_prefix</a>&nbsp;&nbsp;
+      <a href="#M000234">browser_versions</a>&nbsp;&nbsp;
+      <a href="#M000232">browsers</a>&nbsp;&nbsp;
+      <a href="#M000242">compare_browser_versions</a>&nbsp;&nbsp;
+      <a href="#M000231">css2_fallback</a>&nbsp;&nbsp;
+      <a href="#M000240">next_version</a>&nbsp;&nbsp;
+      <a href="#M000238">omitted_usage</a>&nbsp;&nbsp;
+      <a href="#M000230">prefix</a>&nbsp;&nbsp;
+      <a href="#M000241">prefix_usage</a>&nbsp;&nbsp;
+      <a href="#M000229">prefixed</a>&nbsp;&nbsp;
+      <a href="#M000239">previous_version</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="CrossBrowserSupport/CSS2FallbackValue.html" class="link">Compass::SassExtensions::Functions::CrossBrowserSupport::CSS2FallbackValue</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CAPABILITY_OPTION_KEYS</td>
+          <td>=</td>
+          <td class="context-item-value">{     &quot;full-support&quot; =&gt; :full_support,     &quot;partial-support&quot; =&gt; :partial_support,     &quot;prefixed&quot; =&gt; :prefixed,     &quot;spec-versions&quot; =&gt; :spec_versions,   }</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CAPABILITY_OPTION_UNBOXER</td>
+          <td>=</td>
+          <td class="context-item-value">{     :full_support =&gt; lambda {|v| v.to_bool },     :partial_support =&gt; lambda {|v| v.to_bool },     :prefixed =&gt; lambda {|v| v.to_bool },     :spec_versions =&gt; lambda {|versions| versions.to_a.map {|v| v.value } }</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000233" class="method-detail">
+        <a name="M000233"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000233.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000233.html');return false;">
+          <span class="method-name">browser_capabilities</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The known capabilities of <a
+href="CrossBrowserSupport.html#M000232">browsers</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000236" class="method-detail">
+        <a name="M000236"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000236.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000236.html');return false;">
+          <span class="method-name">browser_prefix</span><span class="method-args">(browser, version = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+the <a href="CrossBrowserSupport.html#M000230">prefix</a> for the given
+browser.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000237" class="method-detail">
+        <a name="M000237"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000237.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000237.html');return false;">
+          <span class="method-name">browser_prefixes</span><span class="method-args">(browsers)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The prefixes used by the given <a
+href="CrossBrowserSupport.html#M000232">browsers</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000243" class="method-detail">
+        <a name="M000243"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000243.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000243.html');return false;">
+          <span class="method-name">browser_ranges</span><span class="method-args">(capability, prefix = null(), include_unprefixed_versions = bool(true))</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a map of <a href="CrossBrowserSupport.html#M000232">browsers</a> to
+the first version the capability became available without a <a
+href="CrossBrowserSupport.html#M000230">prefix</a>.
+</p>
+<p>
+If a <a href="CrossBrowserSupport.html#M000230">prefix</a> is provided,
+only those <a href="CrossBrowserSupport.html#M000232">browsers</a> using
+that <a href="CrossBrowserSupport.html#M000230">prefix</a> will be returned
+and the minimum version will be when it first became available as a <a
+href="CrossBrowserSupport.html#M000230">prefix</a> or without a <a
+href="CrossBrowserSupport.html#M000230">prefix</a>.
+</p>
+<p>
+If a browser does not have the capability, it will not included in the map.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000235" class="method-detail">
+        <a name="M000235"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000235.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000235.html');return false;">
+          <span class="method-name">browser_requires_prefix</span><span class="method-args">(browser, version, capability, capability_options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+whether the browser uses a <a
+href="CrossBrowserSupport.html#M000230">prefix</a> for the given capability
+at the version specified or a later version. Returns the <a
+href="CrossBrowserSupport.html#M000230">prefix</a> it requires, or null.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000234" class="method-detail">
+        <a name="M000234"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000234.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000234.html');return false;">
+          <span class="method-name">browser_versions</span><span class="method-args">(browser)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The versions for the given browser.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000232" class="method-detail">
+        <a name="M000232"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000232.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000232.html');return false;">
+          <span class="method-name">browsers</span><span class="method-args">(prefix = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The known <a href="CrossBrowserSupport.html#M000232">browsers</a>.
+</p>
+<p>
+If <a href="CrossBrowserSupport.html#M000230">prefix</a> is given, limits
+the returned <a href="CrossBrowserSupport.html#M000232">browsers</a> to
+those using the specified <a
+href="CrossBrowserSupport.html#M000230">prefix</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000242" class="method-detail">
+        <a name="M000242"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000242.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000242.html');return false;">
+          <span class="method-name">compare_browser_versions</span><span class="method-args">(browser, version1, version2)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Compares two browser versions. Returning:
+</p>
+<ul>
+<li>0 if they are the same
+
+</li>
+<li>&lt;0 if the first version is less than the second
+
+</li>
+<li>&gt;0 if the first version is more than the second
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000231" class="method-detail">
+        <a name="M000231"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000231.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000231.html');return false;">
+          <span class="method-name">css2_fallback</span><span class="method-args">(value, css2_value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000240" class="method-detail">
+        <a name="M000240"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000240.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000240.html');return false;">
+          <span class="method-name">next_version</span><span class="method-args">(browser, version)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The version before the version for the browser specified
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000238" class="method-detail">
+        <a name="M000238"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000238.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000238.html');return false;">
+          <span class="method-name">omitted_usage</span><span class="method-args">(browser, min_version, max_version = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The percent of users that are omitted by setting the min_version of browser
+as specified.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000230" class="method-detail">
+        <a name="M000230"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000230.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000230.html');return false;">
+          <span class="method-name">prefix</span><span class="method-args">(prefix, *objects)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000241" class="method-detail">
+        <a name="M000241"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000241.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000241.html');return false;">
+          <span class="method-name">prefix_usage</span><span class="method-args">(prefix, capability, capability_options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The percent of users relying on a particular <a
+href="CrossBrowserSupport.html#M000230">prefix</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000229" class="method-detail">
+        <a name="M000229"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000229.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000229.html');return false;">
+          <span class="method-name">prefixed</span><span class="method-args">(prefix, *args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Check if any of the arguments passed require a vendor <a
+href="CrossBrowserSupport.html#M000230">prefix</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000239" class="method-detail">
+        <a name="M000239"></a>
+
+        <div class="method-heading">
+          <a href="CrossBrowserSupport.src/M000239.html" target="Code" class="method-signature"
+            onclick="popupCode('CrossBrowserSupport.src/M000239.html');return false;">
+          <span class="method-name">previous_version</span><span class="method-args">(browser, version)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The version before the version for the browser specified
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

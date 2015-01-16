@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Locale::Driver::JRuby module for JRuby Detect the user locales and the charset. This is a low-level class. Application shouldn't use this directly.
+constants: []
+
+full_name: Locale::Driver::JRuby
+includes: []
+
+instance_methods: []
+
+name: JRuby
+superclass: 

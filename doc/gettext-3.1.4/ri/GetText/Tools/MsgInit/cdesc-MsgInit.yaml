@@ -1,0 +1,63 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: run
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: GetText::VERSION
+- !ruby/object:RI::Constant 
+  comment: 
+  name: EMAIL
+  value: "\"EMAIL@ADDRESS\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FIRST_AUTHOR_KEY
+  value: /^FIRST AUTHOR <#{EMAIL}>, (\d+\.)$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POT_REVISION_DATE_KEY
+  value: /^(PO-Revision-Date:).+/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LANGUAGE_KEY
+  value: /^(Language:).+/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LANGUAGE_TEAM_KEY
+  value: /^(Language-Team:).+/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PLURAL_FORMS
+  value: /^(Plural-Forms:) nplurals=INTEGER; plural=EXPRESSION;$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DESCRIPTION_TITLE
+  value: /^SOME DESCRIPTIVE TITLE\.$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: YEAR_KEY
+  value: /^(FIRST AUTHOR <#{EMAIL}>,) YEAR\.$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LAST_TRANSLATOR_KEY
+  value: /^(Last-Translator:) FULL NAME <#{EMAIL}>$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COPYRIGHT_KEY
+  value: /^(Copyright \(C\)) YEAR (THE PACKAGE'S COPYRIGHT HOLDER)$/
+full_name: GetText::Tools::MsgInit
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: GetText
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: run
+name: MsgInit
+superclass: Object

@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Any importer object that is extended with this module will get the import once behavior.
+constants: []
+
+full_name: Compass::ImportOnce::Importer
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: dummy_engine
+- !ruby/object:RI::MethodSummary 
+  name: find
+- !ruby/object:RI::MethodSummary 
+  name: find_relative
+- !ruby/object:RI::MethodSummary 
+  name: handle_force_import
+- !ruby/object:RI::MethodSummary 
+  name: import_tracker_key
+- !ruby/object:RI::MethodSummary 
+  name: imported!
+- !ruby/object:RI::MethodSummary 
+  name: imported?
+- !ruby/object:RI::MethodSummary 
+  name: key
+- !ruby/object:RI::MethodSummary 
+  name: maybe_replace_with_dummy_engine
+- !ruby/object:RI::MethodSummary 
+  name: mtime
+- !ruby/object:RI::MethodSummary 
+  name: normalize_filesystem_importers
+- !ruby/object:RI::MethodSummary 
+  name: tracker
+name: Importer
+superclass: 

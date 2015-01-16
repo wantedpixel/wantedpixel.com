@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: GetText::MO#prime?
+is_singleton: false
+name: prime?
+params: (number)
+visibility: public

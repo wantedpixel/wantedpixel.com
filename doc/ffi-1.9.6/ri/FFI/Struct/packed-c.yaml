@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: FFI::Struct::packed
+is_singleton: true
+name: packed
+params: (packed = 1)
+visibility: protected

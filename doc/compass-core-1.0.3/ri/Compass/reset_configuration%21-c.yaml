@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::reset_configuration!
+is_singleton: true
+name: reset_configuration!
+params: ()
+visibility: public

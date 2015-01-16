@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>locales (Locale::Driver::CGI)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/locale/driver/cgi.rb, line 38</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">locales</span>
+        <span class="ruby-identifier">req</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:current_request</span>]
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">req</span>
+
+        <span class="ruby-identifier">locales</span> = []
+
+        <span class="ruby-comment cmt"># QUERY_STRING &quot;lang&quot;</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">langs</span> = <span class="ruby-identifier">req</span>[<span class="ruby-identifier">:query_langs</span>]
+          <span class="ruby-identifier">langs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">lang</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">locales</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Locale</span><span class="ruby-operator">::</span><span class="ruby-constant">Tag</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">lang</span>)
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">locales</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+          <span class="ruby-comment cmt"># COOKIE &quot;lang&quot;</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">langs</span> = <span class="ruby-identifier">req</span>[<span class="ruby-identifier">:cookie_langs</span>]
+            <span class="ruby-identifier">langs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">lang</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">locales</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Locale</span><span class="ruby-operator">::</span><span class="ruby-constant">Tag</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">lang</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">lang</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">locales</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+          <span class="ruby-comment cmt"># HTTP_ACCEPT_LANGUAGE</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">lang</span> = <span class="ruby-identifier">req</span>[<span class="ruby-identifier">:accept_language</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">lang</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+            <span class="ruby-comment cmt"># 10.0 is for ruby-1.8.6 which have the bug of str.to_f. </span>
+            <span class="ruby-comment cmt"># Normally, this should be 1.0.</span>
+            <span class="ruby-identifier">locales</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">lang</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\s/</span>, <span class="ruby-value str">&quot;&quot;</span>).<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/,/</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;;q=&quot;</span>)}.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">j</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">j</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">j</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_f</span> <span class="ruby-operator">:</span> <span class="ruby-value">10.0</span>]}.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">a</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">1</span>])}.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Locale</span><span class="ruby-operator">::</span><span class="ruby-constant">Tag</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>])}
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">locales</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Locale</span><span class="ruby-operator">::</span><span class="ruby-constant">TagList</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">locales</span>.<span class="ruby-identifier">uniq</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

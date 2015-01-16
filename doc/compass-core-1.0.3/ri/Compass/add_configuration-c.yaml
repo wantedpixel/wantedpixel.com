@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::add_configuration
+is_singleton: true
+name: add_configuration
+params: (data, filename = nil)
+visibility: public

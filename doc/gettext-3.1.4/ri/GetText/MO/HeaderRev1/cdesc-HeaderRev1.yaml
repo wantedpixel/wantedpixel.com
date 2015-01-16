@@ -1,0 +1,36 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: n_sysdep_segments
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: n_sysdep_strings
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: orig_sysdep_tab_offset
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: sysdep_segments_offset
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: trans_sysdep_tab_offset
+  rw: RW
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The following are only used in .mo files with minor revision &gt;= 1.
+constants: []
+
+full_name: GetText::MO::HeaderRev1
+includes: []
+
+instance_methods: []
+
+name: HeaderRev1
+superclass: Header

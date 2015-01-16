@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: (self)
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Gem::Specification, nil] spec Package information associated"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  with the task. Some information are extracted from the spec.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@see #spec= What information are extracted from the spec."
+full_name: GetText::Tools::Task::new
+is_singleton: true
+name: new
+params: (spec=nil) {|self| ...}
+visibility: public

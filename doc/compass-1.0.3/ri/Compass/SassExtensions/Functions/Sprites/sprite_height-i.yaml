@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the height of the generated sprite map
+full_name: Compass::SassExtensions::Functions::Sprites#sprite_height
+is_singleton: false
+name: sprite_height
+params: (map, sprite=nil)
+visibility: public

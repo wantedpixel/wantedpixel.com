@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Gets the locale from environment variable. Priority order except charset is LC_ALL &gt; LC_MESSAGES &gt; LANG. Priority order for charset is LC_ALL &gt; LC_CTYPE &gt; LANG. Returns: the locale as Locale::Tag::Posix."
+full_name: Locale::Driver::Env#locale
+is_singleton: false
+name: locale
+params: ()
+visibility: public

@@ -1,0 +1,81 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Copyright (C) 2012-2013 Kouhei Sutou &lt;kou@clear-code.com&gt;
+- !ruby/struct:SM::Flow::P 
+  body: "License: Ruby's or LGPL"
+- !ruby/struct:SM::Flow::P 
+  body: "This library is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version."
+- !ruby/struct:SM::Flow::P 
+  body: This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+- !ruby/struct:SM::Flow::P 
+  body: You should have received a copy of the GNU Lesser General Public License along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "\"3.1.4\""
+full_name: GetText
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: N_
+- !ruby/object:RI::MethodSummary 
+  name: Nn_
+- !ruby/object:RI::MethodSummary 
+  name: _
+- !ruby/object:RI::MethodSummary 
+  name: bindtextdomain
+- !ruby/object:RI::MethodSummary 
+  name: bindtextdomain_to
+- !ruby/object:RI::MethodSummary 
+  name: cgi
+- !ruby/object:RI::MethodSummary 
+  name: cgi=
+- !ruby/object:RI::MethodSummary 
+  name: current_locale=
+- !ruby/object:RI::MethodSummary 
+  name: gettext
+- !ruby/object:RI::MethodSummary 
+  name: locale
+- !ruby/object:RI::MethodSummary 
+  name: locale=
+- !ruby/object:RI::MethodSummary 
+  name: n_
+- !ruby/object:RI::MethodSummary 
+  name: ngettext
+- !ruby/object:RI::MethodSummary 
+  name: np_
+- !ruby/object:RI::MethodSummary 
+  name: npgettext
+- !ruby/object:RI::MethodSummary 
+  name: ns_
+- !ruby/object:RI::MethodSummary 
+  name: nsgettext
+- !ruby/object:RI::MethodSummary 
+  name: output_charset
+- !ruby/object:RI::MethodSummary 
+  name: output_charset=
+- !ruby/object:RI::MethodSummary 
+  name: p_
+- !ruby/object:RI::MethodSummary 
+  name: pgettext
+- !ruby/object:RI::MethodSummary 
+  name: s_
+- !ruby/object:RI::MethodSummary 
+  name: set_cgi
+- !ruby/object:RI::MethodSummary 
+  name: set_current_locale
+- !ruby/object:RI::MethodSummary 
+  name: set_locale
+- !ruby/object:RI::MethodSummary 
+  name: set_output_charset
+- !ruby/object:RI::MethodSummary 
+  name: sgettext
+name: GetText
+superclass: 

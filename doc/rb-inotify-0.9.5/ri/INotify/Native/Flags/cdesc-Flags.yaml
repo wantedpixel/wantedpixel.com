@@ -1,0 +1,159 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: from_mask
+- !ruby/object:RI::MethodSummary 
+  name: to_mask
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A module containing all the inotify flags to be passed to {Notifier#watch}.
+- !ruby/struct:SM::Flow::P 
+  body: "@private"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: File was accessed.
+  name: IN_ACCESS
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Metadata changed.
+  name: IN_ATTRIB
+  value: "0x00000004"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Writtable file was closed.
+  name: IN_CLOSE_WRITE
+  value: "0x00000008"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: File was modified.
+  name: IN_MODIFY
+  value: "0x00000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Unwrittable file closed.
+  name: IN_CLOSE_NOWRITE
+  value: "0x00000010"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: File was opened.
+  name: IN_OPEN
+  value: "0x00000020"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: File was moved from X.
+  name: IN_MOVED_FROM
+  value: "0x00000040"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: File was moved to Y.
+  name: IN_MOVED_TO
+  value: "0x00000080"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Subfile was created.
+  name: IN_CREATE
+  value: "0x00000100"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Subfile was deleted.
+  name: IN_DELETE
+  value: "0x00000200"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Self was deleted.
+  name: IN_DELETE_SELF
+  value: "0x00000400"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Self was moved.
+  name: IN_MOVE_SELF
+  value: "0x00000800"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Close.
+  name: IN_CLOSE
+  value: (IN_CLOSE_WRITE | IN_CLOSE_NOWRITE)
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Moves.
+  name: IN_MOVE
+  value: (IN_MOVED_FROM | IN_MOVED_TO)
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: All events which a program can wait on.
+  name: IN_ALL_EVENTS
+  value: (IN_ACCESS | IN_MODIFY | IN_ATTRIB | IN_CLOSE_WRITE |         IN_CLOSE_NOWRITE | IN_OPEN | IN_MOVED_FROM | IN_MOVED_TO | IN_CREATE |         IN_DELETE | IN_DELETE_SELF | IN_MOVE_SELF)
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Only watch the path if it is a directory.
+  name: IN_ONLYDIR
+  value: "0x01000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Do not follow a sym link.
+  name: IN_DONT_FOLLOW
+  value: "0x02000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Add to the mask of an already existing watch.
+  name: IN_MASK_ADD
+  value: "0x20000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Only send event once.
+  name: IN_ONESHOT
+  value: "0x80000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Backing fs was unmounted.
+  name: IN_UNMOUNT
+  value: "0x00002000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Event queued overflowed.
+  name: IN_Q_OVERFLOW
+  value: "0x00004000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: File was ignored.
+  name: IN_IGNORED
+  value: "0x00008000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Event occurred against dir.
+  name: IN_ISDIR
+  value: "0x40000000"
+full_name: INotify::Native::Flags
+includes: []
+
+instance_methods: []
+
+name: Flags
+superclass: 

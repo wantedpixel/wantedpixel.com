@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Converts a list of flags to the bitmask that the C API expects.
+- !ruby/struct:SM::Flow::P 
+  body: "@param flags [Array&lt;Symbol&gt;] @return [Fixnum]"
+full_name: INotify::Native::Flags::to_mask
+is_singleton: true
+name: to_mask
+params: (flags)
+visibility: public

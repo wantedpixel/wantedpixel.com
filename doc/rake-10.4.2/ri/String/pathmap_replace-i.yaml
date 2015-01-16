@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Perform the pathmap replacement operations on the given path. The patterns take the form 'pat1,rep1;pat2,rep2...'.
+- !ruby/struct:SM::Flow::P 
+  body: This String extension comes from Rake
+full_name: String#pathmap_replace
+is_singleton: false
+name: pathmap_replace
+params: (patterns, &block)
+visibility: public

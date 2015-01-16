@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>parse_source (GetText::RubyParser)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/gettext/tools/parser/ruby.rb, line 229</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_source</span>(<span class="ruby-identifier">source</span>)
+      <span class="ruby-identifier">po</span> = []
+      <span class="ruby-identifier">file</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>)
+      <span class="ruby-identifier">rl</span> = <span class="ruby-constant">RubyLexX</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">rl</span>.<span class="ruby-identifier">set_input</span>(<span class="ruby-identifier">file</span>)
+      <span class="ruby-identifier">rl</span>.<span class="ruby-identifier">skip_space</span> = <span class="ruby-keyword kw">true</span>
+      <span class="ruby-comment cmt">#rl.readed_auto_clean_up = true</span>
+
+      <span class="ruby-identifier">po_entry</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-identifier">line_no</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-identifier">last_comment</span> = <span class="ruby-value str">&quot;&quot;</span>
+      <span class="ruby-identifier">reset_comment</span> = <span class="ruby-keyword kw">false</span>
+      <span class="ruby-identifier">ignore_next_comma</span> = <span class="ruby-keyword kw">false</span>
+      <span class="ruby-identifier">rl</span>.<span class="ruby-identifier">parse</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tk</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-identifier">ignore_current_comma</span> = <span class="ruby-identifier">ignore_next_comma</span>
+          <span class="ruby-identifier">ignore_next_comma</span> = <span class="ruby-keyword kw">false</span>
+          <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">tk</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-constant">RubyToken</span><span class="ruby-operator">::</span><span class="ruby-constant">TkIDENTIFIER</span>, <span class="ruby-constant">RubyToken</span><span class="ruby-operator">::</span><span class="ruby-constant">TkCONSTANT</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">store_po_entry</span>(<span class="ruby-identifier">po</span>, <span class="ruby-identifier">po_entry</span>, <span class="ruby-identifier">line_no</span>, <span class="ruby-identifier">last_comment</span>)
+              <span class="ruby-identifier">last_comment</span> = <span class="ruby-value str">&quot;&quot;</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ID</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">tk</span>.<span class="ruby-identifier">name</span>)
+              <span class="ruby-identifier">po_entry</span> = <span class="ruby-constant">POEntry</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:normal</span>)
+            <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">PLURAL_ID</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">tk</span>.<span class="ruby-identifier">name</span>)
+              <span class="ruby-identifier">po_entry</span> = <span class="ruby-constant">POEntry</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:plural</span>)
+            <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">MSGCTXT_ID</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">tk</span>.<span class="ruby-identifier">name</span>)
+              <span class="ruby-identifier">po_entry</span> = <span class="ruby-constant">POEntry</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:msgctxt</span>)
+            <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">MSGCTXT_PLURAL_ID</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">tk</span>.<span class="ruby-identifier">name</span>)
+              <span class="ruby-identifier">po_entry</span> = <span class="ruby-constant">POEntry</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:msgctxt_plural</span>)
+            <span class="ruby-keyword kw">else</span>
+              <span class="ruby-identifier">po_entry</span> = <span class="ruby-keyword kw">nil</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">line_no</span> = <span class="ruby-identifier">tk</span>.<span class="ruby-identifier">line_no</span>.<span class="ruby-identifier">to_s</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-constant">RubyToken</span><span class="ruby-operator">::</span><span class="ruby-constant">TkSTRING</span>, <span class="ruby-constant">RubyToken</span><span class="ruby-operator">::</span><span class="ruby-constant">TkDSTRING</span>
+            <span class="ruby-identifier">po_entry</span>.<span class="ruby-identifier">set_current_attribute</span> <span class="ruby-identifier">tk</span>.<span class="ruby-identifier">value</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">po_entry</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-constant">RubyToken</span><span class="ruby-operator">::</span><span class="ruby-constant">TkPLUS</span>, <span class="ruby-constant">RubyToken</span><span class="ruby-operator">::</span><span class="ruby-constant">TkNL</span>
+            <span class="ruby-comment cmt">#do nothing</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-constant">RubyToken</span><span class="ruby-operator">::</span><span class="ruby-constant">TkINTEGER</span>
+            <span class="ruby-identifier">ignore_next_comma</span> = <span class="ruby-keyword kw">true</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-constant">RubyToken</span><span class="ruby-operator">::</span><span class="ruby-constant">TkCOMMA</span>
+            <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">ignore_current_comma</span>
+              <span class="ruby-identifier">po_entry</span>.<span class="ruby-identifier">advance_to_next_attribute</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">po_entry</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">store_po_entry</span>(<span class="ruby-identifier">po</span>, <span class="ruby-identifier">po_entry</span>, <span class="ruby-identifier">line_no</span>, <span class="ruby-identifier">last_comment</span>)
+              <span class="ruby-identifier">po_entry</span> = <span class="ruby-keyword kw">nil</span>
+              <span class="ruby-identifier">last_comment</span> = <span class="ruby-value str">&quot;&quot;</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">rescue</span>
+          <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">print</span> <span class="ruby-value str">&quot;\n\nError&quot;</span>
+          <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">print</span> <span class="ruby-node">&quot; parsing #{@path}:#{tk.line_no}\n\t #{source.lines.to_a[tk.line_no - 1]}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tk</span>
+          <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">print</span> <span class="ruby-node">&quot;\n #{$!.inspect} in\n&quot;</span>
+          <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">print</span> <span class="ruby-identifier">$!</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+          <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">print</span> <span class="ruby-value str">&quot;\n&quot;</span>
+          <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">tk</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">RubyToken</span><span class="ruby-operator">::</span><span class="ruby-constant">TkCOMMENT_WITH_CONTENT</span>
+          <span class="ruby-identifier">last_comment</span> = <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">reset_comment</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">last_comment</span>.<span class="ruby-identifier">empty?</span>
+            <span class="ruby-identifier">comment1</span> = <span class="ruby-identifier">tk</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">lstrip</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">comment_to_be_extracted?</span>(<span class="ruby-identifier">comment1</span>)
+              <span class="ruby-identifier">last_comment</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">comment1</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">last_comment</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;\n&quot;</span>
+            <span class="ruby-identifier">last_comment</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">tk</span>.<span class="ruby-identifier">value</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">reset_comment</span> = <span class="ruby-keyword kw">false</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">RubyToken</span><span class="ruby-operator">::</span><span class="ruby-constant">TkNL</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">reset_comment</span> = <span class="ruby-keyword kw">true</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">po</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

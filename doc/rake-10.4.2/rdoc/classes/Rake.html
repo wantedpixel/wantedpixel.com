@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Rake</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Rake</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                lib/rake.rb
+        <br />
+                <a href="../files/lib/rake/task_manager_rb.html">
+                lib/rake/task_manager.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/private_reader_rb.html">
+                lib/rake/private_reader.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/runtest_rb.html">
+                lib/rake/runtest.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/invocation_exception_mixin_rb.html">
+                lib/rake/invocation_exception_mixin.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/application_rb.html">
+                lib/rake/application.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/file_utils_ext_rb.html">
+                lib/rake/file_utils_ext.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/rule_recursion_overflow_error_rb.html">
+                lib/rake/rule_recursion_overflow_error.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/thread_pool_rb.html">
+                lib/rake/thread_pool.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/file_creation_task_rb.html">
+                lib/rake/file_creation_task.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/dsl_definition_rb.html">
+                lib/rake/dsl_definition.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/linked_list_rb.html">
+                lib/rake/linked_list.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/pseudo_status_rb.html">
+                lib/rake/pseudo_status.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/cpu_counter_rb.html">
+                lib/rake/cpu_counter.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/invocation_chain_rb.html">
+                lib/rake/invocation_chain.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/promise_rb.html">
+                lib/rake/promise.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/task_rb.html">
+                lib/rake/task.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/trace_output_rb.html">
+                lib/rake/trace_output.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/cloneable_rb.html">
+                lib/rake/cloneable.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/testtask_rb.html">
+                lib/rake/testtask.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/scope_rb.html">
+                lib/rake/scope.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/file_task_rb.html">
+                lib/rake/file_task.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/default_loader_rb.html">
+                lib/rake/default_loader.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/rake_module_rb.html">
+                lib/rake/rake_module.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/late_time_rb.html">
+                lib/rake/late_time.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/multi_task_rb.html">
+                lib/rake/multi_task.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/loaders/makefile_rb.html">
+                lib/rake/loaders/makefile.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/packagetask_rb.html">
+                lib/rake/packagetask.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/win32_rb.html">
+                lib/rake/win32.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/thread_history_display_rb.html">
+                lib/rake/thread_history_display.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/backtrace_rb.html">
+                lib/rake/backtrace.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/early_time_rb.html">
+                lib/rake/early_time.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/version_rb.html">
+                lib/rake/version.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/task_argument_error_rb.html">
+                lib/rake/task_argument_error.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/file_list_rb.html">
+                lib/rake/file_list.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/tasklib_rb.html">
+                lib/rake/tasklib.rb
+                </a>
+        <br />
+                <a href="../files/lib/rake/task_arguments_rb.html">
+                lib/rake/task_arguments.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000275">add_rakelib</a>&nbsp;&nbsp;
+      <a href="#M000271">application</a>&nbsp;&nbsp;
+      <a href="#M000272">application=</a>&nbsp;&nbsp;
+      <a href="#M000274">load_rakefile</a>&nbsp;&nbsp;
+      <a href="#M000273">original_dir</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Test::Unit::Assertions</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="Rake/DSL.html" class="link">Rake::DSL</a><br />
+Module <a href="Rake/FileUtilsExt.html" class="link">Rake::FileUtilsExt</a><br />
+Module <a href="Rake/InvocationExceptionMixin.html" class="link">Rake::InvocationExceptionMixin</a><br />
+Module <a href="Rake/TaskManager.html" class="link">Rake::TaskManager</a><br />
+Class <a href="Rake/Application.html" class="link">Rake::Application</a><br />
+Class <a href="Rake/DefaultLoader.html" class="link">Rake::DefaultLoader</a><br />
+Class <a href="Rake/EarlyTime.html" class="link">Rake::EarlyTime</a><br />
+Class <a href="Rake/FileCreationTask.html" class="link">Rake::FileCreationTask</a><br />
+Class <a href="Rake/FileList.html" class="link">Rake::FileList</a><br />
+Class <a href="Rake/FileTask.html" class="link">Rake::FileTask</a><br />
+Class <a href="Rake/InvocationChain.html" class="link">Rake::InvocationChain</a><br />
+Class <a href="Rake/LateTime.html" class="link">Rake::LateTime</a><br />
+Class <a href="Rake/LinkedList.html" class="link">Rake::LinkedList</a><br />
+Class <a href="Rake/MakefileLoader.html" class="link">Rake::MakefileLoader</a><br />
+Class <a href="Rake/MultiTask.html" class="link">Rake::MultiTask</a><br />
+Class <a href="Rake/NameSpace.html" class="link">Rake::NameSpace</a><br />
+Class <a href="Rake/PackageTask.html" class="link">Rake::PackageTask</a><br />
+Class <a href="Rake/RuleRecursionOverflowError.html" class="link">Rake::RuleRecursionOverflowError</a><br />
+Class <a href="Rake/Task.html" class="link">Rake::Task</a><br />
+Class <a href="Rake/TaskArgumentError.html" class="link">Rake::TaskArgumentError</a><br />
+Class <a href="Rake/TaskArguments.html" class="link">Rake::TaskArguments</a><br />
+Class <a href="Rake/TaskLib.html" class="link">Rake::TaskLib</a><br />
+Class <a href="Rake/TestTask.html" class="link">Rake::TestTask</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">'10.4.2'</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CommandLineOptionError</td>
+          <td>=</td>
+          <td class="context-item-value">Class.new(StandardError)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LATE</td>
+          <td>=</td>
+          <td class="context-item-value">LateTime.instance</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">EARLY</td>
+          <td>=</td>
+          <td class="context-item-value">EarlyTime.instance</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000275" class="method-detail">
+        <a name="M000275"></a>
+
+        <div class="method-heading">
+          <a href="Rake.src/M000275.html" target="Code" class="method-signature"
+            onclick="popupCode('Rake.src/M000275.html');return false;">
+          <span class="method-name">add_rakelib</span><span class="method-args">(*files)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Add files to the rakelib list
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000271" class="method-detail">
+        <a name="M000271"></a>
+
+        <div class="method-heading">
+          <a href="Rake.src/M000271.html" target="Code" class="method-signature"
+            onclick="popupCode('Rake.src/M000271.html');return false;">
+          <span class="method-name">application</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Current <a href="Rake.html">Rake</a> <a
+href="Rake/Application.html">Application</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000272" class="method-detail">
+        <a name="M000272"></a>
+
+        <div class="method-heading">
+          <a href="Rake.src/M000272.html" target="Code" class="method-signature"
+            onclick="popupCode('Rake.src/M000272.html');return false;">
+          <span class="method-name">application=</span><span class="method-args">(app)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the current <a href="Rake.html">Rake</a> <a
+href="Rake.html#M000271">application</a> object.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000274" class="method-detail">
+        <a name="M000274"></a>
+
+        <div class="method-heading">
+          <a href="Rake.src/M000274.html" target="Code" class="method-signature"
+            onclick="popupCode('Rake.src/M000274.html');return false;">
+          <span class="method-name">load_rakefile</span><span class="method-args">(path)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Load a rakefile.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000273" class="method-detail">
+        <a name="M000273"></a>
+
+        <div class="method-heading">
+          <a href="Rake.src/M000273.html" target="Code" class="method-signature"
+            onclick="popupCode('Rake.src/M000273.html');return false;">
+          <span class="method-name">original_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return the original directory where the <a href="Rake.html">Rake</a> <a
+href="Rake.html#M000271">application</a> was started.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

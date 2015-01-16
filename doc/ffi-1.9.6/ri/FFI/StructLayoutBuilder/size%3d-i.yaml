@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Numeric] size Set size attribute with <tt>size</tt> only if <tt>size</tt> is greater than attribute value."
+full_name: FFI::StructLayoutBuilder#size=
+is_singleton: false
+name: size=
+params: (size)
+visibility: public

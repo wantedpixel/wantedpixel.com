@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The result is written back to def.po.
+- !ruby/struct:SM::Flow::VERB 
+  body: "      --backup=CONTROL        make a backup of def.po\n      --suffix=SUFFIX         override the usual backup suffix\n"
+- !ruby/struct:SM::Flow::P 
+  body: "The version control method may be selected via the --backup option or through the VERSION_CONTROL environment variable. Here are the values:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  none, off       never make backups (even if --backup is given)\n  numbered, t     make numbered backups\n  existing, nil   numbered if numbered backups exist, simple otherwise\n  simple, never   always make simple backups\n"
+- !ruby/struct:SM::Flow::P 
+  body: The backup suffix is `~', unless set with --suffix or the SIMPLE_BACKUP_SUFFIX environment variable.
+full_name: GetText::Tools::MsgMerge::Config::new
+is_singleton: true
+name: new
+params: ()
+visibility: public

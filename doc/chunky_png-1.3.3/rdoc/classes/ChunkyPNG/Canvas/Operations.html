@@ -1,0 +1,1276 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: ChunkyPNG::Canvas::Operations</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">ChunkyPNG::Canvas::Operations</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/chunky_png/canvas/operations_rb.html">
+                lib/chunky_png/canvas/operations.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+The <a href="Operations.html">ChunkyPNG::Canvas::Operations</a> module
+defines methods to perform operations on a {<a
+href="../Canvas.html">ChunkyPNG::Canvas</a>}. The module is included into
+the <a href="../Canvas.html">Canvas</a> class so all these methods are
+available on every canvas.
+</p>
+<p>
+Note that some of these operations modify the canvas, while some operations
+return a new canvas and leave the original intact.
+</p>
+<p>
+@see <a href="../Canvas.html">ChunkyPNG::Canvas</a>
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000627">border</a>&nbsp;&nbsp;
+      <a href="#M000628">border!</a>&nbsp;&nbsp;
+      <a href="#M000629">check_size_constraints!</a>&nbsp;&nbsp;
+      <a href="#M000602">compose</a>&nbsp;&nbsp;
+      <a href="#M000601">compose!</a>&nbsp;&nbsp;
+      <a href="#M000605">crop</a>&nbsp;&nbsp;
+      <a href="#M000606">crop!</a>&nbsp;&nbsp;
+      <a href="#M000610">flip</a>&nbsp;&nbsp;
+      <a href="#M000609">flip!</a>&nbsp;&nbsp;
+      <a href="#M000607">flip_horizontally</a>&nbsp;&nbsp;
+      <a href="#M000608">flip_horizontally!</a>&nbsp;&nbsp;
+      <a href="#M000611">flip_vertically</a>&nbsp;&nbsp;
+      <a href="#M000612">flip_vertically!</a>&nbsp;&nbsp;
+      <a href="#M000600">grayscale</a>&nbsp;&nbsp;
+      <a href="#M000599">grayscale!</a>&nbsp;&nbsp;
+      <a href="#M000614">mirror</a>&nbsp;&nbsp;
+      <a href="#M000613">mirror!</a>&nbsp;&nbsp;
+      <a href="#M000604">replace</a>&nbsp;&nbsp;
+      <a href="#M000603">replace!</a>&nbsp;&nbsp;
+      <a href="#M000623">rotate_180</a>&nbsp;&nbsp;
+      <a href="#M000624">rotate_180!</a>&nbsp;&nbsp;
+      <a href="#M000617">rotate_clockwise</a>&nbsp;&nbsp;
+      <a href="#M000618">rotate_clockwise!</a>&nbsp;&nbsp;
+      <a href="#M000621">rotate_counter_clockwise</a>&nbsp;&nbsp;
+      <a href="#M000622">rotate_counter_clockwise!</a>&nbsp;&nbsp;
+      <a href="#M000619">rotate_left</a>&nbsp;&nbsp;
+      <a href="#M000620">rotate_left!</a>&nbsp;&nbsp;
+      <a href="#M000615">rotate_right</a>&nbsp;&nbsp;
+      <a href="#M000616">rotate_right!</a>&nbsp;&nbsp;
+      <a href="#M000625">trim</a>&nbsp;&nbsp;
+      <a href="#M000626">trim!</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000627" class="method-detail">
+        <a name="M000627"></a>
+
+        <div class="method-heading">
+          <a href="#M000627" class="method-signature">
+          <span class="method-name">border</span><span class="method-args">(size, color = ChunkyPNG::Color::BLACK)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Draws a <a href="Operations.html#M000627">border</a> around the image.
+</p>
+<p>
+@param [Integer] size The size of the <a
+href="Operations.html#M000627">border</a>. @param [Integer] color The color
+of the <a href="Operations.html#M000627">border</a>. @return [<a
+href="../Canvas.html">ChunkyPNG::Canvas</a>] Returns a bordered version of
+the image. @see <a href="Operations.html#M000627">border</a>!
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000627-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000627-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 356</span>
+356:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">border</span>(<span class="ruby-identifier">size</span>, <span class="ruby-identifier">color</span> = <span class="ruby-constant">ChunkyPNG</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span><span class="ruby-operator">::</span><span class="ruby-constant">BLACK</span>)
+357:         <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">border!</span>(<span class="ruby-identifier">size</span>, <span class="ruby-identifier">color</span>)
+358:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000628" class="method-detail">
+        <a name="M000628"></a>
+
+        <div class="method-heading">
+          <a href="#M000628" class="method-signature">
+          <span class="method-name">border!</span><span class="method-args">(size, color = ChunkyPNG::Color::BLACK)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Draws a <a href="Operations.html#M000627">border</a> around the image in
+place.
+</p>
+<p>
+@param [Integer] size The size of the <a
+href="Operations.html#M000627">border</a>. @param [Integer] color The color
+of the <a href="Operations.html#M000627">border</a>. @return [<a
+href="../Canvas.html">ChunkyPNG::Canvas</a>] Returns itself with the <a
+href="Operations.html#M000627">border</a> added. @see <a
+href="Operations.html#M000627">border</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000628-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000628-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 366</span>
+366:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">border!</span>(<span class="ruby-identifier">size</span>, <span class="ruby-identifier">color</span> = <span class="ruby-constant">ChunkyPNG</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span><span class="ruby-operator">::</span><span class="ruby-constant">BLACK</span>)
+367:         <span class="ruby-identifier">new_width</span>  = <span class="ruby-identifier">width</span>  <span class="ruby-operator">+</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">*</span> <span class="ruby-value">2</span>
+368:         <span class="ruby-identifier">new_height</span> = <span class="ruby-identifier">height</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">*</span> <span class="ruby-value">2</span>
+369: 
+370:         <span class="ruby-identifier">bg</span> = <span class="ruby-constant">Canvas</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">new_width</span>, <span class="ruby-identifier">new_height</span>, <span class="ruby-identifier">color</span>).<span class="ruby-identifier">replace</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">size</span>)
+371:         <span class="ruby-identifier">replace_canvas!</span>(<span class="ruby-identifier">new_width</span>, <span class="ruby-identifier">new_height</span>, <span class="ruby-identifier">bg</span>.<span class="ruby-identifier">pixels</span>)
+372:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000602" class="method-detail">
+        <a name="M000602"></a>
+
+        <div class="method-heading">
+          <a href="#M000602" class="method-signature">
+          <span class="method-name">compose</span><span class="method-args">(other, offset_x = 0, offset_y = 0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Composes another image onto this image using alpha blending. This will
+return a new canvas and leave the original intact.
+</p>
+<p>
+If you simply want to <a href="Operations.html#M000604">replace</a> pixels
+or when the other image does not have transparency, it is faster to use {<a
+href="Operations.html#M000604">replace</a>}.
+</p>
+<p>
+@param (see <a href="Operations.html#M000602">compose</a>!) @return [<a
+href="../Canvas.html">ChunkyPNG::Canvas</a>] Returns the new canvas,
+composed of the
+</p>
+<pre>
+  other 2.
+</pre>
+<p>
+@raise [<a href="../OutOfBounds.html">ChunkyPNG::OutOfBounds</a>] when the
+other canvas doesn&#8216;t fit on
+</p>
+<pre>
+  this one, given the offset and size of the other canvas.
+</pre>
+<p>
+@note API changed since 1.0 - This method now no longer is in place,
+</p>
+<pre>
+  but returns a new canvas and leaves the original intact. Use
+  {#compose!} if you want to compose on the canvas in place.
+</pre>
+<p>
+@see <a href="Operations.html#M000604">replace</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000602-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000602-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 85</span>
+85:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compose</span>(<span class="ruby-identifier">other</span>, <span class="ruby-identifier">offset_x</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">offset_y</span> = <span class="ruby-value">0</span>)
+86:         <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">compose!</span>(<span class="ruby-identifier">other</span>, <span class="ruby-identifier">offset_x</span>, <span class="ruby-identifier">offset_y</span>)
+87:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000601" class="method-detail">
+        <a name="M000601"></a>
+
+        <div class="method-heading">
+          <a href="#M000601" class="method-signature">
+          <span class="method-name">compose!</span><span class="method-args">(other, offset_x = 0, offset_y = 0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Composes another image onto this image using alpha blending. This will
+modify the current canvas.
+</p>
+<p>
+If you simply want to <a href="Operations.html#M000604">replace</a> pixels
+or when the other image does not have transparency, it is faster to use {<a
+href="Operations.html#M000604">replace</a>!}.
+</p>
+<p>
+@param [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] other The
+foreground canvas to <a href="Operations.html#M000602">compose</a> on
+</p>
+<pre>
+  the current canvas, using alpha compositing.
+</pre>
+<p>
+@param [Integer] offset_x The x-offset to apply the new foreground on.
+@param [Integer] offset_y The y-offset to apply the new foreground on.
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] Returns itself,
+but with the other canvas
+</p>
+<pre>
+  composed onto it.
+</pre>
+<p>
+@raise [<a href="../OutOfBounds.html">ChunkyPNG::OutOfBounds</a>] when the
+other canvas doesn&#8216;t fit on
+</p>
+<pre>
+  this one, given the offset and size of the other canvas.
+</pre>
+<p>
+@see <a href="Operations.html#M000604">replace</a>! @see <a
+href="Operations.html#M000602">compose</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000601-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000601-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 54</span>
+54:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compose!</span>(<span class="ruby-identifier">other</span>, <span class="ruby-identifier">offset_x</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">offset_y</span> = <span class="ruby-value">0</span>)
+55:         <span class="ruby-identifier">check_size_constraints!</span>(<span class="ruby-identifier">other</span>, <span class="ruby-identifier">offset_x</span>, <span class="ruby-identifier">offset_y</span>)
+56: 
+57:         <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">y</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">height</span> <span class="ruby-keyword kw">do</span>
+58:           <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">x</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">width</span> <span class="ruby-keyword kw">do</span>
+59:             <span class="ruby-identifier">set_pixel</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">offset_x</span>,
+60:                       <span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">offset_y</span>,
+61:                       <span class="ruby-constant">ChunkyPNG</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span>.<span class="ruby-identifier">compose</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">get_pixel</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>),
+62:                                                <span class="ruby-identifier">get_pixel</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">offset_x</span>,
+63:                                                          <span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">offset_y</span>)))
+64:           <span class="ruby-keyword kw">end</span>
+65:         <span class="ruby-keyword kw">end</span>
+66:         <span class="ruby-keyword kw">self</span>
+67:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000605" class="method-detail">
+        <a name="M000605"></a>
+
+        <div class="method-heading">
+          <a href="#M000605" class="method-signature">
+          <span class="method-name">crop</span><span class="method-args">(x, y, crop_width, crop_height)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Crops an image, given the coordinates and size of the image that needs to
+be cut out. This will leave the original image intact and return a new,
+cropped image with pixels copied from the original image.
+</p>
+<p>
+@param [Integer] x The x-coordinate of the top left corner of the image
+</p>
+<pre>
+  to be cropped.
+</pre>
+<p>
+@param [Integer] y The y-coordinate of the top left corner of the image
+</p>
+<pre>
+  to be cropped.
+</pre>
+<p>
+@param [Integer] crop_width The width of the image to be cropped. @param
+[Integer] crop_height The height of the image to be cropped. @return [<a
+href="../Canvas.html">ChunkyPNG::Canvas</a>] Returns the newly created
+cropped image. @raise [<a
+href="../OutOfBounds.html">ChunkyPNG::OutOfBounds</a>] when the <a
+href="Operations.html#M000605">crop</a> dimensions plus the given
+</p>
+<pre>
+  coordinates are bigger then the original image.
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000605-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000605-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 150</span>
+150:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">crop</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">crop_width</span>, <span class="ruby-identifier">crop_height</span>)
+151:         <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">crop!</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">crop_width</span>, <span class="ruby-identifier">crop_height</span>)
+152:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000606" class="method-detail">
+        <a name="M000606"></a>
+
+        <div class="method-heading">
+          <a href="#M000606" class="method-signature">
+          <span class="method-name">crop!</span><span class="method-args">(x, y, crop_width, crop_height)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Crops an image, given the coordinates and size of the image that needs to
+be cut out.
+</p>
+<p>
+This will change the size and content of the current canvas. Use {<a
+href="Operations.html#M000605">crop</a>} if you want to have a new canvas
+returned instead, leaving the current canvas intact.
+</p>
+<p>
+@param [Integer] x The x-coordinate of the top left corner of the image
+</p>
+<pre>
+  to be cropped.
+</pre>
+<p>
+@param [Integer] y The y-coordinate of the top left corner of the image
+</p>
+<pre>
+  to be cropped.
+</pre>
+<p>
+@param [Integer] crop_width The width of the image to be cropped. @param
+[Integer] crop_height The height of the image to be cropped. @return [<a
+href="../Canvas.html">ChunkyPNG::Canvas</a>] Returns itself, but cropped.
+@raise [<a href="../OutOfBounds.html">ChunkyPNG::OutOfBounds</a>] when the
+<a href="Operations.html#M000605">crop</a> dimensions plus the given
+</p>
+<pre>
+  coordinates are bigger then the original image.
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000606-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000606-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 170</span>
+170:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">crop!</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">crop_width</span>, <span class="ruby-identifier">crop_height</span>)
+171:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">crop_width</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">width</span>
+172:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ChunkyPNG</span><span class="ruby-operator">::</span><span class="ruby-constant">OutOfBounds</span>, <span class="ruby-value str">'Original image width is too small!'</span>
+173:         <span class="ruby-keyword kw">end</span>
+174:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">crop_height</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">height</span>
+175:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ChunkyPNG</span><span class="ruby-operator">::</span><span class="ruby-constant">OutOfBounds</span>, <span class="ruby-value str">'Original image height is too small!'</span>
+176:         <span class="ruby-keyword kw">end</span>
+177: 
+178:         <span class="ruby-identifier">new_pixels</span> = []
+179:         <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">cy</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">crop_height</span> <span class="ruby-keyword kw">do</span>
+180:           <span class="ruby-identifier">new_pixels</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">pixels</span>.<span class="ruby-identifier">slice</span>((<span class="ruby-identifier">cy</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">width</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">crop_width</span>)
+181:         <span class="ruby-keyword kw">end</span>
+182:         <span class="ruby-identifier">replace_canvas!</span>(<span class="ruby-identifier">crop_width</span>, <span class="ruby-identifier">crop_height</span>, <span class="ruby-identifier">new_pixels</span>)
+183:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000610" class="method-detail">
+        <a name="M000610"></a>
+
+        <div class="method-heading">
+          <span class="method-name">flip</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Operations.html#M000607">flip_horizontally</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000609" class="method-detail">
+        <a name="M000609"></a>
+
+        <div class="method-heading">
+          <span class="method-name">flip!</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Operations.html#M000607">flip_horizontally</a>!
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000607" class="method-detail">
+        <a name="M000607"></a>
+
+        <div class="method-heading">
+          <a href="#M000607" class="method-signature">
+          <span class="method-name">flip_horizontally</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Flips the image horizontally, leaving the original intact.
+</p>
+<p>
+This will <a href="Operations.html#M000610">flip</a> the image on its
+horizontal axis, e.g. pixels on the top will now be pixels on the bottom.
+Chaining this method twice will return the original canvas. This method
+will leave the original object intact and return a new canvas.
+</p>
+<p>
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] The flipped image
+@see <a href="Operations.html#M000607">flip_horizontally</a>!
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000607-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000607-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 194</span>
+194:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">flip_horizontally</span>
+195:         <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">flip_horizontally!</span>
+196:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000608" class="method-detail">
+        <a name="M000608"></a>
+
+        <div class="method-heading">
+          <a href="#M000608" class="method-signature">
+          <span class="method-name">flip_horizontally!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Flips the image horizontally in place.
+</p>
+<p>
+This will <a href="Operations.html#M000610">flip</a> the image on its
+horizontal axis, e.g. pixels on the top will now be pixels on the bottom.
+Chaining this method twice will return the original canvas. This method
+will leave the original object intact and return a new canvas.
+</p>
+<p>
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] Itself, but
+flipped @see <a href="Operations.html#M000607">flip_horizontally</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000608-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000608-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 207</span>
+207:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">flip_horizontally!</span>
+208:         <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">y</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span>((<span class="ruby-identifier">height</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">1</span>) <span class="ruby-keyword kw">do</span>
+209:           <span class="ruby-identifier">other_y</span>   = <span class="ruby-identifier">height</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+210:           <span class="ruby-identifier">other_row</span> = <span class="ruby-identifier">row</span>(<span class="ruby-identifier">other_y</span>)
+211:           <span class="ruby-identifier">replace_row!</span>(<span class="ruby-identifier">other_y</span>, <span class="ruby-identifier">row</span>(<span class="ruby-identifier">y</span>))
+212:           <span class="ruby-identifier">replace_row!</span>(<span class="ruby-identifier">y</span>, <span class="ruby-identifier">other_row</span>)
+213:         <span class="ruby-keyword kw">end</span>
+214:         <span class="ruby-keyword kw">self</span>
+215:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000611" class="method-detail">
+        <a name="M000611"></a>
+
+        <div class="method-heading">
+          <a href="#M000611" class="method-signature">
+          <span class="method-name">flip_vertically</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Flips the image vertically, leaving the original intact.
+</p>
+<p>
+This will <a href="Operations.html#M000610">flip</a> the image on its
+vertical axis, e.g. pixels on the left will now be pixels on the right.
+Chaining this method twice will return the original canvas. This method
+will leave the original object intact and return a new canvas.
+</p>
+<p>
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] The flipped image
+@see <a href="Operations.html#M000611">flip_vertically</a>!
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000611-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000611-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 229</span>
+229:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">flip_vertically</span>
+230:         <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">flip_vertically!</span>
+231:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000612" class="method-detail">
+        <a name="M000612"></a>
+
+        <div class="method-heading">
+          <a href="#M000612" class="method-signature">
+          <span class="method-name">flip_vertically!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Flips the image vertically in place.
+</p>
+<p>
+This will <a href="Operations.html#M000610">flip</a> the image on its
+vertical axis, e.g. pixels on the left will now be pixels on the right.
+Chaining this method twice will return the original canvas. This method
+will leave the original object intact and return a new canvas.
+</p>
+<p>
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] Itself, but
+flipped @see <a href="Operations.html#M000611">flip_vertically</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000612-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000612-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 242</span>
+242:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">flip_vertically!</span>
+243:         <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">y</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">height</span> <span class="ruby-keyword kw">do</span>
+244:           <span class="ruby-identifier">replace_row!</span>(<span class="ruby-identifier">y</span>, <span class="ruby-identifier">row</span>(<span class="ruby-identifier">y</span>).<span class="ruby-identifier">reverse</span>)
+245:         <span class="ruby-keyword kw">end</span>
+246:         <span class="ruby-keyword kw">self</span>
+247:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000600" class="method-detail">
+        <a name="M000600"></a>
+
+        <div class="method-heading">
+          <a href="#M000600" class="method-signature">
+          <span class="method-name">grayscale</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Converts the canvas to <a href="Operations.html#M000600">grayscale</a>,
+returning a new canvas.
+</p>
+<p>
+This method will not modify the canvas. To modift the current canvas, use
+{<a href="Operations.html#M000600">grayscale</a>!} instead.
+</p>
+<p>
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] A copy of the
+canvas, converted to
+</p>
+<pre>
+  grayscale.
+</pre>
+<p>
+@see {<a href="Operations.html#M000600">grayscale</a>!} @see {<a
+href="../Color.html#M000457">ChunkyPNG::Color#to_grayscale</a>}
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000600-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000600-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 34</span>
+34:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">grayscale</span>
+35:         <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">grayscale!</span>
+36:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000599" class="method-detail">
+        <a name="M000599"></a>
+
+        <div class="method-heading">
+          <a href="#M000599" class="method-signature">
+          <span class="method-name">grayscale!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Converts the canvas to <a href="Operations.html#M000600">grayscale</a>.
+</p>
+<p>
+This method will modify the canvas. The obtain a new canvas and leave the
+current instance intact, use {<a
+href="Operations.html#M000600">grayscale</a>} instead.
+</p>
+<p>
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] Returns itself,
+converted to <a href="Operations.html#M000600">grayscale</a>. @see {<a
+href="Operations.html#M000600">grayscale</a>} @see {<a
+href="../Color.html#M000457">ChunkyPNG::Color#to_grayscale</a>}
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000599-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000599-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 20</span>
+20:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">grayscale!</span>
+21:         <span class="ruby-identifier">pixels</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pixel</span><span class="ruby-operator">|</span> <span class="ruby-constant">ChunkyPNG</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span>.<span class="ruby-identifier">to_grayscale</span>(<span class="ruby-identifier">pixel</span>) }
+22:         <span class="ruby-keyword kw">self</span>
+23:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000614" class="method-detail">
+        <a name="M000614"></a>
+
+        <div class="method-heading">
+          <span class="method-name">mirror</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Operations.html#M000611">flip_vertically</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000613" class="method-detail">
+        <a name="M000613"></a>
+
+        <div class="method-heading">
+          <span class="method-name">mirror!</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Operations.html#M000611">flip_vertically</a>!
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000604" class="method-detail">
+        <a name="M000604"></a>
+
+        <div class="method-heading">
+          <a href="#M000604" class="method-signature">
+          <span class="method-name">replace</span><span class="method-args">(other, offset_x = 0, offset_y = 0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Replaces pixels on this image by pixels from another pixels, on a given
+offset. This method will modify the current canvas.
+</p>
+<p>
+This will completely <a href="Operations.html#M000604">replace</a> the
+pixels of the background image. If you want to blend them with
+semi-transparent pixels from the foreground image, see {<a
+href="Operations.html#M000602">compose</a>!}.
+</p>
+<p>
+@param (see <a href="Operations.html#M000604">replace</a>!) @return [<a
+href="../Canvas.html">ChunkyPNG::Canvas</a>] Returns a new, combined
+canvas. @raise [<a href="../OutOfBounds.html">ChunkyPNG::OutOfBounds</a>]
+when the other canvas doesn&#8216;t fit on
+</p>
+<pre>
+  this one, given the offset and size of the other canvas.
+</pre>
+<p>
+@note API changed since 1.0 - This method now no longer is in place,
+</p>
+<pre>
+  but returns a new canvas and leaves the original intact. Use
+  {#replace!} if you want to replace pixels on the canvas in place.
+</pre>
+<p>
+@see <a href="Operations.html#M000602">compose</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000604-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000604-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 133</span>
+133:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">other</span>, <span class="ruby-identifier">offset_x</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">offset_y</span> = <span class="ruby-value">0</span>)
+134:         <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">replace!</span>(<span class="ruby-identifier">other</span>, <span class="ruby-identifier">offset_x</span>, <span class="ruby-identifier">offset_y</span>)
+135:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000603" class="method-detail">
+        <a name="M000603"></a>
+
+        <div class="method-heading">
+          <a href="#M000603" class="method-signature">
+          <span class="method-name">replace!</span><span class="method-args">(other, offset_x = 0, offset_y = 0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Replaces pixels on this image by pixels from another pixels, on a given
+offset. This method will modify the current canvas.
+</p>
+<p>
+This will completely <a href="Operations.html#M000604">replace</a> the
+pixels of the background image. If you want to blend them with
+semi-transparent pixels from the foreground image, see {<a
+href="Operations.html#M000602">compose</a>!}.
+</p>
+<p>
+@param [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] other The
+foreground canvas to get the
+</p>
+<pre>
+  pixels from.
+</pre>
+<p>
+@param [Integer] offset_x The x-offset to apply the new foreground on.
+@param [Integer] offset_y The y-offset to apply the new foreground on.
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] Returns itself,
+but with the other canvas
+</p>
+<pre>
+  placed onto it.
+</pre>
+<p>
+@raise [<a href="../OutOfBounds.html">ChunkyPNG::OutOfBounds</a>] when the
+other canvas doesn&#8216;t fit on
+</p>
+<pre>
+  this one, given the offset and size of the other canvas.
+</pre>
+<p>
+@see <a href="Operations.html#M000602">compose</a>! @see <a
+href="Operations.html#M000604">replace</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000603-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000603-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 106</span>
+106:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">replace!</span>(<span class="ruby-identifier">other</span>, <span class="ruby-identifier">offset_x</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">offset_y</span> = <span class="ruby-value">0</span>)
+107:         <span class="ruby-identifier">check_size_constraints!</span>(<span class="ruby-identifier">other</span>, <span class="ruby-identifier">offset_x</span>, <span class="ruby-identifier">offset_y</span>)
+108: 
+109:         <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">y</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">height</span> <span class="ruby-keyword kw">do</span>
+110:           <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">d</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">width</span>
+111:             <span class="ruby-identifier">pixels</span>[(<span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">offset_y</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">width</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">offset_x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">d</span>] = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">pixels</span>[<span class="ruby-identifier">y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">width</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">d</span>]
+112:           <span class="ruby-keyword kw">end</span>
+113:         <span class="ruby-keyword kw">end</span>
+114:         <span class="ruby-keyword kw">self</span>
+115:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000623" class="method-detail">
+        <a name="M000623"></a>
+
+        <div class="method-heading">
+          <a href="#M000623" class="method-signature">
+          <span class="method-name">rotate_180</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Rotates the image 180 degrees.
+</p>
+<p>
+This method will leave the original object intact and return a new canvas.
+</p>
+<p>
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] The rotated image.
+@see <a href="Operations.html#M000623">rotate_180</a>!
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000623-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000623-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 312</span>
+312:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rotate_180</span>
+313:         <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">rotate_180!</span>
+314:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000624" class="method-detail">
+        <a name="M000624"></a>
+
+        <div class="method-heading">
+          <a href="#M000624" class="method-signature">
+          <span class="method-name">rotate_180!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Rotates the image 180 degrees in place.
+</p>
+<p>
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] Itself, but
+rotated 180 degrees. @see <a href="Operations.html#M000623">rotate_180</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000624-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000624-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 320</span>
+320:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rotate_180!</span>
+321:         <span class="ruby-identifier">pixels</span>.<span class="ruby-identifier">reverse!</span>
+322:         <span class="ruby-keyword kw">self</span>
+323:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000617" class="method-detail">
+        <a name="M000617"></a>
+
+        <div class="method-heading">
+          <span class="method-name">rotate_clockwise</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Operations.html#M000615">rotate_right</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000618" class="method-detail">
+        <a name="M000618"></a>
+
+        <div class="method-heading">
+          <span class="method-name">rotate_clockwise!</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Operations.html#M000615">rotate_right</a>!
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000621" class="method-detail">
+        <a name="M000621"></a>
+
+        <div class="method-heading">
+          <span class="method-name">rotate_counter_clockwise</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Operations.html#M000619">rotate_left</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000622" class="method-detail">
+        <a name="M000622"></a>
+
+        <div class="method-heading">
+          <span class="method-name">rotate_counter_clockwise!</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Operations.html#M000619">rotate_left</a>!
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000619" class="method-detail">
+        <a name="M000619"></a>
+
+        <div class="method-heading">
+          <a href="#M000619" class="method-signature">
+          <span class="method-name">rotate_left</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an image that is rotated 90 degrees counter-clockwise.
+</p>
+<p>
+This method will leave the original object intact and return a new canvas.
+</p>
+<p>
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] A rotated copy of
+itself. @see <a href="Operations.html#M000619">rotate_left</a>! for the
+in-place version.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000619-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000619-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 285</span>
+285:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rotate_left</span>
+286:         <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">rotate_left!</span>
+287:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000620" class="method-detail">
+        <a name="M000620"></a>
+
+        <div class="method-heading">
+          <a href="#M000620" class="method-signature">
+          <span class="method-name">rotate_left!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Rotates the image 90 degrees counter-clockwise in place.
+</p>
+<p>
+This method will change the original canvas. See {<a
+href="Operations.html#M000619">rotate_left</a>} for a version that leaves
+the canvas intact and returns a new rotated canvas instead.
+</p>
+<p>
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] Itself, but
+rotated.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000620-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000620-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 296</span>
+296:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rotate_left!</span>
+297:         <span class="ruby-identifier">new_pixels</span> = []
+298:         (<span class="ruby-identifier">width</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">downto</span>(<span class="ruby-value">0</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">new_pixels</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">column</span>(<span class="ruby-identifier">i</span>) }
+299:         <span class="ruby-identifier">replace_canvas!</span>(<span class="ruby-identifier">height</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">new_pixels</span>)
+300:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000615" class="method-detail">
+        <a name="M000615"></a>
+
+        <div class="method-heading">
+          <a href="#M000615" class="method-signature">
+          <span class="method-name">rotate_right</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new canvas instance that is rotated 90 degrees clockwise.
+</p>
+<p>
+This method will return a new canvas and leaves the original intact.
+</p>
+<p>
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] A
+clockwise-rotated copy. @see <a
+href="Operations.html#M000615">rotate_right</a>! for the in place version.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000615-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000615-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 258</span>
+258:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rotate_right</span>
+259:         <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">rotate_right!</span>
+260:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000616" class="method-detail">
+        <a name="M000616"></a>
+
+        <div class="method-heading">
+          <a href="#M000616" class="method-signature">
+          <span class="method-name">rotate_right!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Rotates the image 90 degrees clockwise in place.
+</p>
+<p>
+This method will change the current canvas.
+</p>
+<p>
+@return [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] Itself, but
+rotated clockwise. @see <a href="Operations.html#M000615">rotate_right</a>
+for a version that leaves the current canvas intact
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000616-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000616-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 268</span>
+268:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rotate_right!</span>
+269:         <span class="ruby-identifier">rotated</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">height</span>, <span class="ruby-identifier">width</span>)
+270:         <span class="ruby-identifier">new_pixels</span> = []
+271:         <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">width</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">new_pixels</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">column</span>(<span class="ruby-identifier">i</span>).<span class="ruby-identifier">reverse</span> }
+272:         <span class="ruby-identifier">replace_canvas!</span>(<span class="ruby-identifier">height</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">new_pixels</span>)
+273:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000625" class="method-detail">
+        <a name="M000625"></a>
+
+        <div class="method-heading">
+          <a href="#M000625" class="method-signature">
+          <span class="method-name">trim</span><span class="method-args">(border = pixels.first)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Trims the <a href="Operations.html#M000627">border</a> around the image,
+presumed to be the color of the first pixel.
+</p>
+<p>
+@param [Integer] <a href="Operations.html#M000627">border</a> The color to
+attempt to <a href="Operations.html#M000625">trim</a>. @return [<a
+href="../Canvas.html">ChunkyPNG::Canvas</a>] The trimmed image. @see <a
+href="Operations.html#M000625">trim</a>!
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000625-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000625-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 331</span>
+331:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trim</span>(<span class="ruby-identifier">border</span> = <span class="ruby-identifier">pixels</span>.<span class="ruby-identifier">first</span>)
+332:         <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">trim!</span>
+333:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000626" class="method-detail">
+        <a name="M000626"></a>
+
+        <div class="method-heading">
+          <a href="#M000626" class="method-signature">
+          <span class="method-name">trim!</span><span class="method-args">(border = pixels.first)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Trims the <a href="Operations.html#M000627">border</a> around the image in
+place.
+</p>
+<p>
+@param [Integer] <a href="Operations.html#M000627">border</a> The color to
+attempt to <a href="Operations.html#M000625">trim</a>. @return [<a
+href="../Canvas.html">ChunkyPNG::Canvas</a>] Returns itself, but with the
+<a href="Operations.html#M000627">border</a>
+</p>
+<pre>
+ trimmed.
+</pre>
+<p>
+@see <a href="Operations.html#M000625">trim</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000626-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000626-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 341</span>
+341:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trim!</span>(<span class="ruby-identifier">border</span> = <span class="ruby-identifier">pixels</span>.<span class="ruby-identifier">first</span>)
+342:         <span class="ruby-identifier">x1</span> = [<span class="ruby-operator">*</span><span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">width</span>].<span class="ruby-identifier">index</span>   { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">column</span>(<span class="ruby-identifier">c</span>).<span class="ruby-identifier">uniq</span> <span class="ruby-operator">!=</span> [<span class="ruby-identifier">border</span>] }
+343:         <span class="ruby-identifier">x2</span> = [<span class="ruby-operator">*</span><span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">width</span>].<span class="ruby-identifier">rindex</span>  { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">column</span>(<span class="ruby-identifier">c</span>).<span class="ruby-identifier">uniq</span> <span class="ruby-operator">!=</span> [<span class="ruby-identifier">border</span>] }
+344:         <span class="ruby-identifier">y1</span> = [<span class="ruby-operator">*</span><span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">height</span>].<span class="ruby-identifier">index</span>  { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>    <span class="ruby-identifier">row</span>(<span class="ruby-identifier">r</span>).<span class="ruby-identifier">uniq</span> <span class="ruby-operator">!=</span> [<span class="ruby-identifier">border</span>] }
+345:         <span class="ruby-identifier">y2</span> = [<span class="ruby-operator">*</span><span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">height</span>].<span class="ruby-identifier">rindex</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>    <span class="ruby-identifier">row</span>(<span class="ruby-identifier">r</span>).<span class="ruby-identifier">uniq</span> <span class="ruby-operator">!=</span> [<span class="ruby-identifier">border</span>] }
+346: 
+347:         <span class="ruby-identifier">crop!</span> <span class="ruby-identifier">x1</span>, <span class="ruby-identifier">y1</span>, <span class="ruby-identifier">x2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">x1</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">y2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">y1</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+348:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M000629" class="method-detail">
+        <a name="M000629"></a>
+
+        <div class="method-heading">
+          <a href="#M000629" class="method-signature">
+          <span class="method-name">check_size_constraints!</span><span class="method-args">(other, offset_x, offset_y)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Checks whether another image has the correct dimension to be used for an
+operation on the current image, given an offset coordinate to work with.
+@param [<a href="../Canvas.html">ChunkyPNG::Canvas</a>] other The other
+canvas @param [Integer] offset_x The x offset on which the other image will
+be
+</p>
+<pre>
+  applied.
+</pre>
+<p>
+@param [Integer] offset_y The y offset on which the other image will be
+</p>
+<pre>
+  applied.
+</pre>
+<p>
+@raise [<a href="../OutOfBounds.html">ChunkyPNG::OutOfBounds</a>] when the
+other image doesn&#8216;t fit.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000629-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000629-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/chunky_png/canvas/operations.rb, line 385</span>
+385:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">check_size_constraints!</span>(<span class="ruby-identifier">other</span>, <span class="ruby-identifier">offset_x</span>, <span class="ruby-identifier">offset_y</span>)
+386:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">width</span>  <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">width</span>  <span class="ruby-operator">+</span> <span class="ruby-identifier">offset_x</span>
+387:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ChunkyPNG</span><span class="ruby-operator">::</span><span class="ruby-constant">OutOfBounds</span>, <span class="ruby-value str">'Background image width is too small!'</span>
+388:         <span class="ruby-keyword kw">end</span>
+389:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">height</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">height</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">offset_y</span>
+390:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ChunkyPNG</span><span class="ruby-operator">::</span><span class="ruby-constant">OutOfBounds</span>, <span class="ruby-value str">'Background image height is too small!'</span>
+391:         <span class="ruby-keyword kw">end</span>
+392:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

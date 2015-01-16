@@ -1,0 +1,21 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets a CGI object. This methods is appeared when requiring &quot;gettext/cgi&quot;.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "cgi_: CGI object"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: self"
+  type: :BULLET
+full_name: GetText#set_cgi
+is_singleton: false
+name: set_cgi
+params: (cgi_)
+visibility: public

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>requires_prefix (lib/compass/core/caniuse.rb)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/core/caniuse.rb, line 196</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">requires_prefix</span>(<span class="ruby-identifier">browser</span>, <span class="ruby-identifier">min_version</span>, <span class="ruby-identifier">capability</span>, <span class="ruby-identifier">capability_options_list</span>)
+    <span class="ruby-identifier">min_version</span> = <span class="ruby-identifier">caniuse_version</span>(<span class="ruby-identifier">browser</span>, <span class="ruby-identifier">min_version</span>)
+    <span class="ruby-identifier">assert_valid_browser</span> <span class="ruby-identifier">browser</span>
+    <span class="ruby-identifier">assert_valid_capability</span> <span class="ruby-identifier">capability</span>
+    <span class="ruby-identifier">found_version</span> = <span class="ruby-keyword kw">false</span>
+    <span class="ruby-identifier">versions</span>(<span class="ruby-identifier">browser</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">version</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">found_version</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">version</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">min_version</span>
+      <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">found_version</span>
+      <span class="ruby-identifier">support</span> = <span class="ruby-identifier">browser_support</span>(<span class="ruby-identifier">browser</span>, <span class="ruby-identifier">version</span>, <span class="ruby-identifier">capability</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">capability_matches</span>(<span class="ruby-identifier">support</span>, <span class="ruby-identifier">capability_options_list</span>) <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">support</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\bx\b/</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">prefix</span>(<span class="ruby-identifier">browser</span>, <span class="ruby-identifier">version</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{min_version} is not a version for #{browser}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">found_version</span>
+    <span class="ruby-keyword kw">nil</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a Ruby IO object wrapping the underlying file descriptor. Since this file descriptor is fully functional (except under JRuby), this IO object can be used in any way a Ruby-created IO object can. This includes passing it to functions like `#select`.
+- !ruby/struct:SM::Flow::P 
+  body: Note that this always returns the same IO object. Creating lots of IO objects for the same file descriptor can cause some odd problems.
+- !ruby/struct:SM::Flow::P 
+  body: "**This is not supported under JRuby**. JRuby currently doesn't use native file descriptors for the IO object, so we can't use this file descriptor as a stand-in."
+- !ruby/struct:SM::Flow::P 
+  body: "@return [IO] An IO object wrapping the file descriptor @raise [NotImplementedError] if this is being called in JRuby"
+full_name: INotify::Notifier#to_io
+is_singleton: false
+name: to_io
+params: ()
+visibility: public

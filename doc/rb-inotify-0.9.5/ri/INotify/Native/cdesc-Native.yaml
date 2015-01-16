@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This module contains the low-level foreign-function interface code for dealing with the inotify C APIs. It's an implementation detail, and not meant for users to deal with.
+- !ruby/struct:SM::Flow::P 
+  body: "@private"
+constants: []
+
+full_name: INotify::Native
+includes: []
+
+instance_methods: []
+
+name: Native
+superclass: 

@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: FFI::Struct</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">FFI::Struct</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/ffi/struct_rb.html">
+                lib/ffi/struct.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000758">align</a>&nbsp;&nbsp;
+      <a href="#M000781">aligned</a>&nbsp;&nbsp;
+      <a href="#M000757">alignment</a>&nbsp;&nbsp;
+      <a href="#M000767">alignment</a>&nbsp;&nbsp;
+      <a href="#M000777">auto_ptr</a>&nbsp;&nbsp;
+      <a href="#M000776">by_ref</a>&nbsp;&nbsp;
+      <a href="#M000775">by_value</a>&nbsp;&nbsp;
+      <a href="#M000779">callback</a>&nbsp;&nbsp;
+      <a href="#M000763">clear</a>&nbsp;&nbsp;
+      <a href="#M000782">enclosing_module</a>&nbsp;&nbsp;
+      <a href="#M000783">find_field_type</a>&nbsp;&nbsp;
+      <a href="#M000784">find_type</a>&nbsp;&nbsp;
+      <a href="#M000771">in</a>&nbsp;&nbsp;
+      <a href="#M000778">layout</a>&nbsp;&nbsp;
+      <a href="#M000768">members</a>&nbsp;&nbsp;
+      <a href="#M000760">members</a>&nbsp;&nbsp;
+      <a href="#M000759">offset_of</a>&nbsp;&nbsp;
+      <a href="#M000770">offset_of</a>&nbsp;&nbsp;
+      <a href="#M000769">offsets</a>&nbsp;&nbsp;
+      <a href="#M000762">offsets</a>&nbsp;&nbsp;
+      <a href="#M000772">out</a>&nbsp;&nbsp;
+      <a href="#M000780">packed</a>&nbsp;&nbsp;
+      <a href="#M000773">ptr</a>&nbsp;&nbsp;
+      <a href="#M000756">size</a>&nbsp;&nbsp;
+      <a href="#M000765">size</a>&nbsp;&nbsp;
+      <a href="#M000766">size=</a>&nbsp;&nbsp;
+      <a href="#M000764">to_ptr</a>&nbsp;&nbsp;
+      <a href="#M000774">val</a>&nbsp;&nbsp;
+      <a href="#M000761">values</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="Struct/ManagedStructConverter.html" class="link">FFI::Struct::ManagedStructConverter</a><br />
+
+    </div>
+
+
+    <div id="aliases-list">
+      <h3 class="section-bar">External Aliases</h3>
+
+      <div class="name-list">
+                        <table summary="aliases">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">packed</td>
+          <td>-&gt;</td>
+          <td class="context-item-value">pack</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">aligned</td>
+          <td>-&gt;</td>
+          <td class="context-item-value">align</td>
+        </tr>
+                        </table>
+      </div>
+    </div>
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000767" class="method-detail">
+        <a name="M000767"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000767.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000767.html');return false;">
+          <span class="method-name">alignment</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@return (see <a href="Struct.html#M000757">Struct#alignment</a>)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000777" class="method-detail">
+        <a name="M000777"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000777.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000777.html');return false;">
+          <span class="method-name">auto_ptr</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000776" class="method-detail">
+        <a name="M000776"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000776.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000776.html');return false;">
+          <span class="method-name">by_ref</span><span class="method-args">(flags = :inout)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000775" class="method-detail">
+        <a name="M000775"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000775.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000775.html');return false;">
+          <span class="method-name">by_value</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000771" class="method-detail">
+        <a name="M000771"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000771.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000771.html');return false;">
+          <span class="method-name">in</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000778" class="method-detail">
+        <a name="M000778"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000778.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000778.html');return false;">
+          <span class="method-name">layout</span><span class="method-args">(*spec)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@return [<a href="StructLayout.html">StructLayout</a>] @overload <a
+href="Struct.html#M000778">layout</a>
+</p>
+<pre>
+ @return [StructLayout]
+ Get struct layout.
+</pre>
+<p>
+@overload <a href="Struct.html#M000778">layout</a>(*spec)
+</p>
+<pre>
+ @param [Array&lt;Symbol, Integer&gt;,Array(Hash)] spec
+ @return [StructLayout]
+ Create struct layout from +spec+.
+ @example Creating a layout from an array +spec+
+   class MyStruct &lt; Struct
+     layout :field1, :int,
+            :field2, :pointer,
+            :field3, :string
+   end
+ @example Creating a layout from an array +spec+ with offset
+   class MyStructWithOffset &lt; Struct
+     layout :field1, :int,
+            :field2, :pointer, 6,  # set offset to 6 for this field
+            :field3, :string
+   end
+ @example Creating a layout from a hash +spec+ (Ruby 1.9 only)
+   class MyStructFromHash &lt; Struct
+     layout :field1 =&gt; :int,
+            :field2 =&gt; :pointer,
+            :field3 =&gt; :string
+   end
+ @note Creating a layout from a hash +spec+ is supported only for Ruby 1.9.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000768" class="method-detail">
+        <a name="M000768"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000768.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000768.html');return false;">
+          <span class="method-name">members</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+(see FFI::Type#members)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000770" class="method-detail">
+        <a name="M000770"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000770.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000770.html');return false;">
+          <span class="method-name">offset_of</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+(see <a href="StructLayout.html#M000846">FFI::StructLayout#offset_of</a>)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000769" class="method-detail">
+        <a name="M000769"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000769.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000769.html');return false;">
+          <span class="method-name">offsets</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+(see <a href="StructLayout.html#M000845">FFI::StructLayout#offsets</a>)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000772" class="method-detail">
+        <a name="M000772"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000772.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000772.html');return false;">
+          <span class="method-name">out</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000773" class="method-detail">
+        <a name="M000773"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000773.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000773.html');return false;">
+          <span class="method-name">ptr</span><span class="method-args">(flags = :inout)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000765" class="method-detail">
+        <a name="M000765"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000765.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000765.html');return false;">
+          <span class="method-name">size</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get struct <a href="Struct.html#M000756">size</a> @return [Numeric]
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000766" class="method-detail">
+        <a name="M000766"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000766.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000766.html');return false;">
+          <span class="method-name">size=</span><span class="method-args">(size)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+set struct <a href="Struct.html#M000756">size</a> @param [Numeric] <a
+href="Struct.html#M000756">size</a> @return [<a
+href="Struct.html#M000756">size</a>]
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000774" class="method-detail">
+        <a name="M000774"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000774.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000774.html');return false;">
+          <span class="method-name">val</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Class methods</h3>
+
+      <div id="method-M000781" class="method-detail">
+        <a name="M000781"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000781.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000781.html');return false;">
+          <span class="method-name">aligned</span><span class="method-args">(alignment = 1)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000779" class="method-detail">
+        <a name="M000779"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000779.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000779.html');return false;">
+          <span class="method-name">callback</span><span class="method-args">(params, ret)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000782" class="method-detail">
+        <a name="M000782"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000782.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000782.html');return false;">
+          <span class="method-name">enclosing_module</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000783" class="method-detail">
+        <a name="M000783"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000783.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000783.html');return false;">
+          <span class="method-name">find_field_type</span><span class="method-args">(type, mod = enclosing_module)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000784" class="method-detail">
+        <a name="M000784"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000784.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000784.html');return false;">
+          <span class="method-name">find_type</span><span class="method-args">(type, mod = enclosing_module)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000780" class="method-detail">
+        <a name="M000780"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000780.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000780.html');return false;">
+          <span class="method-name">packed</span><span class="method-args">(packed = 1)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000758" class="method-detail">
+        <a name="M000758"></a>
+
+        <div class="method-heading">
+          <span class="method-name">align</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Struct.html#M000757">alignment</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000757" class="method-detail">
+        <a name="M000757"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000757.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000757.html');return false;">
+          <span class="method-name">alignment</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@return [Fixnum] <a href="Struct.html">Struct</a> <a
+href="Struct.html#M000757">alignment</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000763" class="method-detail">
+        <a name="M000763"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000763.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000763.html');return false;">
+          <span class="method-name">clear</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Clear the struct content. @return [self]
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000760" class="method-detail">
+        <a name="M000760"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000760.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000760.html');return false;">
+          <span class="method-name">members</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+(see FFI::StructLayout#members)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000759" class="method-detail">
+        <a name="M000759"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000759.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000759.html');return false;">
+          <span class="method-name">offset_of</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+(see <a href="StructLayout.html#M000846">FFI::StructLayout#offset_of</a>)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000762" class="method-detail">
+        <a name="M000762"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000762.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000762.html');return false;">
+          <span class="method-name">offsets</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+(see <a href="StructLayout.html#M000845">FFI::StructLayout#offsets</a>)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000756" class="method-detail">
+        <a name="M000756"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000756.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000756.html');return false;">
+          <span class="method-name">size</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get struct <a href="Struct.html#M000756">size</a> @return [Numeric]
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000764" class="method-detail">
+        <a name="M000764"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000764.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000764.html');return false;">
+          <span class="method-name">to_ptr</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get {<a href="Pointer.html">Pointer</a>} to struct content. @return
+[AbstractMemory]
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000761" class="method-detail">
+        <a name="M000761"></a>
+
+        <div class="method-heading">
+          <a href="Struct.src/M000761.html" target="Code" class="method-signature"
+            onclick="popupCode('Struct.src/M000761.html');return false;">
+          <span class="method-name">values</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@return [Array] Get array of <a href="Struct.html#M000761">values</a> from
+<a href="Struct.html">Struct</a> fields.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

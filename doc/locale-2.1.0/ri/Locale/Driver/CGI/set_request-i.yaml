@@ -1,0 +1,27 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Set a request.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "query_langs: An Array of QUERY_STRING value &quot;lang&quot;."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "cookie_langs: An Array of cookie value &quot;lang&quot;."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "accept_language: The value of HTTP_ACCEPT_LANGUAGE"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "accept_charset: The value of HTTP_ACCEPT_CHARSET"
+  type: :BULLET
+full_name: Locale::Driver::CGI#set_request
+is_singleton: false
+name: set_request
+params: (query_langs, cookie_langs, accept_language, accept_charset)
+visibility: public

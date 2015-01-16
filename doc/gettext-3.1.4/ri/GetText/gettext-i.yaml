@@ -1,0 +1,35 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: _
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Translates msgid and return the message. This doesn't make a copy of the message.
+- !ruby/struct:SM::Flow::P 
+  body: You need to use String#dup if you want to modify the return value with destructive functions.
+- !ruby/struct:SM::Flow::P 
+  body: (e.g.1) _(&quot;Hello &quot;).dup &lt;&lt; &quot;world&quot;
+- !ruby/struct:SM::Flow::P 
+  body: "But e.g.1 should be rewrite to:"
+- !ruby/struct:SM::Flow::P 
+  body: (e.g.2) _(&quot;Hello %{val}&quot;) % {:val =&gt; &quot;world&quot;}
+- !ruby/struct:SM::Flow::P 
+  body: Because the translator may want to change the position of &quot;world&quot;.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid: the message id."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: localized text by msgid. If there are not binded mo-file, it will return msgid."
+  type: :BULLET
+full_name: GetText#gettext
+is_singleton: false
+name: gettext
+params: |
+  gettext(msgid)
+  _(msgid)
+
+visibility: public

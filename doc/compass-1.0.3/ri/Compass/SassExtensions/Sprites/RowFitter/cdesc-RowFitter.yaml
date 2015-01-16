@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: images
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: rows
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Compass::SassExtensions::Sprites::RowFitter
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: efficiency
+- !ruby/object:RI::MethodSummary 
+  name: fit!
+- !ruby/object:RI::MethodSummary 
+  name: height
+- !ruby/object:RI::MethodSummary 
+  name: width
+name: RowFitter
+superclass: Object

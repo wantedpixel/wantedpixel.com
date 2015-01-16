@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Declare a file task.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  file &quot;config.cfg&quot; =&gt; [&quot;config.template&quot;] do\n    open(&quot;config.cfg&quot;, &quot;w&quot;) do |outfile|\n      open(&quot;config.template&quot;) do |infile|\n        while line = infile.gets\n          outfile.puts line\n        end\n      end\n    end\n end\n"
+full_name: Rake::DSL#file
+is_singleton: false
+name: file
+params: (*args, &block)
+visibility: private

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: GetText::POEntryForRubyParser#advance_to_next_attribute
+is_singleton: false
+name: advance_to_next_attribute
+params: ()
+visibility: public

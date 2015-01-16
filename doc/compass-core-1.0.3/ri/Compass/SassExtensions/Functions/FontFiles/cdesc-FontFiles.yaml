@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FONT_TYPES
+  value: "{     :woff => 'woff',     :woff2 => 'woff2',     :otf => 'opentype',     :opentype => 'opentype',     :ttf => 'truetype',     :truetype => 'truetype',     :svg => 'svg',     :eot => 'embedded-opentype'"
+full_name: Compass::SassExtensions::Functions::FontFiles
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: font_files
+- !ruby/object:RI::MethodSummary 
+  name: font_formats
+- !ruby/object:RI::MethodSummary 
+  name: with_each_font_file
+name: FontFiles
+superclass: 

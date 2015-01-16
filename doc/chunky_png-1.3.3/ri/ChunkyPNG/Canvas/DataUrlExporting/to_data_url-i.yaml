@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Exports the canvas as a data url (e.g. data:image/png;base64,&lt;data&gt;) that can easily be used inline in CSS or HTML. @return [String] The canvas formatted as a data URL string.
+full_name: ChunkyPNG::Canvas::DataUrlExporting#to_data_url
+is_singleton: false
+name: to_data_url
+params: ()
+visibility: public

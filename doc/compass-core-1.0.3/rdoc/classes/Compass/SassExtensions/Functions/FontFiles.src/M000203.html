@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>with_each_font_file (Compass::SassExtensions::Functions::FontFiles)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/core/sass_extensions/functions/font_files.rb, line 31</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_each_font_file</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-identifier">skip_next</span> = <span class="ruby-keyword kw">false</span>
+
+    <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_type</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">:String</span>
+      <span class="ruby-identifier">path</span> = <span class="ruby-identifier">unquote</span>(<span class="ruby-identifier">path</span>)
+      <span class="ruby-comment cmt"># if we were told to skip this iteration, do so...</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">skip_next</span>
+        <span class="ruby-identifier">skip_next</span> = <span class="ruby-keyword kw">false</span>
+        <span class="ruby-keyword kw">next</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-comment cmt"># back-compat support for passing the font type e.g.</span>
+      <span class="ruby-comment cmt"># font-files('path/to/file.ttf', truetype, 'path/to/file.otf', opentype);</span>
+      <span class="ruby-identifier">type</span> = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>]
+      <span class="ruby-identifier">type</span> = <span class="ruby-identifier">type</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-operator">:</span><span class="ruby-identifier">wrong</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_sym</span>
+
+      <span class="ruby-comment cmt"># if the type is valid, keep it, and skip the next index (as it was the type)</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">FONT_TYPES</span>.<span class="ruby-identifier">key?</span> <span class="ruby-identifier">type</span>
+        <span class="ruby-identifier">skip_next</span> = <span class="ruby-keyword kw">true</span>
+      <span class="ruby-comment cmt"># otherwise, we need to look at the file extension to derive the type...</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-comment cmt"># let pass url like font.type?thing#stuff</span>
+        <span class="ruby-identifier">type</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'.'</span>).<span class="ruby-identifier">last</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/(\?(.*))?(#(.*))?\&quot;?/</span>, <span class="ruby-value str">''</span>).<span class="ruby-identifier">to_sym</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">FONT_TYPES</span>.<span class="ruby-identifier">key?</span> <span class="ruby-identifier">type</span>
+        <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">path</span>, <span class="ruby-constant">FONT_TYPES</span>[<span class="ruby-identifier">type</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>, <span class="ruby-node">&quot;Could not determine font type for #{path}&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

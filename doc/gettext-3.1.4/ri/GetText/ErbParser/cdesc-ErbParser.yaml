@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: init
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: parse
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAGIC_COMMENT
+  value: /\A#coding:.*\n/
+full_name: GetText::ErbParser
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: detect_encoding
+- !ruby/object:RI::MethodSummary 
+  name: parse
+name: ErbParser
+superclass: Object

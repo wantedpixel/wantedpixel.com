@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Locale::Info::Region#iso_region?
+is_singleton: false
+name: iso_region?
+params: ()
+visibility: public

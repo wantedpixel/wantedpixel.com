@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_rakelib
+- !ruby/object:RI::MethodSummary 
+  name: application
+- !ruby/object:RI::MethodSummary 
+  name: application=
+- !ruby/object:RI::MethodSummary 
+  name: load_rakefile
+- !ruby/object:RI::MethodSummary 
+  name: original_dir
+comment: ""
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'10.4.2'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CommandLineOptionError
+  value: Class.new(StandardError)
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LATE
+  value: LateTime.instance
+- !ruby/object:RI::Constant 
+  comment: 
+  name: EARLY
+  value: EarlyTime.instance
+full_name: Rake
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Test::Unit::Assertions
+instance_methods: []
+
+name: Rake
+superclass: 

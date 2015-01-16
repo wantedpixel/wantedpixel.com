@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>when_compilation_error (Compass::SassCompiler)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/sass_compiler.rb, line 113</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">when_compilation_error</span>(<span class="ruby-identifier">error</span>, <span class="ruby-identifier">sass_file</span>, <span class="ruby-identifier">css_file</span>, <span class="ruby-identifier">sourcemap_file</span>)
+    <span class="ruby-ivar">@error_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">error</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:sass_filename</span>)
+      <span class="ruby-identifier">error_filename</span> = <span class="ruby-identifier">error</span>.<span class="ruby-identifier">sass_filename</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">sass_file</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">relativize</span>(<span class="ruby-identifier">error_filename</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">relativize</span>(<span class="ruby-identifier">sass_file</span>)
+        <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">record</span> <span class="ruby-identifier">:error</span>, <span class="ruby-node">&quot;#{relativize(sass_file)} (Line #{error.sass_line}: #{error.message})&quot;</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">record</span> <span class="ruby-identifier">:error</span>, <span class="ruby-node">&quot;#{relativize(sass_file)} (Line #{error.sass_line} of #{relativize(error_filename)}: #{error.message})&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">record</span> <span class="ruby-identifier">:error</span>, <span class="ruby-node">&quot;#{relativize(sass_file)} (#{error.backtrace.first}: #{error.message})&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">config</span>.<span class="ruby-identifier">run_stylesheet_error</span>(<span class="ruby-identifier">sass_file</span>, <span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

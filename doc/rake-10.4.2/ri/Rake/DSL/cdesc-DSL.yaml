@@ -1,0 +1,35 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "DSL is a module that provides #task, #desc, #namespace, etc. Use this when you'd like to use rake outside the top level scope."
+- !ruby/struct:SM::Flow::P 
+  body: For a Rakefile you run from the comamnd line this module is automatically included.
+constants: []
+
+full_name: Rake::DSL
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: FileUtilsExt
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: desc
+- !ruby/object:RI::MethodSummary 
+  name: directory
+- !ruby/object:RI::MethodSummary 
+  name: file
+- !ruby/object:RI::MethodSummary 
+  name: import
+- !ruby/object:RI::MethodSummary 
+  name: multitask
+- !ruby/object:RI::MethodSummary 
+  name: namespace
+- !ruby/object:RI::MethodSummary 
+  name: rule
+- !ruby/object:RI::MethodSummary 
+  name: task
+name: DSL
+superclass: 

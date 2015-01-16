@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Locale::Driver::Win32 module for win32. Detect the user locales and the charset. This is a low-level class. Application shouldn't use this directly.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MODULES
+  value: "{}"
+full_name: Locale::Driver
+includes: []
+
+instance_methods: []
+
+name: Driver
+superclass: 

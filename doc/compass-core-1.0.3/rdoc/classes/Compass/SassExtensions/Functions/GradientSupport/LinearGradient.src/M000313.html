@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>convert_to_or_from_legacy (Compass::SassExtensions::Functions::GradientSupport::LinearGradient)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/core/sass_extensions/functions/gradient_support.rb, line 402</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">convert_to_or_from_legacy</span>(<span class="ruby-identifier">position_or_angle</span>, <span class="ruby-identifier">options</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">options</span>)
+      <span class="ruby-identifier">input</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">position_or_angle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">Number</span>)
+          <span class="ruby-identifier">position_or_angle</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">opts</span>(<span class="ruby-identifier">list</span>(<span class="ruby-identifier">position_or_angle</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">' '</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">identifier</span>(<span class="ruby-identifier">s</span>) }, <span class="ruby-identifier">:space</span>))
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">convert_angle_from_offical</span>(<span class="ruby-identifier">input</span>).<span class="ruby-identifier">to_s</span>(<span class="ruby-identifier">options</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

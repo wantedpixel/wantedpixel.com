@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a hash of all the ISO languages. The hash is {String, language} where the string is the 2 digit language code from the ISO 639-1 data. This contains all of the data from the ISO 639-1 data (186 Languages).
+- !ruby/struct:SM::Flow::P 
+  body: Need to require 'locale/info' or 'locale/language'.
+full_name: Locale::Info#two_languages
+is_singleton: false
+name: two_languages
+params: ()
+visibility: public

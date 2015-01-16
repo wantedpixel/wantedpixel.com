@@ -1,0 +1,29 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [DataConverter, Symbol, Type] old @param add @param [] info @return [FFI::Enum, FFI::Type] Register or get an already registered type definition."
+- !ruby/struct:SM::Flow::P 
+  body: To register a new type definition, <tt>old</tt> should be a {FFI::Type}. <tt>add</tt> is in this case the type definition.
+- !ruby/struct:SM::Flow::P 
+  body: If <tt>old</tt> is a {DataConverter}, a {Type::Mapped} is returned.
+- !ruby/struct:SM::Flow::P 
+  body: If <tt>old</tt> is +:enum+
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: and <tt>add</tt> is an <tt>Array</tt>, a call to {#enum} is made with <tt>add</tt> as single parameter;
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: in others cases, <tt>info</tt> is used to create a named enum.
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: "If <tt>old</tt> is a key for type map, #typedef get <tt>old</tt> type definition."
+full_name: FFI::Library#typedef
+is_singleton: false
+name: typedef
+params: (old, add, info=nil)
+visibility: public

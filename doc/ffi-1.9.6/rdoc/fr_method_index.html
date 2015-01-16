@@ -1,0 +1,173 @@
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+
+    Methods
+
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Methods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="rdoc-style.css" type="text/css" />
+  <base target="docwin" />
+</head>
+<body>
+<div id="index">
+  <h1 class="section-bar">Methods</h1>
+  <div id="index-entries">
+    <a href="classes/FFI/Enums.html#M000802"><< (FFI::Enums)</a><br />
+    <a href="classes/FFI/Enum.html#M000789">[] (FFI::Enum)</a><br />
+    <a href="classes/FFI/ConstGenerator.html#M000833">[] (FFI::ConstGenerator)</a><br />
+    <a href="classes/FFI/Enums.html#M000804">__map_symbol (FFI::Enums)</a><br />
+    <a href="classes/FFI/StructLayoutBuilder.html#M000861">add (FFI::StructLayoutBuilder)</a><br />
+    <a href="classes/FFI/StructLayoutBuilder.html#M000864">add_array (FFI::StructLayoutBuilder)</a><br />
+    <a href="classes/FFI/StructLayoutBuilder.html#M000862">add_field (FFI::StructLayoutBuilder)</a><br />
+    <a href="classes/FFI/StructLayoutBuilder.html#M000863">add_struct (FFI::StructLayoutBuilder)</a><br />
+    <a href="classes/FFI.html#M000731">add_typedef (FFI)</a><br />
+    <a href="classes/FFI/Struct.html#M000758">align (FFI::Struct)</a><br />
+    <a href="classes/FFI/Struct.html#M000781">aligned (FFI::Struct)</a><br />
+    <a href="classes/FFI/Struct.html#M000767">alignment (FFI::Struct)</a><br />
+    <a href="classes/FFI/Struct.html#M000757">alignment (FFI::Struct)</a><br />
+    <a href="classes/FFI/StructLayoutBuilder.html#M000857">alignment= (FFI::StructLayoutBuilder)</a><br />
+    <a href="classes/FFI/VariadicInvoker.html#M000800">attach (FFI::VariadicInvoker)</a><br />
+    <a href="classes/FFI/Library.html#M000740">attach_function (FFI::Library)</a><br />
+    <a href="classes/FFI/Library.html#M000742">attach_variable (FFI::Library)</a><br />
+    <a href="classes/FFI/Struct.html#M000777">auto_ptr (FFI::Struct)</a><br />
+    <a href="classes/FFI/AutoPointer.html#M000821">autorelease= (FFI::AutoPointer)</a><br />
+    <a href="classes/FFI/AutoPointer.html#M000822">autorelease? (FFI::AutoPointer)</a><br />
+    <a href="classes/FFI/StructLayoutBuilder.html#M000865">build (FFI::StructLayoutBuilder)</a><br />
+    <a href="classes/FFI/Union.html#M000843">builder (FFI::Union)</a><br />
+    <a href="classes/FFI/Struct.html#M000776">by_ref (FFI::Struct)</a><br />
+    <a href="classes/FFI/Struct.html#M000775">by_value (FFI::Struct)</a><br />
+    <a href="classes/FFI/StructGenerator.html#M000808">calculate (FFI::StructGenerator)</a><br />
+    <a href="classes/FFI/ConstGenerator.html#M000835">calculate (FFI::ConstGenerator)</a><br />
+    <a href="classes/FFI/AutoPointer/Releaser.html#M000829">call (FFI::AutoPointer::Releaser)</a><br />
+    <a href="classes/FFI/VariadicInvoker.html#M000799">call (FFI::VariadicInvoker)</a><br />
+    <a href="classes/FFI/Library.html#M000743">callback (FFI::Library)</a><br />
+    <a href="classes/FFI/Struct.html#M000779">callback (FFI::Struct)</a><br />
+    <a href="classes/FFI/Struct.html#M000763">clear (FFI::Struct)</a><br />
+    <a href="classes/FFI/ConstGenerator.html#M000834">const (FFI::ConstGenerator)</a><br />
+    <a href="classes/FFI/Generator.html#M000752">constants (FFI::Generator)</a><br />
+    <a href="classes/FFI/ConstGenerator/Constant.html#M000840">converted_value (FFI::ConstGenerator::Constant)</a><br />
+    <a href="classes/FFI/StructGenerator.html#M000811">dump_config (FFI::StructGenerator)</a><br />
+    <a href="classes/FFI/ConstGenerator.html#M000836">dump_constants (FFI::ConstGenerator)</a><br />
+    <a href="classes/FFI/Struct.html#M000782">enclosing_module (FFI::Struct)</a><br />
+    <a href="classes/FFI/Library.html#M000745">enum (FFI::Library)</a><br />
+    <a href="classes/FFI/Library.html#M000746">enum_type (FFI::Library)</a><br />
+    <a href="classes/FFI/Library.html#M000747">enum_value (FFI::Library)</a><br />
+    <a href="classes/FFI.html#M000728">errno (FFI)</a><br />
+    <a href="classes/FFI.html#M000729">errno= (FFI)</a><br />
+    <a href="classes/FFI/Library.html#M000735">extended (FFI::Library)</a><br />
+    <a href="classes/FFI/Library.html#M000737">ffi_convention (FFI::Library)</a><br />
+    <a href="classes/FFI/Library.html#M000736">ffi_lib (FFI::Library)</a><br />
+    <a href="classes/FFI/Library.html#M000739">ffi_lib_flags (FFI::Library)</a><br />
+    <a href="classes/FFI/Library.html#M000738">ffi_libraries (FFI::Library)</a><br />
+    <a href="classes/FFI/StructGenerator.html#M000809">field (FFI::StructGenerator)</a><br />
+    <a href="classes/FFI/Enums.html#M000803">find (FFI::Enums)</a><br />
+    <a href="classes/FFI/Enum.html#M000790">find (FFI::Enum)</a><br />
+    <a href="classes/FFI/Struct.html#M000783">find_field_type (FFI::Struct)</a><br />
+    <a href="classes/FFI/Library.html#M000748">find_type (FFI::Library)</a><br />
+    <a href="classes/FFI.html#M000732">find_type (FFI)</a><br />
+    <a href="classes/FFI/Struct.html#M000784">find_type (FFI::Struct)</a><br />
+    <a href="classes/FFI/IO.html#M000749">for_fd (FFI::IO)</a><br />
+    <a href="classes/FFI/StructGenerator.html#M000810">found? (FFI::StructGenerator)</a><br />
+    <a href="classes/FFI/AutoPointer.html#M000820">free (FFI::AutoPointer)</a><br />
+    <a href="classes/FFI/AutoPointer/Releaser.html#M000828">free (FFI::AutoPointer::Releaser)</a><br />
+    <a href="classes/FFI/StrPtrConverter.html#M000797">from_native (FFI::StrPtrConverter)</a><br />
+    <a href="classes/FFI/Struct/ManagedStructConverter.html#M000786">from_native (FFI::Struct::ManagedStructConverter)</a><br />
+    <a href="classes/FFI/Enum.html#M000796">from_native (FFI::Enum)</a><br />
+    <a href="classes/FFI/AutoPointer.html#M000824">from_native (FFI::AutoPointer)</a><br />
+    <a href="classes/FFI/Library.html#M000741">function_names (FFI::Library)</a><br />
+    <a href="classes/FFI/TypesGenerator.html#M000844">generate (FFI::TypesGenerator)</a><br />
+    <a href="classes/FFI/StructGenerator.html#M000812">generate_layout (FFI::StructGenerator)</a><br />
+    <a href="classes/FFI/StructLayout/Enum.html#M000847">get (FFI::StructLayout::Enum)</a><br />
+    <a href="classes/FFI/StructLayout/InnerStruct.html#M000852">get (FFI::StructLayout::InnerStruct)</a><br />
+    <a href="classes/FFI/StructLayout/Mapped.html#M000850">get (FFI::StructLayout::Mapped)</a><br />
+    <a href="classes/FFI/StructGenerator.html#M000813">get_field (FFI::StructGenerator)</a><br />
+    <a href="classes/FFI/Struct.html#M000771">in (FFI::Struct)</a><br />
+    <a href="classes/FFI/StructGenerator.html#M000814">include (FFI::StructGenerator)</a><br />
+    <a href="classes/FFI/ConstGenerator.html#M000838">include (FFI::ConstGenerator)</a><br />
+    <a href="classes/FFI/VariadicInvoker.html#M000798">init (FFI::VariadicInvoker)</a><br />
+    <a href="classes/FFI/Struct.html#M000778">layout (FFI::Struct)</a><br />
+    <a href="classes/FFI.html#M000727">map_library_name (FFI)</a><br />
+    <a href="classes/FFI/Struct.html#M000768">members (FFI::Struct)</a><br />
+    <a href="classes/FFI/Struct.html#M000760">members (FFI::Struct)</a><br />
+    <a href="classes/FFI/StructGenerator.html#M000815">name (FFI::StructGenerator)</a><br />
+    <a href="classes/FFI/IO.html#M000750">native_read (FFI::IO)</a><br />
+    <a href="classes/FFI/AutoPointer.html#M000823">native_type (FFI::AutoPointer)</a><br />
+    <a href="classes/FFI/Enum.html#M000794">native_type (FFI::Enum)</a><br />
+    <a href="classes/FFI/AutoPointer.html#M000819">new (FFI::AutoPointer)</a><br />
+    <a href="classes/FFI/StructLayoutBuilder.html#M000855">new (FFI::StructLayoutBuilder)</a><br />
+    <a href="classes/FFI/ManagedStruct.html#M000854">new (FFI::ManagedStruct)</a><br />
+    <a href="classes/FFI/Enum.html#M000787">new (FFI::Enum)</a><br />
+    <a href="classes/FFI/Struct/ManagedStructConverter.html#M000785">new (FFI::Struct::ManagedStructConverter)</a><br />
+    <a href="classes/FFI/ConstGenerator/Constant.html#M000839">new (FFI::ConstGenerator::Constant)</a><br />
+    <a href="classes/FFI/Generator/Task.html#M000734">new (FFI::Generator::Task)</a><br />
+    <a href="classes/FFI/ConstGenerator.html#M000830">new (FFI::ConstGenerator)</a><br />
+    <a href="classes/FFI/StructGenerator/Field.html#M000816">new (FFI::StructGenerator::Field)</a><br />
+    <a href="classes/FFI/Generator.html#M000751">new (FFI::Generator)</a><br />
+    <a href="classes/FFI/StructLayout/Mapped.html#M000849">new (FFI::StructLayout::Mapped)</a><br />
+    <a href="classes/FFI/AutoPointer/Releaser.html#M000827">new (FFI::AutoPointer::Releaser)</a><br />
+    <a href="classes/FFI/NotFoundError.html#M000755">new (FFI::NotFoundError)</a><br />
+    <a href="classes/FFI/StructGenerator.html#M000805">new (FFI::StructGenerator)</a><br />
+    <a href="classes/FFI/Enums.html#M000801">new (FFI::Enums)</a><br />
+    <a href="classes/FFI/StructGenerator/Field.html#M000817">offset= (FFI::StructGenerator::Field)</a><br />
+    <a href="classes/FFI/Struct.html#M000770">offset_of (FFI::Struct)</a><br />
+    <a href="classes/FFI/StructLayout.html#M000846">offset_of (FFI::StructLayout)</a><br />
+    <a href="classes/FFI/Struct.html#M000759">offset_of (FFI::Struct)</a><br />
+    <a href="classes/FFI/Struct.html#M000762">offsets (FFI::Struct)</a><br />
+    <a href="classes/FFI/StructLayout.html#M000845">offsets (FFI::StructLayout)</a><br />
+    <a href="classes/FFI/Struct.html#M000769">offsets (FFI::Struct)</a><br />
+    <a href="classes/FFI/StructGenerator.html#M000807">options (FFI::StructGenerator)</a><br />
+    <a href="classes/FFI/ConstGenerator.html#M000832">options (FFI::ConstGenerator)</a><br />
+    <a href="classes/FFI/StructGenerator.html#M000806">options= (FFI::StructGenerator)</a><br />
+    <a href="classes/FFI/ConstGenerator.html#M000831">options= (FFI::ConstGenerator)</a><br />
+    <a href="classes/FFI/Struct.html#M000772">out (FFI::Struct)</a><br />
+    <a href="classes/FFI/Struct.html#M000780">packed (FFI::Struct)</a><br />
+    <a href="classes/FFI/StructLayoutBuilder.html#M000860">packed= (FFI::StructLayoutBuilder)</a><br />
+    <a href="classes/FFI/Struct.html#M000773">ptr (FFI::Struct)</a><br />
+    <a href="classes/FFI/StructLayout/Mapped.html#M000851">put (FFI::StructLayout::Mapped)</a><br />
+    <a href="classes/FFI/StructLayout/InnerStruct.html#M000853">put (FFI::StructLayout::InnerStruct)</a><br />
+    <a href="classes/FFI/StructLayout/Enum.html#M000848">put (FFI::StructLayout::Enum)</a><br />
+    <a href="classes/FFI/Pointer.html#M000872">read_array_of_type (FFI::Pointer)</a><br />
+    <a href="classes/FFI/Pointer.html#M000867">read_string (FFI::Pointer)</a><br />
+    <a href="classes/FFI/Pointer.html#M000868">read_string_length (FFI::Pointer)</a><br />
+    <a href="classes/FFI/Pointer.html#M000869">read_string_to_null (FFI::Pointer)</a><br />
+    <a href="classes/FFI/AutoPointer/CallableReleaser.html#M000826">release (FFI::AutoPointer::CallableReleaser)</a><br />
+    <a href="classes/FFI/AutoPointer/DefaultReleaser.html#M000825">release (FFI::AutoPointer::DefaultReleaser)</a><br />
+    <a href="classes/FFI/ConstGenerator/Constant.html#M000841">ruby_name (FFI::ConstGenerator::Constant)</a><br />
+    <a href="classes/FFI/Pointer.html#M000866">size (FFI::Pointer)</a><br />
+    <a href="classes/FFI/Struct.html#M000756">size (FFI::Struct)</a><br />
+    <a href="classes/FFI/Struct.html#M000765">size (FFI::Struct)</a><br />
+    <a href="classes/FFI/StructLayoutBuilder.html#M000856">size= (FFI::StructLayoutBuilder)</a><br />
+    <a href="classes/FFI/Struct.html#M000766">size= (FFI::Struct)</a><br />
+    <a href="classes/FFI/Generator.html#M000753">struct (FFI::Generator)</a><br />
+    <a href="classes/FFI/Enum.html#M000791">symbol_map (FFI::Enum)</a><br />
+    <a href="classes/FFI/Enum.html#M000788">symbols (FFI::Enum)</a><br />
+    <a href="classes/FFI/StructGenerator/Field.html#M000818">to_config (FFI::StructGenerator::Field)</a><br />
+    <a href="classes/FFI/Enum.html#M000792">to_h (FFI::Enum)</a><br />
+    <a href="classes/FFI/Enum.html#M000793">to_hash (FFI::Enum)</a><br />
+    <a href="classes/FFI/Enum.html#M000795">to_native (FFI::Enum)</a><br />
+    <a href="classes/FFI/Struct.html#M000764">to_ptr (FFI::Struct)</a><br />
+    <a href="classes/FFI/ConstGenerator.html#M000837">to_ruby (FFI::ConstGenerator)</a><br />
+    <a href="classes/FFI/ConstGenerator/Constant.html#M000842">to_ruby (FFI::ConstGenerator::Constant)</a><br />
+    <a href="classes/FFI/Generator.html#M000754">to_s (FFI::Generator)</a><br />
+    <a href="classes/FFI.html#M000733">type_size (FFI)</a><br />
+    <a href="classes/FFI/Library.html#M000744">typedef (FFI::Library)</a><br />
+    <a href="classes/FFI.html#M000730">typedef (FFI)</a><br />
+    <a href="classes/FFI/StructLayoutBuilder.html#M000858">union= (FFI::StructLayoutBuilder)</a><br />
+    <a href="classes/FFI/StructLayoutBuilder.html#M000859">union? (FFI::StructLayoutBuilder)</a><br />
+    <a href="classes/FFI/Struct.html#M000774">val (FFI::Struct)</a><br />
+    <a href="classes/FFI/Struct.html#M000761">values (FFI::Struct)</a><br />
+    <a href="classes/FFI/Pointer.html#M000873">write_array_of_type (FFI::Pointer)</a><br />
+    <a href="classes/FFI/Pointer.html#M000871">write_string (FFI::Pointer)</a><br />
+    <a href="classes/FFI/Pointer.html#M000870">write_string_length (FFI::Pointer)</a><br />
+  </div>
+</div>
+</body>
+</html>

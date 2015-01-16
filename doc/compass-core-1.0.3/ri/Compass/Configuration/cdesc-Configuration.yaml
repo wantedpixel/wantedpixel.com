@@ -1,0 +1,35 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_configuration_property
+- !ruby/object:RI::MethodSummary 
+  name: attributes_for_directory
+- !ruby/object:RI::MethodSummary 
+  name: remove_configuration_property
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ATTRIBUTES
+  value: "[       # What kind of project?       :project_type,       # Where is the project?       :project_path,       :http_path,       # Where are the various bits of the project       attributes_for_directory(:css, :stylesheets),       attributes_for_directory(:sass, nil),       attributes_for_directory(:images),       attributes_for_directory(:generated_images),       attributes_for_directory(:javascripts),       attributes_for_directory(:fonts),       attributes_for_directory(:extensions, nil),       # Compilation options       :output_style,       :sourcemap,       :environment,       :relative_assets,       :sass_options,       attributes_for_directory(:cache, nil),       :cache,       # Helper configuration       :asset_host,       :asset_cache_buster,       :line_comments,       :color_output,       :preferred_syntax,       :disable_warnings,       :sprite_engine,       :chunky_png_options"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ARRAY_ATTRIBUTES
+  value: "[       :additional_import_paths,       :sprite_load_path,       :required_libraries,       :loaded_frameworks,       :framework_path"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ARRAY_ATTRIBUTE_OPTIONS
+  value: "{       :sprite_load_path => { :clobbers => true }"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RUNTIME_READONLY_ATTRIBUTES
+  value: "[       :cache,       attributes_for_directory(:cache, nil),       :chunky_png_options,       :color_output,       attributes_for_directory(:css, :stylesheets),       :environment,       attributes_for_directory(:extensions, nil),       :framework_path,       attributes_for_directory(:javascripts),       :line_comments,       :loaded_frameworks,       :output_style,       :preferred_syntax,       :project_path,       :project_type,       :required_libraries,       attributes_for_directory(:sass, nil),       :sass_options,       :sourcemap,       :sprite_engine,     ].flatten"
+full_name: Compass::Configuration
+includes: []
+
+instance_methods: []
+
+name: Configuration
+superclass: 

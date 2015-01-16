@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Locale</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Locale</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/locale/tag/posix_rb.html">
+                lib/locale/tag/posix.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/tag/irregular_rb.html">
+                lib/locale/tag/irregular.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/tag/simple_rb.html">
+                lib/locale/tag/simple.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/tag/cldr_rb.html">
+                lib/locale/tag/cldr.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/tag/rfc_rb.html">
+                lib/locale/tag/rfc.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/tag/common_rb.html">
+                lib/locale/tag/common.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/info/language_rb.html">
+                lib/locale/info/language.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/info/region_rb.html">
+                lib/locale/info/region.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/tag_rb.html">
+                lib/locale/tag.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/driver/env_rb.html">
+                lib/locale/driver/env.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/driver/posix_rb.html">
+                lib/locale/driver/posix.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/driver/cgi_rb.html">
+                lib/locale/driver/cgi.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/driver/win32_table_rb.html">
+                lib/locale/driver/win32_table.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/driver/jruby_rb.html">
+                lib/locale/driver/jruby.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/driver/win32_rb.html">
+                lib/locale/driver/win32.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/driver_rb.html">
+                lib/locale/driver.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/middleware_rb.html">
+                lib/locale/middleware.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/version_rb.html">
+                lib/locale/version.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale/taglist_rb.html">
+                lib/locale/taglist.rb
+                </a>
+        <br />
+                <a href="../files/lib/locale_rb.html">
+                lib/locale.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="Locale.html">Locale</a> module manages the locale informations of
+the application. These functions are the most important APIs in this
+library. Almost of all i18n/l10n programs use this APIs only.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000180">app_language_tags</a>&nbsp;&nbsp;
+      <a href="#M000175">candidates</a>&nbsp;&nbsp;
+      <a href="#M000166">cgi=</a>&nbsp;&nbsp;
+      <a href="#M000176">charset</a>&nbsp;&nbsp;
+      <a href="#M000177">clear</a>&nbsp;&nbsp;
+      <a href="#M000178">clear_all</a>&nbsp;&nbsp;
+      <a href="#M000174">current</a>&nbsp;&nbsp;
+      <a href="#M000173">current=</a>&nbsp;&nbsp;
+      <a href="#M000171">default</a>&nbsp;&nbsp;
+      <a href="#M000170">default=</a>&nbsp;&nbsp;
+      <a href="#M000168">driver_module</a>&nbsp;&nbsp;
+      <a href="#M000167">init</a>&nbsp;&nbsp;
+      <a href="#M000179">set_app_language_tags</a>&nbsp;&nbsp;
+      <a href="#M000165">set_cgi</a>&nbsp;&nbsp;
+      <a href="#M000172">set_current</a>&nbsp;&nbsp;
+      <a href="#M000169">set_default</a>&nbsp;&nbsp;
+      <a href="#M000164">set_request</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="Locale/Driver.html" class="link">Locale::Driver</a><br />
+Module <a href="Locale/Info.html" class="link">Locale::Info</a><br />
+Module <a href="Locale/Tag.html" class="link">Locale::Tag</a><br />
+Class <a href="Locale/Middleware.html" class="link">Locale::Middleware</a><br />
+Class <a href="Locale/TagList.html" class="link">Locale::TagList</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;2.1.0&quot;</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000180" class="method-detail">
+        <a name="M000180"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000180.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000180.html');return false;">
+          <span class="method-name">app_language_tags</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Locale.html#M000180">app_language_tags</a>. Default is
+nil. See <a href="Locale.html#M000179">set_app_language_tags</a> for more
+details.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000175" class="method-detail">
+        <a name="M000175"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000175.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000175.html');return false;">
+          <span class="method-name">candidates</span><span class="method-args">(options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the language tags which are variations of the <a
+href="Locale.html#M000174">current</a> locales order by priority.
+</p>
+<p>
+For example, if the <a href="Locale.html#M000174">current</a> locales are
+[&quot;fr&quot;, &quot;ja_JP&quot;, &quot;en_US&quot;,
+&quot;en-Latn-GB-VARIANT&quot;], then returns [&quot;fr&quot;,
+&quot;ja_JP&quot;, &quot;en_US&quot;, &quot;en-Latn-GB-VARIANT&quot;,
+&quot;en_Latn_GB&quot;, &quot;en_GB&quot;, &quot;ja&quot;, &quot;en&quot;].
+&quot;en&quot; is the <a href="Locale.html#M000171">default</a> locale(You
+can change it using <a href="Locale.html#M000169">set_default</a>). The <a
+href="Locale.html#M000171">default</a> locale is added at the end of the
+list even if it isn&#8216;t exist.
+</p>
+<p>
+Usually, this method is used to find the locale data as the path(or a kind
+of IDs).
+</p>
+<ul>
+<li>options: options as a Hash or nil.
+
+<ul>
+<li>:supported_language_tags - An Array of the language tags order by the
+priority. This option restricts the locales which are supported by the
+library/application. Default is nil if you don&#8216;t need to restrict the
+locales.
+
+<pre>
+ (e.g.1) [&quot;fr_FR&quot;, &quot;en_GB&quot;, &quot;en_US&quot;, ...]
+</pre>
+</li>
+<li>:type - The type of language tag. :common, :rfc, :cldr, :posix and :simple
+are available. Default value is :common
+
+</li>
+</ul>
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000166" class="method-detail">
+        <a name="M000166"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000166.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000166.html');return false;">
+          <span class="method-name">cgi=</span><span class="method-args">(cgi)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets a CGI object.This is the convenient function of <a
+href="Locale.html#M000164">set_request</a>().
+</p>
+<p>
+This method is appeared when <a
+href="Locale.html#M000167">Locale.init</a>(:driver =&gt; :cgi) is called.
+</p>
+<ul>
+<li>cgi: CGI object
+
+</li>
+<li>Returns: cgi
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000176" class="method-detail">
+        <a name="M000176"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000176.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000176.html');return false;">
+          <span class="method-name">charset</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Gets the <a href="Locale.html#M000174">current</a> <a
+href="Locale.html#M000176">charset</a>.
+</p>
+<p>
+This returns the <a href="Locale.html#M000174">current</a> user/system <a
+href="Locale.html#M000176">charset</a>. This value is read only, so you
+can&#8216;t set it by yourself.
+</p>
+<ul>
+<li>Returns: the <a href="Locale.html#M000174">current</a> <a
+href="Locale.html#M000176">charset</a>.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000177" class="method-detail">
+        <a name="M000177"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000177.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000177.html');return false;">
+          <span class="method-name">clear</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Clear <a href="Locale.html#M000174">current</a> locale.
+</p>
+<ul>
+<li>Returns: self
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000178" class="method-detail">
+        <a name="M000178"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000178.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000178.html');return false;">
+          <span class="method-name">clear_all</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Clear all locales and charsets of all threads. This doesn&#8216;t <a
+href="Locale.html#M000177">clear</a> the <a
+href="Locale.html#M000171">default</a> and <a
+href="Locale.html#M000180">app_language_tags</a>. Use <a
+href="Locale.html#M000171">Locale.default</a> = nil to unset the <a
+href="Locale.html#M000171">default</a> locale.
+</p>
+<ul>
+<li>Returns: self
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000174" class="method-detail">
+        <a name="M000174"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000174.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000174.html');return false;">
+          <span class="method-name">current</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Gets the <a href="Locale.html#M000174">current</a> locales (<a
+href="Locale/Tag.html">Locale::Tag</a>&#8216;s class). If the <a
+href="Locale.html#M000174">current</a> locale is not set, this returns
+system/default locale.
+</p>
+<p>
+This method returns the <a href="Locale.html#M000174">current</a> language
+tags even if it isn&#8216;t included in <a
+href="Locale.html#M000180">app_language_tags</a>.
+</p>
+<p>
+Usually, the programs should use <a
+href="Locale.html#M000175">Locale.candidates</a> to find the correct
+locale, not this method.
+</p>
+<ul>
+<li>Returns: an Array of the <a href="Locale.html#M000174">current</a> locales
+(<a href="Locale/Tag.html">Locale::Tag</a>&#8216;s class).
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000173" class="method-detail">
+        <a name="M000173"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000173.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000173.html');return false;">
+          <span class="method-name">current=</span><span class="method-args">(tag)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets a <a href="Locale.html#M000174">current</a> locale. This is a single
+argument version of <a href="Locale.html#M000172">Locale.set_current</a>.
+</p>
+<ul>
+<li>tag: the language tag such as &quot;ja-JP&quot;
+
+</li>
+<li>Returns: an Array of the <a href="Locale.html#M000174">current</a> locale
+(<a href="Locale/Tag.html">Locale::Tag</a>&#8216;s class).
+
+<pre>
+ Locale.current = &quot;ja-JP&quot;
+ Locale.current = &quot;ja_JP.eucJP&quot;
+</pre>
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000171" class="method-detail">
+        <a name="M000171"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000171.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000171.html');return false;">
+          <span class="method-name">default</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Gets the <a href="Locale.html#M000171">default</a> locale(language tag).
+</p>
+<p>
+If the <a href="Locale.html#M000171">default</a> language tag is not set,
+this returns nil.
+</p>
+<ul>
+<li>Returns: the <a href="Locale.html#M000171">default</a> locale (<a
+href="Locale/Tag.html">Locale::Tag</a>&#8216;s class).
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000170" class="method-detail">
+        <a name="M000170"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000170.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000170.html');return false;">
+          <span class="method-name">default=</span><span class="method-args">(tag)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Same as <a href="Locale.html#M000169">Locale.set_default</a>.
+</p>
+<ul>
+<li>locale: the <a href="Locale.html#M000171">default</a> locale (<a
+href="Locale/Tag.html">Locale::Tag</a>&#8216;s class) or a String such as
+&quot;ja-JP&quot;.
+
+</li>
+<li>Returns: locale.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000168" class="method-detail">
+        <a name="M000168"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000168.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000168.html');return false;">
+          <span class="method-name">driver_module</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Gets the driver module.
+</p>
+<p>
+Usually you don&#8216;t need to call this method.
+</p>
+<ul>
+<li>Returns: the driver module.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000167" class="method-detail">
+        <a name="M000167"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000167.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000167.html');return false;">
+          <span class="method-name">init</span><span class="method-args">(opts = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Initialize <a href="Locale.html">Locale</a> library. Usually, you
+don&#8216;t need to call this directly, because this is called when <a
+href="Locale.html">Locale</a>&#8216;s methods are called.
+</p>
+<p>
+If you use this library with CGI or the kind of CGI. You need to call <a
+href="Locale.html#M000167">Locale.init</a>(:driver =&gt; :cgi).
+</p>
+<h4>For Framework designers/programers:</h4>
+<p>
+If your framework is for WWW, call this once like: <a
+href="Locale.html#M000167">Locale.init</a>(:driver =&gt; :cgi).
+</p>
+<h4>To Application programers:</h4>
+<p>
+If your framework doesn&#8216;t use ruby-locale and the application is for
+WWW, call this once like: <a
+href="Locale.html#M000167">Locale.init</a>(:driver =&gt; :cgi).
+</p>
+<h4>To Library authors:</h4>
+<p>
+Don&#8216;t call this, even if your application is only for WWW.
+</p>
+<ul>
+<li>opts: Options as a Hash.
+
+<ul>
+<li>:driver - The driver. :cgi if you use <a href="Locale.html">Locale</a>
+module with CGI, nil if you use system locale.
+
+<pre>
+  (ex) Locale.init(:driver =&gt; :cgi)
+</pre>
+</li>
+</ul>
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000179" class="method-detail">
+        <a name="M000179"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000179.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000179.html');return false;">
+          <span class="method-name">set_app_language_tags</span><span class="method-args">(*tags)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the language tags which is supported by the Application. This value is
+same with supported_language_tags in <a
+href="Locale.html#M000175">Locale.candidates</a> to restrict the result but
+is the global setting. If you set a language tag, the application works as
+the single locale application.
+</p>
+<p>
+If the <a href="Locale.html#M000174">current</a> locale is not included in
+<a href="Locale.html#M000180">app_language_tags</a>, <a
+href="Locale.html#M000171">Locale.default</a> value is used. Use <a
+href="Locale.html#M000169">Locale.set_default</a>() to set correct language
+if &quot;en&quot; is not included in the language tags.
+</p>
+<p>
+Set nil if <a href="Locale.html#M000177">clear</a> the value.
+</p>
+<p>
+Note that the libraries/plugins shouldn&#8216;t set this value.
+</p>
+<pre>
+ (e.g.) Locale.set_app_language_tags(&quot;fr_FR&quot;, &quot;en-GB&quot;, &quot;en_US&quot;, ...)
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000165" class="method-detail">
+        <a name="M000165"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000165.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000165.html');return false;">
+          <span class="method-name">set_cgi</span><span class="method-args">(cgi)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets a CGI object. This is the convenient function of <a
+href="Locale.html#M000164">set_request</a>().
+</p>
+<p>
+This method is appeared when <a
+href="Locale.html#M000167">Locale.init</a>(:driver =&gt; :cgi) is called.
+</p>
+<ul>
+<li>cgi: CGI object
+
+</li>
+<li>Returns: self
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000172" class="method-detail">
+        <a name="M000172"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000172.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000172.html');return false;">
+          <span class="method-name">set_current</span><span class="method-args">(*tags)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the locales of the <a href="Locale.html#M000174">current</a> thread
+order by the priority. Each thread has a <a
+href="Locale.html#M000174">current</a> locales. The system locale/default
+locale is used if the thread doesn&#8216;t have <a
+href="Locale.html#M000174">current</a> locales.
+</p>
+<ul>
+<li>tag: Locale::Language::Tag&#8216;s class or the language tag as a String.
+nil if you need to <a href="Locale.html#M000177">clear</a> <a
+href="Locale.html#M000174">current</a> locales.
+
+</li>
+<li><a href="Locale.html#M000176">charset</a>: the <a
+href="Locale.html#M000176">charset</a> (override the <a
+href="Locale.html#M000176">charset</a> even if the locale name has <a
+href="Locale.html#M000176">charset</a>) or nil.
+
+</li>
+<li>Returns: self
+
+</li>
+</ul>
+<p>
+(e.g.)
+</p>
+<pre>
+   Locale.set_current(&quot;ja_JP.eucJP&quot;)
+   Locale.set_current(&quot;ja-JP&quot;)
+   Locale.set_current(&quot;en_AU&quot;, &quot;en_US&quot;, ...)
+   Locale.set_current(Locale::Tag::Simple.new(&quot;ja&quot;, &quot;JP&quot;), ...)
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000169" class="method-detail">
+        <a name="M000169"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000169.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000169.html');return false;">
+          <span class="method-name">set_default</span><span class="method-args">(tag)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the <a href="Locale.html#M000171">default</a> locale as the language
+tag (<a href="Locale/Tag.html">Locale::Tag</a>&#8216;s class or String(such
+as &quot;ja_JP&quot;)).
+</p>
+<ul>
+<li>tag: the <a href="Locale.html#M000171">default</a> language_tag
+
+</li>
+<li>Returns: self.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000164" class="method-detail">
+        <a name="M000164"></a>
+
+        <div class="method-heading">
+          <a href="Locale.src/M000164.html" target="Code" class="method-signature"
+            onclick="popupCode('Locale.src/M000164.html');return false;">
+          <span class="method-name">set_request</span><span class="method-args">(query_langs, cookie_langs, accept_language, accept_charset)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets a request values for lang/charset.
+</p>
+<ul>
+<li>query_langs: An Array of QUERY_STRING value &quot;lang&quot;.
+
+</li>
+<li>cookie_langs: An Array of cookie value &quot;lang&quot;.
+
+</li>
+<li>accept_language: The value of HTTP_ACCEPT_LANGUAGE
+
+</li>
+<li>accept_charset: The value of HTTP_ACCEPT_CHARSET
+
+</li>
+</ul>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

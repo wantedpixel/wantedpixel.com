@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@overload enum(name, values)"
+- !ruby/struct:SM::Flow::VERB 
+  body: " Create a named enum.\n @example\n  enum :foo, [:zero, :one, :two]  # named enum\n @param [Symbol] name name for new enum\n @param [Array] values values for enum\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload enum(*args)"
+- !ruby/struct:SM::Flow::VERB 
+  body: " Create an unnamed enum.\n @example\n  enum :zero, :one, :two  # unnamed enum\n @param args values for enum\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload enum(values)"
+- !ruby/struct:SM::Flow::VERB 
+  body: " Create an unnamed enum.\n @example\n  enum [:zero, :one, :two]  # unnamed enum, equivalent to above example\n @param [Array] values values for enum\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@return [FFI::Enum] Create a new {FFI::Enum}."
+full_name: FFI::Library#enum
+is_singleton: false
+name: enum
+params: (*args)
+visibility: public

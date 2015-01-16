@@ -1,0 +1,38 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: GetText::TextDomainManager
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: bind_to
+- !ruby/object:RI::MethodSummary 
+  name: cached=
+- !ruby/object:RI::MethodSummary 
+  name: cached?
+- !ruby/object:RI::MethodSummary 
+  name: clear_all_text_domains
+- !ruby/object:RI::MethodSummary 
+  name: clear_caches
+- !ruby/object:RI::MethodSummary 
+  name: dump_all_text_domains
+- !ruby/object:RI::MethodSummary 
+  name: output_charset
+- !ruby/object:RI::MethodSummary 
+  name: output_charset=
+- !ruby/object:RI::MethodSummary 
+  name: restore_all_text_domains
+- !ruby/object:RI::MethodSummary 
+  name: text_domain_pool
+- !ruby/object:RI::MethodSummary 
+  name: translate_plural_message
+- !ruby/object:RI::MethodSummary 
+  name: translate_singular_message
+name: TextDomainManager
+superclass: 

@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "The root module of the library, which is laid out as so:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "{Notifier} -- The main class, where the notifications are set up"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "{Watcher} -- A watcher for a single file or directory"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "{Event} -- An filesystem event notification"
+  type: :BULLET
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: An array containing the version number of rb-inotify. The numbers in the array are the major, minor, and patch versions, respectively.
+  name: VERSION
+  value: "[0, 9, 5]"
+full_name: INotify
+includes: []
+
+instance_methods: []
+
+name: INotify
+superclass: 

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Functions::Sprites#reversed_color_names
+is_singleton: false
+name: reversed_color_names
+params: ()
+visibility: protected

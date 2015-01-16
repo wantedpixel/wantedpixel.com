@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>calculate (FFI::ConstGenerator)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/ffi/tools/const_generator.rb, line 106</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">calculate</span>(<span class="ruby-identifier">options</span> = {})
+      <span class="ruby-identifier">binary</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">tmpdir</span>, <span class="ruby-node">&quot;rb_const_gen_bin_#{Process.pid}&quot;</span>
+
+      <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{@prefix}.const_generator&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@includes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">inc</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#include &lt;#{inc}&gt;&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;\nint main(int argc, char **argv)\n{&quot;</span>
+
+        <span class="ruby-ivar">@constants</span>.<span class="ruby-identifier">each_value</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">const</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;#ifdef \#{const.name}\nprintf(\&quot;\#{const.name} \#{const.format}\\\\n\&quot;, \#{const.cast}\#{const.name});\n#endif\n&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;\n\treturn 0;\n}&quot;</span>
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">flush</span>
+
+        <span class="ruby-identifier">output</span> = <span class="ruby-node">`gcc #{options[:cppflags]} -D_DARWIN_USE_64_BIT_INODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -x c -Wall -Werror #{f.path} -o #{binary} 2&gt;&amp;1`</span>
+
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">$?</span>.<span class="ruby-identifier">success?</span> <span class="ruby-keyword kw">then</span>
+          <span class="ruby-identifier">output</span> = <span class="ruby-identifier">output</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;\t#{l}&quot;</span> }.<span class="ruby-identifier">join</span> <span class="ruby-value str">&quot;\n&quot;</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Compilation error generating constants #{@prefix}:\n#{output}&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">output</span> = <span class="ruby-node">`#{binary}`</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span>(<span class="ruby-identifier">binary</span> <span class="ruby-operator">+</span> (<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">windows?</span> <span class="ruby-value">? </span><span class="ruby-value str">&quot;.exe&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;&quot;</span>))
+      <span class="ruby-identifier">output</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^(\S+)\s(.*)$/</span>
+        <span class="ruby-identifier">const</span> = <span class="ruby-ivar">@constants</span>[<span class="ruby-identifier">$1</span>]
+        <span class="ruby-identifier">const</span>.<span class="ruby-identifier">value</span> = <span class="ruby-identifier">$2</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">missing_constants</span> = <span class="ruby-ivar">@constants</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">constant</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">constant</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">name</span> }
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@required</span> <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">missing_constants</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Missing required constants for #{@prefix}: #{missing_constants.join ', '}&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

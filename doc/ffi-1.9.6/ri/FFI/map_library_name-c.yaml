@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [#to_s] lib library name @return [String] library name formatted for current platform Transform a generic library name to a platform library name @example"
+- !ruby/struct:SM::Flow::VERB 
+  body: " # Linux\n FFI.map_library_name 'c'     # -&gt; &quot;libc.so.6&quot;\n FFI.map_library_name 'jpeg'  # -&gt; &quot;libjpeg.so&quot;\n # Windows\n FFI.map_library_name 'c'     # -&gt; &quot;msvcrt.dll&quot;\n FFI.map_library_name 'jpeg'  # -&gt; &quot;jpeg.dll&quot;\n"
+full_name: FFI::map_library_name
+is_singleton: true
+name: map_library_name
+params: (lib)
+visibility: public

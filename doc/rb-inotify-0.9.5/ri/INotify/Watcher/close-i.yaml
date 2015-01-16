@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Disables this Watcher, so that it doesn't fire any more events.
+- !ruby/struct:SM::Flow::P 
+  body: "@raise [SystemCallError] if the watch fails to be disabled for some reason"
+full_name: INotify::Watcher#close
+is_singleton: false
+name: close
+params: ()
+visibility: public

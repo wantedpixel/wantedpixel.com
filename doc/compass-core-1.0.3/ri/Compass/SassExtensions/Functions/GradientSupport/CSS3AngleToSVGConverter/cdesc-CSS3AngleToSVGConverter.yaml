@@ -1,0 +1,59 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOP
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BOTTOM
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RIGHT
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LEFT
+  value: "8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DIR_KEYWORDS_TO_ANGLE
+  value: "{       TOP            => 0,       TOP    | RIGHT => 45,                RIGHT => 90,       BOTTOM | RIGHT => 135,       BOTTOM         => 180,       BOTTOM | LEFT  => 225,                LEFT  => 270,       TOP    | LEFT  => 315,     }"
+full_name: Compass::SassExtensions::Functions::GradientSupport::CSS3AngleToSVGConverter
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Math
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: handle_keywords
+- !ruby/object:RI::MethodSummary 
+  name: in_radians
+- !ruby/object:RI::MethodSummary 
+  name: result
+- !ruby/object:RI::MethodSummary 
+  name: round6
+- !ruby/object:RI::MethodSummary 
+  name: scale
+- !ruby/object:RI::MethodSummary 
+  name: sin2
+- !ruby/object:RI::MethodSummary 
+  name: x
+- !ruby/object:RI::MethodSummary 
+  name: x1
+- !ruby/object:RI::MethodSummary 
+  name: x2
+- !ruby/object:RI::MethodSummary 
+  name: y
+- !ruby/object:RI::MethodSummary 
+  name: y1
+- !ruby/object:RI::MethodSummary 
+  name: y2
+name: CSS3AngleToSVGConverter
+superclass: Object

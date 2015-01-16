@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Sprites::ImageMethods#get_magic_selector_image
+is_singleton: false
+name: get_magic_selector_image
+params: (name, selector)
+visibility: public

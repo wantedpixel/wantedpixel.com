@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::Commands::ProjectStats#print_tree
+is_singleton: false
+name: print_tree
+params: (file, depth = 0, importer = @compiler.importer)
+visibility: public

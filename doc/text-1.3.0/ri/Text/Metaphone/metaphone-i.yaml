@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the Metaphone representation of a string. If the string contains multiple words, each word in turn is converted into its Metaphone representation. Note that only the letters A-Z are supported, so any language-specific processing should be done beforehand.
+- !ruby/struct:SM::Flow::P 
+  body: If the :buggy option is set, alternate 'buggy' rules are used.
+full_name: Text::Metaphone#metaphone
+is_singleton: false
+name: metaphone
+params: (str, options={})
+visibility: public

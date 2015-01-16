@@ -1,0 +1,122 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: base
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: left
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: options
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: relative_file
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: top
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACTIVE
+  value: "%r{[_-]active$}"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TARGET
+  value: "%r{[_-]target$}"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: HOVER
+  value: "%r{[_-]hover$}"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FOCUS
+  value: "%r{[_-]focus$}"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PARENT
+  value: "%r{(.+)[-_](.+)$}"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: REPEAT_X
+  value: "'repeat-x'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: REPEAT_Y
+  value: "'repeat-y'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NO_REPEAT
+  value: "'no-repeat'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VALID_REPEATS
+  value: "[REPEAT_Y, REPEAT_X, NO_REPEAT]"
+full_name: Compass::SassExtensions::Sprites::Image
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Sass::Script::Value::Helpers
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: active
+- !ruby/object:RI::MethodSummary 
+  name: active?
+- !ruby/object:RI::MethodSummary 
+  name: digest
+- !ruby/object:RI::MethodSummary 
+  name: file
+- !ruby/object:RI::MethodSummary 
+  name: find_file
+- !ruby/object:RI::MethodSummary 
+  name: focus
+- !ruby/object:RI::MethodSummary 
+  name: focus?
+- !ruby/object:RI::MethodSummary 
+  name: get_var_file
+- !ruby/object:RI::MethodSummary 
+  name: height
+- !ruby/object:RI::MethodSummary 
+  name: hover
+- !ruby/object:RI::MethodSummary 
+  name: hover?
+- !ruby/object:RI::MethodSummary 
+  name: mtime
+- !ruby/object:RI::MethodSummary 
+  name: no_repeat?
+- !ruby/object:RI::MethodSummary 
+  name: offset
+- !ruby/object:RI::MethodSummary 
+  name: parent
+- !ruby/object:RI::MethodSummary 
+  name: position
+- !ruby/object:RI::MethodSummary 
+  name: repeat
+- !ruby/object:RI::MethodSummary 
+  name: repeat_x?
+- !ruby/object:RI::MethodSummary 
+  name: repeat_y?
+- !ruby/object:RI::MethodSummary 
+  name: size
+- !ruby/object:RI::MethodSummary 
+  name: spacing
+- !ruby/object:RI::MethodSummary 
+  name: target
+- !ruby/object:RI::MethodSummary 
+  name: target?
+- !ruby/object:RI::MethodSummary 
+  name: width
+name: Image
+superclass: Object

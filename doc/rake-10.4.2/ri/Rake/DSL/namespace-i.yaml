@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a new rake namespace and use it for evaluating the given block. Returns a NameSpace object that can be used to lookup tasks defined in the namespace.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ns = namespace &quot;nested&quot; do\n    # the &quot;nested:run&quot; task\n    task :run\n  end\n  task_run = ns[:run] # find :run in the given namespace.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Tasks can also be defined in a namespace by using a &quot;:&quot; in the task name:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  task &quot;nested:test&quot; do\n    # ...\n  end\n"
+full_name: Rake::DSL#namespace
+is_singleton: false
+name: namespace
+params: (name=nil, &block)
+visibility: private

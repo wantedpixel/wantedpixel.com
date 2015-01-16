@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The prefixes used by the given browsers.
+full_name: Compass::SassExtensions::Functions::CrossBrowserSupport#browser_prefixes
+is_singleton: false
+name: browser_prefixes
+params: (browsers)
+visibility: public

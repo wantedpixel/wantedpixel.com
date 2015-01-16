@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: For {PoParer}.
+full_name: GetText::PO#set_comment
+is_singleton: false
+name: set_comment
+params: (msgid, comment, msgctxt=nil)
+visibility: public

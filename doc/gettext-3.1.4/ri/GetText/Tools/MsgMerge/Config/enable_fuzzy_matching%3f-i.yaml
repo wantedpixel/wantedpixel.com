@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@return [Bool] true if fuzzy matching is enabled, false otherwise."
+full_name: GetText::Tools::MsgMerge::Config#enable_fuzzy_matching?
+is_singleton: false
+name: enable_fuzzy_matching?
+params: ()
+visibility: public

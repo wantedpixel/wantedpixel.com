@@ -1,0 +1,49 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: mofiles
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: output_charset
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: cached=
+- !ruby/object:RI::MethodSummary 
+  name: cached?
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: GetText::TextDomain class manages mo-files of a text domain.
+- !ruby/struct:SM::Flow::P 
+  body: Usually, you don't need to use this class directly.
+- !ruby/struct:SM::Flow::P 
+  body: "Notice: This class is unstable. APIs will be changed."
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULT_PLURAL_CALC
+  value: Proc.new {|n| n != 1}
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULT_SINGLE_CALC
+  value: Proc.new {|n| 0}
+full_name: GetText::TextDomain
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: clear
+- !ruby/object:RI::MethodSummary 
+  name: output_charset=
+- !ruby/object:RI::MethodSummary 
+  name: translate_singular_message
+name: TextDomain
+superclass: Object

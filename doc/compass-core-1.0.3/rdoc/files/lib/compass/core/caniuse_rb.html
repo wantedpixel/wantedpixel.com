@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: caniuse.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>caniuse.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>lib/compass/core/caniuse.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Fri Jan 16 08:17:09 +0100 2015</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+    <div id="requires-list">
+      <h3 class="section-bar">Required files</h3>
+
+      <div class="name-list">
+      multi_json&nbsp;&nbsp;
+      singleton&nbsp;&nbsp;
+      </div>
+    </div>
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000059">assert_valid_browser</a>&nbsp;&nbsp;
+      <a href="#M000060">assert_valid_capability</a>&nbsp;&nbsp;
+      <a href="#M000058">assert_valid_prefix</a>&nbsp;&nbsp;
+      <a href="#M000061">assert_valid_version</a>&nbsp;&nbsp;
+      <a href="#M000057">browser_data</a>&nbsp;&nbsp;
+      <a href="#M000056">browser_support</a>&nbsp;&nbsp;
+      <a href="#M000053">caniuse_version</a>&nbsp;&nbsp;
+      <a href="#M000051">capabilities</a>&nbsp;&nbsp;
+      <a href="#M000055">capability_data</a>&nbsp;&nbsp;
+      <a href="#M000045">capability_matches</a>&nbsp;&nbsp;
+      <a href="#M000054">inspect</a>&nbsp;&nbsp;
+      <a href="#M000047">next_version</a>&nbsp;&nbsp;
+      <a href="#M000046">prefixed_usage</a>&nbsp;&nbsp;
+      <a href="#M000048">previous_version</a>&nbsp;&nbsp;
+      <a href="#M000049">requires_prefix</a>&nbsp;&nbsp;
+      <a href="#M000052">usage</a>&nbsp;&nbsp;
+      <a href="#M000050">versions</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CAPABILITY_MATCHERS</td>
+          <td>=</td>
+          <td class="context-item-value">{     :full_support =&gt; lambda {|support, capability| !support ^ (capability =~ /\by\b/) },     :partial_support =&gt; lambda {|support, capability| !support ^ (capability =~ /\ba\b/) },     :prefixed =&gt; lambda {|support, capability| !support ^ (capability =~ /\bx\b/) },     :spec_versions =&gt; lambda {|versions, capability| versions.any? {|v| capability =~ SPEC_VERSION_MATCHERS[v] } }</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ALTERNATE_VERSIONS</td>
+          <td>=</td>
+          <td class="context-item-value">{     &quot;android&quot; =&gt; {       &quot;4.2&quot; =&gt; &quot;4.2-4.3&quot;,       &quot;4.3&quot; =&gt; &quot;4.2-4.3&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+These are <a href="caniuse_rb.html#M000050">versions</a> that users might
+reasonably type mapped to the caniuse version.
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000059" class="method-detail">
+        <a name="M000059"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000059.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000059.html');return false;">
+          <span class="method-name">assert_valid_browser</span><span class="method-args">(browser)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+efficiently checks if a browser is valid
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000060" class="method-detail">
+        <a name="M000060"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000060.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000060.html');return false;">
+          <span class="method-name">assert_valid_capability</span><span class="method-args">(capability)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+efficiently checks if a capability is valid
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000058" class="method-detail">
+        <a name="M000058"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000058.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000058.html');return false;">
+          <span class="method-name">assert_valid_prefix</span><span class="method-args">(prefix)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+efficiently checks if a prefix is valid
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000061" class="method-detail">
+        <a name="M000061"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000061.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000061.html');return false;">
+          <span class="method-name">assert_valid_version</span><span class="method-args">(browser, *versions)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000057" class="method-detail">
+        <a name="M000057"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000057.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000057.html');return false;">
+          <span class="method-name">browser_data</span><span class="method-args">(browser)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+the metadata assocated with a given browser
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000056" class="method-detail">
+        <a name="M000056"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000056.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000056.html');return false;">
+          <span class="method-name">browser_support</span><span class="method-args">(browser, version, capability)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000053" class="method-detail">
+        <a name="M000053"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000053.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000053.html');return false;">
+          <span class="method-name">caniuse_version</span><span class="method-args">(browser, version)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+returns a valid version given the version provided by the user This is used
+to maintain API compatibility when caniuse removes a version from their
+data (which seems to be replaced with a semantic equivalent).
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000051" class="method-detail">
+        <a name="M000051"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000051.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000051.html');return false;">
+          <span class="method-name">capabilities</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The list of <a href="caniuse_rb.html#M000051">capabilities</a> tracked by
+caniuse.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000055" class="method-detail">
+        <a name="M000055"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000055.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000055.html');return false;">
+          <span class="method-name">capability_data</span><span class="method-args">(capability)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+the browser data assocated with a given capability
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000045.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000045.html');return false;">
+          <span class="method-name">capability_matches</span><span class="method-args">(support, capability_options_list)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return whether the capability matcher the options specified. For each
+capability option in the options the capability will need to match it.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000054" class="method-detail">
+        <a name="M000054"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000054.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000054.html');return false;">
+          <span class="method-name">inspect</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000047" class="method-detail">
+        <a name="M000047"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000047.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000047.html');return false;">
+          <span class="method-name">next_version</span><span class="method-args">(browser, version)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000046.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000046.html');return false;">
+          <span class="method-name">prefixed_usage</span><span class="method-args">(prefix, capability, capability_options_list)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+returns the percentage of users (0-100) that would be affected if the
+prefix was not used with the given capability.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000048" class="method-detail">
+        <a name="M000048"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000048.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000048.html');return false;">
+          <span class="method-name">previous_version</span><span class="method-args">(browser, version)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000049" class="method-detail">
+        <a name="M000049"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000049.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000049.html');return false;">
+          <span class="method-name">requires_prefix</span><span class="method-args">(browser, min_version, capability, capability_options_list)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns whether the given minimum version of a browser requires the use of
+a prefix for the stated capability.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000052" class="method-detail">
+        <a name="M000052"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000052.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000052.html');return false;">
+          <span class="method-name">usage</span><span class="method-args">(browser, version)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+the <a href="caniuse_rb.html#M000052">usage</a> % for a given browser
+version.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000050" class="method-detail">
+        <a name="M000050"></a>
+
+        <div class="method-heading">
+          <a href="caniuse_rb.src/M000050.html" target="Code" class="method-signature"
+            onclick="popupCode('caniuse_rb.src/M000050.html');return false;">
+          <span class="method-name">versions</span><span class="method-args">(browser, min_usage = 0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="caniuse_rb.html#M000050">versions</a> of a browser. If
+the min_usage parameter is provided, only those <a
+href="caniuse_rb.html#M000050">versions</a> having met the threshold of
+user percentage.
+</p>
+<p>
+@param min_usage a decimal number betwee 0 and 100
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

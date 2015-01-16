@@ -1,0 +1,43 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Initialize Locale library. Usually, you don't need to call this directly, because this is called when Locale's methods are called.
+- !ruby/struct:SM::Flow::P 
+  body: If you use this library with CGI or the kind of CGI. You need to call Locale.init(:driver =&gt; :cgi).
+- !ruby/struct:SM::Flow::H 
+  level: 4
+  text: "For Framework designers/programers:"
+- !ruby/struct:SM::Flow::P 
+  body: "If your framework is for WWW, call this once like: Locale.init(:driver =&gt; :cgi)."
+- !ruby/struct:SM::Flow::H 
+  level: 4
+  text: "To Application programers:"
+- !ruby/struct:SM::Flow::P 
+  body: "If your framework doesn't use ruby-locale and the application is for WWW, call this once like: Locale.init(:driver =&gt; :cgi)."
+- !ruby/struct:SM::Flow::H 
+  level: 4
+  text: "To Library authors:"
+- !ruby/struct:SM::Flow::P 
+  body: Don't call this, even if your application is only for WWW.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "opts: Options as a Hash."
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+    - !ruby/struct:SM::Flow::LI 
+      label: "*"
+      body: ":driver - The driver. :cgi if you use Locale module with CGI, nil if you use system locale."
+    - !ruby/struct:SM::Flow::VERB 
+      body: "  (ex) Locale.init(:driver =&gt; :cgi)\n"
+    type: :BULLET
+  type: :BULLET
+full_name: Locale#init
+is_singleton: false
+name: init
+params: (opts = {})
+visibility: public

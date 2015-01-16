@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: size
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Pointer size
+  name: SIZE
+  value: Platform::ADDRESS_SIZE / 8
+full_name: FFI::Pointer
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: read_array_of_type
+- !ruby/object:RI::MethodSummary 
+  name: read_string
+- !ruby/object:RI::MethodSummary 
+  name: read_string_length
+- !ruby/object:RI::MethodSummary 
+  name: read_string_to_null
+- !ruby/object:RI::MethodSummary 
+  name: write_array_of_type
+- !ruby/object:RI::MethodSummary 
+  name: write_string
+- !ruby/object:RI::MethodSummary 
+  name: write_string_length
+name: Pointer
+superclass: Object

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Tests the hash-equality of two sets in a cross-version manner. Aggravatingly, this is order-dependent in Ruby 1.8.6.
+- !ruby/struct:SM::Flow::P 
+  body: "@param set1 [Set] @param set2 [Set] @return [Boolean] Whether or not the sets are hashcode equal"
+full_name: Sass::Util#set_eql?
+is_singleton: false
+name: set_eql?
+params: (set1, set2)
+visibility: public

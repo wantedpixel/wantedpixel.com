@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>inherited_array (Compass::Configuration::Inheritance::ClassMethods)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/configuration/inheritance.rb, line 112</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inherited_array</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">attributes</span>)
+          <span class="ruby-identifier">options</span> = <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+          <span class="ruby-identifier">inherited_reader</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">attributes</span>)
+          <span class="ruby-identifier">inherited_writer</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">attributes</span>)
+          <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">attr</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">line</span> = <span class="ruby-keyword kw">__LINE__</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+            <span class="ruby-identifier">class_eval</span> <span class="ruby-node">%Q{
+              def #{attr}                                          # def sprite_load_paths
+                ArrayProxy.new(self, #{attr.inspect})              #   ArrayProxy.new(self, :sprite_load_paths)
+              end                                                  # end
+              def #{attr}=(value)                                  # def sprite_load_paths=(value)
+                @set_attributes ||= {}                             #   @set_attributes ||= {}
+                @set_attributes[#{attr.inspect}] = true            #   @set_attributes[:sprite_load_paths] = true
+                @#{attr} = Array(value)                            #   @sprite_load_paths = Array(value)
+                @added_to_#{attr} = []                             #   @added_to_sprite_load_paths = []
+                @removed_from_#{attr} = []                         #   @removed_from_sprite_load_paths = []
+              end                                                  # end
+              def read_inherited_#{attr}_array                     # def read_inherited_sprite_load_paths_array
+                value = if inherited_data                          #   value = if inherited_data
+                  if #{!!options[:clobbers]} &amp;&amp; #{attr}_set?
+                    Array(@#{attr})                                #     Array(@#{attr})
+                  else
+                    Array(@#{attr}) + inherited_data.read_inherited_#{attr}_array  #      inherited_data.read_inherited_sprite_load_paths_array + Array(@sprite_load_paths)
+                  end
+                elsif #{attr}_set?                                 #   elsif sprite_load_paths_set?
+                  Array(@#{attr})                                  #     Array(@#{attr})
+                else                                               #   else
+                  top_level.default_for(#{attr.inspect}) || []     #     top_level.default_for(:sprite_load_paths) || []
+                end                                                #   end
+                value -= Array(@removed_from_#{attr})              #   value -= Array(@removed_from_sprite_load_paths)
+                Array(@added_to_#{attr}) + value                   #   Array(@added_to_sprite_load_paths) + value
+              end                                                  # end
+              def add_to_#{attr}(v)                                # def add_to_sprite_load_paths(v)
+                if #{attr}_set?                                    #   if sprite_load_paths_set?
+                  raw_#{attr} &lt;&lt; v                                 #     raw_sprite_load_paths &lt;&lt; v
+                else                                               #   else
+                  (@added_to_#{attr} ||= []) &lt;&lt; v                  #     (@added_to_sprite_load_paths ||= []) &lt;&lt; v
+                end                                                #   end
+              end                                                  # end
+              def remove_from_#{attr}(v)                           # def remove_from_sprite_load_paths(v)
+                if #{attr}_set?                                    #   if sprite_load_paths_set?
+                  raw_#{attr}.reject!{|e| e == v}                  #     raw_sprite_load_path.reject!{|e| e == v}s
+                else                                               #   else
+                  (@removed_from_#{attr} ||= []) &lt;&lt; v              #     (@removed_from_sprite_load_paths ||= []) &lt;&lt; v
+                end                                                #   end
+              end                                                  # end
+            }</span>, <span class="ruby-keyword kw">__FILE__</span>, <span class="ruby-identifier">line</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

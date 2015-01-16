@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>default_path_rules (GetText::LocalePath)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/gettext/locale_path.rb, line 40</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_path_rules</span>
+        <span class="ruby-identifier">default_path_rules</span> = []
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;GETTEXT_PATH&quot;</span>]
+          <span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;GETTEXT_PATH&quot;</span>].<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/,/</span>).<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">default_path_rules</span> <span class="ruby-operator">+=</span> [<span class="ruby-node">&quot;#{i}/%{lang}/LC_MESSAGES/%{name}.mo&quot;</span>, <span class="ruby-node">&quot;#{i}/%{lang}/%{name}.mo&quot;</span>]
+          }
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">default_path_rules</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">DEFAULT_RULES</span>
+
+        <span class="ruby-identifier">load_path</span> = <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">path</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_path</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_path</span>)
+          <span class="ruby-identifier">path</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\/lib\z/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+        }
+        <span class="ruby-identifier">load_path</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">default_path_rules</span> <span class="ruby-operator">+=</span> [
+            <span class="ruby-node">&quot;#{path}/data/locale/%{lang}/LC_MESSAGES/%{name}.mo&quot;</span>,
+            <span class="ruby-node">&quot;#{path}/data/locale/%{lang}/%{name}.mo&quot;</span>,
+            <span class="ruby-node">&quot;#{path}/locale/%{lang}/LC_MESSAGES/%{name}.mo&quot;</span>,
+            <span class="ruby-node">&quot;#{path}/locale/%{lang}/%{name}.mo&quot;</span>,
+          ]
+        }
+        <span class="ruby-comment cmt"># paths existed only.</span>
+        <span class="ruby-identifier">default_path_rules</span> = <span class="ruby-identifier">default_path_rules</span>.<span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+          <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-identifier">path</span> <span class="ruby-operator">%</span> {<span class="ruby-identifier">:lang</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;*&quot;</span>, <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;*&quot;</span>}).<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>}.<span class="ruby-identifier">uniq</span>
+        <span class="ruby-identifier">default_path_rules</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Apply the pathmap spec to the Pathname, returning a new Pathname with the modified paths. (See String#pathmap for details.)
+- !ruby/struct:SM::Flow::P 
+  body: This Pathname extension comes from Rake
+full_name: Pathname#pathmap
+is_singleton: false
+name: pathmap
+params: (spec=nil, &block)
+visibility: public

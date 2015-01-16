@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: FFI::NotFoundError::new
+is_singleton: true
+name: new
+params: (function, *libraries)
+visibility: public

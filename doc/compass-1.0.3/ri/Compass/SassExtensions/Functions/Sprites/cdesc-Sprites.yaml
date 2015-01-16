@@ -1,0 +1,76 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ZERO
+  value: number(0)
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BOOL_FALSE
+  value: bool(false)
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VALID_SELECTORS
+  value: "%w(hover active target focus)"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Determines if the CSS selector is valid
+  name: IDENTIFIER_RX
+  value: /\A#{Sass::SCSS::RX::IDENT}\Z/
+full_name: Compass::SassExtensions::Functions::Sprites
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Sass::Script::Value::Helpers
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: convert_sprite_name
+- !ruby/object:RI::MethodSummary 
+  name: get_sprite_file
+- !ruby/object:RI::MethodSummary 
+  name: inline_sprite
+- !ruby/object:RI::MethodSummary 
+  name: missing_image!
+- !ruby/object:RI::MethodSummary 
+  name: missing_sprite!
+- !ruby/object:RI::MethodSummary 
+  name: reversed_color_names
+- !ruby/object:RI::MethodSummary 
+  name: sprite
+- !ruby/object:RI::MethodSummary 
+  name: sprite_does_not_have_parent
+- !ruby/object:RI::MethodSummary 
+  name: sprite_file
+- !ruby/object:RI::MethodSummary 
+  name: sprite_has_selector
+- !ruby/object:RI::MethodSummary 
+  name: sprite_has_valid_selector
+- !ruby/object:RI::MethodSummary 
+  name: sprite_height
+- !ruby/object:RI::MethodSummary 
+  name: sprite_map
+- !ruby/object:RI::MethodSummary 
+  name: sprite_map_name
+- !ruby/object:RI::MethodSummary 
+  name: sprite_names
+- !ruby/object:RI::MethodSummary 
+  name: sprite_path
+- !ruby/object:RI::MethodSummary 
+  name: sprite_position
+- !ruby/object:RI::MethodSummary 
+  name: sprite_selector_file
+- !ruby/object:RI::MethodSummary 
+  name: sprite_url
+- !ruby/object:RI::MethodSummary 
+  name: sprite_width
+- !ruby/object:RI::MethodSummary 
+  name: verify_map
+- !ruby/object:RI::MethodSummary 
+  name: verify_sprite
+name: Sprites
+superclass: 

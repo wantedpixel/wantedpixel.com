@@ -1,0 +1,48 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: included
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PI
+  value: number(Math::PI)
+- !ruby/object:RI::Constant 
+  comment: 
+  name: E
+  value: number(Math::E)
+full_name: Compass::SassExtensions::Functions::Math
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: acos
+- !ruby/object:RI::MethodSummary 
+  name: asin
+- !ruby/object:RI::MethodSummary 
+  name: atan
+- !ruby/object:RI::MethodSummary 
+  name: cos
+- !ruby/object:RI::MethodSummary 
+  name: deprecated_random
+- !ruby/object:RI::MethodSummary 
+  name: e
+- !ruby/object:RI::MethodSummary 
+  name: logarithm
+- !ruby/object:RI::MethodSummary 
+  name: pi
+- !ruby/object:RI::MethodSummary 
+  name: pow
+- !ruby/object:RI::MethodSummary 
+  name: sin
+- !ruby/object:RI::MethodSummary 
+  name: sqrt
+- !ruby/object:RI::MethodSummary 
+  name: square_root
+- !ruby/object:RI::MethodSummary 
+  name: tan
+name: Math
+superclass: 

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: GetText::POEntry::Formatter</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">GetText::POEntry::Formatter</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/gettext/po_entry_rb.html">
+                lib/gettext/po_entry.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000127">escape</a>&nbsp;&nbsp;
+      <a href="#M000129">format</a>&nbsp;&nbsp;
+      <a href="#M000128">new</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="../POFormat.html">POFormat</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DEFAULT_MAX_LINE_WIDTH</td>
+          <td>=</td>
+          <td class="context-item-value">78</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000127" class="method-detail">
+        <a name="M000127"></a>
+
+        <div class="method-heading">
+          <a href="Formatter.src/M000127.html" target="Code" class="method-signature"
+            onclick="popupCode('Formatter.src/M000127.html');return false;">
+          <span class="method-name">escape</span><span class="method-args">(string)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000128" class="method-detail">
+        <a name="M000128"></a>
+
+        <div class="method-heading">
+          <a href="Formatter.src/M000128.html" target="Code" class="method-signature"
+            onclick="popupCode('Formatter.src/M000128.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(entry, options={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param [<a href="../POEntry.html">POEntry</a>] entry The entry to be
+formatted. @param [Hash] options @option options [Bool]
+:include_translator_comment (true)
+</p>
+<pre>
+  Includes translator comments in formatted string if true.
+</pre>
+<p>
+@option options [Bool] :include_extracted_comment (true)
+</p>
+<pre>
+  Includes extracted comments in formatted string if true.
+</pre>
+<p>
+@option options [Bool] :include_reference_comment (true)
+</p>
+<pre>
+  Includes reference comments in formatted string if true.
+</pre>
+<p>
+@option options [Bool] :include_flag_comment (true)
+</p>
+<pre>
+  Includes flag comments in formatted string if true.
+</pre>
+<p>
+@option options [Bool] :include_previous_comment (true)
+</p>
+<pre>
+  Includes previous comments in formatted string if true.
+</pre>
+<p>
+@option options [Bool] :include_all_comments (true)
+</p>
+<pre>
+  Includes all comments in formatted string if true.
+  Other specific `:include_XXX` options get preference over
+  this option.
+  You can remove all comments by specifying this option as
+  false and omitting other `:include_XXX` options.
+</pre>
+<p>
+@option options [Integer] :max_line_width (78)
+</p>
+<pre>
+  Wraps long lines that is longer than the `:max_line_width`.
+  Don't break long lines if `:max_line_width` is less than 0
+  such as `-1`.
+</pre>
+<p>
+@option options [Encoding] :encoding (nil)
+</p>
+<pre>
+  Encodes to the specific encoding.
+</pre>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000129" class="method-detail">
+        <a name="M000129"></a>
+
+        <div class="method-heading">
+          <a href="Formatter.src/M000129.html" target="Code" class="method-signature"
+            onclick="popupCode('Formatter.src/M000129.html');return false;">
+          <span class="method-name">format</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

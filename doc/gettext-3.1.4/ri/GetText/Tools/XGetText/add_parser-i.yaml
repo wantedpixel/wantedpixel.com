@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The parser object requires to have target?(path) and parse(path) method.
+- !ruby/struct:SM::Flow::P 
+  body: "@example How to add your parser"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  require &quot;gettext/tools/xgettext&quot;\n  class FooParser\n    def target?(path)\n      File.extname(path) == &quot;.foo&quot;  # *.foo file only.\n    end\n    def parse(path, options={})\n      po = []\n      # Simple entry\n      entry = POEntry.new(:normal)\n      entry.msgid = &quot;hello&quot;\n      entry.references = [&quot;foo.rb:200&quot;, &quot;bar.rb:300&quot;]\n      entry.add_comment(&quot;Comment for the entry&quot;)\n      po &lt;&lt; entry\n      # Plural entry\n      entry = POEntry.new(:plural)\n      entry.msgid = &quot;An apple&quot;\n      entry.msgid_plural = &quot;Apples&quot;\n      entry.references = [&quot;foo.rb:200&quot;, &quot;bar.rb:300&quot;]\n      po &lt;&lt; entry\n      # Simple entry with the entry context\n      entry = POEntry.new(:msgctxt)\n      entry.msgctxt = &quot;context&quot;\n      entry.msgid = &quot;hello&quot;\n      entry.references = [&quot;foo.rb:200&quot;, &quot;bar.rb:300&quot;]\n      po &lt;&lt; entry\n      # Plural entry with the message context.\n      entry = POEntry.new(:msgctxt_plural)\n      entry.msgctxt = &quot;context&quot;\n      entry.msgid = &quot;An apple&quot;\n      entry.msgid_plural = &quot;Apples&quot;\n      entry.references = [&quot;foo.rb:200&quot;, &quot;bar.rb:300&quot;]\n      po &lt;&lt; entry\n      return po\n    end\n  end\n\n  GetText::Tools::XGetText.add_parser(FooParser.new)\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@param [#target?, #parse] parser"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  It parses target file and extracts translate target entries from the\n  target file. If there are multiple target files, parser.parse is\n  called multiple times.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@return [void]"
+full_name: GetText::Tools::XGetText#add_parser
+is_singleton: false
+name: add_parser
+params: (parser)
+visibility: public

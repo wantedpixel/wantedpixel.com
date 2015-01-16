@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: FSEvent#watch
+is_singleton: false
+name: watch
+params: (watch_paths, options=nil, &block)
+visibility: public

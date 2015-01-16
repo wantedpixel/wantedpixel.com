@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: If it is true, each task has description. Otherwise, all tasks doesn't have description.
+- !ruby/struct:SM::Flow::P 
+  body: "@return [Bool] @since 3.0.1"
+full_name: GetText::Tools::Task#enable_description?
+is_singleton: false
+name: enable_description?
+params: ()
+visibility: public

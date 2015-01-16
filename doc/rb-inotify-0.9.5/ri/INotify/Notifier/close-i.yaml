@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Close the notifier.
+- !ruby/struct:SM::Flow::P 
+  body: "@raise [SystemCallError] if closing the underlying file descriptor fails."
+full_name: INotify::Notifier#close
+is_singleton: false
+name: close
+params: ()
+visibility: public

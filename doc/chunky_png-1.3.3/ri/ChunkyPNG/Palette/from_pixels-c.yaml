@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Builds a palette instance from a given set of pixels. @param pixels [Enumerable&lt;Integer&gt;] An enumeration of pixels to create a
+- !ruby/struct:SM::Flow::VERB 
+  body: "  palette for\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@return [ChunkyPNG::Palette] The palette instance."
+full_name: ChunkyPNG::Palette::from_pixels
+is_singleton: true
+name: from_pixels
+params: (pixels)
+visibility: public

@@ -1,0 +1,82 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Watches a file or directory for changes, calling the callback when there are. This is only activated once \{#process} or \{#run} is called.
+- !ruby/struct:SM::Flow::P 
+  body: "**Note that by default, this does not recursively watch subdirectories of the watched directory**. To do so, use the `:recursive` flag."
+- !ruby/struct:SM::Flow::P 
+  body: "## Flags"
+- !ruby/struct:SM::Flow::P 
+  body: "`:access` : A file is accessed (that is, read)."
+- !ruby/struct:SM::Flow::P 
+  body: "`:attrib` : A file's metadata is changed (e.g. permissions, timestamps, etc)."
+- !ruby/struct:SM::Flow::P 
+  body: "`:close_write` : A file that was opened for writing is closed."
+- !ruby/struct:SM::Flow::P 
+  body: "`:close_nowrite` : A file that was not opened for writing is closed."
+- !ruby/struct:SM::Flow::P 
+  body: "`:modify` : A file is modified."
+- !ruby/struct:SM::Flow::P 
+  body: "`:open` : A file is opened."
+- !ruby/struct:SM::Flow::P 
+  body: "### Directory-Specific Flags"
+- !ruby/struct:SM::Flow::P 
+  body: These flags only apply when a directory is being watched.
+- !ruby/struct:SM::Flow::P 
+  body: "`:moved_from` : A file is moved out of the watched directory."
+- !ruby/struct:SM::Flow::P 
+  body: "`:moved_to` : A file is moved into the watched directory."
+- !ruby/struct:SM::Flow::P 
+  body: "`:create` : A file is created in the watched directory."
+- !ruby/struct:SM::Flow::P 
+  body: "`:delete` : A file is deleted in the watched directory."
+- !ruby/struct:SM::Flow::P 
+  body: "`:delete_self` : The watched file or directory itself is deleted."
+- !ruby/struct:SM::Flow::P 
+  body: "`:move_self` : The watched file or directory itself is moved."
+- !ruby/struct:SM::Flow::P 
+  body: "### Helper Flags"
+- !ruby/struct:SM::Flow::P 
+  body: These flags are just combinations of the flags above.
+- !ruby/struct:SM::Flow::P 
+  body: "`:close` : Either `:close_write` or `:close_nowrite` is activated."
+- !ruby/struct:SM::Flow::P 
+  body: "`:move` : Either `:moved_from` or `:moved_to` is activated."
+- !ruby/struct:SM::Flow::P 
+  body: "`:all_events` : Any event above is activated."
+- !ruby/struct:SM::Flow::P 
+  body: "### Options Flags"
+- !ruby/struct:SM::Flow::P 
+  body: These flags don't actually specify events. Instead, they specify options for the watcher.
+- !ruby/struct:SM::Flow::P 
+  body: "`:onlydir` : Only watch the path if it's a directory."
+- !ruby/struct:SM::Flow::P 
+  body: "`:dont_follow` : Don't follow symlinks."
+- !ruby/struct:SM::Flow::P 
+  body: "`:mask_add` : Add these flags to the pre-existing flags for this path."
+- !ruby/struct:SM::Flow::P 
+  body: "`:oneshot` : Only send the event once, then shut down the watcher."
+- !ruby/struct:SM::Flow::P 
+  body: "`:recursive` : Recursively watch any subdirectories that are created."
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Note that this is a feature of rb-inotify,\n  rather than of inotify itself, which can only watch one level of a directory.\n  This means that the {Event#name} field\n  will contain only the basename of the modified file.\n  When using `:recursive`, {Event#absolute_name} should always be used.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@param path [String] The path to the file or directory @param flags [Array&lt;Symbol&gt;] Which events to watch for @yield [event] A block that will be called"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  whenever one of the specified events occur\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@yieldparam event [Event] The Event object containing information"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  about the event that occured\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@return [Watcher] A Watcher set up to watch this path for these events @raise [SystemCallError] if the file or directory can't be watched,"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  e.g. if the file isn't found, read access is denied,\n  or the flags don't contain any events\n"
+full_name: INotify::Notifier#watch
+is_singleton: false
+name: watch
+params: (path, *flags, &callback)
+visibility: public

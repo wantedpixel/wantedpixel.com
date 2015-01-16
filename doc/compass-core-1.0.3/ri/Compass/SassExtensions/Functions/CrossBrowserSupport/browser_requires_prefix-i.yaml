@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: whether the browser uses a prefix for the given capability at the version specified or a later version. Returns the prefix it requires, or null.
+full_name: Compass::SassExtensions::Functions::CrossBrowserSupport#browser_requires_prefix
+is_singleton: false
+name: browser_requires_prefix
+params: (browser, version, capability, capability_options)
+visibility: public

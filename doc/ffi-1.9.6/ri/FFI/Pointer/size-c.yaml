@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return the size of a pointer on the current platform, in bytes @return [Numeric]
+full_name: FFI::Pointer::size
+is_singleton: true
+name: size
+params: ()
+visibility: public

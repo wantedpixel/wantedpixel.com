@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@return [Boolean] Whether includes fuzzy entries or not."
+full_name: GetText::Tools::MsgCat::Config#include_fuzzy?
+is_singleton: false
+name: include_fuzzy?
+params: ()
+visibility: public

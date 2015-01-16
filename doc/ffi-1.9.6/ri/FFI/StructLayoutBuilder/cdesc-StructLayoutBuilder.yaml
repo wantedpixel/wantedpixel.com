@@ -1,0 +1,49 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: alignment
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: size
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Build a {StructLayout struct layout}.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: List of number types
+  name: NUMBER_TYPES
+  value: "[       Type::INT8,       Type::UINT8,       Type::INT16,       Type::UINT16,       Type::INT32,       Type::UINT32,       Type::LONG,       Type::ULONG,       Type::INT64,       Type::UINT64,       Type::FLOAT32,       Type::FLOAT64,       Type::LONGDOUBLE,       Type::BOOL,     ]"
+full_name: FFI::StructLayoutBuilder
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add
+- !ruby/object:RI::MethodSummary 
+  name: add_array
+- !ruby/object:RI::MethodSummary 
+  name: add_field
+- !ruby/object:RI::MethodSummary 
+  name: add_struct
+- !ruby/object:RI::MethodSummary 
+  name: alignment=
+- !ruby/object:RI::MethodSummary 
+  name: build
+- !ruby/object:RI::MethodSummary 
+  name: packed=
+- !ruby/object:RI::MethodSummary 
+  name: size=
+- !ruby/object:RI::MethodSummary 
+  name: union=
+- !ruby/object:RI::MethodSummary 
+  name: union?
+name: StructLayoutBuilder
+superclass: Object

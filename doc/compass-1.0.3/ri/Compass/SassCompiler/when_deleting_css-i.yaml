@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassCompiler#when_deleting_css
+is_singleton: false
+name: when_deleting_css
+params: (filename)
+visibility: public

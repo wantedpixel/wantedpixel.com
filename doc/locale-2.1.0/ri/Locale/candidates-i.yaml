@@ -1,0 +1,33 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the language tags which are variations of the current locales order by priority.
+- !ruby/struct:SM::Flow::P 
+  body: For example, if the current locales are [&quot;fr&quot;, &quot;ja_JP&quot;, &quot;en_US&quot;, &quot;en-Latn-GB-VARIANT&quot;], then returns [&quot;fr&quot;, &quot;ja_JP&quot;, &quot;en_US&quot;, &quot;en-Latn-GB-VARIANT&quot;, &quot;en_Latn_GB&quot;, &quot;en_GB&quot;, &quot;ja&quot;, &quot;en&quot;]. &quot;en&quot; is the default locale(You can change it using set_default). The default locale is added at the end of the list even if it isn't exist.
+- !ruby/struct:SM::Flow::P 
+  body: Usually, this method is used to find the locale data as the path(or a kind of IDs).
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "options: options as a Hash or nil."
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+    - !ruby/struct:SM::Flow::LI 
+      label: "*"
+      body: ":supported_language_tags - An Array of the language tags order by the priority. This option restricts the locales which are supported by the library/application. Default is nil if you don't need to restrict the locales."
+    - !ruby/struct:SM::Flow::VERB 
+      body: " (e.g.1) [&quot;fr_FR&quot;, &quot;en_GB&quot;, &quot;en_US&quot;, ...]\n"
+    - !ruby/struct:SM::Flow::LI 
+      label: "*"
+      body: ":type - The type of language tag. :common, :rfc, :cldr, :posix and :simple are available. Default value is :common"
+    type: :BULLET
+  type: :BULLET
+full_name: Locale#candidates
+is_singleton: false
+name: candidates
+params: (options = {})
+visibility: public

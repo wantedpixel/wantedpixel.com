@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns if PO stores {POEntry} containing msgctxt and msgid. If you specify one argument, it is treated as msgid and msgctxt is nil.
+- !ruby/struct:SM::Flow::P 
+  body: "@overload has_key?(msgid)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  @!macro [new] po.has_key?.arguments\n    @param [String] msgid msgid contained {POEntry} checked if it be\n      stored PO.\n  @!macro po.has_key?.arguments\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload has_key?(msgctxt, msgid)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  @param [String] msgctxt msgctxt contained {POEntry} checked if\n    it be stored PO.\n  @!macro po.has_key?.arguments\n"
+full_name: GetText::PO#has_key?
+is_singleton: false
+name: has_key?
+params: (*arguments)
+visibility: public

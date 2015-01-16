@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: If the text domain isn't bound when calling GetText.textdomain, this error is raised.
+constants: []
+
+full_name: GetText::NoboundTextDomainError
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: message
+name: NoboundTextDomainError
+superclass: RuntimeError

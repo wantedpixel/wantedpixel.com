@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: "<<"
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Sprites::ImageRow#add
+is_singleton: false
+name: add
+params: (image)
+visibility: public

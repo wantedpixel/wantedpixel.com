@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns an Array of tag-candidates order by priority. Use Locale.candidates instead of this method.
+- !ruby/struct:SM::Flow::P 
+  body: Locale::Tag::Rfc, Cldr don't have their own candidates, because it's meaningless to compare the extensions, privateuse, etc.
+full_name: Locale::Tag::Common#candidates
+is_singleton: false
+name: candidates
+params: ()
+visibility: public

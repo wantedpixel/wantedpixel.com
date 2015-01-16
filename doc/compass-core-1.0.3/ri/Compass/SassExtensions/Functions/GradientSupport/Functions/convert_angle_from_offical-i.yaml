@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Functions::GradientSupport::Functions#convert_angle_from_offical
+is_singleton: false
+name: convert_angle_from_offical
+params: (deg)
+visibility: public

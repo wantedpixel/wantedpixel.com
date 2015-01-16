@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Locale::Driver::Win32Table</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Locale::Driver::Win32Table</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/locale/driver/win32_table_rb.html">
+                lib/locale/driver/win32_table.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LocaleTable</td>
+          <td>=</td>
+          <td class="context-item-value">[                      [0x0036,&quot;af&quot;,&quot;CP1252&quot;],                      [0x0436,&quot;af-ZA&quot;,&quot;CP1252&quot;],                      [0x001C,&quot;sq&quot;,&quot;CP1250&quot;],                      [0x041C,&quot;sq-AL&quot;,&quot;CP1250&quot;],                      [0x0484,&quot;gsw-FR&quot;,&quot;CP1252&quot;],                      [0x045E,&quot;am-ET&quot;,&quot;UNICODE&quot;],                      [0x0001,&quot;ar&quot;,&quot;CP1256&quot;],                      [0x1401,&quot;ar-DZ&quot;,&quot;CP1256&quot;],                      [0x3C01,&quot;ar-BH&quot;,&quot;CP1256&quot;],                      [0x0C01,&quot;ar-EG&quot;,&quot;CP1256&quot;],                      [0x0801,&quot;ar-IQ&quot;,&quot;CP1256&quot;],                      [0x2C01,&quot;ar-JO&quot;,&quot;CP1256&quot;],                      [0x3401,&quot;ar-KW&quot;,&quot;CP1256&quot;],                      [0x3001,&quot;ar-LB&quot;,&quot;CP1256&quot;],                      [0x1001,&quot;ar-LY&quot;,&quot;CP1256&quot;],                      [0x1801,&quot;ar-MA&quot;,&quot;CP1256&quot;],                      [0x2001,&quot;ar-OM&quot;,&quot;CP1256&quot;],                      [0x4001,&quot;ar-QA&quot;,&quot;CP1256&quot;],                      [0x0401,&quot;ar-SA&quot;,&quot;CP1256&quot;],                      [0x2801,&quot;ar-SY&quot;,&quot;CP1256&quot;],                      [0x1C01,&quot;ar-TN&quot;,&quot;CP1256&quot;],                      [0x3801,&quot;ar-AE&quot;,&quot;CP1256&quot;],                      [0x2401,&quot;ar-YE&quot;,&quot;CP1256&quot;],                      [0x002B,&quot;hy&quot;,&quot;UNICODE&quot;],                      [0x042B,&quot;hy-AM&quot;,&quot;UNICODE&quot;],                      [0x044D,&quot;as-IN&quot;,&quot;UNICODE&quot;],                      [0x002C,&quot;az&quot;,&quot;CP1254&quot;],                      [0x082C,&quot;az-Cyrl-AZ&quot;,&quot;CP1251&quot;],                      [0x042C,&quot;az-Latn-AZ&quot;,&quot;CP1254&quot;],                      [0x046D,&quot;ba-RU&quot;,&quot;CP1251&quot;],                      [0x002D,&quot;eu&quot;,&quot;CP1252&quot;],                      [0x042D,&quot;eu-ES&quot;,&quot;CP1252&quot;],                      [0x0023,&quot;be&quot;,&quot;CP1251&quot;],                      [0x0423,&quot;be-BY&quot;,&quot;CP1251&quot;],                      [0x0845,&quot;bn-BD&quot;,&quot;UNICODE&quot;],                      [0x0445,&quot;bn-IN&quot;,&quot;UNICODE&quot;],                      [0x201A,&quot;bs-Cyrl-BA&quot;,&quot;CP1251&quot;],                      [0x141A,&quot;bs-Latn-BA&quot;,&quot;CP1250&quot;],                      [0x047E,&quot;br-FR&quot;,&quot;CP1252&quot;],                      [0x0002,&quot;bg&quot;,&quot;CP1251&quot;],                      [0x0402,&quot;bg-BG&quot;,&quot;CP1251&quot;],                      [0x0003,&quot;ca&quot;,&quot;CP1252&quot;],                      [0x0403,&quot;ca-ES&quot;,&quot;CP1252&quot;],                      [0x0C04,&quot;zh-HK&quot;,&quot;CP950&quot;],                      [0x1404,&quot;zh-MO&quot;,&quot;CP950&quot;],                      [0x0804,&quot;zh-CN&quot;,&quot;CP936&quot;],                      [0x0004,&quot;zh-Hans&quot;,&quot;CP936&quot;],                      [0x1004,&quot;zh-SG&quot;,&quot;CP936&quot;],                      [0x0404,&quot;zh-TW&quot;,&quot;CP950&quot;],                      [0x7C04,&quot;zh-Hant&quot;,&quot;CP950&quot;],                      [0x0483,&quot;co-FR&quot;,&quot;CP1252&quot;],                      [0x001A,&quot;hr&quot;,&quot;CP1250&quot;],                      [0x041A,&quot;hr-HR&quot;,&quot;CP1250&quot;],                      [0x101A,&quot;hr-BA&quot;,&quot;CP1250&quot;],                      [0x0005,&quot;cs&quot;,&quot;CP1250&quot;],                      [0x0405,&quot;cs-CZ&quot;,&quot;CP1250&quot;],                      [0x0006,&quot;da&quot;,&quot;CP1252&quot;],                      [0x0406,&quot;da-DK&quot;,&quot;CP1252&quot;],                      [0x048C,&quot;prs-AF&quot;,&quot;CP1256&quot;],                      [0x0065,&quot;div&quot;,&quot;UNICODE&quot;],                      [0x0465,&quot;div-MV&quot;,&quot;UNICODE&quot;],                      [0x0013,&quot;nl&quot;,&quot;CP1252&quot;],                      [0x0813,&quot;nl-BE&quot;,&quot;CP1252&quot;],                      [0x0413,&quot;nl-NL&quot;,&quot;CP1252&quot;],                      [0x0009,&quot;en&quot;,&quot;CP1252&quot;],                      [0x0C09,&quot;en-AU&quot;,&quot;CP1252&quot;],                      [0x2809,&quot;en-BZ&quot;,&quot;CP1252&quot;],                      [0x1009,&quot;en-CA&quot;,&quot;CP1252&quot;],                      [0x2409,&quot;en-029&quot;,&quot;CP1252&quot;],                      [0x4009,&quot;en-IN&quot;,&quot;CP1252&quot;],                      [0x1809,&quot;en-IE&quot;,&quot;CP1252&quot;],                      [0x2009,&quot;en-JM&quot;,&quot;CP1252&quot;],                      [0x4409,&quot;en-MY&quot;,&quot;CP1252&quot;],                      [0x1409,&quot;en-NZ&quot;,&quot;CP1252&quot;],                      [0x3409,&quot;en-PH&quot;,&quot;CP1252&quot;],                      [0x4809,&quot;en-SG&quot;,&quot;CP1252&quot;],                      [0x1C09,&quot;en-ZA&quot;,&quot;CP1252&quot;],                      [0x2C09,&quot;en-TT&quot;,&quot;CP1252&quot;],                      [0x0809,&quot;en-GB&quot;,&quot;CP1252&quot;],                      [0x0409,&quot;en-US&quot;,&quot;CP1252&quot;],                      [0x3009,&quot;en-ZW&quot;,&quot;CP1252&quot;],                      [0x0025,&quot;et&quot;,&quot;CP1257&quot;],                      [0x0425,&quot;et-EE&quot;,&quot;CP1257&quot;],                      [0x0038,&quot;fo&quot;,&quot;CP1252&quot;],                      [0x0438,&quot;fo-FO&quot;,&quot;CP1252&quot;],                      [0x0464,&quot;fil-PH&quot;,&quot;CP1252&quot;],                      [0x000B,&quot;fi&quot;,&quot;CP1252&quot;],                      [0x040B,&quot;fi-FI&quot;,&quot;CP1252&quot;],                      [0x000C,&quot;fr&quot;,&quot;CP1252&quot;],                      [0x080C,&quot;fr-BE&quot;,&quot;CP1252&quot;],                      [0x0C0C,&quot;fr-CA&quot;,&quot;CP1252&quot;],                      [0x040C,&quot;fr-FR&quot;,&quot;CP1252&quot;],                      [0x140C,&quot;fr-LU&quot;,&quot;CP1252&quot;],                      [0x180C,&quot;fr-MC&quot;,&quot;CP1252&quot;],                      [0x100C,&quot;fr-CH&quot;,&quot;CP1252&quot;],                      [0x0462,&quot;fy-NL&quot;,&quot;CP1252&quot;],                      [0x0056,&quot;gl&quot;,&quot;CP1252&quot;],                      [0x0456,&quot;gl-ES&quot;,&quot;CP1252&quot;],                      [0x0037,&quot;ka&quot;,&quot;UNICODE&quot;],                      [0x0437,&quot;ka-GE&quot;,&quot;UNICODE&quot;],                      [0x0007,&quot;de&quot;,&quot;CP1252&quot;],                      [0x0C07,&quot;de-AT&quot;,&quot;CP1252&quot;],                      [0x0407,&quot;de-DE&quot;,&quot;CP1252&quot;],                      [0x1407,&quot;de-LI&quot;,&quot;CP1252&quot;],                      [0x1007,&quot;de-LU&quot;,&quot;CP1252&quot;],                      [0x0807,&quot;de-CH&quot;,&quot;CP1252&quot;],                      [0x0008,&quot;el&quot;,&quot;CP1253&quot;],                      [0x0408,&quot;el-GR&quot;,&quot;CP1253&quot;],                      [0x046F,&quot;kl-GL&quot;,&quot;CP1252&quot;],                      [0x0047,&quot;gu&quot;,&quot;UNICODE&quot;],                      [0x0447,&quot;gu-IN&quot;,&quot;UNICODE&quot;],                      [0x0468,&quot;ha-Latn-NG&quot;,&quot;CP1252&quot;],                      [0x000D,&quot;he&quot;,&quot;CP1255&quot;],                      [0x040D,&quot;he-IL&quot;,&quot;CP1255&quot;],                      [0x0039,&quot;hi&quot;,&quot;UNICODE&quot;],                      [0x0439,&quot;hi-IN&quot;,&quot;UNICODE&quot;],                      [0x000E,&quot;hu&quot;,&quot;CP1250&quot;],                      [0x040E,&quot;hu-HU&quot;,&quot;CP1250&quot;],                      [0x000F,&quot;is&quot;,&quot;CP1252&quot;],                      [0x040F,&quot;is-IS&quot;,&quot;CP1252&quot;],                      [0x0470,&quot;ig-NG&quot;,&quot;CP1252&quot;],                      [0x0021,&quot;id&quot;,&quot;CP1252&quot;],                      [0x0421,&quot;id-ID&quot;,&quot;CP1252&quot;],                      [0x085D,&quot;iu-Latn-CA&quot;,&quot;CP1252&quot;],                      [0x045D,&quot;iu-Cans-CA&quot;,&quot;UNICODE&quot;],                      [0x083C,&quot;ga-IE&quot;,&quot;CP1252&quot;],                      [0x0434,&quot;xh-ZA&quot;,&quot;CP1252&quot;],                      [0x0435,&quot;zu-ZA&quot;,&quot;CP1252&quot;],                      [0x0010,&quot;it&quot;,&quot;CP1252&quot;],                      [0x0410,&quot;it-IT&quot;,&quot;CP1252&quot;],                      [0x0810,&quot;it-CH&quot;,&quot;CP1252&quot;],                      [0x0011,&quot;ja&quot;,&quot;CP932&quot;],                      [0x0411,&quot;ja-JP&quot;,&quot;CP932&quot;],                      [0x004B,&quot;kn&quot;,&quot;UNICODE&quot;],                      [0x044B,&quot;kn-IN&quot;,&quot;UNICODE&quot;],                      [0x003F,&quot;kk&quot;,&quot;CP1251&quot;],                      [0x043F,&quot;kk-KZ&quot;,&quot;CP1251&quot;],                      [0x0453,&quot;km-KH&quot;,&quot;UNICODE&quot;],                      [0x0486,&quot;qut-GT&quot;,&quot;CP1252&quot;],                      [0x0487,&quot;rw-RW&quot;,&quot;CP1252&quot;],                      [0x0041,&quot;sw&quot;,&quot;CP1252&quot;],                      [0x0441,&quot;sw-KE&quot;,&quot;CP1252&quot;],                      [0x0057,&quot;kok&quot;,&quot;UNICODE&quot;],                      [0x0457,&quot;kok-IN&quot;,&quot;UNICODE&quot;],                      [0x0012,&quot;ko&quot;,&quot;CP949&quot;],                      [0x0412,&quot;ko-KR&quot;,&quot;CP949&quot;],                      [0x0040,&quot;ky&quot;,&quot;CP1251&quot;],                      [0x0440,&quot;ky-KG&quot;,&quot;CP1251&quot;],                      [0x0454,&quot;lo-LA&quot;,&quot;UNICODE&quot;],                      [0x0026,&quot;lv&quot;,&quot;CP1257&quot;],                      [0x0426,&quot;lv-LV&quot;,&quot;CP1257&quot;],                      [0x0027,&quot;lt&quot;,&quot;CP1257&quot;],                      [0x0427,&quot;lt-LT&quot;,&quot;CP1257&quot;],                      [0x082E,&quot;wee-DE&quot;,&quot;CP1252&quot;],                      [0x046E,&quot;lb-LU&quot;,&quot;CP1252&quot;],                      [0x002F,&quot;mk&quot;,&quot;CP1251&quot;],                      [0x042F,&quot;mk-MK&quot;,&quot;CP1251&quot;],                      [0x003E,&quot;ms&quot;,&quot;CP1252&quot;],                      [0x083E,&quot;ms-BN&quot;,&quot;CP1252&quot;],                      [0x043E,&quot;ms-MY&quot;,&quot;CP1252&quot;],                      [0x044C,&quot;ml-IN&quot;,&quot;UNICODE&quot;],                      [0x043A,&quot;mt-MT&quot;,&quot;UNICODE&quot;],                      [0x0481,&quot;mi-NZ&quot;,&quot;UNICODE&quot;],                      [0x047A,&quot;arn-CL&quot;,&quot;CP1252&quot;],                      [0x004E,&quot;mr&quot;,&quot;UNICODE&quot;],                      [0x044E,&quot;mr-IN&quot;,&quot;UNICODE&quot;],                      [0x047C,&quot;moh-CA&quot;,&quot;CP1252&quot;],                      [0x0050,&quot;mn&quot;,&quot;CP1251&quot;],                      [0x0450,&quot;mn-MN&quot;,&quot;CP1251&quot;],                      [0x0850,&quot;mn-Mong-CN&quot;,&quot;UNICODE&quot;],                      [0x0461,&quot;ne-NP&quot;,&quot;UNICODE&quot;],                      [0x0014,&quot;no&quot;,&quot;CP1252&quot;],                      [0x0414,&quot;nb-NO&quot;,&quot;CP1252&quot;],                      [0x0814,&quot;nn-NO&quot;,&quot;CP1252&quot;],                      [0x0482,&quot;oc-FR&quot;,&quot;CP1252&quot;],                      [0x0448,&quot;or-IN&quot;,&quot;UNICODE&quot;],                      [0x0463,&quot;ps-AF&quot;,&quot;UNICODE&quot;],                      [0x0029,&quot;fa&quot;,&quot;CP1256&quot;],                      [0x0429,&quot;fa-IR&quot;,&quot;CP1256&quot;],                      [0x0015,&quot;pl&quot;,&quot;CP1250&quot;],                      [0x0415,&quot;pl-PL&quot;,&quot;CP1250&quot;],                      [0x0016,&quot;pt&quot;,&quot;CP1252&quot;],                      [0x0416,&quot;pt-BR&quot;,&quot;CP1252&quot;],                      [0x0816,&quot;pt-PT&quot;,&quot;CP1252&quot;],                      [0x0046,&quot;pa&quot;,&quot;UNICODE&quot;],                      [0x0446,&quot;pa-IN&quot;,&quot;UNICODE&quot;],                      [0x046B,&quot;quz-BO&quot;,&quot;CP1252&quot;],                      [0x086B,&quot;quz-EC&quot;,&quot;CP1252&quot;],                      [0x0C6B,&quot;quz-PE&quot;,&quot;CP1252&quot;],                      [0x0018,&quot;ro&quot;,&quot;CP1250&quot;],                      [0x0418,&quot;ro-RO&quot;,&quot;CP1250&quot;],                      [0x0417,&quot;rm-CH&quot;,&quot;CP1252&quot;],                      [0x0019,&quot;ru&quot;,&quot;CP1251&quot;],                      [0x0419,&quot;ru-RU&quot;,&quot;CP1251&quot;],                      [0x243B,&quot;smn-FI&quot;,&quot;CP1252&quot;],                      [0x103B,&quot;smj-NO&quot;,&quot;CP1252&quot;],                      [0x143B,&quot;smj-SE&quot;,&quot;CP1252&quot;],                      [0x0C3B,&quot;se-FI&quot;,&quot;CP1252&quot;],                      [0x043B,&quot;se-NO&quot;,&quot;CP1252&quot;],                      [0x083B,&quot;se-SE&quot;,&quot;CP1252&quot;],                      [0x203B,&quot;sms-FI&quot;,&quot;CP1252&quot;],                      [0x183B,&quot;sma-NO&quot;,&quot;CP1252&quot;],                      [0x1C3B,&quot;sma-SE&quot;,&quot;CP1252&quot;],                      [0x004F,&quot;sa&quot;,&quot;UNICODE&quot;],                      [0x044F,&quot;sa-IN&quot;,&quot;UNICODE&quot;],                      [0x7C1A,&quot;sr&quot;,&quot;CP1251&quot;],                      [0x1C1A,&quot;sr-Cyrl-BA&quot;,&quot;CP1251&quot;],                      [0x0C1A,&quot;sr-Cyrl-SP&quot;,&quot;CP1251&quot;],                      [0x181A,&quot;sr-Latn-BA&quot;,&quot;CP1250&quot;],                      [0x081A,&quot;sr-Latn-SP&quot;,&quot;CP1250&quot;],                      [0x046C,&quot;nso-ZA&quot;,&quot;CP1252&quot;],                      [0x0432,&quot;tn-ZA&quot;,&quot;CP1252&quot;],                      [0x045B,&quot;si-LK&quot;,&quot;UNICODE&quot;],                      [0x001B,&quot;sk&quot;,&quot;CP1250&quot;],                      [0x041B,&quot;sk-SK&quot;,&quot;CP1250&quot;],                      [0x0024,&quot;sl&quot;,&quot;CP1250&quot;],                      [0x0424,&quot;sl-SI&quot;,&quot;CP1250&quot;],                      [0x000A,&quot;es&quot;,&quot;CP1252&quot;],                      [0x2C0A,&quot;es-AR&quot;,&quot;CP1252&quot;],                      [0x400A,&quot;es-BO&quot;,&quot;CP1252&quot;],                      [0x340A,&quot;es-CL&quot;,&quot;CP1252&quot;],                      [0x240A,&quot;es-CO&quot;,&quot;CP1252&quot;],                      [0x140A,&quot;es-CR&quot;,&quot;CP1252&quot;],                      [0x1C0A,&quot;es-DO&quot;,&quot;CP1252&quot;],                      [0x300A,&quot;es-EC&quot;,&quot;CP1252&quot;],                      [0x440A,&quot;es-SV&quot;,&quot;CP1252&quot;],                      [0x100A,&quot;es-GT&quot;,&quot;CP1252&quot;],                      [0x480A,&quot;es-HN&quot;,&quot;CP1252&quot;],                      [0x080A,&quot;es-MX&quot;,&quot;CP1252&quot;],                      [0x4C0A,&quot;es-NI&quot;,&quot;CP1252&quot;],                      [0x180A,&quot;es-PA&quot;,&quot;CP1252&quot;],                      [0x3C0A,&quot;es-PY&quot;,&quot;CP1252&quot;],                      [0x280A,&quot;es-PE&quot;,&quot;CP1252&quot;],                      [0x500A,&quot;es-PR&quot;,&quot;CP1252&quot;],                      [0x0C0A,&quot;es-ES&quot;,&quot;CP1252&quot;],                      [0x540A,&quot;es-US&quot;,&quot;CP1252&quot;],                      [0x380A,&quot;es-UY&quot;,&quot;CP1252&quot;],                      [0x200A,&quot;es-VE&quot;,&quot;CP1252&quot;],                      [0x001D,&quot;sv&quot;,&quot;CP1252&quot;],                      [0x081D,&quot;sv-FI&quot;,&quot;CP1252&quot;],                      [0x041D,&quot;sv-SE&quot;,&quot;CP1252&quot;],                      [0x005A,&quot;syr&quot;,&quot;UNICODE&quot;],                      [0x045A,&quot;syr-SY&quot;,&quot;UNICODE&quot;],                      [0x0428,&quot;tg-Cyrl-TJ&quot;,&quot;CP1251&quot;],                      [0x085F,&quot;tmz-Latn-DZ&quot;,&quot;CP1252&quot;],                      [0x0049,&quot;ta&quot;,&quot;UNICODE&quot;],                      [0x0449,&quot;ta-IN&quot;,&quot;UNICODE&quot;],                      [0x0044,&quot;tt&quot;,&quot;CP1251&quot;],                      [0x0444,&quot;tt-RU&quot;,&quot;CP1251&quot;],                      [0x004A,&quot;te&quot;,&quot;UNICODE&quot;],                      [0x044A,&quot;te-IN&quot;,&quot;UNICODE&quot;],                      [0x001E,&quot;th&quot;,&quot;CP874&quot;],                      [0x041E,&quot;th-TH&quot;,&quot;CP874&quot;],                      [0x0451,&quot;bo-CN&quot;,&quot;UNICODE&quot;],                      [0x001F,&quot;tr&quot;,&quot;CP1254&quot;],                      [0x041F,&quot;tr-TR&quot;,&quot;CP1254&quot;],                      [0x0442,&quot;tk-TM&quot;,&quot;CP1250&quot;],                      [0x0480,&quot;ug-CN&quot;,&quot;CP1256&quot;],                      [0x0022,&quot;uk&quot;,&quot;CP1251&quot;],                      [0x0422,&quot;uk-UA&quot;,&quot;CP1251&quot;],                      [0x042E,&quot;wen-DE&quot;,&quot;CP1252&quot;],                      [0x0020,&quot;ur&quot;,&quot;CP1256&quot;],                      [0x0420,&quot;ur-PK&quot;,&quot;CP1256&quot;],                      [0x0043,&quot;uz&quot;,&quot;CP1254&quot;],                      [0x0843,&quot;uz-Cyrl-UZ&quot;,&quot;CP1251&quot;],                      [0x0443,&quot;uz-Latn-UZ&quot;,&quot;CP1254&quot;],                      [0x002A,&quot;vi&quot;,&quot;CP1258&quot;],                      [0x042A,&quot;vi-VN&quot;,&quot;CP1258&quot;],                      [0x0452,&quot;cy-GB&quot;,&quot;CP1252&quot;],                      [0x0488,&quot;wo-SN&quot;,&quot;CP1252&quot;],                      [0x0485,&quot;sah-RU&quot;,&quot;CP1251&quot;],                      [0x0478,&quot;ii-CN&quot;,&quot;UNICODE&quot;],                      [0x046A,&quot;yo-NG&quot;,&quot;CP1252&quot;],                     ]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+LangID, locale name, code page
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

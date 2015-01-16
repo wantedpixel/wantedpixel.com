@@ -1,0 +1,41 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: HORIZONTAL
+  value: "'horizontal'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DIAGONAL
+  value: "'diagonal'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SMART
+  value: "'smart'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERTICAL
+  value: "'vertical'"
+full_name: Compass::SassExtensions::Sprites::LayoutMethods
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: compute_image_positions!
+- !ruby/object:RI::MethodSummary 
+  name: diagonal?
+- !ruby/object:RI::MethodSummary 
+  name: horizontal?
+- !ruby/object:RI::MethodSummary 
+  name: layout
+- !ruby/object:RI::MethodSummary 
+  name: smart?
+- !ruby/object:RI::MethodSummary 
+  name: vertical?
+name: LayoutMethods
+superclass: 

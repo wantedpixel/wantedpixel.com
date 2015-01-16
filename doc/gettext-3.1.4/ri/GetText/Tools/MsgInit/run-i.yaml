@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create .po file from .pot file, user's inputs and metadata. @param [Array] arguments the list of arguments for rmsginit
+full_name: GetText::Tools::MsgInit#run
+is_singleton: false
+name: run
+params: (*arguments)
+visibility: public

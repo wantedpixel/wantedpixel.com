@@ -1,0 +1,38 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: np_
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The npgettext is similar to the nsgettext function.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  e.g.) np_(&quot;Special&quot;, &quot;An apple&quot;, &quot;%{num} Apples&quot;, num) == ns_(&quot;Special|An apple&quot;, &quot;%{num} Apples&quot;, num)\n"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgctxt: the message context."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid: the singular form."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid_plural: the plural form."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "n: a number used to determine the plural form."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: the localized text which key is msgid_plural if n is plural(follow plural-rule) or msgid. &quot;plural-rule&quot; is defined in po-file."
+  type: :BULLET
+full_name: GetText#npgettext
+is_singleton: false
+name: npgettext
+params: |
+  npgettext(msgctxt, msgid, msgid_plural, n)
+  npgettext(msgctxt, msgids, n)  # msgids = [msgid, msgid_plural]
+  np_(msgctxt, msgid, msgid_plural, n)
+  np_(msgctxt, msgids, n)  # msgids = [msgid, msgid_plural]
+
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [#to_s] name function name @param [Array] arg_types function's argument types @return [Array&lt;String&gt;] This function returns a list of possible names to lookup. @note Function names on windows may be decorated if they are using stdcall. See"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  * http://en.wikipedia.org/wiki/Name_mangling#C_name_decoration_in_Microsoft_Windows\n  * http://msdn.microsoft.com/en-us/library/zxk0tw93%28v=VS.100%29.aspx\n  * http://en.wikibooks.org/wiki/X86_Disassembly/Calling_Conventions#STDCALL\n  Note that decorated names can be overridden via def files.  Also note that the\n  windows api, although using, doesn't have decorated names.\n"
+full_name: FFI::Library#function_names
+is_singleton: false
+name: function_names
+params: (name, arg_types)
+visibility: public

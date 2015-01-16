@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Merges two translation targets with the same msgid and returns the merged result. If one is declared as plural and the other not, then the one with the plural wins.
+full_name: GetText::POEntry#merge
+is_singleton: false
+name: merge
+params: (other)
+visibility: public

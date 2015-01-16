@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>check_for_sass_files! (Compass::Commands::UpdateProject)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/commands/update_project.rb, line 81</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">check_for_sass_files!</span>(<span class="ruby-identifier">compiler</span>)
+        <span class="ruby-identifier">file_list</span> = <span class="ruby-identifier">compiler</span>.<span class="ruby-identifier">file_list</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">file_list</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-identifier">message</span> = <span class="ruby-value str">&quot;Compass can't find any Sass files to compile.\nIs your compass configuration correct?.\nIf you're trying to start a new project, you have left off the directory argument.\n&quot;</span>
+          <span class="ruby-identifier">message</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;Run \&quot;compass -h\&quot; to get help.&quot;</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">Compass</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>, <span class="ruby-identifier">message</span>
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">missing</span> = <span class="ruby-identifier">file_list</span>.<span class="ruby-identifier">find</span> {<span class="ruby-operator">|</span>(<span class="ruby-identifier">sass_file</span>, <span class="ruby-identifier">_</span>, <span class="ruby-identifier">_</span>)<span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">sass_file</span>)}
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">Compass</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>, <span class="ruby-node">&quot;File not found: #{missing[0]}&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

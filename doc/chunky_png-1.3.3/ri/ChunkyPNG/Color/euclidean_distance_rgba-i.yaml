@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Compute the Euclidean distance between 2 colors in RGBA
+- !ruby/struct:SM::Flow::P 
+  body: This method simply takes the Euclidean distance between the RGBA channels of 2 colors, which gives us a measure of how different the two colors are.
+- !ruby/struct:SM::Flow::P 
+  body: Although it would be more perceptually accurate to calculate a proper Delta E in Lab colorspace, this method should serve many use-cases while avoiding the overhead of converting RGBA to Lab.
+- !ruby/struct:SM::Flow::P 
+  body: "@param pixel_after [Integer] @param pixel_before [Integer] @return [Float]"
+full_name: ChunkyPNG::Color#euclidean_distance_rgba
+is_singleton: false
+name: euclidean_distance_rgba
+params: (pixel_after, pixel_before)
+visibility: public

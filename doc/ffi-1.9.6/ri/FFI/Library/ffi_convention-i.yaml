@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Set the calling convention for {#attach_function} and {#callback}
+- !ruby/struct:SM::Flow::P 
+  body: "@see http://en.wikipedia.org/wiki/Stdcall#stdcall @note +:stdcall+ is typically used for attaching Windows API functions"
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Symbol] convention one of +:default+, +:stdcall+ @return [Symbol] the new calling convention"
+full_name: FFI::Library#ffi_convention
+is_singleton: false
+name: ffi_convention
+params: (convention = nil)
+visibility: public

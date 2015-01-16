@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a hash of all the ISO regions. The hash is {String, Region} where the string is the 2 digit region code from the ISO 3166 data.
+- !ruby/struct:SM::Flow::P 
+  body: You need to require 'locale/info' or 'locale/region'.
+full_name: Locale::Info#regions
+is_singleton: false
+name: regions
+params: ()
+visibility: public

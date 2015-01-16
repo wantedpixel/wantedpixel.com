@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets some preferences to parse ERB files.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "config: a Hash of the config. It can takes some values below:"
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+    - !ruby/struct:SM::Flow::LI 
+      label: "*"
+      body: ":extnames: An Array of target files extension. Default is [&quot;.rhtml&quot;]."
+    type: :BULLET
+  type: :BULLET
+full_name: GetText::ErbParser::init
+is_singleton: true
+name: init
+params: (config)
+visibility: public

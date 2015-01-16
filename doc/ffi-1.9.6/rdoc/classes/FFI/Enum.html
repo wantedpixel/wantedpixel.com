@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: FFI::Enum</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">FFI::Enum</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/ffi/enum_rb.html">
+                lib/ffi/enum.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Represents a C enum.
+</p>
+<p>
+For a C enum:
+</p>
+<pre>
+ enum fruits {
+   apple,
+   banana,
+   orange,
+   pineapple
+ };
+</pre>
+<p>
+are defined this vocabulary:
+</p>
+<ul>
+<li>a <em>symbol</em> is a word from the enumeration (ie. <em>apple</em>, by
+example);
+
+</li>
+<li>a <em>value</em> is the value of a symbol in the enumeration (by example,
+apple has value _0_ and banana _1_).
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000789">[]</a>&nbsp;&nbsp;
+      <a href="#M000790">find</a>&nbsp;&nbsp;
+      <a href="#M000796">from_native</a>&nbsp;&nbsp;
+      <a href="#M000794">native_type</a>&nbsp;&nbsp;
+      <a href="#M000787">new</a>&nbsp;&nbsp;
+      <a href="#M000791">symbol_map</a>&nbsp;&nbsp;
+      <a href="#M000788">symbols</a>&nbsp;&nbsp;
+      <a href="#M000792">to_h</a>&nbsp;&nbsp;
+      <a href="#M000793">to_hash</a>&nbsp;&nbsp;
+      <a href="#M000795">to_native</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">DataConverter</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">tag</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000787" class="method-detail">
+        <a name="M000787"></a>
+
+        <div class="method-heading">
+          <a href="Enum.src/M000787.html" target="Code" class="method-signature"
+            onclick="popupCode('Enum.src/M000787.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(info, tag=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param [nil, Enumerable] info @param tag enum tag
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000789" class="method-detail">
+        <a name="M000789"></a>
+
+        <div class="method-heading">
+          <a href="Enum.src/M000789.html" target="Code" class="method-signature"
+            onclick="popupCode('Enum.src/M000789.html');return false;">
+          <span class="method-name">[]</span><span class="method-args">(query)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get a symbol or a value from the enum. @overload [](query)
+</p>
+<pre>
+ Get enum value from symbol.
+ @param [Symbol] query
+ @return [Integer]
+</pre>
+<p>
+@overload [](query)
+</p>
+<pre>
+ Get enum symbol from value.
+ @param [Integer] query
+ @return [Symbol]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000790" class="method-detail">
+        <a name="M000790"></a>
+
+        <div class="method-heading">
+          <span class="method-name">find</span><span class="method-args">(query)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for #[]
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000796" class="method-detail">
+        <a name="M000796"></a>
+
+        <div class="method-heading">
+          <a href="Enum.src/M000796.html" target="Code" class="method-signature"
+            onclick="popupCode('Enum.src/M000796.html');return false;">
+          <span class="method-name">from_native</span><span class="method-args">(val, ctx)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param val @return symbol name if it exists for <tt>val</tt>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000794" class="method-detail">
+        <a name="M000794"></a>
+
+        <div class="method-heading">
+          <a href="Enum.src/M000794.html" target="Code" class="method-signature"
+            onclick="popupCode('Enum.src/M000794.html');return false;">
+          <span class="method-name">native_type</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get native type of <a href="Enum.html">Enum</a> @return [Type::INT]
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000791" class="method-detail">
+        <a name="M000791"></a>
+
+        <div class="method-heading">
+          <a href="Enum.src/M000791.html" target="Code" class="method-signature"
+            onclick="popupCode('Enum.src/M000791.html');return false;">
+          <span class="method-name">symbol_map</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get the symbol map. @return [Hash]
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000788" class="method-detail">
+        <a name="M000788"></a>
+
+        <div class="method-heading">
+          <a href="Enum.src/M000788.html" target="Code" class="method-signature"
+            onclick="popupCode('Enum.src/M000788.html');return false;">
+          <span class="method-name">symbols</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@return [Array] enum symbol names
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000792" class="method-detail">
+        <a name="M000792"></a>
+
+        <div class="method-heading">
+          <span class="method-name">to_h</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Enum.html#M000791">symbol_map</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000793" class="method-detail">
+        <a name="M000793"></a>
+
+        <div class="method-heading">
+          <span class="method-name">to_hash</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Enum.html#M000791">symbol_map</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000795" class="method-detail">
+        <a name="M000795"></a>
+
+        <div class="method-heading">
+          <a href="Enum.src/M000795.html" target="Code" class="method-signature"
+            onclick="popupCode('Enum.src/M000795.html');return false;">
+          <span class="method-name">to_native</span><span class="method-args">(val, ctx)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param [Symbol, Integer, to_int] val @param ctx unused @return [Integer]
+value of a enum symbol
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

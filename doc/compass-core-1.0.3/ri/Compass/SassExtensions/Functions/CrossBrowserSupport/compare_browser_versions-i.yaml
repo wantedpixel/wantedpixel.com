@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Compares two browser versions. Returning:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: 0 if they are the same
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "&lt;0 if the first version is less than the second"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "&gt;0 if the first version is more than the second"
+  type: :BULLET
+full_name: Compass::SassExtensions::Functions::CrossBrowserSupport#compare_browser_versions
+is_singleton: false
+name: compare_browser_versions
+params: (browser, version1, version2)
+visibility: public

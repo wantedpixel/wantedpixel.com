@@ -1,0 +1,28 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the locales of the current thread order by the priority. Each thread has a current locales. The system locale/default locale is used if the thread doesn't have current locales.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "tag: Locale::Language::Tag's class or the language tag as a String. nil if you need to clear current locales."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "charset: the charset (override the charset even if the locale name has charset) or nil."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: self"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: (e.g.)
+- !ruby/struct:SM::Flow::VERB 
+  body: "   Locale.set_current(&quot;ja_JP.eucJP&quot;)\n   Locale.set_current(&quot;ja-JP&quot;)\n   Locale.set_current(&quot;en_AU&quot;, &quot;en_US&quot;, ...)\n   Locale.set_current(Locale::Tag::Simple.new(&quot;ja&quot;, &quot;JP&quot;), ...)\n"
+full_name: Locale#set_current
+is_singleton: false
+name: set_current
+params: (*tags)
+visibility: public

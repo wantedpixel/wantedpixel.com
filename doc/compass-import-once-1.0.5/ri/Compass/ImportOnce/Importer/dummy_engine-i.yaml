@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::ImportOnce::Importer#dummy_engine
+is_singleton: false
+name: dummy_engine
+params: (engine, options)
+visibility: protected

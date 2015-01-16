@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@return [StructLayout] @overload layout"
+- !ruby/struct:SM::Flow::VERB 
+  body: " @return [StructLayout]\n Get struct layout.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload layout(*spec)"
+- !ruby/struct:SM::Flow::VERB 
+  body: " @param [Array&lt;Symbol, Integer&gt;,Array(Hash)] spec\n @return [StructLayout]\n Create struct layout from <tt>spec</tt>.\n @example Creating a layout from an array <tt>spec</tt>\n   class MyStruct &lt; Struct\n     layout :field1, :int,\n            :field2, :pointer,\n            :field3, :string\n   end\n @example Creating a layout from an array <tt>spec</tt> with offset\n   class MyStructWithOffset &lt; Struct\n     layout :field1, :int,\n            :field2, :pointer, 6,  # set offset to 6 for this field\n            :field3, :string\n   end\n @example Creating a layout from a hash <tt>spec</tt> (Ruby 1.9 only)\n   class MyStructFromHash &lt; Struct\n     layout :field1 =&gt; :int,\n            :field2 =&gt; :pointer,\n            :field3 =&gt; :string\n   end\n @note Creating a layout from a hash <tt>spec</tt> is supported only for Ruby 1.9.\n"
+full_name: FFI::Struct::layout
+is_singleton: true
+name: layout
+params: (*spec)
+visibility: public

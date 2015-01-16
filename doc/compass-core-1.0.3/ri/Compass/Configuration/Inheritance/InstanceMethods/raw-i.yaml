@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Reads the raw value that was set on this object. you generally should call raw_&lt;attribute&gt;() instead.
+full_name: Compass::Configuration::Inheritance::InstanceMethods#raw
+is_singleton: false
+name: raw
+params: (attribute)
+visibility: public

@@ -1,0 +1,32 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: p_
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Translates msgid with msgctxt. This methods is similer with s_().
+- !ruby/struct:SM::Flow::VERB 
+  body: " e.g.) p_(&quot;File&quot;, &quot;New&quot;)   == s_(&quot;File|New&quot;)\n       p_(&quot;File&quot;, &quot;Open&quot;)  == s_(&quot;File|Open&quot;)\n"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgctxt: the message context."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid: the message id."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: the localized text by msgid. If there are no localized text, it returns msgid."
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: "See: http://www.gnu.org/software/autoconf/manual/gettext/Contexts.html"
+full_name: GetText#pgettext
+is_singleton: false
+name: pgettext
+params: |
+  pgettext(msgctxt, msgid)
+  p_(msgctxt, msgid)
+
+visibility: public

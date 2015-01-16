@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Boolean] autorelease @return [Boolean] <tt>autorelease</tt> Set <tt>autorelease</tt> property. See {Pointer Autorelease section at Pointer}."
+full_name: FFI::AutoPointer#autorelease=
+is_singleton: false
+name: autorelease=
+params: (autorelease)
+visibility: public

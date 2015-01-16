@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>handle_keywords (Compass::SassExtensions::Functions::GradientSupport::CSS3AngleToSVGConverter)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/core/sass_extensions/functions/gradient_support.rb, line 41</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handle_keywords</span>(<span class="ruby-identifier">angle</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">angle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">List</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">angle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>)
+        <span class="ruby-identifier">direction</span> = <span class="ruby-identifier">angle</span>.<span class="ruby-identifier">to_sass</span>
+        <span class="ruby-identifier">is_end_point</span> = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-regexp re">/\bto\b/i</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">direction</span>)
+        <span class="ruby-identifier">dir</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">dir</span> <span class="ruby-operator">|=</span> <span class="ruby-constant">TOP</span> <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/\btop\b/i</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">direction</span>)
+        <span class="ruby-identifier">dir</span> <span class="ruby-operator">|=</span> <span class="ruby-constant">BOTTOM</span> <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/\bbottom\b/i</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">direction</span>)
+        <span class="ruby-identifier">dir</span> <span class="ruby-operator">|=</span> <span class="ruby-constant">RIGHT</span> <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/\bright\b/i</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">direction</span>)
+        <span class="ruby-identifier">dir</span> <span class="ruby-operator">|=</span> <span class="ruby-constant">LEFT</span> <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/\bleft\b/i</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">direction</span>)
+        <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">r</span> = <span class="ruby-constant">DIR_KEYWORDS_TO_ANGLE</span>[<span class="ruby-identifier">dir</span>])
+          <span class="ruby-identifier">r</span> <span class="ruby-operator">+=</span> <span class="ruby-value">180</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">is_end_point</span>
+          <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">Number</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">r</span>, <span class="ruby-node">%w(deg)</span>, [])
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>, <span class="ruby-node">&quot;Unknown direction: #{angle.to_sass}&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">angle</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

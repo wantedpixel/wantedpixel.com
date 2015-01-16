@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a new {Watcher}.
+- !ruby/struct:SM::Flow::P 
+  body: "@private @see Notifier#watch"
+full_name: INotify::Watcher::new
+is_singleton: true
+name: new
+params: (notifier, path, *flags, &callback)
+visibility: public

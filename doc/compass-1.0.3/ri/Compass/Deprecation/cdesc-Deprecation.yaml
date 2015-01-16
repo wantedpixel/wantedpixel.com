@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: issued_deprecations
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: deprecated!
+- !ruby/object:RI::MethodSummary 
+  name: mark_as_issued
+comment: 
+constants: []
+
+full_name: Compass::Deprecation
+includes: []
+
+instance_methods: []
+
+name: Deprecation
+superclass: 

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Type, DataConverter, Symbol] old type definition used by {FFI.find_type} @param [Symbol] add new type definition's name to add @return [Type] Add a definition type to type definitions."
+full_name: FFI::typedef
+is_singleton: true
+name: typedef
+params: (old, add)
+visibility: public

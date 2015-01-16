@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Constructs an {Event} object from a string of binary data, and destructively modifies the string to get rid of the initial segment used to construct the Event.
+- !ruby/struct:SM::Flow::P 
+  body: "@private @param data [String] The string to be modified @param notifier [Notifier] The {Notifier} that fired the event @return [Event, nil] The event, or `nil` if the string is empty"
+full_name: INotify::Event::consume
+is_singleton: true
+name: consume
+params: (data, notifier)
+visibility: public

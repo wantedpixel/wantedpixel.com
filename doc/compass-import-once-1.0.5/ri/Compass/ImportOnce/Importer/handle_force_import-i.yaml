@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: any uri that ends with an exclamation mark will be forced to import
+full_name: Compass::ImportOnce::Importer#handle_force_import
+is_singleton: false
+name: handle_force_import
+params: (uri)
+visibility: protected

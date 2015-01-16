@@ -1,0 +1,82 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: language
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: region
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: tag is set when .parse method is called. This value is used when the program want to know the original String.
+  name: tag
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: parse
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Abstract language tag class. This class has &lt;language&gt;, &lt;region&gt; which all of language tag specifications have.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "ja (language: ISO 639 (2 or 3 alpha))"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "ja_JP (country: RFC4646 (ISO3166/UN M.49) (2 alpha or 3 digit)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ja-JP
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ja-392
+  type: :BULLET
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ALPHA
+  value: "'[a-z]'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DIGIT
+  value: "'[0-9]'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ALPHANUM
+  value: "\"[a-zA-Z0-9]\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LANGUAGE
+  value: "\"(#{ALPHA}{2,3})\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: REGION
+  value: "\"(#{ALPHA}{2}|#{DIGIT}{3})\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TAG_RE
+  value: /\A#{LANGUAGE}(?:[_-]#{REGION})?\Z/i
+full_name: Locale::Tag::Simple
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: <=>
+- !ruby/object:RI::MethodSummary 
+  name: candidates
+- !ruby/object:RI::MethodSummary 
+  name: country
+- !ruby/object:RI::MethodSummary 
+  name: language=
+- !ruby/object:RI::MethodSummary 
+  name: region=
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+name: Simple
+superclass: Object

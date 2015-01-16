@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the language tag.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;language&gt;_&lt;COUNTRY&gt;.&lt;CHARSET&gt;@&lt;MODIFIER&gt;\n  (e.g.) &quot;ja_JP.EUC-JP@Modifier&quot;\n"
+full_name: Locale::Tag::Posix#to_s
+is_singleton: false
+name: to_s
+params: ()
+visibility: public

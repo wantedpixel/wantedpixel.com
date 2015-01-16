@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::Core::CanIUse#browser_ranges
+is_singleton: false
+name: browser_ranges
+params: (capability, prefix = nil, include_unprefixed_versions = true)
+visibility: public

@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Translates msgid, but if there are no localized text, it returns a last part of msgid separeted &quot;div&quot; or whole of the msgid with no &quot;div&quot;.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid: the message id."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "div: separator or nil."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: the localized text by msgid. If there are no localized text, it returns a last part of msgid separeted &quot;div&quot;."
+  type: :BULLET
+full_name: GetText::TextDomainManager#translate_singular_message
+is_singleton: false
+name: translate_singular_message
+params: (klass, msgid, div = nil)
+visibility: public

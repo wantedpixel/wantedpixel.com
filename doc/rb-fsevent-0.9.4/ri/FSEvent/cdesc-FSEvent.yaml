@@ -1,0 +1,41 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: callback
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: paths
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'0.9.4'"
+full_name: FSEvent
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: open_pipe
+- !ruby/object:RI::MethodSummary 
+  name: open_pipe
+- !ruby/object:RI::MethodSummary 
+  name: options_string
+- !ruby/object:RI::MethodSummary 
+  name: run
+- !ruby/object:RI::MethodSummary 
+  name: shellescape
+- !ruby/object:RI::MethodSummary 
+  name: shellescaped_paths
+- !ruby/object:RI::MethodSummary 
+  name: stop
+- !ruby/object:RI::MethodSummary 
+  name: watch
+name: FSEvent
+superclass: Object

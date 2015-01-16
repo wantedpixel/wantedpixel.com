@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "For normalize/finding the related classes/modules. This is used for realizing the scope of TextDomain. (see: http://www.yotabanana.com/hiki/ruby-gettext-scope.html)"
+constants: []
+
+full_name: GetText::ClassInfo
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: normalize_class
+- !ruby/object:RI::MethodSummary 
+  name: related_classes
+- !ruby/object:RI::MethodSummary 
+  name: related_classes_internal
+name: ClassInfo
+superclass: 

@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: An enum {Field} in a {StructLayout}.
+constants: []
+
+full_name: FFI::StructLayout::Enum
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: get
+- !ruby/object:RI::MethodSummary 
+  name: put
+name: Enum
+superclass: Field

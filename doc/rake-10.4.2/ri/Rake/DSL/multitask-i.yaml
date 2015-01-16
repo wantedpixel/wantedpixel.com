@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Declare a task that performs its prerequisites in parallel. Multitasks does <b>not</b> guarantee that its prerequisites will execute in any given order (which is obvious when you think about it)
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  multitask deploy: %w[deploy_gem deploy_rdoc]\n"
+full_name: Rake::DSL#multitask
+is_singleton: false
+name: multitask
+params: (*args, &block)
+visibility: private

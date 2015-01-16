@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Sass::Tree::Visitors::CheckNesting</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Sass::Tree::Visitors::CheckNesting</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../../files/lib/sass/tree/visitors/check_nesting_rb.html">
+                lib/sass/tree/visitors/check_nesting.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Base.html">
+                Sass::Tree::Visitors::Base
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+A visitor for checking that all nodes are properly nested.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000815">invalid_charset_parent?</a>&nbsp;&nbsp;
+      <a href="#M000814">invalid_content_parent?</a>&nbsp;&nbsp;
+      <a href="#M000816">invalid_extend_parent?</a>&nbsp;&nbsp;
+      <a href="#M000820">invalid_function_child?</a>&nbsp;&nbsp;
+      <a href="#M000819">invalid_function_parent?</a>&nbsp;&nbsp;
+      <a href="#M000817">invalid_import_parent?</a>&nbsp;&nbsp;
+      <a href="#M000818">invalid_mixindef_parent?</a>&nbsp;&nbsp;
+      <a href="#M000821">invalid_prop_child?</a>&nbsp;&nbsp;
+      <a href="#M000822">invalid_prop_parent?</a>&nbsp;&nbsp;
+      <a href="#M000823">invalid_return_parent?</a>&nbsp;&nbsp;
+      <a href="#M000808">new</a>&nbsp;&nbsp;
+      <a href="#M000809">visit</a>&nbsp;&nbsp;
+      <a href="#M000810">visit_children</a>&nbsp;&nbsp;
+      <a href="#M000812">visit_import</a>&nbsp;&nbsp;
+      <a href="#M000813">visit_mixindef</a>&nbsp;&nbsp;
+      <a href="#M000811">visit_root</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CONTROL_NODES</td>
+          <td>=</td>
+          <td class="context-item-value">[Sass::Tree::EachNode, Sass::Tree::ForNode, Sass::Tree::IfNode,                    Sass::Tree::WhileNode, Sass::Tree::TraceNode]</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SCRIPT_NODES</td>
+          <td>=</td>
+          <td class="context-item-value">[Sass::Tree::ImportNode] + CONTROL_NODES</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VALID_EXTEND_PARENTS</td>
+          <td>=</td>
+          <td class="context-item-value">[Sass::Tree::RuleNode, Sass::Tree::MixinDefNode, Sass::Tree::MixinNode]</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">INVALID_IMPORT_PARENTS</td>
+          <td>=</td>
+          <td class="context-item-value">CONTROL_NODES +     [Sass::Tree::MixinDefNode, Sass::Tree::MixinNode]</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VALID_FUNCTION_CHILDREN</td>
+          <td>=</td>
+          <td class="context-item-value">[     Sass::Tree::CommentNode,  Sass::Tree::DebugNode, Sass::Tree::ReturnNode,     Sass::Tree::VariableNode, Sass::Tree::WarnNode, Sass::Tree::ErrorNode</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VALID_PROP_CHILDREN</td>
+          <td>=</td>
+          <td class="context-item-value">CONTROL_NODES + [Sass::Tree::CommentNode,                                           Sass::Tree::PropNode,                                           Sass::Tree::MixinNode]</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VALID_PROP_PARENTS</td>
+          <td>=</td>
+          <td class="context-item-value">[Sass::Tree::RuleNode, Sass::Tree::KeyframeRuleNode, Sass::Tree::PropNode,                         Sass::Tree::MixinDefNode, Sass::Tree::DirectiveNode, Sass::Tree::MixinNode]</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000808" class="method-detail">
+        <a name="M000808"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000808.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000808.html');return false;">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M000815" class="method-detail">
+        <a name="M000815"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000815.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000815.html');return false;">
+          <span class="method-name">invalid_charset_parent?</span><span class="method-args">(parent, child)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000814" class="method-detail">
+        <a name="M000814"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000814.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000814.html');return false;">
+          <span class="method-name">invalid_content_parent?</span><span class="method-args">(parent, child)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000816" class="method-detail">
+        <a name="M000816"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000816.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000816.html');return false;">
+          <span class="method-name">invalid_extend_parent?</span><span class="method-args">(parent, child)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000820" class="method-detail">
+        <a name="M000820"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000820.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000820.html');return false;">
+          <span class="method-name">invalid_function_child?</span><span class="method-args">(parent, child)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000819" class="method-detail">
+        <a name="M000819"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000819.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000819.html');return false;">
+          <span class="method-name">invalid_function_parent?</span><span class="method-args">(parent, child)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000817" class="method-detail">
+        <a name="M000817"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000817.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000817.html');return false;">
+          <span class="method-name">invalid_import_parent?</span><span class="method-args">(parent, child)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000818" class="method-detail">
+        <a name="M000818"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000818.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000818.html');return false;">
+          <span class="method-name">invalid_mixindef_parent?</span><span class="method-args">(parent, child)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000821" class="method-detail">
+        <a name="M000821"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000821.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000821.html');return false;">
+          <span class="method-name">invalid_prop_child?</span><span class="method-args">(parent, child)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000822" class="method-detail">
+        <a name="M000822"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000822.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000822.html');return false;">
+          <span class="method-name">invalid_prop_parent?</span><span class="method-args">(parent, child)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000823" class="method-detail">
+        <a name="M000823"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000823.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000823.html');return false;">
+          <span class="method-name">invalid_return_parent?</span><span class="method-args">(parent, child)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000809" class="method-detail">
+        <a name="M000809"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000809.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000809.html');return false;">
+          <span class="method-name">visit</span><span class="method-args">(node)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000810" class="method-detail">
+        <a name="M000810"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000810.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000810.html');return false;">
+          <span class="method-name">visit_children</span><span class="method-args">(parent)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000812" class="method-detail">
+        <a name="M000812"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000812.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000812.html');return false;">
+          <span class="method-name">visit_import</span><span class="method-args">(node) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000813" class="method-detail">
+        <a name="M000813"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000813.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000813.html');return false;">
+          <span class="method-name">visit_mixindef</span><span class="method-args">(node) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000811" class="method-detail">
+        <a name="M000811"></a>
+
+        <div class="method-heading">
+          <a href="CheckNesting.src/M000811.html" target="Code" class="method-signature"
+            onclick="popupCode('CheckNesting.src/M000811.html');return false;">
+          <span class="method-name">visit_root</span><span class="method-args">(node) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

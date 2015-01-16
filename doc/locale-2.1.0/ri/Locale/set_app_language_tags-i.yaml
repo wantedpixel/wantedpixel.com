@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Set the language tags which is supported by the Application. This value is same with supported_language_tags in Locale.candidates to restrict the result but is the global setting. If you set a language tag, the application works as the single locale application.
+- !ruby/struct:SM::Flow::P 
+  body: If the current locale is not included in app_language_tags, Locale.default value is used. Use Locale.set_default() to set correct language if &quot;en&quot; is not included in the language tags.
+- !ruby/struct:SM::Flow::P 
+  body: Set nil if clear the value.
+- !ruby/struct:SM::Flow::P 
+  body: Note that the libraries/plugins shouldn't set this value.
+- !ruby/struct:SM::Flow::VERB 
+  body: " (e.g.) Locale.set_app_language_tags(&quot;fr_FR&quot;, &quot;en-GB&quot;, &quot;en_US&quot;, ...)\n"
+full_name: Locale#set_app_language_tags
+is_singleton: false
+name: set_app_language_tags
+params: (*tags)
+visibility: public

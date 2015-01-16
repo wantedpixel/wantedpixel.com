@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a new AutoPointer.
+- !ruby/struct:SM::Flow::P 
+  body: Override {DataConverter#from_native}. @overload self.from_native(ptr, ctx) @param [Pointer] ptr @param ctx not used. Please set <tt>nil</tt>. @return [AutoPointer]
+full_name: FFI::AutoPointer::from_native
+is_singleton: true
+name: from_native
+params: (val, ctx)
+visibility: public

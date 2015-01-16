@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: return the name of the selector file
+full_name: Compass::SassExtensions::Functions::Sprites#sprite_selector_file
+is_singleton: false
+name: sprite_selector_file
+params: (map, sprite, selector)
+visibility: public

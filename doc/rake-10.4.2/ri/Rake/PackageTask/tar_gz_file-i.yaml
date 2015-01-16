@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The package name with .tar.gz added
+full_name: Rake::PackageTask#tar_gz_file
+is_singleton: false
+name: tar_gz_file
+params: ()
+visibility: public

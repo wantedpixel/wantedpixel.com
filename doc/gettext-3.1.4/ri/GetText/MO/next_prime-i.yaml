@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: GetText::MO#next_prime
+is_singleton: false
+name: next_prime
+params: (seed)
+visibility: public

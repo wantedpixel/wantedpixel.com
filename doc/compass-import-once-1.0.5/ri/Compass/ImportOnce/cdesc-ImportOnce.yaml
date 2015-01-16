@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: activate!
+- !ruby/object:RI::MethodSummary 
+  name: import_tracker
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: although this is part of the compass suite of gems, it doesn't depend on compass, so any sass-based project can use to to get import-once behavior for all of their importers.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: File.read(File.join(File.dirname(__FILE__), "..", "..", "..", "VERSION")).strip
+full_name: Compass::ImportOnce
+includes: []
+
+instance_methods: []
+
+name: ImportOnce
+superclass: 

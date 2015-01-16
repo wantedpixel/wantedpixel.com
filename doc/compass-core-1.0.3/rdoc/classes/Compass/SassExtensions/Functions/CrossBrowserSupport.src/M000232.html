@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>browsers (Compass::SassExtensions::Functions::CrossBrowserSupport)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/core/sass_extensions/functions/cross_browser_support.rb, line 77</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">browsers</span>(<span class="ruby-identifier">prefix</span> = <span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-identifier">browsers</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">prefix</span>
+                 <span class="ruby-identifier">assert_type</span> <span class="ruby-identifier">prefix</span>, <span class="ruby-identifier">:String</span>
+                 <span class="ruby-constant">Compass</span><span class="ruby-operator">::</span><span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">CanIUse</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">browsers_with_prefix</span>(<span class="ruby-identifier">prefix</span>.<span class="ruby-identifier">value</span>)
+               <span class="ruby-keyword kw">else</span>
+                 <span class="ruby-constant">Compass</span><span class="ruby-operator">::</span><span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">CanIUse</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">browsers</span>
+               <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">list</span>(<span class="ruby-identifier">browsers</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">identifier</span>(<span class="ruby-identifier">b</span>)}, <span class="ruby-identifier">:comma</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

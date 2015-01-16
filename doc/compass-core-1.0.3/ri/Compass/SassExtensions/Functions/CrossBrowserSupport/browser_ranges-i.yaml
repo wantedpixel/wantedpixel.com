@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a map of browsers to the first version the capability became available without a prefix.
+- !ruby/struct:SM::Flow::P 
+  body: If a prefix is provided, only those browsers using that prefix will be returned and the minimum version will be when it first became available as a prefix or without a prefix.
+- !ruby/struct:SM::Flow::P 
+  body: If a browser does not have the capability, it will not included in the map.
+full_name: Compass::SassExtensions::Functions::CrossBrowserSupport#browser_ranges
+is_singleton: false
+name: browser_ranges
+params: (capability, prefix = null(), include_unprefixed_versions = bool(true))
+visibility: public

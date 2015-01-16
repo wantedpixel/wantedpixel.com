@@ -1,0 +1,33 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: n_
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The ngettext is similar to the gettext function as it finds the message catalogs in the same way. But it takes two extra arguments for plural form.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid: the singular form."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid_plural: the plural form."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "n: a number used to determine the plural form."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: the localized text which key is msgid_plural if n is plural(follow plural-rule) or msgid. &quot;plural-rule&quot; is defined in po-file."
+  type: :BULLET
+full_name: GetText#ngettext
+is_singleton: false
+name: ngettext
+params: |
+  ngettext(msgid, msgid_plural, n)
+  ngettext(msgids, n)  # msgids = [msgid, msgid_plural]
+  n_(msgid, msgid_plural, n)
+  n_(msgids, n)  # msgids = [msgid, msgid_plural]
+
+visibility: public

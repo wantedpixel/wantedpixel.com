@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@see #ffi_lib @return [Array&lt;FFI::DynamicLibrary&gt;] array of currently loaded FFI libraries @raise [LoadError] if no libraries have been loaded (using {#ffi_lib}) Get FFI libraries loaded using {#ffi_lib}."
+full_name: FFI::Library#ffi_libraries
+is_singleton: false
+name: ffi_libraries
+params: ()
+visibility: public

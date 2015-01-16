@@ -1,0 +1,53 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: extensions
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: privateuse
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: parse
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Language tag class for RFC4646(BCP47).
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SINGLETON
+  value: "'[a-wyz0-9]'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARIANT
+  value: "\"(#{ALPHANUM}{5,8}|#{DIGIT}#{ALPHANUM}{3})\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: EXTENSION
+  value: "\"(#{SINGLETON}(?:-#{ALPHANUM}{2,8})+)\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PRIVATEUSE
+  value: "\"(x(?:-#{ALPHANUM}{1,8})+)\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GRANDFATHERED
+  value: "\"#{ALPHA}{1,3}(?:-#{ALPHANUM}{2,8}){1,2}\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TAG_RE
+  value: /\A#{LANGUAGE}(?:-#{SCRIPT})?                   (?:-#{REGION})?((?:-#{VARIANT})*                   (?:-#{EXTENSION})*(?:-#{PRIVATEUSE})?)\Z/ix
+full_name: Locale::Tag::Rfc
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: extensions=
+- !ruby/object:RI::MethodSummary 
+  name: privateuse=
+name: Rfc
+superclass: Common

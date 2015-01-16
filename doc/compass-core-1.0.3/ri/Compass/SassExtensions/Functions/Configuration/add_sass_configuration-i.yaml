@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Functions::Configuration#add_sass_configuration
+is_singleton: false
+name: add_sass_configuration
+params: (project_path)
+visibility: public

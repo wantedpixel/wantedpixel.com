@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "(see #run)"
+- !ruby/struct:SM::Flow::P 
+  body: This method is provided just for convenience. It equals to `new.run(*command_line)`.
+full_name: GetText::Tools::MsgMerge::run
+is_singleton: true
+name: run
+params: (*command_line)
+visibility: public

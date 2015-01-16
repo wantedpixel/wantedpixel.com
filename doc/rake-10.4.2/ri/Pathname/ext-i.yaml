@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return a new Pathname with <tt>String#ext</tt> applied to it.
+- !ruby/struct:SM::Flow::P 
+  body: This Pathname extension comes from Rake
+full_name: Pathname#ext
+is_singleton: false
+name: ext
+params: (newext='')
+visibility: public

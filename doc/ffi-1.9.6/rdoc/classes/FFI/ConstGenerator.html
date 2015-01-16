@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: FFI::ConstGenerator</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">FFI::ConstGenerator</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/ffi/tools/const_generator_rb.html">
+                lib/ffi/tools/const_generator.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="ConstGenerator.html">ConstGenerator</a> turns C constants into
+ruby values.
+</p>
+<p>
+@example a simple example for stdio
+</p>
+<pre>
+ cg = FFI::ConstGenerator.new('stdio') do |gen|
+   gen.const(:SEEK_SET)
+   gen.const('SEEK_CUR')
+   gen.const('seek_end')   # this constant does not exist
+ end            # #calculate called automatically at the end of the block
+
+ cg['SEEK_SET'] # =&gt; 0
+ cg['SEEK_CUR'] # =&gt; 1
+ cg['seek_end'] # =&gt; nil
+ cg.to_ruby     # =&gt; &quot;SEEK_SET = 0\nSEEK_CUR = 1\n# seek_end not available&quot;
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000833">[]</a>&nbsp;&nbsp;
+      <a href="#M000835">calculate</a>&nbsp;&nbsp;
+      <a href="#M000834">const</a>&nbsp;&nbsp;
+      <a href="#M000836">dump_constants</a>&nbsp;&nbsp;
+      <a href="#M000838">include</a>&nbsp;&nbsp;
+      <a href="#M000830">new</a>&nbsp;&nbsp;
+      <a href="#M000832">options</a>&nbsp;&nbsp;
+      <a href="#M000831">options=</a>&nbsp;&nbsp;
+      <a href="#M000837">to_ruby</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="ConstGenerator/Constant.html" class="link">FFI::ConstGenerator::Constant</a><br />
+
+    </div>
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">constants</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000830" class="method-detail">
+        <a name="M000830"></a>
+
+        <div class="method-heading">
+          <a href="ConstGenerator.src/M000830.html" target="Code" class="method-signature"
+            onclick="popupCode('ConstGenerator.src/M000830.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(prefix = nil, options = {}) {|self| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="ConstGenerator.html#M000830">new</a> constant generator
+that uses <tt>prefix</tt> as a name, and an <a
+href="ConstGenerator.html#M000832">options</a> hash.
+</p>
+<p>
+The only option is +:required+, which if set to <tt>true</tt> raises an
+error if a constant you have requested was not found.
+</p>
+<p>
+@param [to_s] prefix @param [Hash] <a
+href="ConstGenerator.html#M000832">options</a> @return @option <a
+href="ConstGenerator.html#M000832">options</a> [Boolean] :required
+@overload initialize(prefix, <a
+href="ConstGenerator.html#M000832">options</a>) @overload
+initialize(prefix, <a href="ConstGenerator.html#M000832">options</a>) {
+|gen| &#8230; }
+</p>
+<pre>
+ @yieldparam [ConstGenerator] gen new generator is passed to the block
+ When passed a block, {#calculate} is automatically called at the end of
+ the block, otherwise you must call it yourself.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000832" class="method-detail">
+        <a name="M000832"></a>
+
+        <div class="method-heading">
+          <a href="ConstGenerator.src/M000832.html" target="Code" class="method-signature"
+            onclick="popupCode('ConstGenerator.src/M000832.html');return false;">
+          <span class="method-name">options</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get class <a href="ConstGenerator.html#M000832">options</a>. @return [Hash]
+class <a href="ConstGenerator.html#M000832">options</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000831" class="method-detail">
+        <a name="M000831"></a>
+
+        <div class="method-heading">
+          <a href="ConstGenerator.src/M000831.html" target="Code" class="method-signature"
+            onclick="popupCode('ConstGenerator.src/M000831.html');return false;">
+          <span class="method-name">options=</span><span class="method-args">(options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set class <a href="ConstGenerator.html#M000832">options</a> These <a
+href="ConstGenerator.html#M000832">options</a> are merged with {initialize}
+<a href="ConstGenerator.html#M000832">options</a> when it is called with a
+block. @param [Hash] <a href="ConstGenerator.html#M000832">options</a>
+@return [Hash] class <a href="ConstGenerator.html#M000832">options</a>
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000833" class="method-detail">
+        <a name="M000833"></a>
+
+        <div class="method-heading">
+          <a href="ConstGenerator.src/M000833.html" target="Code" class="method-signature"
+            onclick="popupCode('ConstGenerator.src/M000833.html');return false;">
+          <span class="method-name">[]</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param [String] name @return constant value (converted if a
+<tt>converter</tt> was defined). Access a constant by name.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000835" class="method-detail">
+        <a name="M000835"></a>
+
+        <div class="method-heading">
+          <a href="ConstGenerator.src/M000835.html" target="Code" class="method-signature"
+            onclick="popupCode('ConstGenerator.src/M000835.html');return false;">
+          <span class="method-name">calculate</span><span class="method-args">(options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Calculate constants values. @param [Hash] <a
+href="ConstGenerator.html#M000832">options</a> @option <a
+href="ConstGenerator.html#M000832">options</a> [String] :cppflags flags for
+C compiler @return [nil] @raise if a constant is missing and +:required+
+was set to <tt>true</tt> (see {initialize})
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000834" class="method-detail">
+        <a name="M000834"></a>
+
+        <div class="method-heading">
+          <a href="ConstGenerator.src/M000834.html" target="Code" class="method-signature"
+            onclick="popupCode('ConstGenerator.src/M000834.html');return false;">
+          <span class="method-name">const</span><span class="method-args">(name, format = nil, cast = '', ruby_name = nil, converter = nil, &amp;converter_proc)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Request the value for C constant <tt>name</tt>.
+</p>
+<p>
+@param [to_s] name C constant name @param [String] format a printf format
+string to print the value out @param [String] cast a C cast for the value
+@param ruby_name alternate ruby name for {<a
+href="ConstGenerator.html#M000837">to_ruby</a>}
+</p>
+<p>
+@overload <a href="ConstGenerator.html#M000834">const</a>(name, format=nil,
+cast=&#8217;&#8217;, ruby_name=nil, converter=nil)
+</p>
+<pre>
+ +converter+ is a Method or a Proc.
+ @param [#call] converter convert the value from a string to the appropriate
+  type for {#to_ruby}.
+</pre>
+<p>
+@overload <a href="ConstGenerator.html#M000834">const</a>(name, format=nil,
+cast=&#8217;&#8217;, ruby_name=nil) { |value| &#8230; }
+</p>
+<pre>
+ Use a converter block. This block convert the value from a string to the
+ appropriate type for {#to_ruby}.
+ @yieldparam value constant value
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000836" class="method-detail">
+        <a name="M000836"></a>
+
+        <div class="method-heading">
+          <a href="ConstGenerator.src/M000836.html" target="Code" class="method-signature"
+            onclick="popupCode('ConstGenerator.src/M000836.html');return false;">
+          <span class="method-name">dump_constants</span><span class="method-args">(io)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Dump constants to <tt>io</tt>. @param [puts] io @return [nil]
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000838" class="method-detail">
+        <a name="M000838"></a>
+
+        <div class="method-heading">
+          <a href="ConstGenerator.src/M000838.html" target="Code" class="method-signature"
+            onclick="popupCode('ConstGenerator.src/M000838.html');return false;">
+          <span class="method-name">include</span><span class="method-args">(*i)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Add additional C <a href="ConstGenerator.html#M000838">include</a> file(s)
+to <a href="ConstGenerator.html#M000835">calculate</a> constants from.
+@note +stdio.h+ and +stddef.h+ automatically included @param
+[List&lt;String&gt;, Array&lt;String&gt;] i <a
+href="ConstGenerator.html#M000838">include</a> file(s) @return
+[Array&lt;String&gt;] array of <a
+href="ConstGenerator.html#M000838">include</a> files
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000837" class="method-detail">
+        <a name="M000837"></a>
+
+        <div class="method-heading">
+          <a href="ConstGenerator.src/M000837.html" target="Code" class="method-signature"
+            onclick="popupCode('ConstGenerator.src/M000837.html');return false;">
+          <span class="method-name">to_ruby</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Outputs values for discovered constants. If the constant&#8216;s value was
+not discovered it is not omitted. @return [String]
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

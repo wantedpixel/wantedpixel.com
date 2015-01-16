@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Array] names names of libraries to load @return [Array&lt;DynamicLibrary&gt;] @raise {LoadError} if a library cannot be opened Load native libraries."
+full_name: FFI::Library#ffi_lib
+is_singleton: false
+name: ffi_lib
+params: (*names)
+visibility: public

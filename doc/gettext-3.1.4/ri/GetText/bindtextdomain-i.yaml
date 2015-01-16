@@ -1,0 +1,35 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: bindtextdomain(domainname, options = {})
+- !ruby/struct:SM::Flow::P 
+  body: Bind a text domain(%{path}/%{locale}/LC_MESSAGES/%{domainname}.mo) to your program. Normally, the texdomain scope becomes the class/module(and parent classes/included modules).
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "domainname: the text domain name."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "options: options as an Hash."
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+    - !ruby/struct:SM::Flow::LI 
+      label: "*"
+      body: ":path - the path to the mo-files. When the value is nil, it will search default paths such as /usr/share/locale, /usr/local/share/locale)"
+    - !ruby/struct:SM::Flow::LI 
+      label: "*"
+      body: ":output_charset - The output charset. Same with GetText.set_output_charset. Usually, L10n library doesn't use this option. Application may use this once."
+    type: :BULLET
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: the GetText::TextDomainManager."
+  type: :BULLET
+full_name: GetText#bindtextdomain
+is_singleton: false
+name: bindtextdomain
+params: (domainname, *options)
+visibility: public

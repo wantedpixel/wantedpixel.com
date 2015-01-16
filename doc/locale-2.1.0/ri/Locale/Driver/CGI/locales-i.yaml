@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Gets required locales from CGI parameters. (Based on RFC2616)
+- !ruby/struct:SM::Flow::P 
+  body: "Returns: An Array of Locale::Tag's subclasses"
+- !ruby/struct:SM::Flow::VERB 
+  body: "         (QUERY_STRING &quot;lang&quot; &gt; COOKIE &quot;lang&quot; &gt; HTTP_ACCEPT_LANGUAGE &gt; &quot;en&quot;)\n"
+full_name: Locale::Driver::CGI#locales
+is_singleton: false
+name: locales
+params: ()
+visibility: public

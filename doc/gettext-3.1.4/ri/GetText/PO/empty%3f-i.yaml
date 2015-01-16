@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@return [Bool] `true` if there is no entry, `false` otherwise."
+full_name: GetText::PO#empty?
+is_singleton: false
+name: empty?
+params: ()
+visibility: public

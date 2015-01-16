@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Sprites::SpriteMethods#log
+is_singleton: false
+name: log
+params: (action, filename, *extra)
+visibility: public

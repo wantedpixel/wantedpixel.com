@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Hash&lt;Symbol, Object&gt;] Options for parsing. Options"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  are depend on each parser.\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@see RubyParser#parse @see ErbParser#parse"
+  name: parse_options
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_parser
+- !ruby/object:RI::MethodSummary 
+  name: run
+comment: 
+constants: []
+
+full_name: GetText::Tools::XGetText
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: GetText
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_parser
+name: XGetText
+superclass: Object

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Rake::DSL</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Rake::DSL</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/rake/dsl_definition_rb.html">
+                lib/rake/dsl_definition.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="DSL.html">DSL</a> is a module that provides <a
+href="DSL.html#M000286">task</a>, <a href="DSL.html#M000292">desc</a>, <a
+href="DSL.html#M000290">namespace</a>, etc. Use this when you&#8216;d like
+to use rake outside the top level scope.
+</p>
+<p>
+For a Rakefile you run from the comamnd line this module is automatically
+included.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000292">desc</a>&nbsp;&nbsp;
+      <a href="#M000288">directory</a>&nbsp;&nbsp;
+      <a href="#M000287">file</a>&nbsp;&nbsp;
+      <a href="#M000293">import</a>&nbsp;&nbsp;
+      <a href="#M000289">multitask</a>&nbsp;&nbsp;
+      <a href="#M000290">namespace</a>&nbsp;&nbsp;
+      <a href="#M000291">rule</a>&nbsp;&nbsp;
+      <a href="#M000286">task</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="FileUtilsExt.html">FileUtilsExt</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Private Instance methods</h3>
+
+      <div id="method-M000292" class="method-detail">
+        <a name="M000292"></a>
+
+        <div class="method-heading">
+          <a href="DSL.src/M000292.html" target="Code" class="method-signature"
+            onclick="popupCode('DSL.src/M000292.html');return false;">
+          <span class="method-name">desc</span><span class="method-args">(description)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Describes the next rake <a href="DSL.html#M000286">task</a>. Duplicate
+descriptions are discarded. Descriptions are shown with <tt>rake -T</tt>
+(up to the first sentence) and <tt>rake -D</tt> (the entire description).
+</p>
+<p>
+Example:
+</p>
+<pre>
+  desc &quot;Run the Unit Tests&quot;
+  task test: [:build]
+    # ... run tests
+  end
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000288" class="method-detail">
+        <a name="M000288"></a>
+
+        <div class="method-heading">
+          <a href="DSL.src/M000288.html" target="Code" class="method-signature"
+            onclick="popupCode('DSL.src/M000288.html');return false;">
+          <span class="method-name">directory</span><span class="method-args">(*args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Declare a set of files tasks to create the given directories on demand.
+</p>
+<p>
+Example:
+</p>
+<pre>
+  directory &quot;testdata/doc&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000287" class="method-detail">
+        <a name="M000287"></a>
+
+        <div class="method-heading">
+          <a href="DSL.src/M000287.html" target="Code" class="method-signature"
+            onclick="popupCode('DSL.src/M000287.html');return false;">
+          <span class="method-name">file</span><span class="method-args">(*args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Declare a <a href="DSL.html#M000287">file</a> <a
+href="DSL.html#M000286">task</a>.
+</p>
+<p>
+Example:
+</p>
+<pre>
+  file &quot;config.cfg&quot; =&gt; [&quot;config.template&quot;] do
+    open(&quot;config.cfg&quot;, &quot;w&quot;) do |outfile|
+      open(&quot;config.template&quot;) do |infile|
+        while line = infile.gets
+          outfile.puts line
+        end
+      end
+    end
+ end
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000293" class="method-detail">
+        <a name="M000293"></a>
+
+        <div class="method-heading">
+          <a href="DSL.src/M000293.html" target="Code" class="method-signature"
+            onclick="popupCode('DSL.src/M000293.html');return false;">
+          <span class="method-name">import</span><span class="method-args">(*fns)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Import the partial Rakefiles <tt>fn</tt>. Imported files are loaded
+<em>after</em> the current <a href="DSL.html#M000287">file</a> is
+completely loaded. This allows the <a href="DSL.html#M000293">import</a>
+statement to appear anywhere in the importing <a
+href="DSL.html#M000287">file</a>, and yet allowing the imported files to
+depend on objects defined in the importing <a
+href="DSL.html#M000287">file</a>.
+</p>
+<p>
+A common use of the <a href="DSL.html#M000293">import</a> statement is to
+include files containing dependency declarations.
+</p>
+<p>
+See also the &#8212;rakelibdir command line option.
+</p>
+<p>
+Example:
+</p>
+<pre>
+  import &quot;.depend&quot;, &quot;my_rules&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000289" class="method-detail">
+        <a name="M000289"></a>
+
+        <div class="method-heading">
+          <a href="DSL.src/M000289.html" target="Code" class="method-signature"
+            onclick="popupCode('DSL.src/M000289.html');return false;">
+          <span class="method-name">multitask</span><span class="method-args">(*args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Declare a <a href="DSL.html#M000286">task</a> that performs its
+prerequisites in parallel. Multitasks does <b>not</b> guarantee that its
+prerequisites will execute in any given order (which is obvious when you
+think about it)
+</p>
+<p>
+Example:
+</p>
+<pre>
+  multitask deploy: %w[deploy_gem deploy_rdoc]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000290" class="method-detail">
+        <a name="M000290"></a>
+
+        <div class="method-heading">
+          <a href="DSL.src/M000290.html" target="Code" class="method-signature"
+            onclick="popupCode('DSL.src/M000290.html');return false;">
+          <span class="method-name">namespace</span><span class="method-args">(name=nil, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Create a new rake <a href="DSL.html#M000290">namespace</a> and use it for
+evaluating the given block. Returns a <a
+href="NameSpace.html">NameSpace</a> object that can be used to lookup tasks
+defined in the <a href="DSL.html#M000290">namespace</a>.
+</p>
+<p>
+Example:
+</p>
+<pre>
+  ns = namespace &quot;nested&quot; do
+    # the &quot;nested:run&quot; task
+    task :run
+  end
+  task_run = ns[:run] # find :run in the given namespace.
+</pre>
+<p>
+Tasks can also be defined in a <a href="DSL.html#M000290">namespace</a> by
+using a &quot;:&quot; in the <a href="DSL.html#M000286">task</a> name:
+</p>
+<pre>
+  task &quot;nested:test&quot; do
+    # ...
+  end
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000291" class="method-detail">
+        <a name="M000291"></a>
+
+        <div class="method-heading">
+          <a href="DSL.src/M000291.html" target="Code" class="method-signature"
+            onclick="popupCode('DSL.src/M000291.html');return false;">
+          <span class="method-name">rule</span><span class="method-args">(*args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Declare a <a href="DSL.html#M000291">rule</a> for auto-tasks.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ rule '.o' =&gt; '.c' do |t|
+   sh 'cc', '-o', t.name, t.source
+ end
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000286" class="method-detail">
+        <a name="M000286"></a>
+
+        <div class="method-heading">
+          <a href="DSL.src/M000286.html" target="Code" class="method-signature"
+            onclick="popupCode('DSL.src/M000286.html');return false;">
+          <span class="method-name">task task_name<br />
+task task_name: dependencies<br />
+task task_name, arguments => dependencies<br />
+task task_name, argument[, argument ...], :needs: dependencies<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Declare a basic <a href="DSL.html#M000286">task</a>. The <tt>task_name</tt>
+is always the first argument. If the <a href="DSL.html#M000286">task</a>
+name contains a &quot;:&quot; it is defined in that <a
+href="DSL.html#M000290">namespace</a>.
+</p>
+<p>
+The <tt>dependencies</tt> may be a single <a
+href="DSL.html#M000286">task</a> name or an Array of <a
+href="DSL.html#M000286">task</a> names. The <tt>argument</tt> (a single
+name) or <tt>arguments</tt> (an Array of names) define the arguments
+provided to the <a href="DSL.html#M000286">task</a>.
+</p>
+<p>
+The <a href="DSL.html#M000286">task</a>, argument and dependency names may
+be either symbols or strings.
+</p>
+<p>
+A <a href="DSL.html#M000286">task</a> with a single dependency:
+</p>
+<pre>
+  task clobber: %w[clean] do
+    rm_rf &quot;html&quot;
+  end
+</pre>
+<p>
+A <a href="DSL.html#M000286">task</a> with an argument and a dependency:
+</p>
+<pre>
+  task :package, [:version] =&gt; :test do |t, args|
+    # ...
+  end
+</pre>
+<p>
+To invoke this <a href="DSL.html#M000286">task</a> from the command line:
+</p>
+<pre>
+  $ rake package[1.2.3]
+</pre>
+<p>
+Alternate definition:
+</p>
+<pre>
+  task :package, :version, needs: :test do |t, args|
+    # ...
+  end
+</pre>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

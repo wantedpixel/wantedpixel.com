@@ -1,0 +1,21 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a new GetText::TextDomain.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "name: the textdomain name."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "topdir: the locale path (&quot;%{topdir}/%{lang}/LC_MESSAGES/%{name}.mo&quot;) or nil."
+  type: :BULLET
+full_name: GetText::LocalePath::new
+is_singleton: true
+name: new
+params: (name, topdir = nil)
+visibility: public

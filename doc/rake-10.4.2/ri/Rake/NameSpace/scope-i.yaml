@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The scope of the namespace (a LinkedList)
+full_name: Rake::NameSpace#scope
+is_singleton: false
+name: scope
+params: ()
+visibility: public

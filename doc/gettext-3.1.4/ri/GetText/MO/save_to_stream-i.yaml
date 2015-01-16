@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Save data as little endian format.
+full_name: GetText::MO#save_to_stream
+is_singleton: false
+name: save_to_stream
+params: (io)
+visibility: public

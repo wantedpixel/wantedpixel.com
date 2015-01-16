@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create Locale::Tag::Cldr.
+- !ruby/struct:SM::Flow::P 
+  body: variants should be upcase.
+full_name: Locale::Tag::Cldr::new
+is_singleton: true
+name: new
+params: (language, script = nil, region = nil, variants = [], extensions = {})
+visibility: public

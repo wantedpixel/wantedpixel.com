@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns path rules as an Array. (e.g.) [&quot;/usr/share/locale/%{lang}/LC_MESSAGES/%{name}.mo&quot;, ...]
+full_name: GetText::LocalePath::default_path_rules
+is_singleton: true
+name: default_path_rules
+params: ()
+visibility: public

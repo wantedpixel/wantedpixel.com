@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@return [Bool] true if outputting obsolete entries is"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   enabled, false otherwise.\n"
+full_name: GetText::Tools::MsgMerge::Config#output_obsolete_entries?
+is_singleton: false
+name: output_obsolete_entries?
+params: ()
+visibility: public

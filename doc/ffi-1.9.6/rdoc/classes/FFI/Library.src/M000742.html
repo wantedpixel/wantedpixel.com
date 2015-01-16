@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>attach_variable (FFI::Library)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/ffi/library.rb, line 317</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attach_variable</span>(<span class="ruby-identifier">mname</span>, <span class="ruby-identifier">a1</span>, <span class="ruby-identifier">a2</span> = <span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-identifier">cname</span>, <span class="ruby-identifier">type</span> = <span class="ruby-identifier">a2</span> <span class="ruby-value">? </span>[ <span class="ruby-identifier">a1</span>, <span class="ruby-identifier">a2</span> ] <span class="ruby-operator">:</span> [ <span class="ruby-identifier">mname</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">a1</span> ]
+      <span class="ruby-identifier">address</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-identifier">ffi_libraries</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">lib</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-identifier">address</span> = <span class="ruby-identifier">lib</span>.<span class="ruby-identifier">find_variable</span>(<span class="ruby-identifier">cname</span>.<span class="ruby-identifier">to_s</span>)
+          <span class="ruby-keyword kw">break</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">address</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">LoadError</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">NotFoundError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">cname</span>, <span class="ruby-identifier">ffi_libraries</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">address</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">address</span>.<span class="ruby-identifier">null?</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Class</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Struct</span>
+        <span class="ruby-comment cmt"># If it is a global struct, just attach directly to the pointer</span>
+        <span class="ruby-identifier">s</span> = <span class="ruby-identifier">type</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">address</span>)
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-value str">&quot;@@ffi_gvar_\#{mname} = s\ndef self.\#{mname}\n@@ffi_gvar_\#{mname}\nend\n&quot;</span>, <span class="ruby-keyword kw">__FILE__</span>, <span class="ruby-keyword kw">__LINE__</span>
+
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">sc</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Struct</span>)
+        <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">layout</span> <span class="ruby-identifier">:gvar</span>, <span class="ruby-identifier">find_type</span>(<span class="ruby-identifier">type</span>)
+        <span class="ruby-identifier">s</span> = <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">address</span>)
+        <span class="ruby-comment cmt">#</span>
+        <span class="ruby-comment cmt"># Attach to this module as mname/mname=</span>
+        <span class="ruby-comment cmt">#</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-value str">&quot;@@ffi_gvar_\#{mname} = s\ndef self.\#{mname}\n@@ffi_gvar_\#{mname}[:gvar]\nend\ndef self.\#{mname}=(value)\n@@ffi_gvar_\#{mname}[:gvar] = value\nend\n&quot;</span>, <span class="ruby-keyword kw">__FILE__</span>, <span class="ruby-keyword kw">__LINE__</span>
+
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">address</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

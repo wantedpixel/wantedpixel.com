@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Sprites::Image#repeat_y?
+is_singleton: false
+name: repeat_y?
+params: ()
+visibility: public

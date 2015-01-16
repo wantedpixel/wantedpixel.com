@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Sprites::RowFitter#width
+is_singleton: false
+name: width
+params: ()
+visibility: public

@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: INotify::Notifier</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">INotify::Notifier</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/rb-inotify/notifier_rb.html">
+                lib/rb-inotify/notifier.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="Notifier.html">Notifier</a> wraps a single instance of inotify.
+It&#8216;s possible to have more than one instance, but usually
+unnecessary.
+</p>
+<p>
+@example
+</p>
+<pre>
+  # Create the notifier
+  notifier = INotify::Notifier.new
+
+  # Run this callback whenever the file path/to/foo.txt is read
+  notifier.watch(&quot;path/to/foo.txt&quot;, :access) do
+    puts &quot;Foo.txt was accessed!&quot;
+  end
+
+  # Watch for any file in the directory being deleted
+  # or moved out of the directory.
+  notifier.watch(&quot;path/to/directory&quot;, :delete, :moved_from) do |event|
+    # The #name field of the event object contains the name of the affected file
+    puts &quot;#{event.name} is no longer in the directory!&quot;
+  end
+
+  # Nothing happens until you run the notifier!
+  notifier.run
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000893">close</a>&nbsp;&nbsp;
+      <a href="#M000887">new</a>&nbsp;&nbsp;
+      <a href="#M000892">process</a>&nbsp;&nbsp;
+      <a href="#M000894">read_events</a>&nbsp;&nbsp;
+      <a href="#M000890">run</a>&nbsp;&nbsp;
+      <a href="#M000891">stop</a>&nbsp;&nbsp;
+      <a href="#M000886">supports_ruby_io?</a>&nbsp;&nbsp;
+      <a href="#M000888">to_io</a>&nbsp;&nbsp;
+      <a href="#M000889">watch</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RECURSIVE_BLACKLIST</td>
+          <td>=</td>
+          <td class="context-item-value">%w[/dev/fd]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+A list of directories that should never be recursively watched.
+
+<ul>
+<li>Files in `/dev/fd` sometimes register as directories, but are not
+enumerable.
+
+</li>
+</ul>
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">fd</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+The underlying file descriptor for this notifier. This is a valid OS file
+descriptor, and can be used as such (except under JRuby &#8212; see
+\{to_io}).
+
+<p>
+@return [Fixnum]
+</p>
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">watchers</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+A hash from {<a href="Watcher.html">Watcher</a>} ids to the instances
+themselves.
+
+<p>
+@private @return [{Fixnum =&gt; <a href="Watcher.html">Watcher</a>}]
+</p>
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000887" class="method-detail">
+        <a name="M000887"></a>
+
+        <div class="method-heading">
+          <a href="Notifier.src/M000887.html" target="Code" class="method-signature"
+            onclick="popupCode('Notifier.src/M000887.html');return false;">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="Notifier.html#M000887">new</a> {<a
+href="Notifier.html">Notifier</a>}.
+</p>
+<p>
+@return [<a href="Notifier.html">Notifier</a>] @raise [SystemCallError] if
+inotify failed to initialize for some reason
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000886" class="method-detail">
+        <a name="M000886"></a>
+
+        <div class="method-heading">
+          <a href="Notifier.src/M000886.html" target="Code" class="method-signature"
+            onclick="popupCode('Notifier.src/M000886.html');return false;">
+          <span class="method-name">supports_ruby_io?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@return [Boolean] Whether or not this Ruby implementation supports
+</p>
+<pre>
+  wrapping the native file descriptor in a Ruby IO wrapper.
+</pre>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000893" class="method-detail">
+        <a name="M000893"></a>
+
+        <div class="method-heading">
+          <a href="Notifier.src/M000893.html" target="Code" class="method-signature"
+            onclick="popupCode('Notifier.src/M000893.html');return false;">
+          <span class="method-name">close</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Close the notifier.
+</p>
+<p>
+@raise [SystemCallError] if closing the underlying file descriptor fails.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000892" class="method-detail">
+        <a name="M000892"></a>
+
+        <div class="method-heading">
+          <a href="Notifier.src/M000892.html" target="Code" class="method-signature"
+            onclick="popupCode('Notifier.src/M000892.html');return false;">
+          <span class="method-name">process</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Blocks until there are one or more filesystem events that this notifier has
+watchers registered for. Once there are events, the appropriate callbacks
+are called and this function returns.
+</p>
+<p>
+@see <a href="Notifier.html#M000890">run</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000894" class="method-detail">
+        <a name="M000894"></a>
+
+        <div class="method-heading">
+          <a href="Notifier.src/M000894.html" target="Code" class="method-signature"
+            onclick="popupCode('Notifier.src/M000894.html');return false;">
+          <span class="method-name">read_events</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Blocks until there are one or more filesystem events that this notifier has
+watchers registered for. Once there are events, returns their {<a
+href="Event.html">Event</a>} objects.
+</p>
+<p>
+{<a href="Notifier.html#M000890">run</a>} or {<a
+href="Notifier.html#M000892">process</a>} are ususally preferable to
+calling this directly.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000890" class="method-detail">
+        <a name="M000890"></a>
+
+        <div class="method-heading">
+          <a href="Notifier.src/M000890.html" target="Code" class="method-signature"
+            onclick="popupCode('Notifier.src/M000890.html');return false;">
+          <span class="method-name">run</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Starts the notifier watching for filesystem events. Blocks until \{<a
+href="Notifier.html#M000891">stop</a>} is called.
+</p>
+<p>
+@see <a href="Notifier.html#M000892">process</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000891" class="method-detail">
+        <a name="M000891"></a>
+
+        <div class="method-heading">
+          <a href="Notifier.src/M000891.html" target="Code" class="method-signature"
+            onclick="popupCode('Notifier.src/M000891.html');return false;">
+          <span class="method-name">stop</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Stop watching for filesystem events. That is, if we&#8216;re in a \{<a
+href="Notifier.html#M000890">run</a>} loop, exit out as soon as we finish
+handling the events.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000888" class="method-detail">
+        <a name="M000888"></a>
+
+        <div class="method-heading">
+          <a href="Notifier.src/M000888.html" target="Code" class="method-signature"
+            onclick="popupCode('Notifier.src/M000888.html');return false;">
+          <span class="method-name">to_io</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a Ruby IO object wrapping the underlying file descriptor. Since
+this file descriptor is fully functional (except under JRuby), this IO
+object can be used in any way a Ruby-created IO object can. This includes
+passing it to functions like `select`.
+</p>
+<p>
+Note that this always returns the same IO object. Creating lots of IO
+objects for the same file descriptor can cause some odd problems.
+</p>
+<p>
+**This is not supported under JRuby**. JRuby currently doesn&#8216;t use
+native file descriptors for the IO object, so we can&#8216;t use this file
+descriptor as a stand-in.
+</p>
+<p>
+@return [IO] An IO object wrapping the file descriptor @raise
+[NotImplementedError] if this is being called in JRuby
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000889" class="method-detail">
+        <a name="M000889"></a>
+
+        <div class="method-heading">
+          <a href="Notifier.src/M000889.html" target="Code" class="method-signature"
+            onclick="popupCode('Notifier.src/M000889.html');return false;">
+          <span class="method-name">watch</span><span class="method-args">(path, *flags, &amp;callback)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Watches a file or directory for changes, calling the callback when there
+are. This is only activated once \{<a
+href="Notifier.html#M000892">process</a>} or \{<a
+href="Notifier.html#M000890">run</a>} is called.
+</p>
+<p>
+**Note that by default, this does not recursively <a
+href="Notifier.html#M000889">watch</a> subdirectories of the watched
+directory**. To do so, use the `:recursive` flag.
+</p>
+<p>
+## Flags
+</p>
+<p>
+`:access` : A file is accessed (that is, read).
+</p>
+<p>
+`:attrib` : A file&#8216;s metadata is changed (e.g. permissions,
+timestamps, etc).
+</p>
+<p>
+`:close_write` : A file that was opened for writing is closed.
+</p>
+<p>
+`:close_nowrite` : A file that was not opened for writing is closed.
+</p>
+<p>
+`:modify` : A file is modified.
+</p>
+<p>
+`:open` : A file is opened.
+</p>
+<p>
+### Directory-Specific Flags
+</p>
+<p>
+These flags only apply when a directory is being watched.
+</p>
+<p>
+`:moved_from` : A file is moved out of the watched directory.
+</p>
+<p>
+`:moved_to` : A file is moved into the watched directory.
+</p>
+<p>
+`:create` : A file is created in the watched directory.
+</p>
+<p>
+`:delete` : A file is deleted in the watched directory.
+</p>
+<p>
+`:delete_self` : The watched file or directory itself is deleted.
+</p>
+<p>
+`:move_self` : The watched file or directory itself is moved.
+</p>
+<p>
+### Helper Flags
+</p>
+<p>
+These flags are just combinations of the flags above.
+</p>
+<p>
+`:<a href="Notifier.html#M000893">close</a>` : Either `:close_write` or
+`:close_nowrite` is activated.
+</p>
+<p>
+`:move` : Either `:moved_from` or `:moved_to` is activated.
+</p>
+<p>
+`:all_events` : Any event above is activated.
+</p>
+<p>
+### Options Flags
+</p>
+<p>
+These flags don&#8216;t actually specify events. Instead, they specify
+options for the watcher.
+</p>
+<p>
+`:onlydir` : Only <a href="Notifier.html#M000889">watch</a> the path if
+it&#8216;s a directory.
+</p>
+<p>
+`:dont_follow` : Don&#8216;t follow symlinks.
+</p>
+<p>
+`:mask_add` : Add these flags to the pre-existing flags for this path.
+</p>
+<p>
+`:oneshot` : Only send the event once, then shut down the watcher.
+</p>
+<p>
+`:recursive` : Recursively <a href="Notifier.html#M000889">watch</a> any
+subdirectories that are created.
+</p>
+<pre>
+  Note that this is a feature of rb-inotify,
+  rather than of inotify itself, which can only watch one level of a directory.
+  This means that the {Event#name} field
+  will contain only the basename of the modified file.
+  When using `:recursive`, {Event#absolute_name} should always be used.
+</pre>
+<p>
+@param path [String] The path to the file or directory @param flags
+[Array&lt;Symbol&gt;] Which events to <a
+href="Notifier.html#M000889">watch</a> for @yield [event] A block that will
+be called
+</p>
+<pre>
+  whenever one of the specified events occur
+</pre>
+<p>
+@yieldparam event [<a href="Event.html">Event</a>] The <a
+href="Event.html">Event</a> object containing information
+</p>
+<pre>
+  about the event that occured
+</pre>
+<p>
+@return [<a href="Watcher.html">Watcher</a>] A <a
+href="Watcher.html">Watcher</a> set up to <a
+href="Notifier.html#M000889">watch</a> this path for these events @raise
+[SystemCallError] if the file or directory can&#8216;t be watched,
+</p>
+<pre>
+  e.g. if the file isn't found, read access is denied,
+  or the flags don't contain any events
+</pre>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

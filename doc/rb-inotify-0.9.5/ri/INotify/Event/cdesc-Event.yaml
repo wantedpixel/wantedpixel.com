@@ -1,0 +1,72 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: An integer specifying that this event is related to some other event, which will have the same cookie.
+  - !ruby/struct:SM::Flow::P 
+    body: Currently, this is only used for files that are moved within the same directory. Both the `:moved_from` and the `:moved_to` events will have the same cookie.
+  - !ruby/struct:SM::Flow::P 
+    body: "@private @return [Fixnum]"
+  name: cookie
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The name of the file that the event occurred on. This is only set for events that occur on files in directories; otherwise, it's `&quot;&quot;`. Similarly, if the event is being fired for the directory itself the name will be `&quot;&quot;`
+  - !ruby/struct:SM::Flow::P 
+    body: This pathname is relative to the enclosing directory. For the absolute pathname, use \{#absolute_name}. Note that when the `:recursive` flag is passed to {Notifier#watch}, events in nested subdirectories will still have a `#name` field relative to their immediately enclosing directory. For example, an event on the file `&quot;foo/bar/baz&quot;` will have name `&quot;baz&quot;`.
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [String]"
+  name: name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The {Notifier} that fired this event.
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Notifier]"
+  name: notifier
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "A list of other events that are related to this one. Currently, this is only used for files that are moved within the same directory: the `:moved_from` and the `:moved_to` events will be related."
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Array&lt;Event&gt;]"
+  name: related
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The {Watcher#id id} of the {Watcher} that fired this event.
+  - !ruby/struct:SM::Flow::P 
+    body: "@private @return [Fixnum]"
+  name: watcher_id
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: consume
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: An event caused by a change on the filesystem. Each {Watcher} can fire many events, which are passed to that watcher's callback.
+constants: []
+
+full_name: INotify::Event
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: absolute_name
+- !ruby/object:RI::MethodSummary 
+  name: callback!
+- !ruby/object:RI::MethodSummary 
+  name: flags
+- !ruby/object:RI::MethodSummary 
+  name: size
+- !ruby/object:RI::MethodSummary 
+  name: watcher
+name: Event
+superclass: Object

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::Commands::UpdateProject#transfer_options
+is_singleton: false
+name: transfer_options
+params: (from, to, *keys)
+visibility: public

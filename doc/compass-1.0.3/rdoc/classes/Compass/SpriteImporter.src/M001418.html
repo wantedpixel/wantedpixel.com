@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>content_for_images (Compass::SpriteImporter)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/compass/sprite_importer.rb, line 111</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">content_for_images</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">skip_overrides</span> = <span class="ruby-keyword kw">false</span>)
+      <span class="ruby-identifier">binder</span> = <span class="ruby-constant">Compass</span><span class="ruby-operator">::</span><span class="ruby-constant">Sprites</span><span class="ruby-operator">::</span><span class="ruby-constant">Binding</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">:uri</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">:skip_overrides</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">skip_overrides</span>, <span class="ruby-identifier">:sprite_names</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sprite_names</span>(<span class="ruby-identifier">uri</span>), <span class="ruby-identifier">:files</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">files</span>(<span class="ruby-identifier">uri</span>))
+      <span class="ruby-constant">CONTENT_TEMPLATE</span>.<span class="ruby-identifier">result</span>(<span class="ruby-identifier">binder</span>.<span class="ruby-identifier">get_binding</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

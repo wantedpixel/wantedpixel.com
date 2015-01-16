@@ -1,0 +1,71 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: script
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: variants
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: parse
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Common Language tag class for Ruby. Java and MS Windows use this format.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "ja (language: RFC4646)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "ja_JP (country: RFC4646(2 alpha or 3 digit))"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ja-JP
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "ja_Hira_JP (script: 4 characters)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ja-Hira-JP
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "ja_Hira_JP_MOBILE (variants: more than 2 characters or 3 digit)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ja_Hira_JP_MOBILE_IPHONE (2 variants example)
+  type: :BULLET
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LANGUAGE
+  value: "\"(#{ALPHA}{2,3}|#{ALPHA}{4}|#{ALPHA}{5,8})\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SCRIPT
+  value: "\"(#{ALPHA}{4})\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARIANT
+  value: "\"(#{ALPHANUM}{3,}|#{DIGIT}#{ALPHANUM}{3})\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TAG_RE
+  value: /\A#{LANGUAGE}(?:[-_]#{SCRIPT})?                   (?:[-_]#{REGION})?((?:[-_]#{VARIANT})*)\Z/ix
+full_name: Locale::Tag::Common
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: candidates
+- !ruby/object:RI::MethodSummary 
+  name: script=
+- !ruby/object:RI::MethodSummary 
+  name: variants=
+name: Common
+superclass: Simple

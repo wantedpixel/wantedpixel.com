@@ -1,0 +1,26 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@overload attach_function(func, args, returns, options = {})"
+- !ruby/struct:SM::Flow::VERB 
+  body: " @example attach function without an explicit name\n   module Foo\n     extend FFI::Library\n     ffi_lib FFI::Library::LIBC\n     attach_function :malloc, [:size_t], :pointer\n   end\n   # now callable via Foo.malloc\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@overload attach_function(name, func, args, returns, options = {})"
+- !ruby/struct:SM::Flow::VERB 
+  body: " @example attach function with an explicit name\n   module Bar\n     extend FFI::Library\n     ffi_lib FFI::Library::LIBC\n     attach_function :c_malloc, :malloc, [:size_t], :pointer\n   end\n   # now callable via Bar.c_malloc\n"
+- !ruby/struct:SM::Flow::P 
+  body: Attach C function <tt>func</tt> to this module.
+- !ruby/struct:SM::Flow::P 
+  body: "@param [#to_s] name name of ruby method to attach as @param [#to_s] func name of C function to attach @param [Array&lt;Symbol&gt;] args an array of types @param [Symbol] returns type of return value @option options [Boolean] :blocking (@blocking) set to true if the C function is a blocking call @option options [Symbol] :convention (:default) calling convention (see {#ffi_convention}) @option options [FFI::Enums] :enums @option options [Hash] :type_map"
+- !ruby/struct:SM::Flow::P 
+  body: "@return [FFI::VariadicInvoker]"
+- !ruby/struct:SM::Flow::P 
+  body: "@raise [FFI::NotFoundError] if <tt>func</tt> cannot be found in the attached libraries (see {#ffi_lib})"
+full_name: FFI::Library#attach_function
+is_singleton: false
+name: attach_function
+params: (name, func, args, returns = nil, options = nil)
+visibility: public

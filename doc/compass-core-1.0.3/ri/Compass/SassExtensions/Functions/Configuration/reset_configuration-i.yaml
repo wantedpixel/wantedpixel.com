@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Functions::Configuration#reset_configuration
+is_singleton: false
+name: reset_configuration
+params: ()
+visibility: public

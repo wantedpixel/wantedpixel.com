@@ -1,0 +1,38 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: parse
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ID
+  value: "[\"gettext\", \"_\", \"N_\", \"sgettext\", \"s_\"]"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PLURAL_ID
+  value: "[\"ngettext\", \"n_\", \"Nn_\", \"ns_\", \"nsgettext\"]"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MSGCTXT_ID
+  value: "[\"pgettext\", \"p_\"]"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MSGCTXT_PLURAL_ID
+  value: "[\"npgettext\", \"np_\"]"
+full_name: GetText::RubyParser
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: detect_encoding
+- !ruby/object:RI::MethodSummary 
+  name: parse
+- !ruby/object:RI::MethodSummary 
+  name: parse_source
+name: RubyParser
+superclass: Object

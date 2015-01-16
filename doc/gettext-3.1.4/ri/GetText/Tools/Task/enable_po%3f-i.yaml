@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: If it is true, PO related tasks are defined. Otherwise, they are not defined.
+- !ruby/struct:SM::Flow::P 
+  body: This parameter is useful to manage PO written by hand.
+- !ruby/struct:SM::Flow::P 
+  body: "@return [Bool] @since 3.0.1"
+full_name: GetText::Tools::Task#enable_po?
+is_singleton: false
+name: enable_po?
+params: ()
+visibility: public

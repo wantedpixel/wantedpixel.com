@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>run (GetText::Tools::MsgInit)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/gettext/tools/msginit.rb, line 69</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span>)
+        <span class="ruby-identifier">parse_arguments</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span>)
+        <span class="ruby-identifier">validate</span>
+
+        <span class="ruby-identifier">parser</span> = <span class="ruby-constant">POParser</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">ignore_fuzzy</span> = <span class="ruby-keyword kw">false</span>
+        <span class="ruby-identifier">pot</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse_file</span>(<span class="ruby-ivar">@input_file</span>, <span class="ruby-constant">GetText</span><span class="ruby-operator">::</span><span class="ruby-constant">PO</span>.<span class="ruby-identifier">new</span>)
+        <span class="ruby-identifier">po</span> = <span class="ruby-identifier">replace_pot_header</span>(<span class="ruby-identifier">pot</span>)
+
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-ivar">@output_file</span>, <span class="ruby-value str">&quot;w&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">po</span>.<span class="ruby-identifier">to_s</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

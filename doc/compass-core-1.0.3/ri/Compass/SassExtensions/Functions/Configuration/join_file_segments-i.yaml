@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Users who need to support windows and unix paths in their configuration should construct them with this helper function.
+full_name: Compass::SassExtensions::Functions::Configuration#join_file_segments
+is_singleton: false
+name: join_file_segments
+params: (*segments)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: GetText::PO::new
+is_singleton: true
+name: new
+params: (order=nil)
+visibility: public

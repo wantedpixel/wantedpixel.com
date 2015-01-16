@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The version before the version for the browser specified
+full_name: Compass::SassExtensions::Functions::CrossBrowserSupport#next_version
+is_singleton: false
+name: next_version
+params: (browser, version)
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Define tasks from configured parameters.
+- !ruby/struct:SM::Flow::P 
+  body: "TODO: List defined Rake tasks."
+full_name: GetText::Tools::Task#define
+is_singleton: false
+name: define
+params: ()
+visibility: public

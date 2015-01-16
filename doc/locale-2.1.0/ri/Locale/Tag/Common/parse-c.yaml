@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Parse the language tag and return the new Locale::Tag::Common.
+full_name: Locale::Tag::Common::parse
+is_singleton: true
+name: parse
+params: (tag)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: (see FFI::StructLayout#offset_of)
+full_name: FFI::Struct#offset_of
+is_singleton: false
+name: offset_of
+params: (name)
+visibility: public

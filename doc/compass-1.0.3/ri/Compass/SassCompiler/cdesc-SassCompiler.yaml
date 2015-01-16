@@ -1,0 +1,81 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: config
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: display_compilation_times
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: error_count
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: logger
+  rw: W
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: only_sass_files
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: quiet
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: working_path
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Compass::SassCompiler
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Compass::Actions
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: clean!
+- !ruby/object:RI::MethodSummary 
+  name: compile!
+- !ruby/object:RI::MethodSummary 
+  name: corresponding_css_file
+- !ruby/object:RI::MethodSummary 
+  name: file_list
+- !ruby/object:RI::MethodSummary 
+  name: individual_files
+- !ruby/object:RI::MethodSummary 
+  name: logger
+- !ruby/object:RI::MethodSummary 
+  name: sass_files
+- !ruby/object:RI::MethodSummary 
+  name: stylesheet_name
+- !ruby/object:RI::MethodSummary 
+  name: watch!
+- !ruby/object:RI::MethodSummary 
+  name: when_compilation_error
+- !ruby/object:RI::MethodSummary 
+  name: when_compilation_starting
+- !ruby/object:RI::MethodSummary 
+  name: when_creating_directory
+- !ruby/object:RI::MethodSummary 
+  name: when_deleting_css
+- !ruby/object:RI::MethodSummary 
+  name: when_deleting_sourcemap
+- !ruby/object:RI::MethodSummary 
+  name: when_template_created
+- !ruby/object:RI::MethodSummary 
+  name: when_template_deleted
+- !ruby/object:RI::MethodSummary 
+  name: when_template_modified
+- !ruby/object:RI::MethodSummary 
+  name: when_updated_stylesheet
+- !ruby/object:RI::MethodSummary 
+  name: when_updating_stylesheets
+name: SassCompiler
+superclass: Object

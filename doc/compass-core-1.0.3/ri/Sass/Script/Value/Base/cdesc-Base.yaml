@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NO_CHILDREN
+  value: "[]"
+full_name: Sass::Script::Value::Base
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: children
+- !ruby/object:RI::MethodSummary 
+  name: opts
+name: Base
+superclass: Object

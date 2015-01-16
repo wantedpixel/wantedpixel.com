@@ -1,0 +1,21 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "makes dynamic translation messages readable for the gettext parser. <tt>_(fruit)</tt> cannot be understood by the gettext parser. To help the parser find all your translations, you can add <tt>fruit = N_(&quot;Apple&quot;)</tt> which does not translate, but tells the parser: &quot;Apple&quot; needs translation."
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "msgid: the message id."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: msgid."
+  type: :BULLET
+full_name: GetText#N_
+is_singleton: false
+name: N_
+params: (msgid)
+visibility: public

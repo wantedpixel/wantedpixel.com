@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (INotify::Watcher)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/rb-inotify/watcher.rb, line 61</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">notifier</span>, <span class="ruby-identifier">path</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">flags</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">callback</span>)
+      <span class="ruby-ivar">@notifier</span> = <span class="ruby-identifier">notifier</span>
+      <span class="ruby-ivar">@callback</span> = <span class="ruby-identifier">callback</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">proc</span> {}
+      <span class="ruby-ivar">@path</span> = <span class="ruby-identifier">path</span>
+      <span class="ruby-ivar">@flags</span> = <span class="ruby-identifier">flags</span>.<span class="ruby-identifier">freeze</span>
+      <span class="ruby-ivar">@id</span> = <span class="ruby-constant">Native</span>.<span class="ruby-identifier">inotify_add_watch</span>(<span class="ruby-ivar">@notifier</span>.<span class="ruby-identifier">fd</span>, <span class="ruby-identifier">path</span>.<span class="ruby-identifier">dup</span>,
+        <span class="ruby-constant">Native</span><span class="ruby-operator">::</span><span class="ruby-constant">Flags</span>.<span class="ruby-identifier">to_mask</span>(<span class="ruby-identifier">flags</span>))
+
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@id</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+        <span class="ruby-ivar">@notifier</span>.<span class="ruby-identifier">watchers</span>[<span class="ruby-ivar">@id</span>] = <span class="ruby-keyword kw">self</span>
+        <span class="ruby-keyword kw">return</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">SystemCallError</span>.<span class="ruby-identifier">new</span>(
+        <span class="ruby-node">&quot;Failed to watch #{path.inspect}&quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-keyword kw">case</span> <span class="ruby-constant">FFI</span>.<span class="ruby-identifier">errno</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span><span class="ruby-operator">::</span><span class="ruby-constant">Errno</span>; <span class="ruby-value str">&quot;: read access to the given file is not permitted.&quot;</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EBADF</span><span class="ruby-operator">::</span><span class="ruby-constant">Errno</span>; <span class="ruby-value str">&quot;: the given file descriptor is not valid.&quot;</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EFAULT</span><span class="ruby-operator">::</span><span class="ruby-constant">Errno</span>; <span class="ruby-value str">&quot;: path points outside of the process's accessible address space.&quot;</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EINVAL</span><span class="ruby-operator">::</span><span class="ruby-constant">Errno</span>; <span class="ruby-value str">&quot;: the given event mask contains no legal events; or fd is not an inotify file descriptor.&quot;</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOMEM</span><span class="ruby-operator">::</span><span class="ruby-constant">Errno</span>; <span class="ruby-value str">&quot;: insufficient kernel memory was available.&quot;</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOSPC</span><span class="ruby-operator">::</span><span class="ruby-constant">Errno</span>; <span class="ruby-value str">&quot;: The user limit on the total number of inotify watches was reached or the kernel failed to allocate a needed resource.&quot;</span>
+        <span class="ruby-keyword kw">else</span>; <span class="ruby-value str">&quot;&quot;</span>
+        <span class="ruby-keyword kw">end</span>,
+        <span class="ruby-constant">FFI</span>.<span class="ruby-identifier">errno</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

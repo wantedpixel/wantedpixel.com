@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: GetText::GladeParser::parse
+is_singleton: true
+name: parse
+params: (path, options={})
+visibility: public

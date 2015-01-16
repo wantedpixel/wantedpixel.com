@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: FFI::ManagedStruct</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">FFI::ManagedStruct</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/ffi/managedstruct_rb.html">
+                lib/ffi/managedstruct.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Struct.html">
+                FFI::Struct
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="ManagedStruct.html">FFI::ManagedStruct</a> allows custom
+garbage-collection of your FFI::Structs.
+</p>
+<p>
+The typical use case would be when interacting with a library that has a
+nontrivial memory management design, such as a linked list or a binary
+tree.
+</p>
+<p>
+When the {<a href="Struct.html">Struct</a>} instance is garbage collected,
+<a href="ManagedStruct.html">FFI::ManagedStruct</a> will invoke the
+class&#8216;s release() method during object finalization.
+</p>
+<p>
+@example Example usage:
+</p>
+<pre>
+ module MyLibrary
+   ffi_lib &quot;libmylibrary&quot;
+   attach_function :new_dlist, [], :pointer
+   attach_function :destroy_dlist, [:pointer], :void
+ end
+
+ class DoublyLinkedList &lt; FFI::ManagedStruct
+   @@@
+   struct do |s|
+     s.name 'struct dlist'
+     s.include 'dlist.h'
+     s.field :head, :pointer
+     s.field :tail, :pointer
+   end
+   @@@
+
+   def self.release ptr
+     MyLibrary.destroy_dlist(ptr)
+   end
+ end
+
+ begin
+   ptr = DoublyLinkedList.new(MyLibrary.new_dlist)
+   #  do something with the list
+ end
+ # struct is out of scope, and will be GC'd using DoublyLinkedList#release
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000854">new</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000854" class="method-detail">
+        <a name="M000854"></a>
+
+        <div class="method-heading">
+          <a href="ManagedStruct.src/M000854.html" target="Code" class="method-signature"
+            onclick="popupCode('ManagedStruct.src/M000854.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(pointer=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@overload initialize(pointer)
+</p>
+<pre>
+ @param [Pointer] pointer
+ Create a new ManagedStruct which will invoke the class method #release on
+</pre>
+<p>
+@overload initialize A <a href="ManagedStruct.html#M000854">new</a>
+instance of <a href="ManagedStruct.html">FFI::ManagedStruct</a>.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

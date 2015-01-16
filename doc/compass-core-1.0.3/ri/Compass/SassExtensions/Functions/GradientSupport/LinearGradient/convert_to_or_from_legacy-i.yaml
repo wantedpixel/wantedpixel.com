@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Functions::GradientSupport::LinearGradient#convert_to_or_from_legacy
+is_singleton: false
+name: convert_to_or_from_legacy
+params: (position_or_angle, options = self.options)
+visibility: public

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (FFI::Generator)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/ffi/tools/generator.rb, line 6</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">ffi_name</span>, <span class="ruby-identifier">rb_name</span>, <span class="ruby-identifier">options</span> = {})
+      <span class="ruby-ivar">@ffi_name</span> = <span class="ruby-identifier">ffi_name</span>
+      <span class="ruby-ivar">@rb_name</span> = <span class="ruby-identifier">rb_name</span>
+      <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
+      <span class="ruby-ivar">@name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-identifier">rb_name</span>, <span class="ruby-value str">'.rb'</span>
+
+      <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span> <span class="ruby-ivar">@ffi_name</span>
+
+      <span class="ruby-identifier">new_file</span> = <span class="ruby-identifier">file</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/^( *)@@@(.*?)@@@/</span><span class="ruby-identifier">m</span>) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-ivar">@constants</span> = []
+        <span class="ruby-ivar">@structs</span> = []
+
+        <span class="ruby-identifier">indent</span> = <span class="ruby-identifier">$1</span>
+        <span class="ruby-identifier">original_lines</span> = <span class="ruby-identifier">$2</span>.<span class="ruby-identifier">count</span> <span class="ruby-value str">&quot;\n&quot;</span>
+
+        <span class="ruby-identifier">instance_eval</span> <span class="ruby-identifier">$2</span>, <span class="ruby-ivar">@ffi_name</span>, <span class="ruby-identifier">$`</span>.<span class="ruby-identifier">count</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+
+        <span class="ruby-identifier">new_lines</span> = []
+        <span class="ruby-ivar">@constants</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">new_lines</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_ruby</span> }
+        <span class="ruby-ivar">@structs</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">new_lines</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">generate_layout</span> }
+
+        <span class="ruby-identifier">new_lines</span> = <span class="ruby-identifier">new_lines</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>).<span class="ruby-identifier">split</span> <span class="ruby-value str">&quot;\n&quot;</span> <span class="ruby-comment cmt"># expand multiline blocks</span>
+        <span class="ruby-identifier">new_lines</span> = <span class="ruby-identifier">new_lines</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">indent</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">line</span> }
+
+        <span class="ruby-identifier">padding</span> = <span class="ruby-identifier">original_lines</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">new_lines</span>.<span class="ruby-identifier">length</span>
+        <span class="ruby-identifier">new_lines</span> <span class="ruby-operator">+=</span> [<span class="ruby-keyword kw">nil</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">padding</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">padding</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span>
+
+        <span class="ruby-identifier">new_lines</span>.<span class="ruby-identifier">join</span> <span class="ruby-value str">&quot;\n&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">open</span> <span class="ruby-ivar">@rb_name</span>, <span class="ruby-value str">'w'</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;# This file is generated by rake. Do not edit.&quot;</span>
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span>
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">new_file</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

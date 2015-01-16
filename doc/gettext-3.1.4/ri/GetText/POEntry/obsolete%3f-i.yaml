@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@return true if the entry is obsolete entry, false otherwise."
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Obsolete entry is normal type and has :last msgid.\n"
+full_name: GetText::POEntry#obsolete?
+is_singleton: false
+name: obsolete?
+params: ()
+visibility: public

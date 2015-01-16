@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Sprites::LayoutMethods#vertical?
+is_singleton: false
+name: vertical?
+params: ()
+visibility: public

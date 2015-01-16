@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The absolute path of the file that the event occurred on.
+- !ruby/struct:SM::Flow::P 
+  body: This is actually only as absolute as the path passed to the {Watcher} that created this event. However, it is relative to the working directory, assuming that hasn't changed since the watcher started.
+- !ruby/struct:SM::Flow::P 
+  body: "@return [String]"
+full_name: INotify::Event#absolute_name
+is_singleton: false
+name: absolute_name
+params: ()
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Set the value whether cache messages or not. true to cache messages, otherwise false.
+- !ruby/struct:SM::Flow::P 
+  body: Default is true. If $DEBUG is false, messages are not checked even if this value is true.
+full_name: GetText::TextDomainManager#cached=
+is_singleton: false
+name: cached=
+params: (val)
+visibility: public

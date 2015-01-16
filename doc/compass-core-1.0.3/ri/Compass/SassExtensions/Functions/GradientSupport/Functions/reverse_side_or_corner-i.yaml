@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Functions::GradientSupport::Functions#reverse_side_or_corner
+is_singleton: false
+name: reverse_side_or_corner
+params: (position)
+visibility: public

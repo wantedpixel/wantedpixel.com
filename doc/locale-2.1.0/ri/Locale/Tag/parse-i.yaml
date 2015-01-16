@@ -1,0 +1,21 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Parse a language tag/locale name and return Locale::Tag object.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "tag: a tag as a String. e.g.) ja-Hira-JP"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: a Locale::Tag subclass."
+  type: :BULLET
+full_name: Locale::Tag#parse
+is_singleton: false
+name: parse
+params: (tag)
+visibility: public

@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: generate
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@private"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Maps different C types to the C type representations we use
+  name: TYPE_MAP
+  value: "{                \"char\" => :char,         \"signed char\" => :char,       \"__signed char\" => :char,       \"unsigned char\" => :uchar,                 \"short\"     => :short,         \"signed short\"     => :short,         \"signed short int\" => :short,       \"unsigned short\"     => :ushort,       \"unsigned short int\" => :ushort,                 \"int\" => :int,         \"signed int\" => :int,       \"unsigned int\" => :uint,                 \"long\" => :long,                \"long int\" => :long,         \"signed long\" => :long,         \"signed long int\" => :long,       \"unsigned long\" => :ulong,       \"unsigned long int\" => :ulong,       \"long unsigned int\" => :ulong,                 \"long long\"     => :long_long,                \"long long int\" => :long_long,         \"signed long long\"     => :long_long,         \"signed long long int\" => :long_long,       \"unsigned long long\"     => :ulong_long,       \"unsigned long long int\" => :ulong_long,        \"char *\" => :string,       \"void *\" => :pointer,     }"
+full_name: FFI::TypesGenerator
+includes: []
+
+instance_methods: []
+
+name: TypesGenerator
+superclass: Object

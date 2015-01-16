@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: included
+comment: 
+constants: []
+
+full_name: Compass::SassExtensions::Functions::GradientSupport::Gradient
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Sass::Script::Value::Helpers
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: angle?
+- !ruby/object:RI::MethodSummary 
+  name: has_aspect?
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: is_position
+- !ruby/object:RI::MethodSummary 
+  name: supports?
+name: Gradient
+superclass: 

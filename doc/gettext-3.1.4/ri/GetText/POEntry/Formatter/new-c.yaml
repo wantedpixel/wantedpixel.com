@@ -1,0 +1,42 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [POEntry] entry The entry to be formatted. @param [Hash] options @option options [Bool] :include_translator_comment (true)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Includes translator comments in formatted string if true.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@option options [Bool] :include_extracted_comment (true)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Includes extracted comments in formatted string if true.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@option options [Bool] :include_reference_comment (true)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Includes reference comments in formatted string if true.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@option options [Bool] :include_flag_comment (true)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Includes flag comments in formatted string if true.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@option options [Bool] :include_previous_comment (true)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Includes previous comments in formatted string if true.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@option options [Bool] :include_all_comments (true)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Includes all comments in formatted string if true.\n  Other specific `:include_XXX` options get preference over\n  this option.\n  You can remove all comments by specifying this option as\n  false and omitting other `:include_XXX` options.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@option options [Integer] :max_line_width (78)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Wraps long lines that is longer than the `:max_line_width`.\n  Don't break long lines if `:max_line_width` is less than 0\n  such as `-1`.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "@option options [Encoding] :encoding (nil)"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Encodes to the specific encoding.\n"
+full_name: GetText::POEntry::Formatter::new
+is_singleton: true
+name: new
+params: (entry, options={})
+visibility: public

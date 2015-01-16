@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Compass::Configuration::Defaults</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Compass::Configuration::Defaults</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/compass/configuration/defaults_rb.html">
+                lib/compass/configuration/defaults.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000122">default_cache</a>&nbsp;&nbsp;
+      <a href="#M000108">default_cache_dir</a>&nbsp;&nbsp;
+      <a href="#M000109">default_cache_path</a>&nbsp;&nbsp;
+      <a href="#M000125">default_chunky_png_options</a>&nbsp;&nbsp;
+      <a href="#M000100">default_color_output</a>&nbsp;&nbsp;
+      <a href="#M000093">default_css_dir</a>&nbsp;&nbsp;
+      <a href="#M000102">default_css_path</a>&nbsp;&nbsp;
+      <a href="#M000097">default_environment</a>&nbsp;&nbsp;
+      <a href="#M000092">default_extensions_dir</a>&nbsp;&nbsp;
+      <a href="#M000106">default_extensions_path</a>&nbsp;&nbsp;
+      <a href="#M000095">default_fonts_dir</a>&nbsp;&nbsp;
+      <a href="#M000107">default_fonts_path</a>&nbsp;&nbsp;
+      <a href="#M000110">default_generated_images_dir</a>&nbsp;&nbsp;
+      <a href="#M000104">default_generated_images_path</a>&nbsp;&nbsp;
+      <a href="#M000118">default_http_fonts_dir</a>&nbsp;&nbsp;
+      <a href="#M000119">default_http_fonts_path</a>&nbsp;&nbsp;
+      <a href="#M000111">default_http_generated_images_dir</a>&nbsp;&nbsp;
+      <a href="#M000117">default_http_generated_images_path</a>&nbsp;&nbsp;
+      <a href="#M000112">default_http_images_dir</a>&nbsp;&nbsp;
+      <a href="#M000114">default_http_images_path</a>&nbsp;&nbsp;
+      <a href="#M000120">default_http_javascripts_dir</a>&nbsp;&nbsp;
+      <a href="#M000121">default_http_javascripts_path</a>&nbsp;&nbsp;
+      <a href="#M000091">default_http_path</a>&nbsp;&nbsp;
+      <a href="#M000115">default_http_stylesheets_dir</a>&nbsp;&nbsp;
+      <a href="#M000116">default_http_stylesheets_path</a>&nbsp;&nbsp;
+      <a href="#M000096">default_images_dir</a>&nbsp;&nbsp;
+      <a href="#M000103">default_images_path</a>&nbsp;&nbsp;
+      <a href="#M000105">default_javascripts_path</a>&nbsp;&nbsp;
+      <a href="#M000099">default_line_comments</a>&nbsp;&nbsp;
+      <a href="#M000098">default_output_style</a>&nbsp;&nbsp;
+      <a href="#M000123">default_preferred_syntax</a>&nbsp;&nbsp;
+      <a href="#M000089">default_project_path</a>&nbsp;&nbsp;
+      <a href="#M000090">default_project_type</a>&nbsp;&nbsp;
+      <a href="#M000094">default_sass_dir</a>&nbsp;&nbsp;
+      <a href="#M000101">default_sass_path</a>&nbsp;&nbsp;
+      <a href="#M000124">default_sprite_engine</a>&nbsp;&nbsp;
+      <a href="#M000113">default_sprite_load_path</a>&nbsp;&nbsp;
+      <a href="#M000126">http_join</a>&nbsp;&nbsp;
+      <a href="#M000127">http_pathify</a>&nbsp;&nbsp;
+      <a href="#M000128">http_root_relative</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000122" class="method-detail">
+        <a name="M000122"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000122.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000122.html');return false;">
+          <span class="method-name">default_cache</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000108" class="method-detail">
+        <a name="M000108"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000108.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000108.html');return false;">
+          <span class="method-name">default_cache_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000109" class="method-detail">
+        <a name="M000109"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000109.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000109.html');return false;">
+          <span class="method-name">default_cache_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000125" class="method-detail">
+        <a name="M000125"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000125.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000125.html');return false;">
+          <span class="method-name">default_chunky_png_options</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000100" class="method-detail">
+        <a name="M000100"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000100.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000100.html');return false;">
+          <span class="method-name">default_color_output</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000093" class="method-detail">
+        <a name="M000093"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000093.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000093.html');return false;">
+          <span class="method-name">default_css_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000102" class="method-detail">
+        <a name="M000102"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000102.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000102.html');return false;">
+          <span class="method-name">default_css_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000097" class="method-detail">
+        <a name="M000097"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000097.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000097.html');return false;">
+          <span class="method-name">default_environment</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000092" class="method-detail">
+        <a name="M000092"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000092.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000092.html');return false;">
+          <span class="method-name">default_extensions_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000106" class="method-detail">
+        <a name="M000106"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000106.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000106.html');return false;">
+          <span class="method-name">default_extensions_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000095" class="method-detail">
+        <a name="M000095"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000095.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000095.html');return false;">
+          <span class="method-name">default_fonts_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000107" class="method-detail">
+        <a name="M000107"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000107.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000107.html');return false;">
+          <span class="method-name">default_fonts_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000110" class="method-detail">
+        <a name="M000110"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000110.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000110.html');return false;">
+          <span class="method-name">default_generated_images_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000104" class="method-detail">
+        <a name="M000104"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000104.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000104.html');return false;">
+          <span class="method-name">default_generated_images_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000118" class="method-detail">
+        <a name="M000118"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000118.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000118.html');return false;">
+          <span class="method-name">default_http_fonts_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000119" class="method-detail">
+        <a name="M000119"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000119.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000119.html');return false;">
+          <span class="method-name">default_http_fonts_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000111" class="method-detail">
+        <a name="M000111"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000111.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000111.html');return false;">
+          <span class="method-name">default_http_generated_images_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000117.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000117.html');return false;">
+          <span class="method-name">default_http_generated_images_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000112" class="method-detail">
+        <a name="M000112"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000112.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000112.html');return false;">
+          <span class="method-name">default_http_images_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000114" class="method-detail">
+        <a name="M000114"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000114.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000114.html');return false;">
+          <span class="method-name">default_http_images_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000120" class="method-detail">
+        <a name="M000120"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000120.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000120.html');return false;">
+          <span class="method-name">default_http_javascripts_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000121" class="method-detail">
+        <a name="M000121"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000121.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000121.html');return false;">
+          <span class="method-name">default_http_javascripts_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000091" class="method-detail">
+        <a name="M000091"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000091.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000091.html');return false;">
+          <span class="method-name">default_http_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000115" class="method-detail">
+        <a name="M000115"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000115.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000115.html');return false;">
+          <span class="method-name">default_http_stylesheets_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000116.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000116.html');return false;">
+          <span class="method-name">default_http_stylesheets_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000096" class="method-detail">
+        <a name="M000096"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000096.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000096.html');return false;">
+          <span class="method-name">default_images_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000103" class="method-detail">
+        <a name="M000103"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000103.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000103.html');return false;">
+          <span class="method-name">default_images_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000105" class="method-detail">
+        <a name="M000105"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000105.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000105.html');return false;">
+          <span class="method-name">default_javascripts_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000099" class="method-detail">
+        <a name="M000099"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000099.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000099.html');return false;">
+          <span class="method-name">default_line_comments</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000098" class="method-detail">
+        <a name="M000098"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000098.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000098.html');return false;">
+          <span class="method-name">default_output_style</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000123" class="method-detail">
+        <a name="M000123"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000123.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000123.html');return false;">
+          <span class="method-name">default_preferred_syntax</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000089" class="method-detail">
+        <a name="M000089"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000089.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000089.html');return false;">
+          <span class="method-name">default_project_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000090" class="method-detail">
+        <a name="M000090"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000090.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000090.html');return false;">
+          <span class="method-name">default_project_type</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000094" class="method-detail">
+        <a name="M000094"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000094.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000094.html');return false;">
+          <span class="method-name">default_sass_dir</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000101" class="method-detail">
+        <a name="M000101"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000101.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000101.html');return false;">
+          <span class="method-name">default_sass_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000124" class="method-detail">
+        <a name="M000124"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000124.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000124.html');return false;">
+          <span class="method-name">default_sprite_engine</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000113" class="method-detail">
+        <a name="M000113"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000113.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000113.html');return false;">
+          <span class="method-name">default_sprite_load_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000126" class="method-detail">
+        <a name="M000126"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000126.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000126.html');return false;">
+          <span class="method-name">http_join</span><span class="method-args">(*segments)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+helper functions
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000127" class="method-detail">
+        <a name="M000127"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000127.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000127.html');return false;">
+          <span class="method-name">http_pathify</span><span class="method-args">(path)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000128" class="method-detail">
+        <a name="M000128"></a>
+
+        <div class="method-heading">
+          <a href="Defaults.src/M000128.html" target="Code" class="method-signature"
+            onclick="popupCode('Defaults.src/M000128.html');return false;">
+          <span class="method-name">http_root_relative</span><span class="method-args">(path)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

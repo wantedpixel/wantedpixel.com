@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::Configuration::Inheritance::ClassMethods::ArrayProxy#serialize_to_config
+is_singleton: false
+name: serialize_to_config
+params: (prop)
+visibility: public

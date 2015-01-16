@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: (path, FONT_TYPES[type])
+comment: 
+full_name: Compass::SassExtensions::Functions::FontFiles#with_each_font_file
+is_singleton: false
+name: with_each_font_file
+params: (*args) {|path, FONT_TYPES[type]| ...}
+visibility: protected

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param mod extended object @return [nil] @raise {RuntimeError} if <tt>mod</tt> is not a Module Test if extended object is a Module. If not, raise RuntimeError."
+full_name: FFI::Library::extended
+is_singleton: true
+name: extended
+params: (mod)
+visibility: public

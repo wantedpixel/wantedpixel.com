@@ -1,0 +1,39 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULT_TIME
+  value: identifier("%T%:z")
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULT_DATE
+  value: identifier("%F")
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NOT_ABSOLUTE
+  value: bool(false)
+full_name: Compass::SassExtensions::Functions::Env
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: at_stylesheet_root
+- !ruby/object:RI::MethodSummary 
+  name: compass_env
+- !ruby/object:RI::MethodSummary 
+  name: compass_extensions
+- !ruby/object:RI::MethodSummary 
+  name: current_date
+- !ruby/object:RI::MethodSummary 
+  name: current_output_file
+- !ruby/object:RI::MethodSummary 
+  name: current_source_file
+- !ruby/object:RI::MethodSummary 
+  name: current_time
+name: Env
+superclass: 

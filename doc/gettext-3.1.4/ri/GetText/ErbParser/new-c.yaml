@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param path [String] eRuby script path to be parsed @param options [Hash]"
+full_name: GetText::ErbParser::new
+is_singleton: true
+name: new
+params: (path, options={})
+visibility: public

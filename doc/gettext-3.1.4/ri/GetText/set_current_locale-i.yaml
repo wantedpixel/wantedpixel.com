@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: current_locale=
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Set the locale to the current thread. Note that if #set_locale is set, this value is ignored. If you need, set_locale(nil); set_current_locale(lang)"
+full_name: GetText#set_current_locale
+is_singleton: false
+name: set_current_locale
+params: (lang)
+visibility: public

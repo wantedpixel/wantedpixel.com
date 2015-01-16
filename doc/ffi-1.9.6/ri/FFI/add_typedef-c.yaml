@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: (see FFI.typedef)
+full_name: FFI::add_typedef
+is_singleton: true
+name: add_typedef
+params: (old, add)
+visibility: public

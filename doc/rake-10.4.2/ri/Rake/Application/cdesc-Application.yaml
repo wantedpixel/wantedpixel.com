@@ -1,0 +1,66 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The name of the application (typically 'rake')
+  name: name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The original directory where rake was invoked.
+  name: original_dir
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Name of the actual rakefile used.
+  name: rakefile
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Number of columns on the terminal
+  name: terminal_columns
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: List of the top level task names (task names from the command line).
+  name: top_level_tasks
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Rake main application object. When invoking <tt>rake</tt> from the command line, a Rake::Application object is created and run.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULT_RAKEFILES
+  value: "[       'rakefile',       'Rakefile',       'rakefile.rb',       'Rakefile.rb'"
+full_name: Rake::Application
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: TaskManager
+- !ruby/object:RI::IncludedModule 
+  name: TraceOutput
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_loader
+- !ruby/object:RI::MethodSummary 
+  name: init
+- !ruby/object:RI::MethodSummary 
+  name: load_rakefile
+- !ruby/object:RI::MethodSummary 
+  name: options
+- !ruby/object:RI::MethodSummary 
+  name: run
+- !ruby/object:RI::MethodSummary 
+  name: run_with_threads
+- !ruby/object:RI::MethodSummary 
+  name: top_level
+name: Application
+superclass: Object

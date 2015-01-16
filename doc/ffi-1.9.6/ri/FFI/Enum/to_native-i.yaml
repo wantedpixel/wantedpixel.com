@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [Symbol, Integer, #to_int] val @param ctx unused @return [Integer] value of a enum symbol"
+full_name: FFI::Enum#to_native
+is_singleton: false
+name: to_native
+params: (val, ctx)
+visibility: public

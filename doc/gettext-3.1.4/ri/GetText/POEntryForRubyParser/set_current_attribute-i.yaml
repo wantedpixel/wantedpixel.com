@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Supports parsing by setting attributes by and by.
+full_name: GetText::POEntryForRubyParser#set_current_attribute
+is_singleton: false
+name: set_current_attribute
+params: (str)
+visibility: public

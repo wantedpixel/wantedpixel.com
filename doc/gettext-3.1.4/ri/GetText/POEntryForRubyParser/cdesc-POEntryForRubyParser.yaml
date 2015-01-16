@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Extends POEntry for RubyParser. Implements a sort of state machine to assist the parser.
+constants: []
+
+full_name: GetText::POEntryForRubyParser
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: advance_to_next_attribute
+- !ruby/object:RI::MethodSummary 
+  name: init_param
+- !ruby/object:RI::MethodSummary 
+  name: set_current_attribute
+name: POEntryForRubyParser
+superclass: 

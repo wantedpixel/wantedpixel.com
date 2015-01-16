@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [#to_s] name @param [String] format a printf format string to print the value out @param [String] cast a C cast for the value @param ruby_name alternate ruby name for {#to_ruby} @param [#call] converter convert the value from a string to the appropriate"
+- !ruby/struct:SM::Flow::VERB 
+  body: " type for {#to_ruby}.\n"
+full_name: FFI::ConstGenerator::Constant::new
+is_singleton: true
+name: new
+params: (name, format, cast, ruby_name = nil, converter=nil)
+visibility: public

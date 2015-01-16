@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: GetText::Tools::Task::Path#edit_po_directory
+is_singleton: false
+name: edit_po_directory
+params: ()
+visibility: public

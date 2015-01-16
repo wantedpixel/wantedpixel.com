@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Locale::Driver::Env module. Detect the user locales and the charset. All drivers(except CGI) refer environment variables first and use it as the locale if it's defined. This is a low-level module. Application shouldn't use this directly.
+constants: []
+
+full_name: Locale::Driver::Env
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: locale
+- !ruby/object:RI::MethodSummary 
+  name: locales
+name: Env
+superclass: 

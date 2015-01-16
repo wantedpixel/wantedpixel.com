@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: FFI::ManagedStruct allows custom garbage-collection of your FFI::Structs.
+- !ruby/struct:SM::Flow::P 
+  body: The typical use case would be when interacting with a library that has a nontrivial memory management design, such as a linked list or a binary tree.
+- !ruby/struct:SM::Flow::P 
+  body: When the {Struct} instance is garbage collected, FFI::ManagedStruct will invoke the class's release() method during object finalization.
+- !ruby/struct:SM::Flow::P 
+  body: "@example Example usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " module MyLibrary\n   ffi_lib &quot;libmylibrary&quot;\n   attach_function :new_dlist, [], :pointer\n   attach_function :destroy_dlist, [:pointer], :void\n end\n\n class DoublyLinkedList &lt; FFI::ManagedStruct\n   @@@\n   struct do |s|\n     s.name 'struct dlist'\n     s.include 'dlist.h'\n     s.field :head, :pointer\n     s.field :tail, :pointer\n   end\n   @@@\n\n   def self.release ptr\n     MyLibrary.destroy_dlist(ptr)\n   end\n end\n\n begin\n   ptr = DoublyLinkedList.new(MyLibrary.new_dlist)\n   #  do something with the list\n end\n # struct is out of scope, and will be GC'd using DoublyLinkedList#release\n"
+constants: []
+
+full_name: FFI::ManagedStruct
+includes: []
+
+instance_methods: []
+
+name: ManagedStruct
+superclass: FFI::Struct

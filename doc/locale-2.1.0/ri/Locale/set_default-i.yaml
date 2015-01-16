@@ -1,0 +1,21 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the default locale as the language tag (Locale::Tag's class or String(such as &quot;ja_JP&quot;)).
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "tag: the default language_tag"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "Returns: self."
+  type: :BULLET
+full_name: Locale#set_default
+is_singleton: false
+name: set_default
+params: (tag)
+visibility: public

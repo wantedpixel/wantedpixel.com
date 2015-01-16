@@ -1,0 +1,45 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Compass::SassExtensions::Functions::GradientSupport::Functions
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Sass::Script::Value::Helpers
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: _build_linear_gradient
+- !ruby/object:RI::MethodSummary 
+  name: _linear_gradient
+- !ruby/object:RI::MethodSummary 
+  name: _linear_gradient_legacy
+- !ruby/object:RI::MethodSummary 
+  name: color_stops
+- !ruby/object:RI::MethodSummary 
+  name: color_stops_in_percentages
+- !ruby/object:RI::MethodSummary 
+  name: convert_angle_from_offical
+- !ruby/object:RI::MethodSummary 
+  name: grad_color_stops
+- !ruby/object:RI::MethodSummary 
+  name: grad_end_position
+- !ruby/object:RI::MethodSummary 
+  name: grad_point
+- !ruby/object:RI::MethodSummary 
+  name: grad_position
+- !ruby/object:RI::MethodSummary 
+  name: linear_end_position
+- !ruby/object:RI::MethodSummary 
+  name: linear_svg_gradient
+- !ruby/object:RI::MethodSummary 
+  name: radial_gradient
+- !ruby/object:RI::MethodSummary 
+  name: radial_svg_gradient
+- !ruby/object:RI::MethodSummary 
+  name: reverse_side_or_corner
+name: Functions
+superclass: 

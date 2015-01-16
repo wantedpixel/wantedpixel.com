@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Add additional C include file(s) to calculate constants from. @note +stdio.h+ and +stddef.h+ automatically included @param [List&lt;String&gt;, Array&lt;String&gt;] i include file(s) @return [Array&lt;String&gt;] array of include files
+full_name: FFI::ConstGenerator#include
+is_singleton: false
+name: include
+params: (*i)
+visibility: public

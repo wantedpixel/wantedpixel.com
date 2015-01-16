@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: FFI::Library</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">FFI::Library</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/ffi/library_rb.html">
+                lib/ffi/library.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+This module is the base to use native functions.
+</p>
+<p>
+A basic usage may be:
+</p>
+<pre>
+ require 'ffi'
+
+ module Hello
+   extend FFI::Library
+   ffi_lib FFI::Library::LIBC
+   attach_function 'puts', [ :string ], :int
+ end
+
+ Hello.puts(&quot;Hello, World&quot;)
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000740">attach_function</a>&nbsp;&nbsp;
+      <a href="#M000742">attach_variable</a>&nbsp;&nbsp;
+      <a href="#M000743">callback</a>&nbsp;&nbsp;
+      <a href="#M000745">enum</a>&nbsp;&nbsp;
+      <a href="#M000746">enum_type</a>&nbsp;&nbsp;
+      <a href="#M000747">enum_value</a>&nbsp;&nbsp;
+      <a href="#M000735">extended</a>&nbsp;&nbsp;
+      <a href="#M000737">ffi_convention</a>&nbsp;&nbsp;
+      <a href="#M000736">ffi_lib</a>&nbsp;&nbsp;
+      <a href="#M000739">ffi_lib_flags</a>&nbsp;&nbsp;
+      <a href="#M000738">ffi_libraries</a>&nbsp;&nbsp;
+      <a href="#M000748">find_type</a>&nbsp;&nbsp;
+      <a href="#M000741">function_names</a>&nbsp;&nbsp;
+      <a href="#M000744">typedef</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CURRENT_PROCESS</td>
+          <td>=</td>
+          <td class="context-item-value">FFI::CURRENT_PROCESS</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LIBC</td>
+          <td>=</td>
+          <td class="context-item-value">FFI::Platform::LIBC</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">FlagsMap</td>
+          <td>=</td>
+          <td class="context-item-value">{       :global =&gt; DynamicLibrary::RTLD_GLOBAL,       :local =&gt; DynamicLibrary::RTLD_LOCAL,       :lazy =&gt; DynamicLibrary::RTLD_LAZY,       :now =&gt; DynamicLibrary::RTLD_NOW</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Flags used in {<a href="Library.html#M000736">ffi_lib</a>}.
+
+<p>
+This map allows you to supply symbols to {<a
+href="Library.html#M000739">ffi_lib_flags</a>} instead of the actual
+constants.
+</p>
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000735" class="method-detail">
+        <a name="M000735"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000735.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000735.html');return false;">
+          <span class="method-name">extended</span><span class="method-args">(mod)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param mod <a href="Library.html#M000735">extended</a> object @return [nil]
+@raise {RuntimeError} if <tt>mod</tt> is not a Module Test if <a
+href="Library.html#M000735">extended</a> object is a Module. If not, raise
+RuntimeError.
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000740" class="method-detail">
+        <a name="M000740"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000740.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000740.html');return false;">
+          <span class="method-name">attach_function</span><span class="method-args">(name, func, args, returns = nil, options = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@overload <a href="Library.html#M000740">attach_function</a>(func, args,
+returns, options = {})
+</p>
+<pre>
+ @example attach function without an explicit name
+   module Foo
+     extend FFI::Library
+     ffi_lib FFI::Library::LIBC
+     attach_function :malloc, [:size_t], :pointer
+   end
+   # now callable via Foo.malloc
+</pre>
+<p>
+@overload <a href="Library.html#M000740">attach_function</a>(name, func,
+args, returns, options = {})
+</p>
+<pre>
+ @example attach function with an explicit name
+   module Bar
+     extend FFI::Library
+     ffi_lib FFI::Library::LIBC
+     attach_function :c_malloc, :malloc, [:size_t], :pointer
+   end
+   # now callable via Bar.c_malloc
+</pre>
+<p>
+Attach C function <tt>func</tt> to this module.
+</p>
+<p>
+@param [to_s] name name of ruby method to attach as @param [to_s] func name
+of C function to attach @param [Array&lt;Symbol&gt;] args an array of types
+@param [Symbol] returns type of return value @option options [Boolean]
+:blocking (@blocking) set to true if the C function is a blocking call
+@option options [Symbol] :convention (:default) calling convention (see {<a
+href="Library.html#M000737">ffi_convention</a>}) @option options [<a
+href="Enums.html">FFI::Enums</a>] :enums @option options [Hash] :type_map
+</p>
+<p>
+@return [<a href="VariadicInvoker.html">FFI::VariadicInvoker</a>]
+</p>
+<p>
+@raise [<a href="NotFoundError.html">FFI::NotFoundError</a>] if
+<tt>func</tt> cannot be found in the attached libraries (see {<a
+href="Library.html#M000736">ffi_lib</a>})
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000742" class="method-detail">
+        <a name="M000742"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000742.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000742.html');return false;">
+          <span class="method-name">attach_variable</span><span class="method-args">(mname, a1, a2 = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@overload <a href="Library.html#M000742">attach_variable</a>(mname, cname,
+type)
+</p>
+<pre>
+ @example
+  module Bar
+    extend FFI::Library
+    ffi_lib 'my_lib'
+    attach_variable :c_myvar, :myvar, :long
+  end
+  # now callable via Bar.c_myvar
+</pre>
+<p>
+@overload <a href="Library.html#M000742">attach_variable</a>(cname, type)
+</p>
+<pre>
+ @example
+  module Bar
+    extend FFI::Library
+    ffi_lib 'my_lib'
+    attach_variable :myvar, :long
+  end
+  # now callable via Bar.myvar
+</pre>
+<p>
+@param [to_s] mname name of ruby method to attach as @param [to_s] cname
+name of C variable to attach @param [DataConverter, <a
+href="Struct.html">Struct</a>, Symbol, Type] type C varaible&#8216;s type
+@return [DynamicLibrary::Symbol] @raise {<a
+href="NotFoundError.html">FFI::NotFoundError</a>} if <tt>cname</tt> cannot
+be found in libraries
+</p>
+<p>
+Attach C variable <tt>cname</tt> to this module.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000743" class="method-detail">
+        <a name="M000743"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000743.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000743.html');return false;">
+          <span class="method-name">callback</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@overload <a href="Library.html#M000743">callback</a>(name, params, ret)
+@overload <a href="Library.html#M000743">callback</a>(params, ret) @param
+name <a href="Library.html#M000743">callback</a> name to add to type map
+@param [Array] params array of parameters&#8217; types @param
+[DataConverter, <a href="Struct.html">Struct</a>, Symbol, Type] ret <a
+href="Library.html#M000743">callback</a> return type @return
+[FFI::CallbackInfo]
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000745" class="method-detail">
+        <a name="M000745"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000745.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000745.html');return false;">
+          <span class="method-name">enum</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@overload <a href="Library.html#M000745">enum</a>(name, values)
+</p>
+<pre>
+ Create a named enum.
+ @example
+  enum :foo, [:zero, :one, :two]  # named enum
+ @param [Symbol] name name for new enum
+ @param [Array] values values for enum
+</pre>
+<p>
+@overload <a href="Library.html#M000745">enum</a>(*args)
+</p>
+<pre>
+ Create an unnamed enum.
+ @example
+  enum :zero, :one, :two  # unnamed enum
+ @param args values for enum
+</pre>
+<p>
+@overload <a href="Library.html#M000745">enum</a>(values)
+</p>
+<pre>
+ Create an unnamed enum.
+ @example
+  enum [:zero, :one, :two]  # unnamed enum, equivalent to above example
+ @param [Array] values values for enum
+</pre>
+<p>
+@return [<a href="Enum.html">FFI::Enum</a>] Create a new {<a
+href="Enum.html">FFI::Enum</a>}.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000746" class="method-detail">
+        <a name="M000746"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000746.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000746.html');return false;">
+          <span class="method-name">enum_type</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param name @return [<a href="Enum.html">FFI::Enum</a>] Find an <a
+href="Library.html#M000745">enum</a> by name.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000747" class="method-detail">
+        <a name="M000747"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000747.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000747.html');return false;">
+          <span class="method-name">enum_value</span><span class="method-args">(symbol)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param symbol @return [<a href="Enum.html">FFI::Enum</a>] Find an <a
+href="Library.html#M000745">enum</a> by a symbol it contains.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000737" class="method-detail">
+        <a name="M000737"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000737.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000737.html');return false;">
+          <span class="method-name">ffi_convention</span><span class="method-args">(convention = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the calling convention for {<a
+href="Library.html#M000740">attach_function</a>} and {<a
+href="Library.html#M000743">callback</a>}
+</p>
+<p>
+@see <a
+href="http://en.wikipedia.org/wiki/Stdcall#stdcall">en.wikipedia.org/wiki/Stdcall#stdcall</a>
+@note +:stdcall+ is typically used for attaching Windows API functions
+</p>
+<p>
+@param [Symbol] convention one of +:default+, +:stdcall+ @return [Symbol]
+the new calling convention
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000736" class="method-detail">
+        <a name="M000736"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000736.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000736.html');return false;">
+          <span class="method-name">ffi_lib</span><span class="method-args">(*names)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param [Array] names names of libraries to load @return
+[Array&lt;DynamicLibrary&gt;] @raise {LoadError} if a library cannot be
+opened Load native libraries.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000739" class="method-detail">
+        <a name="M000739"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000739.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000739.html');return false;">
+          <span class="method-name">ffi_lib_flags</span><span class="method-args">(*flags)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets library flags for {<a href="Library.html#M000736">ffi_lib</a>}.
+</p>
+<p>
+@example
+</p>
+<pre>
+  ffi_lib_flags(:lazy, :local) # =&gt; 5
+</pre>
+<p>
+@param [Symbol, …] flags (see {FlagsMap}) @return [Fixnum] the new value
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000738" class="method-detail">
+        <a name="M000738"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000738.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000738.html');return false;">
+          <span class="method-name">ffi_libraries</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@see <a href="Library.html#M000736">ffi_lib</a> @return
+[Array&lt;FFI::DynamicLibrary&gt;] array of currently loaded <a
+href="../FFI.html">FFI</a> libraries @raise [LoadError] if no libraries
+have been loaded (using {<a href="Library.html#M000736">ffi_lib</a>}) Get
+<a href="../FFI.html">FFI</a> libraries loaded using {<a
+href="Library.html#M000736">ffi_lib</a>}.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000748" class="method-detail">
+        <a name="M000748"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000748.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000748.html');return false;">
+          <span class="method-name">find_type</span><span class="method-args">(t)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param [DataConverter, Type, <a href="Struct.html">Struct</a>, Symbol] t
+type to find @return [Type] Find a type definition.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000741" class="method-detail">
+        <a name="M000741"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000741.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000741.html');return false;">
+          <span class="method-name">function_names</span><span class="method-args">(name, arg_types)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param [to_s] name function name @param [Array] arg_types function&#8216;s
+argument types @return [Array&lt;String&gt;] This function returns a list
+of possible names to lookup. @note Function names on windows may be
+decorated if they are using stdcall. See
+</p>
+<pre>
+  * http://en.wikipedia.org/wiki/Name_mangling#C_name_decoration_in_Microsoft_Windows
+  * http://msdn.microsoft.com/en-us/library/zxk0tw93%28v=VS.100%29.aspx
+  * http://en.wikibooks.org/wiki/X86_Disassembly/Calling_Conventions#STDCALL
+  Note that decorated names can be overridden via def files.  Also note that the
+  windows api, although using, doesn't have decorated names.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000744" class="method-detail">
+        <a name="M000744"></a>
+
+        <div class="method-heading">
+          <a href="Library.src/M000744.html" target="Code" class="method-signature"
+            onclick="popupCode('Library.src/M000744.html');return false;">
+          <span class="method-name">typedef</span><span class="method-args">(old, add, info=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param [DataConverter, Symbol, Type] old @param add @param [] info @return
+[<a href="Enum.html">FFI::Enum</a>, FFI::Type] Register or get an already
+registered type definition.
+</p>
+<p>
+To register a new type definition, <tt>old</tt> should be a {FFI::Type}.
+<tt>add</tt> is in this case the type definition.
+</p>
+<p>
+If <tt>old</tt> is a {DataConverter}, a {Type::Mapped} is returned.
+</p>
+<p>
+If <tt>old</tt> is +:<a href="Library.html#M000745">enum</a>+
+</p>
+<ul>
+<li>and <tt>add</tt> is an <tt>Array</tt>, a call to {<a
+href="Library.html#M000745">enum</a>} is made with <tt>add</tt> as single
+parameter;
+
+</li>
+<li>in others cases, <tt>info</tt> is used to create a named <a
+href="Library.html#M000745">enum</a>.
+
+</li>
+</ul>
+<p>
+If <tt>old</tt> is a key for type map, <a
+href="Library.html#M000744">typedef</a> get <tt>old</tt> type definition.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

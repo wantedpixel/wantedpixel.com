@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Locale::TagList#to_rfc
+is_singleton: false
+name: to_rfc
+params: ()
+visibility: public

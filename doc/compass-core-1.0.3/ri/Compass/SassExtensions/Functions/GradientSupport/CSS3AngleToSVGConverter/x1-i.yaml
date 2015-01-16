@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Compass::SassExtensions::Functions::GradientSupport::CSS3AngleToSVGConverter#x1
+is_singleton: false
+name: x1
+params: ()
+visibility: public

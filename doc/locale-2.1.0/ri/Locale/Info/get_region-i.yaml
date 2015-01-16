@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the region for the given code.
+- !ruby/struct:SM::Flow::P 
+  body: You need to require 'locale/info' or 'locale/info/region'.
+full_name: Locale::Info#get_region
+is_singleton: false
+name: get_region
+params: (code)
+visibility: public

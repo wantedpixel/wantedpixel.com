@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param [String, Symbol] name name of the field @param [Array, DataConverter, Struct, StructLayout::Field, Symbol, Type] type type of the field @param [Numeric, nil] offset @return [self] Add a field to the builder. @note Setting <tt>offset</tt> to <tt>nil</tt> or +-1+ is equivalent to +0+."
+full_name: FFI::StructLayoutBuilder#add
+is_singleton: false
+name: add
+params: (name, type, offset = nil)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "@param (see #add) @return (see #add) Same as {#add}. @see #add"
+full_name: FFI::StructLayoutBuilder#add_field
+is_singleton: false
+name: add_field
+params: (name, type, offset = nil)
+visibility: public

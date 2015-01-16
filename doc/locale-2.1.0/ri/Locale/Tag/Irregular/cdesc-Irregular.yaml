@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Broken tag class.
+constants: []
+
+full_name: Locale::Tag::Irregular
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: candidates
+name: Irregular
+superclass: Simple

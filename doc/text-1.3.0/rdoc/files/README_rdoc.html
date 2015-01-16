@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.rdoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.rdoc</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.rdoc
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Fri Jan 16 08:46:44 +0100 2015</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>Text</h1>
+<p>
+A collection of text algorithms.
+</p>
+<h2>Usage</h2>
+<pre>
+  require 'text'
+</pre>
+<h3>Levenshtein distance</h3>
+<pre>
+  Text::Levenshtein.distance('test', 'test')
+  # =&gt; 0
+  Text::Levenshtein.distance('test', 'tent')
+  # =&gt; 1
+  Text::Levenshtein.distance('test', 'testing')
+  # =&gt; 3
+  Text::Levenshtein.distance('test', 'testing', 2)
+  # =&gt; 2
+</pre>
+<h3>Metaphone</h3>
+<pre>
+  Text::Metaphone.metaphone('BRIAN')
+  # =&gt; 'BRN'
+
+  Text::Metaphone.double_metaphone('Coburn')
+  # =&gt; ['KPRN', nil]
+  Text::Metaphone.double_metaphone('Angier')
+  # =&gt; ['ANJ', 'ANJR']
+</pre>
+<h3>Soundex</h3>
+<pre>
+  Text::Soundex.soundex('Knuth')
+  # =&gt; 'K530'
+</pre>
+<h3>Porter stemming</h3>
+<pre>
+  Text::PorterStemming.stem('abatements')  # =&gt; 'abat'
+</pre>
+<h3>White similarity</h3>
+<pre>
+  white = Text::WhiteSimilarity.new
+  white.similarity('Healed', 'Sealed')   # 0.8
+  white.similarity('Healed', 'Help')     # 0.25
+</pre>
+<p>
+Note that some intermediate information is cached on the instance to
+improve performance.
+</p>
+<h2>Ruby version compatibility</h2>
+<p>
+The library has been tested on Ruby 1.8.6 to 1.9.3 and on JRuby.
+</p>
+<h2>Thanks</h2>
+<ul>
+<li>Hampton Catlin (hcatlin) for Ruby 1.9 compatibility work
+
+</li>
+<li>Wilker Lúcio for the initial implementation of the White algorithm
+
+</li>
+</ul>
+<h2>License</h2>
+<p>
+MIT. See COPYING.txt for details.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
