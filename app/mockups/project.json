@@ -1,5 +1,41 @@
 [
   {
+    "title": "discavo integrated on urlaubspiraten",
+    "mission": "DEVELOP",
+    "description": "We have integrated the hotel searching service discavo.de on urlaubspiraten.de",
+    "image": "images/accordion/slide_discavo-urlaubspiraten.jpg",
+    "details":
+    {
+      "title": "discavo integrated on urlaubspiraten",
+      "images": [
+        "images/project-screenshots/discavo_up_01.jpg",
+        "images/project-screenshots/discavo_up_02.jpg",
+        "images/project-screenshots/discavo_up_03.jpg",
+        "images/project-screenshots/discavo_up_04.jpg"
+      ],
+      "url": "http://www.urlaubspiraten.de",
+      "description": "Urlaubspiraten need no introduction as trusted travel offer aggregator. We developed the discavo.de widget that allows visitors of urlaubspiraten.de to find the ideal accomodation through discavo.de. The widget look and feel is configurable and enables tracking user clicks on google analytics or other tools."
+    }
+  },
+  {
+    "title": "émouvance",
+    "mission": "DESIGN AND DEVELOP",
+    "description": "We created a fresh website for the music label emouvance.com. The music label founded by double bass player Claude Tchamitchian, is based in Marseille - France, producing music and organizing festivals since 20 years.",
+    "image": "images/accordion/slide_emouvance.jpg",
+    "details":
+    {
+      "title": "émouvance",
+      "images": [
+        "images/project-screenshots/emouvance_01.jpg",
+        "images/project-screenshots/emouvance_02.jpg",
+        "images/project-screenshots/emouvance_03.jpg",
+        "images/project-screenshots/emouvance_04.jpg"
+      ],
+      "url": "http://www.emouvance.org",
+      "description": "We have developed the emouvance.com web site to look fresh and elegant, resonating the spirit of their music. The site is multilingual, SEO optimized and features a user friendly backend that enables non technical users to easily update its content."
+    }
+  },
+  {
     "title": "discavo.de",
     "mission": "DEVELOP - Mobile Site",
     "description": "DISCAVO is the new hotel price comparison platform that takes the pain out of travel search. The platform offers user-friendly filter options that are revolutionizing the search for suitable accommodation. Travelers choose their destination and find the nearest location within the chosen price range. Dynamic maps allow visitors to explore the surroundings.",
