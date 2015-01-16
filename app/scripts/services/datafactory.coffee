@@ -14,6 +14,6 @@ angular.module('wantedpixelApp')
     dataFactory.service = $resource('mockups/service.json')
     dataFactory.methodology = $resource('mockups/methodology.json')
     dataFactory.maker = $resource('mockups/maker.json')
-    dataFactory.email = $resource('http://localhost:3000/mail')
+    dataFactory.email = $resource('http://wantedpixel.com/express/mail')
     dataFactory
   ]
