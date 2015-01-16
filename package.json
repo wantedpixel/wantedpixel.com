@@ -1,7 +1,9 @@
 {
   "name": "wantedpixel",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "grunt-wiredep": "^2.0.0"
+  },
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^0.7.3",
