@@ -169,7 +169,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-body">
-                  <div>{{messageResponse}}</div>
+                  <div ng-bind-html="messageResponse"></div>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" ng-click="messageResponse=undefined">Ok</button>

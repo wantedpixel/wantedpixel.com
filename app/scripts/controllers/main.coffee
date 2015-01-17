@@ -37,5 +37,5 @@ angular.module('wantedpixelApp')
           $scope.messageResponse = "thank you for your message, we will contact you as soon as possible."
         (httpResponse)->
           $scope.messageSending = false
-          $scope.messageResponse = "something is wrong, please try again later"
+          $scope.messageResponse = "something is wrong, please try again later or send us your message to <a href='mailto:contact@wantedpixel.com'>contact@wantedpixel.com</a>"
       )
