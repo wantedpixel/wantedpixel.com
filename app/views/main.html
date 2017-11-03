@@ -5,10 +5,10 @@
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
-        <li class="project" ng-class="{'active': activeSection == 'works'}"><a ng-click="navigateTo('works')">Works</a></li>
         <li class="project" ng-class="{'active': activeSection == 'products'}"><a ng-click="navigateTo('products')">What</a></li>
         <li class="project" ng-class="{'active': activeSection == 'framework'}"><a ng-click="navigateTo('framework')">How</a></li>
         <li class="project" ng-class="{'active': activeSection == 'contact-us'}"><a ng-click="navigateTo('contact-us')">Contact</a></li>
+        <li class="project" ng-class="{'active': activeSection == 'impressum'}"><a ng-click="navigateTo('impressum')">Impressum</a></li>
       </ul>
     </div>
   </div>
@@ -19,65 +19,11 @@
     <p>Ranging from a simple 3 page website to a bespoke eCommerce platform combined with your own branded iPhone application; Wanted Pixel offers affordable, high quality design and functionality that will perform for your business.</p>
     <p>Wanted Pixel brings together creativity, technology, and marketing to transform your vision into reality.</p>
     <div class="links">
-      <a ng-click="navigateTo('works')">See our portfolio</a>
       <a ng-click="navigateTo('contact-us')">Contact us</a>
     </div>
   </div>
 </div>
 <div class="home-black-bg"></div>
-<div class="works">
-  <div class="line"></div>
-  <div class="container">
-    <h2>Selected works</h2>
-    <ul accordion class="projects">
-      <li class="project" ng-repeat="project in projects" on-finish-render>
-        <div data-toggle="modal" data-target="#myModal{{$index}}">
-          <image class="project-image" ng-src="{{project.image}}" alt="{{project.title}}" />
-          <div class="info">
-            <h3>{{project.title}}</h3>
-            <div class="mision-label">Mission:</div>
-            <div class="mission">{{project.mission}}</div>
-            <div class="text">
-              {{project.description}}
-            </div>
-            <div class="more">See more</div>
-          </div>
-        </div>
-        <div class="overlay"></div>
-        <!-- Modal -->
-      </li>
-    </ul>
-  </div>
-</div>
-<div ng-repeat="project in projects" class="modal" id="myModal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div id="works-link{{$index}}" class="carousel slide" data-ride="carousel">
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-            <div ng-class="{active: $index==0}" class="item" ng-repeat="image in project.details.images">
-              <img ng-src="{{image}}" alt="project.title">
-            </div>
-          </div>
-          <!-- Controls -->
-          <a ng-if="project.details.images.length > 1" class="left carousel-control" data-target="#works-link{{$index}}" href="javascript:void(0);" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a ng-if="project.details.images.length > 1" class="right carousel-control" data-target="#works-link{{$index}}" href="javascript:void(0);" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <h2>{{project.details.title}}</h2> <a class="project-link" href="{{project.details.url}}" target="_blank">VISIT THE WEBSITE ></a>
-        <p ng-bind-html="project.details.description"></p>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="services">
   <div class="line"></div>
   <div smallipop="isService" class="container">
@@ -187,6 +133,32 @@
             </div>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="impressum">
+  <div class="line"></div>
+  <div class="container">
+    <h2 class="section-title">Impressum</h2>
+    <div class="row">
+      <div class="col-xs-12">
+        <p>
+          Wanted Pixel GmbH<br/>
+          Kiefholzstr. 413<br>
+          12435, Berlin, Germany
+        </p>
+        <p>
+          Managing Directors: Efthymios Dimopoulos, Spyridon-Konstantinos Dimopoulos
+        </p>
+        <p>
+          HRB / Commercial Register Number: 188680, Berlin Charlottenburg<br/>
+          Steuernummer / Tax number: 37/578/50078Ust-IdNr / VAT ID: DE 312929058
+        </p>
+        <p>
+          Tel: +49 1577 1754 181<br/>
+          Fax: +49 3222 335 3359
+        </p>
       </div>
     </div>
   </div>

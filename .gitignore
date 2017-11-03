@@ -20,3 +20,6 @@ main.js.map
 watcherTasks.xml
 app/scripts/services/datafactory.js
 app/scripts/services/datafactory.js.map
+/.idea/compiler.xml
+/.idea/wantedpixel.com.iml
+/.idea/sonarIssues.xml
